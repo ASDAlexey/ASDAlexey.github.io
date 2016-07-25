@@ -170,3 +170,15 @@ div.drum-wrapper .dial {
 .drum-wrapper .dial div {
     width: 35px;
 }
+
+.wrapper-drum-numbers {
+    opacity: 0;
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    transition: opacity .5s;
+}
+
+.wrapper-drum-numbers.loaded {
+    opacity: 1;
+}
