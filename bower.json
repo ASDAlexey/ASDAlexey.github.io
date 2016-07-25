@@ -1,0 +1,19 @@
+{
+  "name": "drumjs",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "hammerjs": "^1.1.3",
+    "jquery": "^3.1.0",
+    "normalize-css": "normalize.css#^4.2.0"
+  }
+}

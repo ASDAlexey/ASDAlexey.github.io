@@ -1,0 +1,172 @@
+div.drum-wrapper {
+    position: relative;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 30px;
+}
+
+div.drum-wrapper .inner {
+    position: relative;
+    overflow: hidden;
+}
+
+div.drum-wrapper div.container {
+    position: absolute;
+    width: 100%;
+    top: 48px;
+    left: 0;
+    -webkit-perspective: 1100px;
+    -moz-perspective: 1100px;
+    perspective: 1100px;
+}
+
+div.drum-wrapper,
+div.drum-wrapper .inner {
+    height: 120px;
+}
+
+.outside div.drum-wrapper .inner {
+    top: 12px;
+}
+
+.outside div.drum-wrapper .container {
+    top: 46px;
+}
+
+/* dail styles for mouse controls */
+div.drum-wrapper .dial {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 48px;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: none;
+}
+
+.outside div.drum-wrapper .dial {
+    height: 58px;
+}
+
+div.drum-wrapper .dial div {
+    width: 20px;
+    height: 10px;
+    margin: 0 auto;
+}
+
+div.drum-wrapper .dial svg {
+    position: absolute;
+}
+
+div.drum-wrapper .up {
+    top: 0;
+}
+
+div.drum-wrapper .up svg {
+    top: 2px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+
+div.drum-wrapper .down {
+    bottom: 0;
+}
+
+div.drum-wrapper .down svg {
+    bottom: 2px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+
+/* actual drum styles */
+div.drum {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+div.drum figure {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 20px;
+    color: black;
+    margin: 0;
+    padding: 0 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
+
+div.drum-wrapper div.container, div.drum-wrapper figure {
+    height: 25px;
+    line-height: 25px;
+}
+
+/*Custom drumjs styles*/
+.dial {
+    background-color: rgba(190, 190, 190, 0.3) !important;
+}
+
+div.inside, div.outside {
+    float: left;
+}
+
+div.drum-wrapper {
+    margin-right: 20px;
+    border: solid 1px #f0f0f0;
+    text-align: center;
+    font-family: arial, verdana, sans-serif;
+    width: 50px;
+    height: 240px;
+    position: relative;
+    z-index: 0;
+}
+
+div.drum-wrapper .inner {
+    top: 15px;
+    height: 215px;
+}
+
+.drum-wrapper .container, #drum_number figure {
+    height: 35px;
+}
+
+div.drum-wrapper .container {
+    top: 93px !important;
+}
+
+div.drum-wrapper figure {
+    text-align: center;
+    font-size: 1.4em;
+    line-height: 1.4em;
+}
+
+div.drum-wrapper .dial {
+    height: 108px !important;
+}
+
+.drum-wrapper .dial div {
+    width: 35px;
+}
