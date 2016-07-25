@@ -182,3 +182,14 @@ div.drum-wrapper .dial {
 .wrapper-drum-numbers.loaded {
     opacity: 1;
 }
+
+.time{
+    font-size: 0;
+}
+
+.time > li {
+    list-style: none;
+    display: inline;
+    vertical-align: top;
+    font-size: 14px;
+}
