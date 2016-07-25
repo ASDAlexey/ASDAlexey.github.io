@@ -13,7 +13,7 @@ builder/configs/config.private.json
 # Ignore Node & Bower
 ###################
 node_modules
-bower_components
+#bower_components
 
 # Packages #
 ############
