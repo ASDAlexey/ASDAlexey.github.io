@@ -15,16 +15,17 @@
       </li>
     </ul>
   </div>
-  <ul class="product-list">
+  <ul *ngrxLet="currencyPairsRates$; let currencyPairsRates" class="product-list">
     <li *ngFor="let product of products$ | ngrxPush; let i = index" class="product-list__item product">
       <img class="product__img" [src]="product.image" alt="product-image" />
       <div class="product__info">
         <span class="product__name" [innerText]="product.name"></span>
-        <!--        <span class="product__price" [innerText]="(product.price | price) | currency: activeCurrency:'symbol-narrow'"></span>-->
         <span
-          *ngrxLet="currencyPairsRates$; let currencyPairsRates"
           class="product__price"
-          [innerText]="product.price | price: currencyPairsRates | json"
+          [innerText]="
+            (product.price | cartProductPrice: currencyPairsRates)[currencyPairsNames[activeCurrency]]
+              | currency: activeCurrency:'symbol-narrow'
+          "
         ></span>
       </div>
     </li>

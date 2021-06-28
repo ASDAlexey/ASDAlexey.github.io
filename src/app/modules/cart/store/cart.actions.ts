@@ -6,7 +6,7 @@ export const loadSelectedCart = createAction('[Cart] Load Selected Cart', props<
 
 export const setActiveCurrency = createAction('[Cart] Set Active Currency', props<{ activeCurrency: Currencies }>());
 
-export const loadCurrencyPairsRates = createAction('[Cart] Load Currency Pairs Rates', props<{ pairs: string }>());
+export const loadCurrencyPairsRates = createAction('[Cart] Load Currency Pairs Rates', props<{ pairs: string[] }>());
 
 export const loadCurrencyPairsRatesSuccess = createAction(
   '[Cart] Load Currency Pairs Rates Success',
