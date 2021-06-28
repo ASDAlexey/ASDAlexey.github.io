@@ -11,21 +11,21 @@ export interface Product {
   createdAt: string;
 }
 
-export enum CurrencyPairs {
-  USDRUB = 'USDRUB',
-  USDEUR = 'USDEUR',
-  USDGBP = 'USDGBP',
-  USDJPY = 'USDJPY',
+export enum CurrencyPairsRates {
+  USDRUB = 'rubles',
+  USDEUR = 'euros',
+  USDGBP = 'US dollars',
+  USDJPY = 'yens',
 }
 
 @Injectable({ providedIn: 'root' })
 export class CartService {
   constructor(private http: HttpClient) {}
 
-  loadCurrencyPairsRates(): Observable<Record<CurrencyPairs, number>> {
+  loadCurrencyPairsRates(pairs: string): Observable<Record<CurrencyPairsRates, number>> {
     return this.http
-      .get<{ rates: Record<CurrencyPairs, number>; code: number }>('/', {
-        params: { pairs: 'USDRUB,USDEUR,USDGBP,USDJPY' },
+      .get<{ rates: Record<CurrencyPairsRates, number>; code: number }>('/api/live', {
+        params: { pairs },
       })
       .pipe(pluck('rates'));
   }

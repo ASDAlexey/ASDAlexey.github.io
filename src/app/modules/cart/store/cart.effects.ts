@@ -11,8 +11,8 @@ export class CartEffects {
       ofType(loadCurrencyPairsRates),
       mergeMap(({ pairs }) =>
         this.cartService
-          .loadCurrencyPairsRates()
-          .pipe(map(currencyPairs => loadCurrencyPairsRatesSuccess({ currencyPairs }))),
+          .loadCurrencyPairsRates(pairs)
+          .pipe(map(currencyPairsRates => loadCurrencyPairsRatesSuccess({ currencyPairsRates }))),
       ),
     ),
   );

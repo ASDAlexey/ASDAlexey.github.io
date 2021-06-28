@@ -1,6 +1,8 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BASE_URL } from '@app/injection-tokens';
+import { BaseUrlInterceptor } from '@app/interceptors/base-url.interceptor';
 import { environment } from '@env/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
@@ -30,7 +32,10 @@ import { CartModule } from './modules/cart/cart.module';
     EffectsModule.forRoot([]),
     environment.production ? [] : StoreDevtoolsModule.instrument({ maxAge: 300 }),
   ],
-  providers: [],
+  providers: [
+    { provide: BASE_URL, useValue: environment.BASE_URL },
+    { provide: HTTP_INTERCEPTORS, useClass: BaseUrlInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

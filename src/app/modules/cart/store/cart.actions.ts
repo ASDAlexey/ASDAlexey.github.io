@@ -1,17 +1,14 @@
 import { createAction, props } from '@ngrx/store';
-import { CurrencyPairs } from '../services/cart.service';
+import { Currencies } from '@shared/helpers/app.constants';
+import { CurrencyPairsRates } from '../services/cart.service';
 
-export const loadSelectedCart = createAction(
-  '[Cart] Load Selected Cart',
-  props<{ data: { price: number }[] }>(),
-);
+export const loadSelectedCart = createAction('[Cart] Load Selected Cart', props<{ data: { price: number }[] }>());
 
-export const loadCurrencyPairsRates = createAction(
-  '[Cart] Load Currency Pairs Rates',
-  props<{ pairs: CurrencyPairs[] }>(),
-);
+export const setActiveCurrency = createAction('[Cart] Set Active Currency', props<{ activeCurrency: Currencies }>());
+
+export const loadCurrencyPairsRates = createAction('[Cart] Load Currency Pairs Rates', props<{ pairs: string }>());
 
 export const loadCurrencyPairsRatesSuccess = createAction(
   '[Cart] Load Currency Pairs Rates Success',
-  props<{ currencyPairs: Record<CurrencyPairs, number> }>(),
+  props<{ currencyPairsRates: Record<CurrencyPairsRates, number> }>(),
 );

@@ -1,12 +1,20 @@
-import { loadSelectedCart } from '@app/modules/cart/store/cart.actions';
+import {
+  loadCurrencyPairsRates,
+  loadCurrencyPairsRatesSuccess,
+  loadSelectedCart,
+  setActiveCurrency,
+} from '@app/modules/cart/store/cart.actions';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { Action, createReducer, on } from '@ngrx/store';
+import { Currencies } from '@shared/helpers/app.constants';
 import { Status } from '@shared/helpers/async-item.helper';
 import { nanoid } from 'nanoid';
-import { Product } from '../services/cart.service';
+import { CurrencyPairsRates, Product } from '../services/cart.service';
 
 export interface CartState extends EntityState<Product> {
-  status: Status;
+  activeCurrency: Currencies;
+  currencyPairsRates: Record<CurrencyPairsRates, number>;
+  statusCurrencyPairsRate: Status;
   error: string | null;
 }
 
@@ -20,7 +28,9 @@ export const adapter: EntityAdapter<Product> = createEntityAdapter<Product>({
 });
 
 export const initialState: CartState = {
-  status: Status.UNINITIALIZED,
+  activeCurrency: Currencies.USD,
+  currencyPairsRates: {} as Record<CurrencyPairsRates, number>,
+  statusCurrencyPairsRate: Status.UNINITIALIZED,
   error: null,
   ids: [],
   entities: {},
@@ -38,13 +48,13 @@ const cartReducer = createReducer(
     }));
     return adapter.addMany(products, { ...state });
   }),
-  // on(loadRecordYearsSuccess, (state, { userId, years }) => ({
-  //   ...state,
-  //   years: {
-  //     ...state.years,
-  //     [+userId]: { ...state.years[userId], items: years, status: Status.LOADED },
-  //   },
-  // })),
+  on(setActiveCurrency, (state, { activeCurrency }) => ({ ...state, activeCurrency })),
+  on(loadCurrencyPairsRates, state => ({ ...state, statusCurrencyPairsRate: Status.LOADING })),
+  on(loadCurrencyPairsRatesSuccess, (state, { currencyPairsRates }) => ({
+    ...state,
+    currencyPairsRates,
+    statusCurrencyPairsRate: Status.LOADED,
+  })),
 );
 
 export function reducer(state: CartState | undefined, action: Action): CartState {

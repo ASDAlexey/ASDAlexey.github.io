@@ -7,6 +7,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { SharedModule } from '@shared/shared.module';
 import { CartComponent } from './containers/cart/cart.component';
+import { PricePipe } from './pipes/price.pipe';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import { CartComponent } from './containers/cart/cart.component';
     EffectsModule.forFeature([CartEffects]),
     ReactiveComponentModule,
   ],
-  declarations: [CartComponent],
+  declarations: [CartComponent, PricePipe],
   exports: [CartComponent],
 })
 export class CartModule {}
