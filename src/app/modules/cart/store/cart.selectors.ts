@@ -10,25 +10,3 @@ export const selectTotalProductsPrice = createSelector(selectProducts, products 
 });
 export const selectActiveCurrency = createSelector(selectCartState, state => state.activeCurrency);
 export const selectCurrencyPairsRates = createSelector(selectCartState, state => state.currencyPairsRates);
-
-// export const selectProductBySegmentId = createSelector(selectStepsList, steps => (segmentId: number, year?: number) => {
-//   return steps
-//     .filter(step => step.segmentId === segmentId)
-//     .filter(step => {
-//       if (!year) {
-//         return true;
-//       } else {
-//         const stepYear = new Date(step.date).getFullYear();
-//         return stepYear === year;
-//       }
-//     });
-// });
-//
-//
-// const totalCartPrice = {
-//   rubles: number,
-//   euros: number,
-//   US dollars: number,
-//   pounds: number,
-//   yens: number
-// };
