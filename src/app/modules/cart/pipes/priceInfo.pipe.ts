@@ -1,8 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { CurrencyPairsRates } from '@app/modules/cart/services/cart.service';
 
-@Pipe({ name: 'cartProductPrice' })
-export class CartProductPricePipe implements PipeTransform {
+@Pipe({ name: 'priceInfo' })
+export class PriceInfoPipe implements PipeTransform {
   transform(priceInUSD: number, currencyPairsRates: Record<CurrencyPairsRates, number>): Record<string, number> {
     // TODO: better use RUB, ... instead rubles, but it task requirements
     /*return {

@@ -20,14 +20,20 @@
       <img class="product__img" [src]="product.image" alt="product-image" />
       <div class="product__info">
         <span class="product__name" [innerText]="product.name"></span>
-        <span
-          class="product__price"
-          [innerText]="
-            (product.price | cartProductPrice: currencyPairsRates)[currencyPairsNames[activeCurrency]]
+        <span class="product__price">
+          {{
+            (product.price | priceInfo: currencyPairsRates)[currencyPairsNames[activeCurrency]]
               | currency: activeCurrency:'symbol-narrow'
-          "
-        ></span>
+          }}
+        </span>
       </div>
     </li>
   </ul>
+  <div *ngrxLet="currencyPairsRates$; let currencyPairsRates" class="total">
+    Total:
+    {{
+      (totalProductsPrice$ | ngrxPush | priceInfo: currencyPairsRates)[currencyPairsNames[activeCurrency]]
+        | currency: activeCurrency:'symbol-narrow'
+    }}
+  </div>
 </ng-container>

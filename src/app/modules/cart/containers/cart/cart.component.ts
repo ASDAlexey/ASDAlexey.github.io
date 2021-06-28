@@ -2,7 +2,12 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CurrencyPairsNames } from '@app/modules/cart/services/cart.service';
 import { loadCurrencyPairsRates, loadSelectedCart, setActiveCurrency } from '@app/modules/cart/store/cart.actions';
 import { CartState } from '@app/modules/cart/store/cart.reducer';
-import { selectActiveCurrency, selectCurrencyPairsRates, selectProducts } from '@app/modules/cart/store/cart.selectors';
+import {
+  selectActiveCurrency,
+  selectCurrencyPairsRates,
+  selectProducts,
+  selectTotalProductsPrice,
+} from '@app/modules/cart/store/cart.selectors';
 import { select, Store } from '@ngrx/store';
 import { Currencies } from '@shared/helpers/app.constants';
 
@@ -16,6 +21,7 @@ export class CartComponent implements OnInit {
   currencyPairsNames = CurrencyPairsNames;
   currencies = Currencies;
   products$ = this.store$.pipe(select(selectProducts));
+  totalProductsPrice$ = this.store$.pipe(select(selectTotalProductsPrice));
   activeCurrency$ = this.store$.pipe(select(selectActiveCurrency));
   currencyPairsRates$ = this.store$.pipe(select(selectCurrencyPairsRates));
 
