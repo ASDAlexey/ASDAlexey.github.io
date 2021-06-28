@@ -16,7 +16,10 @@
     </ul>
   </div>
   <ul *ngrxLet="currencyPairsRates$; let currencyPairsRates" class="product-list">
-    <li *ngFor="let product of products$ | ngrxPush; let i = index" class="product-list__item product">
+    <li
+      *ngFor="let product of products$ | ngrxPush; trackByKey: 'uuid'; let i = index"
+      class="product-list__item product"
+    >
       <img class="product__img" [src]="product.image" alt="product-image" />
       <div class="product__info">
         <span class="product__name" [innerText]="product.name"></span>
