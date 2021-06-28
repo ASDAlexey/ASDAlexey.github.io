@@ -1,1 +1,25 @@
-<p>cart works!</p>
+<div class="languages">
+  <h2 class="languages__title">Choose currency:</h2>
+  <ul class="languages__list">
+    <li *ngFor="let item of currencies | keyvalue" class="languages__list-item">
+      <button
+        type="button"
+        class="languages__list-item-btn"
+        [class.languages__list-item-btn_active]="item.value === activeCurrency"
+        (click)="setActiveCurrency(item.value)"
+      >
+        {{ 0 | currency: item.value:'symbol-narrow' | replace: '0.00':'' | replace: '0':'' }}
+        <span class="languages__list-item-text" [innerText]="item.value"></span>
+      </button>
+    </li>
+  </ul>
+</div>
+<ul class="product-list">
+  <li *ngFor="let product of selectedCart; let i = index" class="product-list__item product">
+    <img class="product__img" [src]="product.image" alt="product-image" />
+    <div class="product__info">
+      <span class="product__name" [innerText]="product.name"></span>
+      <span class="product__price" [innerText]="product.price | currency: activeCurrency:'symbol-narrow'"></span>
+    </div>
+  </li>
+</ul>

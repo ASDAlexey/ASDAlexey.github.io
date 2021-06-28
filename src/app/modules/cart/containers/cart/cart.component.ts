@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Currencies } from '../../../shared/helpers/app.constants';
+import { CartService } from '../../cart.service';
 
 @Component({
   selector: 'cc-cart',
@@ -6,4 +8,14 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./cart.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CartComponent {}
+export class CartComponent {
+  currencies = Currencies;
+  activeCurrency = Currencies.USD;
+  selectedCart = this.cartService.selectedCart;
+
+  constructor(private cartService: CartService) {}
+
+  setActiveCurrency(activeCurrency: Currencies): void {
+    this.activeCurrency = activeCurrency;
+  }
+}
