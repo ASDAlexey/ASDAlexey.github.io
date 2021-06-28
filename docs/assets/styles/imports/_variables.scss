@@ -1,0 +1,21 @@
+@import "mixins";
+
+$black: #000;
+
+:root {
+  --black: #{$black};
+  --black-rgb: #{HexToRGB($black)};
+  --white: #fff;
+  --picton-blue: #56afe3;
+  --link-water: #ecf5fa;
+
+  --primary: #74889F;
+
+  --time: .3s;
+
+  --mobile-sm: 479px;
+  --mobile: 768px;
+  --tablet: 1024px;
+  --desktop: 1200px;
+  --x-desktop: 1440px;
+}
