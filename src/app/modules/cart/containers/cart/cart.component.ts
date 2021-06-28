@@ -1,6 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { loadSelectedCart } from '@app/modules/cart/store/cart.actions';
+import { CartState } from '@app/modules/cart/store/cart.reducer';
+import { selectProducts } from '@app/modules/cart/store/cart.selectors';
+import { select, Store } from '@ngrx/store';
 import { Currencies } from '../../../shared/helpers/app.constants';
-import { CartService } from '../../cart.service';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'cc-cart',
@@ -8,12 +12,16 @@ import { CartService } from '../../cart.service';
   styleUrls: ['./cart.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CartComponent {
+export class CartComponent implements OnInit {
   currencies = Currencies;
   activeCurrency = Currencies.USD;
-  selectedCart = this.cartService.selectedCart;
+  products$ = this.store$.pipe(select(selectProducts));
 
-  constructor(private cartService: CartService) {}
+  constructor(private store$: Store<CartState>, private cartService: CartService) {}
+
+  ngOnInit(): void {
+    this.store$.dispatch(loadSelectedCart({ data: [{ price: 20 }, { price: 45 }, { price: 67 }, { price: 1035 }] }));
+  }
 
   setActiveCurrency(activeCurrency: Currencies): void {
     this.activeCurrency = activeCurrency;
