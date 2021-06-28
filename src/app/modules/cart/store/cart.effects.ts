@@ -1,11 +1,34 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { nanoid } from 'nanoid';
 import { map, mergeMap } from 'rxjs/operators';
 import { CartService } from '../services/cart.service';
-import { loadCurrencyPairsRates, loadCurrencyPairsRatesSuccess } from './cart.actions';
+import {
+  loadCurrencyPairsRates,
+  loadCurrencyPairsRatesSuccess,
+  loadSelectedCart,
+  loadSelectedCartSuccess,
+} from './cart.actions';
 
 @Injectable()
 export class CartEffects {
+  loadSelectedCart$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(loadSelectedCart),
+      map(({ data }) => {
+        const products = data.map((item, index) => ({
+          ...item,
+          uuid: nanoid(),
+          name: 'Product name ' + (index + 1),
+          image: 'https://picsum.photos/id/' + index * 10 + '/200/200',
+          createdAt: new Date().toISOString(),
+        }));
+
+        return loadSelectedCartSuccess({ products });
+      }),
+    ),
+  );
+
   loadCurrencyPairsRates$ = createEffect(() =>
     this.actions$.pipe(
       ofType(loadCurrencyPairsRates),

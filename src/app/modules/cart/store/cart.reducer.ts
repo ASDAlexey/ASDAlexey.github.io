@@ -1,14 +1,13 @@
 import {
   loadCurrencyPairsRates,
   loadCurrencyPairsRatesSuccess,
-  loadSelectedCart,
+  loadSelectedCartSuccess,
   setActiveCurrency,
 } from '@app/modules/cart/store/cart.actions';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { Action, createReducer, on } from '@ngrx/store';
 import { Currencies } from '@shared/helpers/app.constants';
 import { Status } from '@shared/helpers/async-item.helper';
-import { nanoid } from 'nanoid';
 import { CurrencyPairsRates, Product } from '../services/cart.service';
 
 export interface CartState extends EntityState<Product> {
@@ -38,15 +37,8 @@ export const initialState: CartState = {
 
 const cartReducer = createReducer(
   initialState,
-  on(loadSelectedCart, (state, { data }) => {
-    const products = data.map((item, index) => ({
-      ...item,
-      uuid: nanoid(),
-      name: 'Product name ' + (index + 1),
-      image: 'https://picsum.photos/id/' + index * 10 + '/200/200',
-      createdAt: new Date().toISOString(),
-    }));
-    return adapter.addMany(products, { ...state });
+  on(loadSelectedCartSuccess, (state, { products }) => {
+    return adapter.addMany(products, state);
   }),
   on(setActiveCurrency, (state, { activeCurrency }) => ({ ...state, activeCurrency })),
   on(loadCurrencyPairsRates, state => ({ ...state, statusCurrencyPairsRate: Status.LOADING })),
