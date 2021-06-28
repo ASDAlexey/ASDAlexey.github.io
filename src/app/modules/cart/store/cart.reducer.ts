@@ -42,7 +42,7 @@ const cartReducer = createReducer(
     const products = data.map((item, index) => ({
       ...item,
       uuid: nanoid(),
-      name: 'Product name ' + index,
+      name: 'Product name ' + (index + 1),
       image: 'https://picsum.photos/id/' + index * 10 + '/200/200',
       createdAt: new Date().toISOString(),
     }));
