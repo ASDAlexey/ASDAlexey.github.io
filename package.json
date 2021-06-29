@@ -1,11 +1,16 @@
 {
   "name": "currency-calculator",
   "version": "0.0.0",
+  "author": "Alexey Popov <asdalexey@yandex.ru>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ASDAlexey/ASDAlexey.github.io"
+  },
   "scripts": {
     "ng-serve": "node --max_old_space_size=4096 node_modules/@angular/cli/bin/ng serve",
     "ng-build": "node --max_old_space_size=4096 node_modules/@angular/cli/bin/ng build",
     "server": "npm run ng-serve -- --configuration development -- --hmr",
-    "build": "ng build -- --configuration development",
+    "build": "ng build",
     "build:prod": "ng build --configuration production"
   },
   "private": true,
