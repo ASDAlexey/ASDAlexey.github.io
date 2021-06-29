@@ -11,18 +11,20 @@
       </li>
     </ul>
   </div>
-  <div *ngrxLet="currencyPairsRates$; let currencyPairsRates" class="product-list">
-    <ng-container *ngFor="let product of products$ | ngrxPush; trackByKey: 'uuid'; let i = index">
-      <cc-product
-        [product]="product"
-        [currencyPairsRates]="currencyPairsRates"
-        [activeCurrency]="activeCurrency"
-      ></cc-product>
-    </ng-container>
-  </div>
-  <cc-total-price
-    [totalProductsPrice]="totalProductsPrice$ | ngrxPush"
-    [currencyPairsRates]="currencyPairsRates$ | ngrxPush"
-    [activeCurrency]="activeCurrency"
-  ></cc-total-price>
+  <ng-container *ngrxLet="currencyPairsRates$; let currencyPairsRates">
+    <div class="product-list">
+      <ng-container *ngFor="let product of products$ | ngrxPush; trackByKey: 'uuid'; let i = index">
+        <cc-product
+          [product]="product"
+          [currencyPairsRates]="currencyPairsRates"
+          [activeCurrency]="activeCurrency"
+        ></cc-product>
+      </ng-container>
+    </div>
+    <cc-total-price
+      [totalProductsPrice]="totalProductsPrice$ | ngrxPush"
+      [currencyPairsRates]="currencyPairsRates"
+      [activeCurrency]="activeCurrency"
+    ></cc-total-price>
+  </ng-container>
 </ng-container>
