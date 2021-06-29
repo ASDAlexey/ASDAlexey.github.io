@@ -11,28 +11,18 @@
       </li>
     </ul>
   </div>
-  <ul *ngrxLet="currencyPairsRates$; let currencyPairsRates" class="product-list">
-    <li
-      *ngFor="let product of products$ | ngrxPush; trackByKey: 'uuid'; let i = index"
-      class="product-list__item product"
-    >
-      <img class="product__img" [src]="product.image" alt="product-image" />
-      <div class="product__info">
-        <span class="product__name" [innerText]="product.name"></span>
-        <span class="product__price">
-          {{
-            (product.price | priceInfo: currencyPairsRates)[currencyPairsNames[activeCurrency]]
-              | currency: activeCurrency:'symbol-narrow'
-          }}
-        </span>
-      </div>
-    </li>
-  </ul>
-  <div *ngrxLet="currencyPairsRates$; let currencyPairsRates" class="total">
-    Total:
-    {{
-      (totalProductsPrice$ | ngrxPush | priceInfo: currencyPairsRates)[currencyPairsNames[activeCurrency]]
-        | currency: activeCurrency:'symbol-narrow'
-    }}
+  <div *ngrxLet="currencyPairsRates$; let currencyPairsRates" class="product-list">
+    <ng-container *ngFor="let product of products$ | ngrxPush; trackByKey: 'uuid'; let i = index">
+      <cc-product
+        [product]="product"
+        [currencyPairsRates]="currencyPairsRates"
+        [activeCurrency]="activeCurrency"
+      ></cc-product>
+    </ng-container>
   </div>
+  <cc-total-price
+    [totalProductsPrice]="totalProductsPrice$ | ngrxPush"
+    [currencyPairsRates]="currencyPairsRates$ | ngrxPush"
+    [activeCurrency]="activeCurrency"
+  ></cc-total-price>
 </ng-container>

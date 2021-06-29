@@ -10,6 +10,8 @@ import { CartComponent } from './containers/cart/cart.component';
 import { PriceInfoPipe } from './pipes/priceInfo.pipe';
 import { CurrencySymbolComponent } from './components/currency-symbol/currency-symbol.component';
 import { CurrencyButtonComponent } from './components/currency-button/currency-button.component';
+import { ProductComponent } from './components/product/product.component';
+import { TotalPriceComponent } from './components/total-price/total-price.component';
 
 @NgModule({
   imports: [
@@ -19,7 +21,7 @@ import { CurrencyButtonComponent } from './components/currency-button/currency-b
     EffectsModule.forFeature([CartEffects]),
     ReactiveComponentModule,
   ],
-  declarations: [CartComponent, PriceInfoPipe, CurrencySymbolComponent, CurrencyButtonComponent],
+  declarations: [CartComponent, PriceInfoPipe, CurrencySymbolComponent, CurrencyButtonComponent, ProductComponent, TotalPriceComponent],
   exports: [CartComponent],
 })
 export class CartModule {}

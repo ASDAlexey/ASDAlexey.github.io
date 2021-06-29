@@ -1,0 +1,27 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 12px 10px 12px;
+  box-shadow: 0 2px 10px rgba(var(--black-rgb), 0.100524);
+  width: 240px;
+  margin-left: 10px;
+  color: var(--primary);
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 12px;
+    white-space: nowrap;
+  }
+
+  &__name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 5px;
+  }
+
+  &__price {
+    font-weight: 700;
+  }
+}
