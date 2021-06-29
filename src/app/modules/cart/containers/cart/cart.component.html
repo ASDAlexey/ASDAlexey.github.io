@@ -9,7 +9,7 @@
           [class.languages__list-item-btn_active]="item.value === activeCurrency"
           (click)="setActiveCurrency(item.value)"
         >
-          {{ 0 | currency: item.value:'symbol-narrow' | replace: '0.00':'' | replace: '0':'' }}
+          {{ 0 | currency: item.value:'symbol-narrow' | currencySymbol }}
           <span class="languages__list-item-text" [innerText]="item.value"></span>
         </button>
       </li>

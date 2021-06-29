@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { NgForTrackByKeyDirective } from './directives/track-by-key.directive';
-import { ReplacePipe } from './pipes/replace.pipe';
+import { CurrencySymbolPipe } from './pipes/CurrencySymbol.pipe';
 
-const pipes = [ReplacePipe];
+const pipes = [CurrencySymbolPipe];
 const directives = [NgForTrackByKeyDirective];
 
 @NgModule({
