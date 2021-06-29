@@ -3,15 +3,11 @@
     <h2 class="languages__title">Choose currency:</h2>
     <ul class="languages__list">
       <li *ngFor="let item of currencies | keyvalue" class="languages__list-item">
-        <button
-          type="button"
-          class="languages__list-item-btn"
-          [class.languages__list-item-btn_active]="item.value === activeCurrency"
-          (click)="setActiveCurrency(item.value)"
-        >
-          <cc-currency-symbol [currencyType]="item.value"></cc-currency-symbol>
-          <span class="languages__list-item-text" [innerText]="item.value"></span>
-        </button>
+        <cc-currency-button
+          [currency]="item.value"
+          [isActive]="item.value === activeCurrency"
+          (setActiveCurrency)="setActiveCurrency($event)"
+        ></cc-currency-button>
       </li>
     </ul>
   </div>

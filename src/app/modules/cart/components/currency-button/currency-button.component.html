@@ -1,0 +1,9 @@
+<button
+  type="button"
+  class="btn"
+  [class.btn_active]="isActive"
+  (click)="setActiveCurrency.emit(currency)"
+>
+  <cc-currency-symbol [currencyType]="currency"></cc-currency-symbol>
+  <span class="btn__text" [innerText]="currency"></span>
+</button>

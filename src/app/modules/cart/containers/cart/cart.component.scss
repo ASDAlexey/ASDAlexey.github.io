@@ -32,35 +32,6 @@
     align-items: center;
     justify-content: center;
   }
-
-  &__list-item {
-    &-btn {
-      margin-top: 8px;
-      margin-left: 8px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 75px;
-      height: 75px;
-      border-radius: 8px;
-      color: var(--primary);
-      font-size: 20px;
-      box-shadow: 0 2px 10px rgba(var(--black-rgb), 0.100524);
-      transition: var(--time) all;
-
-      &:hover,
-      &_active {
-        color: var(--picton-blue);
-        background: var(--link-water);
-      }
-    }
-
-    &-text {
-      font-size: 12px;
-      padding-top: 7px;
-    }
-  }
 }
 
 .product-list {

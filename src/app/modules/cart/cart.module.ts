@@ -9,6 +9,7 @@ import { SharedModule } from '@shared/shared.module';
 import { CartComponent } from './containers/cart/cart.component';
 import { PriceInfoPipe } from './pipes/priceInfo.pipe';
 import { CurrencySymbolComponent } from './components/currency-symbol/currency-symbol.component';
+import { CurrencyButtonComponent } from './components/currency-button/currency-button.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { CurrencySymbolComponent } from './components/currency-symbol/currency-s
     EffectsModule.forFeature([CartEffects]),
     ReactiveComponentModule,
   ],
-  declarations: [CartComponent, PriceInfoPipe, CurrencySymbolComponent],
+  declarations: [CartComponent, PriceInfoPipe, CurrencySymbolComponent, CurrencyButtonComponent],
   exports: [CartComponent],
 })
 export class CartModule {}
