@@ -8,6 +8,7 @@ import { StoreModule } from '@ngrx/store';
 import { SharedModule } from '@shared/shared.module';
 import { CartComponent } from './containers/cart/cart.component';
 import { PriceInfoPipe } from './pipes/priceInfo.pipe';
+import { CurrencySymbolComponent } from './components/currency-symbol/currency-symbol.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { PriceInfoPipe } from './pipes/priceInfo.pipe';
     EffectsModule.forFeature([CartEffects]),
     ReactiveComponentModule,
   ],
-  declarations: [CartComponent, PriceInfoPipe],
+  declarations: [CartComponent, PriceInfoPipe, CurrencySymbolComponent],
   exports: [CartComponent],
 })
 export class CartModule {}
