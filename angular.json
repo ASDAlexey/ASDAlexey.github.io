@@ -51,11 +51,33 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "buildOptimizer": true,
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": true
+                },
+                "fonts": true
+              },
+              "vendorChunk": true,
+              "namedChunks": true,
+              "extractLicenses": true,
+              "sourceMap": false,
+              "subresourceIntegrity": true
             },
             "development": {
               "buildOptimizer": false,
-              "optimization": false,
+              "optimization": {
+                "scripts": false,
+                "styles": {
+                  "minify": false,
+                  "inlineCritical": true
+                },
+                "fonts": true
+              },
+              "showCircularDependencies": true,
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,

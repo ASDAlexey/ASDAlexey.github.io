@@ -10,8 +10,10 @@
     "ng-serve": "node --max_old_space_size=4096 node_modules/@angular/cli/bin/ng serve",
     "ng-build": "node --max_old_space_size=4096 node_modules/@angular/cli/bin/ng build",
     "server": "npm run ng-serve -- --configuration development -- --hmr",
-    "build": "ng build",
-    "build:prod": "ng build --configuration production"
+    "build:dev": "ng build --configuration development && npm run html-minify && npm run compress",
+    "build:prod": "ng build --configuration production && npm run html-minify && npm run compress",
+    "html-minify": "node ./scripts/html-minify.js",
+    "compress": "node scripts/compress.js"
   },
   "private": true,
   "dependencies": {
@@ -43,6 +45,8 @@
     "@angular/compiler-cli": "~13.0.0",
     "@types/jasmine": "~3.10.1",
     "@types/node": "^16.11.6",
+    "cheerio": "^1.0.0-rc.10",
+    "html-minifier": "^4.0.0",
     "jasmine-core": "~3.10.1",
     "karma": "~6.3.6",
     "karma-chrome-launcher": "~3.1.0",
