@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, DestroyRef, OnInit, inject } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, DestroyRef, OnInit, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormControl, FormGroupDirective, NgForm, NonNullableFormBuilder, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
@@ -27,7 +27,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   isLoaded$ = this.currenciesService.isLoaded$;
   matcher = new MyErrorStateMatcher();
 
@@ -54,6 +54,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadCurrencyPairsRates();
+  }
+
+  ngAfterViewInit(): void {
     this.formListener();
   }
 
