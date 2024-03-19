@@ -2,7 +2,7 @@ import { AfterViewInit, ChangeDetectionStrategy, Component, DestroyRef, OnInit, 
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormControl, FormGroupDirective, NgForm, NonNullableFormBuilder, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { combineLatest, filter, startWith, take } from 'rxjs';
+import { combineLatest, delay, filter, startWith, take } from 'rxjs';
 
 import { Pairs } from './services/currencies.interface';
 import { CurrenciesService } from './services/currencies.service';
@@ -73,9 +73,16 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.form.get('currencyFrom')!.valueChanges.pipe(startWith(this.form.value.currencyFrom ?? Pairs.USD)),
       this.form.get('currencyTo')!.valueChanges.pipe(startWith(this.form.value.currencyTo ?? Pairs.RUB)),
     ])
-      .pipe(filter(([isLoaded]) => !isLoaded))
-      .subscribe(([, amountFrom, currencyFrom, currencyTo]) => {
-        const amountTo = this.currenciesService.getAmount(amountFrom, currencyFrom as Pairs, currencyTo as Pairs);
+      .pipe(
+        filter(([isLoaded]) => !isLoaded),
+        delay(0),
+      )
+      .subscribe(([, amountFrom]) => {
+        const amountTo = this.currenciesService.getAmount(
+          amountFrom,
+          this.form.value.currencyFrom as Pairs,
+          this.form.value.currencyTo as Pairs,
+        );
         this.form.get('amountTo')?.setValue(amountTo, { emitEvent: false });
       });
 
