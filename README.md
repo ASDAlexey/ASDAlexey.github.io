@@ -1,4 +1,4 @@
-### Example code - Angular 16 + NgRx(selectSignal is used) + Prettier + ESLint + Stylelint
+### Example code - Angular 17 + Prettier + ESLint + Stylelint
 
 - How it works can be seen on the website: https://asdalexey.github.io/
 - Code: https://github.com/ASDAlexey/ASDAlexey.github.io
