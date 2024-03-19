@@ -16,8 +16,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { DropdownModule } from 'primeng/dropdown';
 
-
-
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { LoadingComponent } from './components/loading/loading.component';
@@ -25,7 +23,7 @@ import { BaseUrlInterceptor } from './interceptors/base-url.interceptor';
 import { default as icons } from './modules/svg-icon/generated-svg/svg-icons';
 import { SvgIconModule } from './modules/svg-icon/svg-icon.module';
 import { SVG_REGISTRY_TOKEN } from './modules/svg-icon/svg-icon.token';
-
+import { ExcludePipe } from './pipe/exclude.pipe';
 
 @NgModule({
   declarations: [AppComponent],
@@ -52,6 +50,7 @@ import { SVG_REGISTRY_TOKEN } from './modules/svg-icon/svg-icon.token';
     LoadingComponent,
     PushPipe,
     MatIcon,
+    ExcludePipe,
   ],
   providers: [
     { provide: SVG_REGISTRY_TOKEN, useValue: icons },

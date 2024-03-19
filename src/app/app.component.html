@@ -13,7 +13,7 @@
     <mat-form-field appearance="outline" class="form-group__field form-group__field_short" floatLabel="always">
       <mat-label i18n="@@form.form-field.label-currency-from">Currency</mat-label>
       <mat-select formControlName="currencyFrom" [errorStateMatcher]="matcher">
-        @for (currency of currencies; track currency.code) {
+        @for (currency of currencies | exclude: form.value.currencyTo; track currency.code) {
           <mat-option [value]="currency.code">{{ currency.name }}</mat-option>
         }
       </mat-select>
@@ -32,7 +32,7 @@
     <mat-form-field appearance="outline" class="form-group__field form-group__field_short" floatLabel="always">
       <mat-label i18n="@@form.form-field.label-currency-to">Currency</mat-label>
       <mat-select formControlName="currencyTo" [errorStateMatcher]="matcher">
-        @for (currency of currencies; track currency.code) {
+        @for (currency of currencies | exclude: form.value.currencyFrom; track currency.code) {
           <mat-option [value]="currency.code">{{ currency.name }}</mat-option>
         }
       </mat-select>
