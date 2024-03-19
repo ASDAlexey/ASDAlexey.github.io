@@ -52,4 +52,64 @@ describe('CurrenciesService', () => {
       expect(data).toEqual(mockData);
     });
   });
+
+  it('should set currency pairs rates', () => {
+    const testData: ResponsePairsRates = {
+      rates: {
+        [Pairs.USD]: 1,
+        [Pairs.EUR]: 0.85,
+        [Pairs.GBP]: 0.7,
+        [Pairs.RUB]: 90,
+      },
+      date: Date.now(),
+      base: 'USD',
+    };
+
+    service.setCurrencyPairsRates(testData);
+    expect(service.getAmount('10', Pairs.USD, Pairs.EUR)).toEqual('8.5');
+  });
+
+  describe('#getAmount', () => {
+    it("should return empty string if there's no rates available", () => {
+      const result = service.getAmount('100', Pairs.USD, Pairs.EUR);
+      expect(result).toBe('');
+    });
+
+    it('should convert amount from non-USD currency to another currency', () => {
+      service.setCurrencyPairsRates({
+        rates: {
+          [Pairs.USD]: 1,
+          [Pairs.EUR]: 0.85,
+          [Pairs.GBP]: 0.7,
+          [Pairs.RUB]: 90,
+        },
+        date: Date.now(),
+        base: 'USD',
+      });
+
+      const amount = '100';
+      const expectedAmount = `${(+amount / 0.85) * 0.7}`;
+      const result = service.getAmount(amount, Pairs.EUR, Pairs.GBP);
+      expect(result).toBe(expectedAmount);
+    });
+
+    it('should convert amount from USD to another currency', () => {
+      const rateGBP = 0.7;
+      service.setCurrencyPairsRates({
+        rates: {
+          [Pairs.USD]: 1,
+          [Pairs.EUR]: 0.85,
+          [Pairs.GBP]: 0.7,
+          [Pairs.RUB]: 90,
+        },
+        date: Date.now(),
+        base: 'USD',
+      });
+
+      const amount = '100';
+      const expectedAmount = `${+amount * rateGBP}`;
+      const result = service.getAmount(amount, Pairs.USD, Pairs.GBP);
+      expect(result).toBe(expectedAmount);
+    });
+  });
 });
