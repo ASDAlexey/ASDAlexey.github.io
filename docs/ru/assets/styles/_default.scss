@@ -1,0 +1,220 @@
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: transparent;
+
+  th {
+    text-align: left;
+  }
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+a {
+  color: var(--picton-blue);
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid var(--primary);
+}
+
+select {
+  text-transform: none;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+input[type='search'] {
+  box-sizing: content-box;
+  -webkit-appearance: textfield; /* stylelint-disable-line */
+  appearance: none;
+}
+
+fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+input[type='file'] {
+  display: block;
+}
+
+legend {
+  padding: 0;
+  border: 0;
+  font-size: 21px;
+}
+
+textarea {
+  overflow: auto;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+input {
+  font-size: inherit;
+  line-height: normal;
+  font-family: inherit;
+}
+
+select,
+textarea {
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  font-weight: 700;
+}
+
+figure {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  font-family: inherit;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin-bottom: 0;
+}
+
+html,
+body {
+  display: block;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--sys-on-surface);
+  font-size: 14px;
+  line-height: 1.4285;
+  font-family: var(--font-family-base);
+
+  * {
+    touch-action: manipulation;
+  }
+}
+
+button {
+  cursor: pointer;
+}

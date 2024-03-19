@@ -1,0 +1,161 @@
+{
+  "root": true,
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
+  "plugins": ["@typescript-eslint", "rxjs", "optimize-regex", "@angular-eslint", "eslint-plugin-import", "change-detection-strategy"],
+  "overrides": [
+    {
+      "parser": "@typescript-eslint/parser",
+      "files": ["*.ts"],
+      "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:ngrx/recommended"],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": ["error"],
+        "import/no-duplicates": [
+          "error",
+          {
+            "considerQueryString": true
+          }
+        ],
+        "@typescript-eslint/no-explicit-any": ["error"],
+        "@typescript-eslint/no-inferrable-types": ["error"],
+        "@typescript-eslint/explicit-function-return-type": ["error"],
+        "@typescript-eslint/explicit-member-accessibility": [
+          "error",
+          {
+            "accessibility": "no-public"
+          }
+        ],
+        "@typescript-eslint/member-ordering": [
+          "error",
+          {
+            "default": {
+              "memberTypes": [
+                "static-field",
+                "public-field",
+                "protected-field",
+                "private-static-field",
+                "private-field",
+                "abstract-field",
+                "constructor",
+                "public-method",
+                "protected-method",
+                "private-method",
+                "abstract-method"
+              ]
+            }
+          }
+        ],
+        "no-console": [
+          "error",
+          {
+            "allow": ["error", "warn", "info", "time", "timeEnd"]
+          }
+        ],
+        "rxjs/no-ignored-observable": "error",
+        "rxjs/no-nested-subscribe": "error",
+        "rxjs/no-unbound-methods": "error",
+        "rxjs/throw-error": "error",
+        "rxjs/no-unsafe-takeuntil": "error",
+        "rxjs/ban-observables": "error",
+        "rxjs/ban-operators": "error",
+        "rxjs/finnish": [
+          "error",
+          {
+            "functions": false,
+            "methods": false,
+            "names": {
+              "^(canActivate|canActivateChild|canDeactivate|canLoad|intercept|resolve|validate|actionsSubject|useValue)$": false
+            },
+            "parameters": true,
+            "properties": true,
+            "strict": false,
+            "types": {
+              "^EventEmitter$": false
+            },
+            "variables": true
+          }
+        ],
+        "rxjs/no-create": "error",
+        "rxjs/no-cyclic-action": [
+          "warn",
+          {
+            "observable": "[Aa]ction(s|s\\$|\\$)$"
+          }
+        ],
+        "rxjs/no-explicit-generics": "error",
+        "rxjs/no-ignored-replay-buffer": "error",
+        "rxjs/no-unsafe-catch": "error",
+        "optimize-regex/optimize-regex": "error",
+        "no-restricted-imports": ["error"],
+        "lines-between-class-members": [
+          "error",
+          "always",
+          {
+            "exceptAfterSingleLine": true
+          }
+        ],
+        "object-shorthand": "error",
+        "@angular-eslint/no-output-on-prefix": "error",
+        "@angular-eslint/no-output-rename": "error",
+        "@angular-eslint/use-pipe-transform-interface": "error",
+        "@angular-eslint/template/no-negated-async": "off",
+        "curly": ["error"],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "@typescript-eslint/prefer-includes": "error",
+        "@typescript-eslint/prefer-optional-chain": "error",
+        "@typescript-eslint/prefer-nullish-coalescing": "error",
+        "@typescript-eslint/sort-type-constituents": "error",
+        "eqeqeq": ["error", "always"],
+        "ngrx/prefer-effect-callback-in-block-statement": "off",
+        "ngrx/no-multiple-actions-in-effects": "off",
+        "ngrx/use-consistent-global-store-name": ["warn", "store$"],
+        "ngrx/no-typed-global-store": "off",
+        "ngrx/select-style": ["error", "operator"],
+        "ngrx/prefix-selectors-with-select": "error",
+        "ngrx/on-function-explicit-return-type": "error",
+        "change-detection-strategy/on-push": "error"
+      }
+    },
+    {
+      "files": ["*.html"],
+      "plugins": ["@angular-eslint/eslint-plugin-template"],
+      "parser": "@angular-eslint/template-parser",
+      "rules": {
+        "@angular-eslint/template/no-duplicate-attributes": "error",
+        "@angular-eslint/template/alt-text": "error",
+        "@angular-eslint/template/banana-in-box": "error",
+        "@angular-eslint/template/button-has-type": "error",
+        "@angular-eslint/template/conditional-complexity": "error",
+        "@angular-eslint/template/cyclomatic-complexity": ["error", { "maxComplexity": 7 }],
+        "@angular-eslint/template/eqeqeq": "error",
+        "@angular-eslint/template/i18n": [
+          "error",
+          {
+            "checkId": true,
+            "checkText": true,
+            "checkAttributes": false
+          }
+        ],
+        "@angular-eslint/template/label-has-associated-control": "error",
+        "@angular-eslint/template/no-any": "error",
+        "@angular-eslint/template/no-negated-async": "error"
+      }
+    }
+  ]
+}

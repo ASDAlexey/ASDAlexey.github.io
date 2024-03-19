@@ -1,0 +1,49 @@
+<app-loading [isVisible]="(isLoaded$ | ngrxPush) ?? false">
+  <ng-container i18n="@@loading.text">Loading currency rates</ng-container>
+</app-loading>
+<form class="form" [formGroup]="form">
+  <div class="form-group">
+    <mat-form-field appearance="outline" class="form-group__field" floatLabel="always">
+      <mat-label i18n="@@form.form-field.label-amount-from">Amount</mat-label>
+      <input formControlName="amountFrom" mask="separator" matInput type="text" [leadZero]="true" />
+      @if (form.get('amountFrom')?.hasError('required')) {
+        <mat-error i18n="@@form.form-field.error-required">Required field</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="form-group__field form-group__field_short" floatLabel="always">
+      <mat-label i18n="@@form.form-field.label-currency-from">Currency</mat-label>
+      <mat-select formControlName="currencyFrom" [errorStateMatcher]="matcher">
+        @for (currency of currencies; track currency.code) {
+          <mat-option [value]="currency.code">{{ currency.name }}</mat-option>
+        }
+      </mat-select>
+      @if (form.get('currencyFrom')?.hasError('required')) {
+        <mat-error i18n="@@form.form-field.error">Must make a selection</mat-error>
+      }
+    </mat-form-field>
+  </div>
+  <button class="form__swap-btn" type="button"><svg-icon name="swap"></svg-icon></button>
+  <div class="form-group">
+    <mat-form-field appearance="outline" class="form-group__field" floatLabel="always">
+      <mat-label i18n="@@form.form-field.label-amoun-to">Amount</mat-label>
+      <input formControlName="amountTo" mask="separator" matInput type="text" [leadZero]="true" />
+      <mat-error i18n="@@form.form-field.error-required">Required field</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="form-group__field form-group__field_short" floatLabel="always">
+      <mat-label i18n="@@form.form-field.label-currency-to">Currency</mat-label>
+      <mat-select formControlName="currencyTo" [errorStateMatcher]="matcher">
+        @for (currency of currencies; track currency.code) {
+          <mat-option [value]="currency.code">{{ currency.name }}</mat-option>
+        }
+      </mat-select>
+      @if (form.get('currencyTo')?.hasError('required')) {
+        <mat-error i18n="@@form.form-field.error">Must make a selection</mat-error>
+      }
+    </mat-form-field>
+  </div>
+</form>
+
+<a class="github-link" href="https://github.com/ASDAlexey/ASDAlexey.github.io" target="_blank">
+  <img alt="github" class="github-link__img" height="24" property="high" src="/assets/images/github.svg" width="24" />
+  <span class="github-link__text" i18n="@@github.link">See code on github</span>
+</a>

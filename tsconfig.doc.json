@@ -1,0 +1,20 @@
+{
+  "include": ["src/**/*.ts"],
+  "exclude": [
+    "src/**/*.spec.ts",
+    "src/**/*.interface.ts",
+    "src/**/*.type.ts",
+    "src/**/*.enum.ts",
+    "src/**/*.token.ts",
+    "src/**/*.mocks.ts",
+    "src/**/*.constant.ts",
+    "src/**/*.reducer.ts",
+    "src/**/*.selectors.ts",
+    "src/**/*.actions.ts",
+    "src/**/*.mocks.ts",
+    "src/**/track-by-key.directive.ts",
+    "src/**/svg-icons.ts",
+    "src/**/*.routes.ts",
+    "src/**/environment.**.ts"
+  ]
+}

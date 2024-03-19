@@ -1,0 +1,18 @@
+{
+  "conversionType": "object",
+  "srcFiles": ["./src/app/modules/svg-icon/icons/*.svg"],
+  "outputDirectory": "./src/app/modules/svg-icon/generated-svg",
+  "fileName": "svg-icons",
+  "verbose": true,
+  "typeName": "IconType",
+  "svgoConfig": {
+    "plugins": [
+      {
+        "name": "removeAttrs",
+        "params": {
+          "attrs": "fill"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+@use 'variables';
+@use 'reset';
+@use 'material';
+@use 'scrollbar';
+@use 'default';
+@use 'mat-custom-styling';
+
+[hidden] {
+  display: none !important;
+}
+
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px 10px;
+  border: solid 2px var(--sys-outline);
+  border-radius: 4px;
+  background: none;
+  color: var(--sys-on-surface);
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    border-color: var(--sys-primary);
+    outline: none;
+  }
+}

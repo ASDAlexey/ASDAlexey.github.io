@@ -1,0 +1,16 @@
+projects
+documentation
+scripts
+src/assets/**/*
+src/components/**/*
+dist/**/*
+*.scss
+*.svg
+*.json
+src/index.html
+coverage
+test.ts
+*.spec.ts
+src/app/utils/spec-utils
+ui-docs
+jest.config.ts

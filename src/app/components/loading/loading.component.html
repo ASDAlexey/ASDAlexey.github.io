@@ -1,0 +1,8 @@
+@if (type === 'image') {
+  <div class="loader__img-block">
+    <img alt="loader-image" class="loader__img" [src]="link" />
+  </div>
+} @else {
+  <span class="loader__text"><ng-content></ng-content></span>
+  <div class="loader__animation"></div>
+}

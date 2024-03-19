@@ -1,0 +1,7 @@
+*.html
+*.js
+*.ts
+src/assets/styles/_variables.scss
+src/components
+projects
+documentation
