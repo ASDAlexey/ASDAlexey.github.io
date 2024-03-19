@@ -32,7 +32,7 @@ export class CurrenciesService {
   }
 
   getAmount(amount: string, from: Pairs, to: Pairs): string {
-    if (!this.#currencyPairsRates?.rates[from] || !this.#currencyPairsRates?.rates[to] || amount === '') {
+    if (!this.#currencyPairsRates?.rates?.[from] || !this.#currencyPairsRates?.rates?.[to] || amount === '') {
       return '';
     }
 

@@ -60,6 +60,12 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.formListener();
   }
 
+  swap(): void {
+    const { currencyFrom = Pairs.USD, currencyTo = Pairs.RUB, amountFrom = '' } = this.form.value;
+    this.form.patchValue({ currencyFrom: currencyTo, currencyTo: currencyFrom });
+    this.form.get('amountFrom')?.setValue(amountFrom);
+  }
+
   private formListener(): void {
     combineLatest([this.currenciesService.isLoaded$, this.form.get('amountFrom')!.valueChanges])
       .pipe(filter(([isLoaded]) => !isLoaded))
