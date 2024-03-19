@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "start": "ng serve --hmr",
-    "build": "ng build && node scripts/compress.js",
+    "build:dev": "ng build --configuration development && node scripts/compress.js",
+    "build:prod": "ng build && node scripts/compress.js",
     "update-lock": "npm i --package-lock-only",
     "prettier:html": "npx prettier -w \"./src/**/**.html\" --cache",
     "prettier:styles": "npx prettier -w \"./src/**/**.scss\" --cache",
@@ -92,7 +93,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://asdalexey.github.io/"
   },
   "engines": {
     "node": "^18.13.0 || >=20.0.0",
