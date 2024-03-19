@@ -1,3 +1,5 @@
+@use 'breakpoints';
+
 :host {
   display: flex;
   flex-direction: column;
@@ -10,12 +12,25 @@
   display: flex;
   gap: 10px;
 
+  @include breakpoints.media-breakpoint-down(lg) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include breakpoints.media-breakpoint-down(sm) {
+    width: 100%;
+  }
+
   &__swap-btn {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 40px;
     height: 56px;
+
+    @include breakpoints.media-breakpoint-down(lg) {
+      margin-top: -18px;
+    }
   }
 }
 
@@ -24,9 +39,19 @@
   width: 370px;
   gap: 10px;
 
+  @include breakpoints.media-breakpoint-down(sm) {
+    flex-direction: column;
+    width: 90%;
+    gap: 0;
+  }
+
   &__field {
     &_short {
       width: 170px;
+
+      @include breakpoints.media-breakpoint-down(sm) {
+        width: 100%;
+      }
     }
   }
 }
