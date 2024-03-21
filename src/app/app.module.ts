@@ -13,7 +13,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterOutlet } from '@angular/router';
 import { LetDirective, PushPipe } from '@ngrx/component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { DropdownModule } from 'primeng/dropdown';
 
 import { environment } from '../environments/environment';
@@ -46,7 +45,6 @@ import { ExcludePipe } from './pipe/exclude.pipe';
     MatFormFieldModule,
     FormsModule,
     MatInputModule,
-    NgxMaskDirective,
     LoadingComponent,
     PushPipe,
     MatIcon,
@@ -55,7 +53,6 @@ import { ExcludePipe } from './pipe/exclude.pipe';
   providers: [
     { provide: SVG_REGISTRY_TOKEN, useValue: icons },
     { provide: HTTP_INTERCEPTORS, useClass: BaseUrlInterceptor, multi: true },
-    provideNgxMask(),
   ],
   bootstrap: [AppComponent],
 })
