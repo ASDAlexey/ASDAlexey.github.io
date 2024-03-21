@@ -38,9 +38,9 @@ export class CurrenciesService {
 
     if (from !== Pairs.USD) {
       const inDollars = +amount / this.#currencyPairsRates.rates[from];
-      return `${inDollars * this.#currencyPairsRates.rates[to] || ''}`;
+      return `${this.round(inDollars * this.#currencyPairsRates.rates[to]) || ''}`;
     } else {
-      return `${+amount * this.#currencyPairsRates.rates[to] || ''}`;
+      return `${this.round(+amount * this.#currencyPairsRates.rates[to]) || ''}`;
     }
   }
 
@@ -67,5 +67,9 @@ export class CurrenciesService {
     } else {
       return null;
     }
+  }
+
+  private round(value: number): number {
+    return Math.round(value * 100) / 100;
   }
 }

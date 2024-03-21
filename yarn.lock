@@ -8557,13 +8557,6 @@ ng-packagr@^17.2.0:
     esbuild "^0.20.0"
     rollup "^4.5.0"
 
-ngx-mask@^17.0.4:
-  version "17.0.4"
-  resolved "https://registry.npmjs.org/ngx-mask/-/ngx-mask-17.0.4.tgz"
-  integrity sha512-Rfox/zLIcuEc+t8xGvDYL83KYw0P80Ctvx+uy3v/F901XLhzEXKEgPOEFRKNkQu4Eu5Y7SjnX44mGdk/1cqh3w==
-  dependencies:
-    tslib "^2.3.0"
-
 nice-napi@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npmjs.org/nice-napi/-/nice-napi-1.0.2.tgz"

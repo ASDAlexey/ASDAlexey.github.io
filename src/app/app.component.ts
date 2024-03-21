@@ -66,6 +66,23 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.form.get('amountFrom')?.setValue(amountFrom);
   }
 
+  input(event: Event): boolean {
+    const key = (event as KeyboardEvent).key;
+    if (key === 'Backspace') {
+      return true;
+    }
+
+    if (key === '.') {
+      return false;
+    }
+
+    if (this.getDigits(+(event.target as HTMLInputElement).value) >= 2) {
+      return false;
+    }
+
+    return true;
+  }
+
   private formListener(): void {
     combineLatest([
       this.currenciesService.isLoaded$,
@@ -87,7 +104,10 @@ export class AppComponent implements OnInit, AfterViewInit {
       });
 
     combineLatest([this.currenciesService.isLoaded$, this.form.get('amountTo')!.valueChanges])
-      .pipe(filter(([isLoaded]) => !isLoaded))
+      .pipe(
+        filter(([isLoaded]) => !isLoaded),
+        delay(0),
+      )
       .subscribe(([, amountTo]) => {
         const amountFrom = this.currenciesService.getAmount(
           amountTo,
@@ -105,5 +125,11 @@ export class AppComponent implements OnInit, AfterViewInit {
       .subscribe((data) => {
         this.currenciesService.setCurrencyPairsRates(data);
       });
+  }
+
+  private getDigits(v: number): number {
+    const s = v.toString(),
+      i = s.indexOf('.') + 1;
+    return i && s.length - i;
   }
 }

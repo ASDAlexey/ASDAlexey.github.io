@@ -39,7 +39,6 @@
     "jest-auto-spies": "^3.0.0",
     "jest-environment-jsdom": "^29.7.0",
     "material-design-icons": "^3.0.1",
-    "ngx-mask": "^17.0.4",
     "primeng": "^17.11.0",
     "rxjs": "~7.8.1",
     "the-new-css-reset": "^1.11.2",
