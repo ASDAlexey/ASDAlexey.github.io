@@ -12,7 +12,6 @@ dist/
 .angular
 .vscode
 .stylelintcache
-src/environments/environment.development.ts
 coverage
 .angular
 .husky

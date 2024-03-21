@@ -1,6 +1,0 @@
-export const environment = {
-  production: false,
-  environment: 'development',
-  API_URL: 'SET URL HERE',
-  CURRENCY_FREAKS_API_KEY: 'SET KEY HERE',
-};
