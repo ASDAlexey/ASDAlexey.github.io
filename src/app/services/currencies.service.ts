@@ -36,12 +36,20 @@ export class CurrenciesService {
       return '';
     }
 
+    if (amount.match(',')) {
+      amount = amount.replace(',', '.');
+    }
+
+    let res: string;
+
     if (from !== Pairs.USD) {
       const inDollars = +amount / this.#currencyPairsRates.rates[from];
-      return `${this.round(inDollars * this.#currencyPairsRates.rates[to]) || ''}`;
+      res = `${this.round(inDollars * this.#currencyPairsRates.rates[to]) || ''}`;
     } else {
-      return `${this.round(+amount * this.#currencyPairsRates.rates[to]) || ''}`;
+      res = `${this.round(+amount * this.#currencyPairsRates.rates[to]) || ''}`;
     }
+
+    return res.replace('.', ',');
   }
 
   private loadCurrencyPairsRatesFromAPI(pairs: Pairs[]): Observable<ResponsePairsRates> {

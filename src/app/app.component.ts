@@ -68,19 +68,40 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   input(event: Event): boolean {
     const key = (event as KeyboardEvent).key;
-    if (key === 'Backspace') {
+
+    if (key === 'Backspace' || key === 'ArrowLeft' || key === 'ArrowRight') {
       return true;
+    }
+
+    const regex = /[\d,]/;
+
+    if (!regex.test(key)) {
+      return false;
     }
 
     if (key === '.') {
       return false;
     }
 
-    if (this.getDigits(+(event.target as HTMLInputElement).value) >= 2) {
+    const input = event.target as HTMLInputElement;
+
+    if (!(event.target as HTMLInputElement).value && key === ',') {
       return false;
     }
 
-    return true;
+    if (key === ',' && (event.target as HTMLInputElement).value.match(',')) {
+      return false;
+    }
+
+    const selection = input.value.substring(input.selectionStart ?? 0, input.selectionEnd ?? 0);
+    const selectionStart = input.selectionStart ?? 0;
+    const index = input.value.indexOf(',') + 1;
+
+    if (selection && (!!selection.match(',') || selectionStart >= index)) {
+      return true;
+    }
+
+    return this.getDigits(input.value) < 2;
   }
 
   private formListener(): void {
@@ -95,6 +116,10 @@ export class AppComponent implements OnInit, AfterViewInit {
         delay(0),
       )
       .subscribe(([, amountFrom]) => {
+        if (amountFrom.endsWith(',')) {
+          amountFrom = amountFrom.replace(',', '');
+        }
+
         const amountTo = this.currenciesService.getAmount(
           amountFrom,
           this.form.value.currencyFrom as Pairs,
@@ -109,6 +134,10 @@ export class AppComponent implements OnInit, AfterViewInit {
         delay(0),
       )
       .subscribe(([, amountTo]) => {
+        if (amountTo.endsWith(',')) {
+          amountTo = amountTo.replace(',', '');
+        }
+
         const amountFrom = this.currenciesService.getAmount(
           amountTo,
           this.form.value.currencyTo as Pairs,
@@ -127,9 +156,8 @@ export class AppComponent implements OnInit, AfterViewInit {
       });
   }
 
-  private getDigits(v: number): number {
-    const s = v.toString(),
-      i = s.indexOf('.') + 1;
-    return i && s.length - i;
+  private getDigits(value: string): number {
+    const i = value.indexOf(',') + 1;
+    return i && value.length - i;
   }
 }
