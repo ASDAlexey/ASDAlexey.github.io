@@ -5,7 +5,7 @@
   <div class="form-group">
     <mat-form-field appearance="outline" class="form-group__field" floatLabel="always">
       <mat-label i18n="@@form.form-field.label-amount-from">Amount</mat-label>
-      <input formControlName="amountFrom" mask="separator" matInput type="text" [leadZero]="true" />
+      <input formControlName="amountFrom" mask="separator.2" matInput type="text" [leadZero]="true" />
       @if (form.get('amountFrom')?.hasError('required')) {
         <mat-error i18n="@@form.form-field.error-required">Required field</mat-error>
       }
@@ -26,7 +26,7 @@
   <div class="form-group">
     <mat-form-field appearance="outline" class="form-group__field" floatLabel="always">
       <mat-label i18n="@@form.form-field.label-amoun-to">Amount</mat-label>
-      <input formControlName="amountTo" mask="separator" matInput type="text" [leadZero]="true" />
+      <input formControlName="amountTo" mask="separator.2" matInput type="text" [leadZero]="true" />
       <mat-error i18n="@@form.form-field.error-required">Required field</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline" class="form-group__field form-group__field_short" floatLabel="always">
