@@ -85,7 +85,7 @@ export const PROJECTS: readonly Project[] = [
   {
     name: 'Bonds Tracker',
     badge: $localize`:@@proj.bonds.badge:Desktop · Personal`,
-    description: $localize`:@@proj.bonds.desc:Personal bonds portfolio tracker across multiple T-Bank Invest accounts (your own and others'). Smart-portfolio optimizer by risk profile, portfolio audit with swap recommendations, a scored screener, coupon calendar by month and year, monthly income vs. contributions, and a goal dashboard with a growth roadmap. Real-time analytics over Tinkoff Invest / MOEX ISS / CBR APIs, Plotly charts, KMV-Merton default risk, a Telegram bot and Rust quant engines.`,
+    description: $localize`:@@proj.bonds.desc:Personal bonds portfolio tracker across multiple T-Bank Invest accounts. Smart-portfolio optimizer, audit with swap suggestions, scored screener, coupon calendar and a goal dashboard with growth roadmap. Real-time analytics over Tinkoff / MOEX ISS / CBR APIs, KMV-Merton default risk, Plotly, Telegram bot, Rust engines.`,
     links: [],
     tags: ['Angular 22', 'Tauri 2', 'Rust', 'SQLite', 'WebSocket'],
     featured: false,
@@ -105,7 +105,7 @@ export const PROJECTS: readonly Project[] = [
     name: 'Claude Code config & skills',
     badge: $localize`:@@proj.claude.badge:Tooling · Open Source`,
     description: $localize`:@@proj.claude.desc:Custom Claude Code skills, agents and hooks that encode project conventions, code generation and token-optimization — including an AI code-review skill built for large Angular MRs.`,
-    links: [{ label: 'GitHub', href: 'https://github.com/ASDAlexey/claude' }],
+    links: [],
     tags: ['Claude Code', 'AI', 'Automation'],
     featured: false,
   },

@@ -179,8 +179,8 @@
         <target>Десктоп · Личное</target>
       </trans-unit>
       <trans-unit id="proj.bonds.desc" datatype="html">
-        <source>Personal bonds portfolio tracker across multiple T-Bank Invest accounts (your own and others'). Smart-portfolio optimizer by risk profile, portfolio audit with swap recommendations, a scored screener, coupon calendar by month and year, monthly income vs. contributions, and a goal dashboard with a growth roadmap. Real-time analytics over Tinkoff Invest / MOEX ISS / CBR APIs, Plotly charts, KMV-Merton default risk, a Telegram bot and Rust quant engines.</source>
-        <target>Личный трекер портфеля облигаций с поддержкой нескольких счетов T-Bank Invest (свои и чужие). Умный портфель — автоподбор облигаций по риск-профилю, аудит портфеля с рекомендациями по замене, скринер с балльной оценкой, купонный календарь по месяцам и годам, помесячный доход с учётом пополнений и дашборд цели с дорожной картой роста. Аналитика в реальном времени по API Tinkoff Invest / MOEX ISS / ЦБ РФ, графики Plotly, риск дефолта по KMV-Merton, Telegram-бот и квант-движки на Rust.</target>
+        <source>Personal bonds portfolio tracker across multiple T-Bank Invest accounts. Smart-portfolio optimizer, audit with swap suggestions, scored screener, coupon calendar and a goal dashboard with growth roadmap. Real-time analytics over Tinkoff / MOEX ISS / CBR APIs, KMV-Merton default risk, Plotly, Telegram bot, Rust engines.</source>
+        <target>Личный трекер портфеля облигаций с поддержкой нескольких счетов T-Bank Invest. Умный портфель, аудит с рекомендациями по замене, скринер с баллами, купонный календарь и дашборд цели с дорожной картой роста. Аналитика в реальном времени по API Tinkoff / MOEX ISS / ЦБ РФ, риск дефолта по KMV-Merton, Plotly, Telegram-бот и движки на Rust.</target>
       </trans-unit>
       <trans-unit id="proj.vas.badge" datatype="html">
         <source>Library · Open Source</source>
