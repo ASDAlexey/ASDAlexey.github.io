@@ -2,8 +2,7 @@
 
 **Tech Lead / Senior Angular Developer (NgRx)** · 14+ years · Web (SSR) · Smart TV · Mobile (Ionic) · Desktop (Tauri/Rust)
 
-[![CI](https://github.com/ASDAlexey/ASDAlexey.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/ASDAlexey/ASDAlexey.github.io/actions/workflows/ci.yml)
-[![Deploy](https://github.com/ASDAlexey/ASDAlexey.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/ASDAlexey/ASDAlexey.github.io/actions/workflows/deploy.yml)
+[![CI / Deploy](https://github.com/ASDAlexey/ASDAlexey.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/ASDAlexey/ASDAlexey.github.io/actions/workflows/ci.yml)
 ![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
 ![Tests](https://img.shields.io/badge/tests-Vitest-6E9F18?logo=vitest&logoColor=white)
 ![Angular](https://img.shields.io/badge/Angular-22-dd0031?logo=angular&logoColor=white)
@@ -66,8 +65,9 @@ seo/                 # robots.txt · sitemap.xml · root redirect
 
 ## Deployment
 
-Pushing to `main` triggers [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml): it builds the
-EN + RU locales, assembles the site root, and publishes to GitHub Pages (source: GitHub Actions).
+Pushing to `main` triggers [`.github/workflows/ci.yml`](.github/workflows/ci.yml): after lint, tests
+and a 100% coverage gate pass, it builds the EN + RU locales, assembles the site root, and publishes to
+GitHub Pages (source: GitHub Actions).
 
 ## Contact
 
