@@ -14,7 +14,7 @@ describe('HeroComponent', () => {
 
   it('renders the name and role', () => {
     expect(el.querySelector('.hero__title')?.textContent).toContain('Alexey Popov');
-    expect(el.querySelector('.hero__role')?.textContent).toContain('Senior Angular Developer');
+    expect(el.querySelector('.hero__role')?.textContent).toContain('Senior Frontend Developer');
   });
 
   it('renders all platform pills', () => {

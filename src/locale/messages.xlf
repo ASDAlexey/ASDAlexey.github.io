@@ -177,7 +177,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="hero.role" datatype="html">
-        <source>Senior Angular Developer</source>
+        <source>Tech Lead &amp; Senior Frontend Developer</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
           <context context-type="linenumber">10</context>
@@ -359,7 +359,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="proj.bonds.desc" datatype="html">
-        <source>Personal bonds portfolio tracker. Real-time analytics over Tinkoff Invest / MOEX ISS / CBR APIs, Plotly charts, a Telegram bot and quant engines.</source>
+        <source>Personal bonds portfolio tracker across multiple T-Bank Invest accounts (your own and others'). Smart-portfolio optimizer by risk profile, portfolio audit with swap recommendations, a scored screener, coupon calendar by month and year, monthly income vs. contributions, and a goal dashboard with a growth roadmap. Real-time analytics over Tinkoff Invest / MOEX ISS / CBR APIs, Plotly charts, KMV-Merton default risk, a Telegram bot and Rust quant engines.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
           <context context-type="linenumber">88</context>

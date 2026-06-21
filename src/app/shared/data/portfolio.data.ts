@@ -5,9 +5,9 @@ export const PROFILE = {
   email: 'ASDAlexey@yandex.ru',
   github: 'https://github.com/ASDAlexey',
   linkedin: 'https://www.linkedin.com/in/alexey-popov-7988a874/',
-  resume: 'Alexey-Popov-Resume.pdf',
+  resume: $localize`:@@hero.resume.file:Alexey-Popov-Resume.pdf`,
   siteUrl: 'https://asdalexey.github.io',
-  role: $localize`:@@hero.role:Senior Angular Developer`,
+  role: $localize`:@@hero.role:Tech Lead & Senior Frontend Developer`,
   eyebrow: $localize`:@@hero.eyebrow:Angular · every platform`,
   hint: $localize`:@@hero.hint:Taganrog, Russia · UTC+3 · remote-first`,
 } as const;
@@ -83,11 +83,11 @@ export const PROJECTS: readonly Project[] = [
     featured: true,
   },
   {
-    name: 'Bonds-tracker',
+    name: 'Bonds Tracker',
     badge: $localize`:@@proj.bonds.badge:Desktop · Personal`,
-    description: $localize`:@@proj.bonds.desc:Personal bonds portfolio tracker. Real-time analytics over Tinkoff Invest / MOEX ISS / CBR APIs, Plotly charts, a Telegram bot and quant engines.`,
+    description: $localize`:@@proj.bonds.desc:Personal bonds portfolio tracker across multiple T-Bank Invest accounts (your own and others'). Smart-portfolio optimizer by risk profile, portfolio audit with swap recommendations, a scored screener, coupon calendar by month and year, monthly income vs. contributions, and a goal dashboard with a growth roadmap. Real-time analytics over Tinkoff Invest / MOEX ISS / CBR APIs, Plotly charts, KMV-Merton default risk, a Telegram bot and Rust quant engines.`,
     links: [],
-    tags: ['Angular 21', 'Tauri 2', 'Rust', 'SQLite', 'WebSocket'],
+    tags: ['Angular 22', 'Tauri 2', 'Rust', 'SQLite', 'WebSocket'],
     featured: false,
   },
   {
