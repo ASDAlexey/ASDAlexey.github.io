@@ -1,0 +1,35 @@
+// ===========================================================
+//  Design tokens — Litely design language
+//  Dark · purple→blue accent · Inter + JetBrains Mono
+// ===========================================================
+
+:root {
+  --bg: #06060a;
+  --bg-subtle: #0b0b12;
+  --surface: #111118;
+  --surface-hover: #191922;
+  --border: #1c1c2a;
+  --border-hover: #2a2a3e;
+
+  --text: #eeeef0;
+  --text-secondary: #9898b0;
+  --text-muted: #9494ae;
+
+  --accent: #7c3aed;
+  --accent-light: #a78bfa;
+  --accent-blue: #3b82f6;
+  --accent-glow: rgba(124, 58, 237, 0.12);
+  --green: #10b981;
+  --white: #fff;
+
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-xs: 6px;
+
+  --maxw: 1100px;
+
+  --font: 'Inter Variable', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, sans-serif;
+  --mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}

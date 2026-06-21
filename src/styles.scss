@@ -1,0 +1,78 @@
+@use 'styles/tokens';
+@use 'styles/typography' as t;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @include t.base-body;
+
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+
+  &--narrow {
+    max-width: 760px;
+  }
+}
+
+// Skip link for a11y
+.skip-link {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: -9999px;
+
+  @include t.text('label', 'medium');
+
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: var(--white);
+
+  &:focus {
+    top: 1rem;
+    left: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

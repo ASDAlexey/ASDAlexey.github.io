@@ -1,0 +1,81 @@
+@use 'typography' as t;
+
+@mixin card-base {
+  display: block;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition:
+    border-color 0.3s var(--ease),
+    box-shadow 0.3s var(--ease),
+    transform 0.3s var(--ease);
+}
+
+@mixin card-link-hover {
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-hover);
+    box-shadow: 0 16px 50px rgb(0, 0, 0, 0.4);
+  }
+
+  &:hover .card__title {
+    color: var(--accent-light);
+  }
+
+  &:hover .card__arrow {
+    transform: translate(3px, -3px);
+  }
+}
+
+@mixin card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  gap: 14px;
+}
+
+@mixin card-title {
+  @include t.text('title', 'medium');
+
+  transition: color 0.25s var(--ease);
+}
+
+@mixin card-desc {
+  @include t.text('body', 'medium');
+
+  margin-bottom: 14px;
+  color: var(--text-secondary);
+}
+
+@mixin card-meta-label {
+  @include t.text('label', 'medium');
+
+  color: var(--text-muted);
+}
+
+@mixin tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  list-style: none;
+
+  li {
+    @include t.text('label', 'small');
+
+    padding: 5px 10px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--bg-subtle);
+    color: var(--text-secondary);
+  }
+}
+
+@mixin arrow {
+  display: inline-block;
+  transition: transform 0.25s var(--ease);
+}

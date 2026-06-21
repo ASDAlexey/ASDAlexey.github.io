@@ -1,0 +1,35 @@
+@use 'styles/typography' as t;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 22px 18px;
+  gap: 6px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition:
+    border-color 0.3s var(--ease),
+    transform 0.3s var(--ease);
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-hover);
+  }
+}
+
+.stat__num {
+  @include t.gradient-text;
+  @include t.stat-value;
+}
+
+.stat__plus {
+  @include t.stat-suffix;
+}
+
+.stat__cap {
+  @include t.text('label', 'small');
+
+  color: var(--text-muted);
+  text-transform: uppercase;
+}

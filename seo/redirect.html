@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title i18n>Alexey Popov — Tech Lead / Senior Angular Developer</title>
+    <meta content="noindex, follow" name="robots" />
+    <link href="https://asdalexey.github.io/en/" rel="canonical" />
+    <link href="https://asdalexey.github.io/en/" hreflang="en" rel="alternate" />
+    <link href="https://asdalexey.github.io/ru/" hreflang="ru" rel="alternate" />
+    <link href="https://asdalexey.github.io/en/" hreflang="x-default" rel="alternate" />
+    <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+    <script>
+      (function () {
+        var target = '/en/';
+        try {
+          var stored = sessionStorage.getItem('portfolio-lang');
+          if (stored === 'ru' || stored === 'en') {
+            target = '/' + stored + '/';
+          } else if ((navigator.language || 'en').toLowerCase().indexOf('ru') === 0) {
+            target = '/ru/';
+          }
+        } catch (e) {}
+        location.replace(target + (location.hash || ''));
+      })();
+    </script>
+    <meta content="0; url=/en/" http-equiv="refresh" />
+  </head>
+  <body>
+    <noscript><a href="/en/" i18n>Continue to Alexey Popov's portfolio →</a></noscript>
+  </body>
+</html>

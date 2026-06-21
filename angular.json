@@ -1,0 +1,143 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "packageManager": "bun"
+  },
+  "newProjectRoot": "projects",
+  "projects": {
+    "ngportfolio": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "i18n": {
+        "sourceLocale": {
+          "code": "en",
+          "subPath": "en"
+        },
+        "locales": {
+          "ru": {
+            "translation": "src/locale/messages.ru.xlf",
+            "subPath": "ru"
+          }
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "src/main.ts",
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "localize": true,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "node_modules/@fontsource-variable/inter/index.css",
+              "node_modules/@fontsource-variable/jetbrains-mono/index.css",
+              "src/styles.scss"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src"]
+            },
+            "polyfills": ["@angular/localize/init"],
+            "server": "src/main.server.ts",
+            "outputMode": "static",
+            "ssr": {
+              "entry": "src/server.ts"
+            }
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kB",
+                  "maximumError": "12kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            },
+            "ru": {
+              "localize": ["ru"]
+            },
+            "test": {
+              "localize": ["en"],
+              "optimization": false,
+              "sourceMap": true,
+              "outputHashing": "none",
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "ngportfolio:build:production"
+            },
+            "development": {
+              "buildTarget": "ngportfolio:build:development"
+            },
+            "ru": {
+              "buildTarget": "ngportfolio:build:development,ru"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "tsconfig.spec.json",
+            "buildTarget": "ngportfolio:build:test",
+            "runner": "vitest",
+            "providersFile": "src/test-providers.ts",
+            "runnerConfig": "vitest-base.config.ts",
+            "coverage": true,
+            "coverageReporters": ["text", "text-summary", "html"],
+            "coverageExclude": [
+              "**/*.spec.ts",
+              "**/*.html",
+              "**/*.interface.ts",
+              "**/*.type.ts",
+              "**/*.constant.ts",
+              "**/*.routes.ts",
+              "**/*.server.ts",
+              "**/server.ts",
+              "**/spec-utils/**",
+              "**/app.config.ts",
+              "**/app.ts",
+              "**/main.ts",
+              "**/test-providers.ts",
+              "**/portfolio.data.ts"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "version": 1
+}

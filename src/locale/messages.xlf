@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="skip" datatype="html">
+        <source>Skip to content</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">1,3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="seo.title" datatype="html">
+        <source>Alexey Popov — Tech Lead / Senior Angular Developer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/seo.service.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/seo.service.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="seo.desc" datatype="html">
+        <source>Tech Lead / Senior Angular Developer (NgRx). 14+ years of Angular across every platform — Web (SSR), Smart TV, Mobile (Ionic), Desktop (Tauri/Rust). Nx, GitLab CI/CD, 90%+ test coverage, AI code-review. Frontend team lead.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/seo.service.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/seo.service.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ld.jobTitle" datatype="html">
+        <source>Tech Lead / Senior Angular Developer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/structured-data.service.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav.about" datatype="html">
+        <source>About</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/about/about.component.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/nav/nav.component.html</context>
+          <context context-type="linenumber">11,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.title" datatype="html">
+        <source>Angular specialist who closes every platform with one stack</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/about/about.component.html</context>
+          <context context-type="linenumber">4,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.p1" datatype="html">
+        <source> Tech Lead and Senior Frontend Developer with <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>14+ years<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> of experience. Angular is my core strength — and I&apos;ve shipped it on every platform there is: web (SSR), Smart TV (Samsung/LG/Hisense), mobile (Ionic, iOS/Android) and desktop (Tauri). </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/about/about.component.html</context>
+          <context context-type="linenumber">8,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.p2" datatype="html">
+        <source> I <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>architect large Angular apps end-to-end<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — Nx monorepos, micro-frontends, multilingual (i18n), zoneless change detection, signals, NgRx, design systems and shared libraries. I build <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>GitLab CI/CD from scratch<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — reusable templates, builds scoped to only the changed projects, parallel test sharding, automated semantic versioning, Docker multi-stage builds and Nginx. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/about/about.component.html</context>
+          <context context-type="linenumber">13,17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.p3" datatype="html">
+        <source> I <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>lead people<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — I&apos;ve built and led frontend teams, run technical interviews, and own the code-review process. I <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>test relentlessly<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — I raised a project to <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>90%+ unit-test coverage<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> and hold my own code to the same bar. And I drive <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>AI-assisted development<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — custom Claude Code skills, agents and hooks, including an AI code-review skill that handles huge MRs. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/about/about.component.html</context>
+          <context context-type="linenumber">19,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav.experience" datatype="html">
+        <source>Experience</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/experience/experience.component.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/nav/nav.component.html</context>
+          <context context-type="linenumber">12,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="experience.title" datatype="html">
+        <source>Where I&apos;ve shipped</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/experience/experience.component.html</context>
+          <context context-type="linenumber">4,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.subtitle" datatype="html">
+        <source> 14+ years building <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Angular across every platform<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — web (SSR), Smart TV, mobile (Ionic) and desktop (Tauri/Rust). Nx · NgRx · GitLab CI/CD · 90%+ test coverage · AI code-review · frontend team lead. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/hero/hero.component.html</context>
+          <context context-type="linenumber">12,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.platforms" datatype="html">
+        <source>Platforms</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/hero/hero.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.cta.github" datatype="html">
+        <source><x id="START_TAG_APP_ICON" ctype="x-app_icon" equiv-text="&lt;app-icon name=&quot;github&quot; [size]=&quot;18&quot; /&gt;"/><x id="CLOSE_TAG_APP_ICON" ctype="x-app_icon" equiv-text="&lt;app-icon name=&quot;github&quot; [size]=&quot;18&quot; /&gt;"/> GitHub </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/hero/hero.component.html</context>
+          <context context-type="linenumber">24,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.cta.linkedin" datatype="html">
+        <source>LinkedIn</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/hero/hero.component.html</context>
+          <context context-type="linenumber">27,28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.cta.email" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/hero/hero.component.html</context>
+          <context context-type="linenumber">28,29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.resume" datatype="html">
+        <source>Résumé</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/hero/hero.component.html</context>
+          <context context-type="linenumber">29,32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav.projects" datatype="html">
+        <source>Projects</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/projects/projects.component.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/nav/nav.component.html</context>
+          <context context-type="linenumber">13,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projects.title" datatype="html">
+        <source>Things I&apos;ve built on my own time</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/projects/projects.component.html</context>
+          <context context-type="linenumber">4,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footer.copy" datatype="html">
+        <source>Designed &amp; built with Angular 22 — prerendered, EN/RU, 100% tested.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/footer/footer.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="lang.switch" datatype="html">
+        <source>Switch language</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/language-switcher/language-switcher.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav.github" datatype="html">
+        <source>GitHub ↗</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/nav/nav.component.html</context>
+          <context context-type="linenumber">15,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.role" datatype="html">
+        <source>Senior Angular Developer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.eyebrow" datatype="html">
+        <source>Angular · every platform</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.hint" datatype="html">
+        <source>Taganrog, Russia · UTC+3 · remote-first</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="stat.years" datatype="html">
+        <source>years shipping</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="stat.platforms" datatype="html">
+        <source>platforms shipped</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="stat.coverage" datatype="html">
+        <source>test coverage</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="stat.interviews" datatype="html">
+        <source>interviews run</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="exp.current.role" datatype="html">
+        <source>Senior Angular Developer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="exp.current.loc" datatype="html">
+        <source>Remote</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="exp.current.period" datatype="html">
+        <source>2023 — Present</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="exp.current.desc" datatype="html">
+        <source>Building and architecting large-scale Angular applications — modern reactive architecture (NgRx, Signals, zoneless, OnPush), a strong testing culture and CI/CD. Focused on performance, code quality and developer experience.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="exp.fifthkind.role" datatype="html">
+        <source>Tech Lead / Senior Frontend</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="exp.fifthkind.loc" datatype="html">
+        <source>US, Remote</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="exp.fifthkind.desc" datatype="html">
+        <source>Distributed digital-asset management platform. Led the migration to a layered NgRx architecture, built custom virtual-scrolling for dynamic-height items, complex forms via ControlValueAccessor, and an OnPush + immutability performance overhaul. Ran 20+ technical interviews; hired and mentored newcomers.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="exp.arcadia.role" datatype="html">
+        <source>Senior Angular Developer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="exp.arcadia.loc" datatype="html">
+        <source>Taganrog</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="exp.arcadia.desc" datatype="html">
+        <source>Designed the product&apos;s UI architecture, planned refactoring, and shipped 10+ major features. Built the mobile iOS/Android app with Ionic.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="exp.umbrella.role" datatype="html">
+        <source>Senior Full Stack Developer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="exp.umbrella.loc" datatype="html">
+        <source>Taganrog</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="exp.umbrella.desc" datatype="html">
+        <source>Full-stack development (Angular + Node.js) for international US/EU clients via Upwork. Top Rated, 100% job success.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="exp.tutmee.role" datatype="html">
+        <source>Frontend Web Developer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="exp.tutmee.loc" datatype="html">
+        <source>Taganrog</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="exp.tutmee.desc" datatype="html">
+        <source>Built 50+ landing pages and online stores with a focus on responsive layout and performance.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="proj.litely.badge" datatype="html">
+        <source>Desktop · Open Source</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="proj.litely.desc" datatype="html">
+        <source>Cross-platform desktop app for batch image / video / PDF compression (WebP, AVIF, JPEG, PNG, SVG). Browser extension pastes compressed files straight into Jira / GitLab via Cmd+V. Watch-folders, system tray, drag&amp;drop, dark/light, before/after compare. Rust backend.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="proj.bonds.badge" datatype="html">
+        <source>Desktop · Personal</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="proj.bonds.desc" datatype="html">
+        <source>Personal bonds portfolio tracker. Real-time analytics over Tinkoff Invest / MOEX ISS / CBR APIs, Plotly charts, a Telegram bot and quant engines.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="proj.vas.badge" datatype="html">
+        <source>Library · Open Source</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="proj.vas.desc" datatype="html">
+        <source>Typed auto-mocking for Vitest — the missing jest-auto-spies. Typed Spy&lt;T&gt; over conditional/mapped types, Observable mocking (nextWith/throwWith), calledWith dispatch, zoneless Angular, zero dependencies. Published on npm and dogfooded in this site&apos;s tests.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">96</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="proj.claude.badge" datatype="html">
+        <source>Tooling · Open Source</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">106</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="proj.claude.desc" datatype="html">
+        <source>Custom Claude Code skills, agents and hooks that encode project conventions, code generation and token-optimization — including an AI code-review skill built for large Angular MRs.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">107</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

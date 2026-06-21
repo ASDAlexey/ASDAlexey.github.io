@@ -1,0 +1,12 @@
+<section class="section" id="projects">
+  <div class="container">
+    <p class="section__eyebrow"><span class="section__num">03</span>&nbsp;—&nbsp;<span i18n="@@nav.projects">Projects</span></p>
+    <h2 class="section__title" i18n="@@projects.title">Things I've built on my own time</h2>
+
+    <div class="card-grid">
+      @for (project of projects; track project.name) {
+        <app-project-card [project]="project" />
+      }
+    </div>
+  </div>
+</section>

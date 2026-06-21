@@ -1,0 +1,92 @@
+@use 'styles/typography' as t;
+
+.nav {
+  z-index: 50;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(14px);
+  background: rgb(6, 6, 10, 0.72);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__logo {
+    display: grid;
+    position: relative;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-blue));
+    box-shadow:
+      0 0 0 2px rgb(124, 58, 237, 0.35),
+      0 0 0 4px var(--bg);
+    color: var(--white);
+
+    @include t.text('label', 'medium');
+    @include t.extrabold;
+  }
+
+  &__avatar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &__name {
+    @include t.bold;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    a:not(.nav__cta) {
+      @include t.text('body', 'medium');
+
+      color: var(--text-secondary);
+      transition: color 0.2s var(--ease);
+
+      &:hover {
+        color: var(--text);
+      }
+    }
+  }
+
+  &__cta {
+    @include t.text('body', 'medium');
+    @include t.semibold;
+
+    color: var(--text);
+  }
+}
+
+@media (width <= 640px) {
+  .nav__name {
+    display: none;
+  }
+
+  .nav__links {
+    gap: 14px;
+
+    a:not(.nav__cta) {
+      display: none;
+    }
+  }
+}

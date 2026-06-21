@@ -1,0 +1,42 @@
+@use 'styles/typography' as t;
+
+.footer {
+  margin-top: 32px;
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  &__brand {
+    @include t.bold;
+  }
+
+  &__copy {
+    @include t.text('label', 'medium');
+
+    color: var(--text-muted);
+  }
+
+  &__links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+
+    a {
+      @include t.text('body', 'medium');
+
+      color: var(--text-secondary);
+      transition: color 0.2s var(--ease);
+
+      &:hover {
+        color: var(--accent-light);
+      }
+    }
+  }
+}

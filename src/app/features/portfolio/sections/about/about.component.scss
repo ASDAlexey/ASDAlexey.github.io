@@ -1,0 +1,33 @@
+@use 'styles/section' as s;
+@use 'styles/typography' as t;
+
+.section {
+  @include s.section;
+}
+
+.section__eyebrow {
+  @include s.section-eyebrow;
+}
+
+.section__num {
+  color: var(--accent-light);
+}
+
+.section__title {
+  @include s.section-title;
+}
+
+.prose {
+  p {
+    @include t.text('body', 'large');
+
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+  }
+
+  strong {
+    @include t.semibold;
+
+    color: var(--text);
+  }
+}

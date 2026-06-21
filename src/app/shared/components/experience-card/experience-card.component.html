@@ -1,0 +1,11 @@
+<div class="card__head">
+  <h3 class="card__title">{{ title() }}</h3>
+  <span class="card__period">{{ experience().period }}</span>
+</div>
+<p class="card__org">{{ experience().location }}</p>
+<p class="card__desc">{{ experience().description }}</p>
+<ul class="tags">
+  @for (tag of experience().tags; track tag) {
+    <li>{{ tag }}</li>
+  }
+</ul>

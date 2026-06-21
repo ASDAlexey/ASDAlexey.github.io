@@ -1,0 +1,22 @@
+@use 'styles/section' as s;
+
+.section {
+  @include s.section;
+}
+
+.section__eyebrow {
+  @include s.section-eyebrow;
+}
+
+.section__num {
+  color: var(--accent-light);
+}
+
+.section__title {
+  @include s.section-title;
+}
+
+.timeline {
+  display: grid;
+  gap: 16px;
+}

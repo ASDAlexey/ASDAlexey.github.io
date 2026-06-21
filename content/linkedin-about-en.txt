@@ -1,0 +1,37 @@
+Tech Lead & Senior Frontend Developer — 14+ years, Angular at the core.
+
+I've shipped Angular on every platform there is: web (SSR), Smart TV (Samsung/LG/Hisense), mobile (Ionic, iOS/Android) and desktop (Tauri). My job is turning complex designs into fast, scalable products — clean architecture, strict performance budgets and automated delivery.
+
+⚙️ What I do
+
+• Architect large Angular apps end-to-end — Nx monorepos, micro-frontends, multi-tenant builds, zoneless change detection, signals, NgRx, design systems & shared libraries.
+
+• Own performance — strict bundle budgets, OnPush everywhere, circular-dependency & duplication checks in CI. Once took a critical selection workflow from ~200ms to <0.5ms (≈400× faster).
+
+• Build CI/CD from scratch — GitLab reusable templates, nx affected, parallel test sharding, automated semantic versioning, idempotent publishing, Docker multi-stage, Nginx.
+
+• Test relentlessly — Jest/Vitest as a core strength; raised a project to 90%+ unit-test coverage and hold my own code to the same bar.
+
+• Lead people — built and now lead a team of 9 frontend engineers (hired every one myself) + ~6 subcontractors, ran 70+ technical interviews, own the code-review process.
+
+• Drive AI-assisted development — custom Claude Code skills, agents & hooks that encode our conventions, including an AI code-review skill for huge MRs.
+
+🚀 Highlights
+
+• Current role — a large Angular product (Nx monorepo, micro-frontends) shipping across web (SSR), Smart TV, mobile (Ionic) and desktop, CI/CD built from scratch, team of 9.
+
+• The 5th Kind (US, remote) — Tech Lead on a distributed digital-asset management platform; led the migration to a layered NgRx architecture, custom virtual scrolling, OnPush performance overhaul.
+
+🛠️ Beyond the day job
+
+• Litely — my own cross-platform desktop app (Tauri + Angular) for batch image/video/PDF compression.
+
+• vitest-auto-spy — open-source typed auto-mocking utility for Vitest.
+
+🎓 Background in physics & mathematics (M.Sc., GPA 4.97/5) — where the structured, performance-first mindset comes from.
+
+Core stack: Angular (2 → 22, every version since launch), NgRx, RxJS, single-spa, WebSockets, AG-Grid, Jest, Vitest, Nx, GitLab CI/CD, Docker, Nginx, Node.js.
+
+Open to Senior / Lead Angular roles (remote / relocation).
+
+📂 github.com/ASDAlexey · 🌐 asdalexey.github.io

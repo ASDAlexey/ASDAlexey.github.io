@@ -1,0 +1,20 @@
+@use 'typography' as t;
+
+@mixin section {
+  padding: 44px 0;
+}
+
+@mixin section-eyebrow {
+  @include t.text('label', 'medium');
+
+  display: block;
+  margin-bottom: 12px;
+  color: var(--accent-light);
+}
+
+@mixin section-title {
+  @include t.text('display', 'medium');
+
+  max-width: 24ch;
+  margin-bottom: 32px;
+}

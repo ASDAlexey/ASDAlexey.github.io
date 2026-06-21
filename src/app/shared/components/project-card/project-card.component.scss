@@ -1,0 +1,68 @@
+@use 'styles/card' as c;
+@use 'styles/typography' as t;
+
+:host {
+  display: block;
+  height: 100%;
+}
+
+.card {
+  @include c.card-base;
+
+  height: 100%;
+
+  &:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 16px 50px rgb(0, 0, 0, 0.4);
+  }
+
+  &--featured {
+    border-color: rgb(124, 58, 237, 0.45);
+    background: linear-gradient(160deg, rgb(124, 58, 237, 0.1), var(--surface) 60%);
+    box-shadow:
+      0 0 0 1px rgb(124, 58, 237, 0.2),
+      0 12px 40px var(--accent-glow);
+  }
+}
+
+.card__head {
+  @include c.card-head;
+}
+
+.card__title {
+  @include c.card-title;
+}
+
+.card__badge {
+  @include c.card-meta-label;
+
+  color: var(--accent-light);
+  white-space: nowrap;
+}
+
+.card__desc {
+  @include c.card-desc;
+}
+
+.card__links {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  gap: 14px;
+  list-style: none;
+
+  a {
+    @include t.text('label', 'medium');
+
+    color: var(--accent-blue);
+    transition: color 0.2s var(--ease);
+
+    &:hover {
+      color: var(--accent-light);
+    }
+  }
+}
+
+.tags {
+  @include c.tags;
+}

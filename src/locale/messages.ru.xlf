@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ru" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="skip" datatype="html">
+        <source>Skip to content</source>
+        <target>Перейти к содержимому</target>
+      </trans-unit>
+      <trans-unit id="seo.title" datatype="html">
+        <source>Alexey Popov — Tech Lead / Senior Angular Developer</source>
+        <target>Алексей Попов — Tech Lead / Senior Angular Developer</target>
+      </trans-unit>
+      <trans-unit id="seo.desc" datatype="html">
+        <source>Tech Lead / Senior Angular Developer (NgRx). 14+ years of Angular across every platform — Web (SSR), Smart TV, Mobile (Ionic), Desktop (Tauri/Rust). Nx, GitLab CI/CD, 90%+ test coverage, AI code-review. Frontend team lead.</source>
+        <target>Tech Lead / Senior Angular Developer (NgRx). 14+ лет Angular на всех платформах — Web (SSR), Smart TV, Mobile (Ionic), Desktop (Tauri/Rust). Nx, GitLab CI/CD, 90%+ покрытие тестами, AI code-review. Тимлид фронтенд-команд.</target>
+      </trans-unit>
+      <trans-unit id="ld.jobTitle" datatype="html">
+        <source>Tech Lead / Senior Angular Developer</source>
+        <target>Tech Lead / Senior Angular Developer</target>
+      </trans-unit>
+      <trans-unit id="nav.about" datatype="html">
+        <source>About</source>
+        <target>Обо мне</target>
+      </trans-unit>
+      <trans-unit id="about.title" datatype="html">
+        <source>Angular specialist who closes every platform with one stack</source>
+        <target>Angular-специалист, который закрывает все платформы одним стеком</target>
+      </trans-unit>
+      <trans-unit id="about.p1" datatype="html">
+        <source> Tech Lead and Senior Frontend Developer with <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>14+ years<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> of experience. Angular is my core strength — and I&apos;ve shipped it on every platform there is: web (SSR), Smart TV (Samsung/LG/Hisense), mobile (Ionic, iOS/Android) and desktop (Tauri). </source>
+        <target> Tech Lead и Senior Frontend Developer с <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>14+ годами<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> опыта. Angular — моя сильная сторона, и я выпускал его на всех платформах: web (SSR), Smart TV (Samsung/LG/Hisense), mobile (Ionic, iOS/Android) и desktop (Tauri). </target>
+      </trans-unit>
+      <trans-unit id="about.p2" datatype="html">
+        <source> I <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>architect large Angular apps end-to-end<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — Nx monorepos, micro-frontends, multi-tenant builds, zoneless change detection, signals, NgRx, design systems and shared libraries. I build <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>GitLab CI/CD from scratch<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — reusable templates, builds scoped to only the changed projects, parallel test sharding, automated semantic versioning, Docker multi-stage builds and Nginx. </source>
+        <target> Я <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>проектирую крупные Angular-приложения целиком<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — Nx-монорепо, micro-frontends, мультиязычность (i18n), zoneless, signals, NgRx, дизайн-системы и общие библиотеки. Строю <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>GitLab CI/CD с нуля<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — переиспользуемые шаблоны, сборки только изменённых проектов, параллельный шардинг тестов, авто-семвер, многостадийные Docker-сборки и Nginx. </target>
+      </trans-unit>
+      <trans-unit id="about.p3" datatype="html">
+        <source> I <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>lead people<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — I've built and led frontend teams, run technical interviews, and own the code-review process. I <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>test relentlessly<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — I raised a project to <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>90%+ unit-test coverage<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> and hold my own code to the same bar. And I drive <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>AI-assisted development<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — custom Claude Code skills, agents and hooks, including an AI code-review skill that handles huge MRs. </source>
+        <target> Я <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>руковожу людьми<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — собирал и вёл фронтенд-команды, провожу технические собеседования и отвечаю за процесс code-review. Я <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>дотошно тестирую<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — поднял проект до <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>90%+ покрытия unit-тестами<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> и держу свой код на той же планке. И внедряю <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>AI-assisted разработку<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — кастомные скиллы, агенты и хуки для Claude Code, включая скилл авто-код-ревью для огромных MR. </target>
+      </trans-unit>
+      <trans-unit id="nav.experience" datatype="html">
+        <source>Experience</source>
+        <target>Опыт</target>
+      </trans-unit>
+      <trans-unit id="experience.title" datatype="html">
+        <source>Where I&apos;ve shipped</source>
+        <target>Где я работал</target>
+      </trans-unit>
+      <trans-unit id="hero.subtitle" datatype="html">
+        <source> 14+ years building <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Angular across every platform<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — web (SSR), Smart TV, mobile (Ionic) and desktop (Tauri/Rust). Nx · NgRx · GitLab CI/CD · 90%+ test coverage · AI code-review · frontend team lead. </source>
+        <target> 14+ лет создаю <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Angular на всех платформах<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — web (SSR), Smart TV, mobile (Ionic) и desktop (Tauri/Rust). Nx · NgRx · GitLab CI/CD · 90%+ покрытие тестами · AI code-review · тимлид фронтенд-команд. </target>
+      </trans-unit>
+      <trans-unit id="hero.platforms" datatype="html">
+        <source>Platforms</source>
+        <target>Платформы</target>
+      </trans-unit>
+      <trans-unit id="hero.resume" datatype="html">
+        <source>Résumé</source>
+        <target>Резюме</target>
+      </trans-unit>
+      <trans-unit id="nav.projects" datatype="html">
+        <source>Projects</source>
+        <target>Проекты</target>
+      </trans-unit>
+      <trans-unit id="projects.title" datatype="html">
+        <source>Things I&apos;ve built on my own time</source>
+        <target>Что я сделал в своё свободное время</target>
+      </trans-unit>
+      <trans-unit id="footer.copy" datatype="html">
+        <source>Designed &amp; built with Angular 22 — prerendered, EN/RU, 100% tested.</source>
+        <target>Сделано на Angular 22 — prerender, EN/RU, 100% покрытие тестами.</target>
+      </trans-unit>
+      <trans-unit id="hero.role" datatype="html">
+        <source>Senior Angular Developer</source>
+        <target>Senior Angular Developer</target>
+      </trans-unit>
+      <trans-unit id="hero.eyebrow" datatype="html">
+        <source>Angular · every platform</source>
+        <target>Angular · все платформы</target>
+      </trans-unit>
+      <trans-unit id="hero.hint" datatype="html">
+        <source>Taganrog, Russia · UTC+3 · remote-first</source>
+        <target>Таганрог, Россия · UTC+3 · удалённо</target>
+      </trans-unit>
+      <trans-unit id="stat.years" datatype="html">
+        <source>years shipping</source>
+        <target>лет в разработке</target>
+      </trans-unit>
+      <trans-unit id="stat.platforms" datatype="html">
+        <source>platforms shipped</source>
+        <target>платформ освоено</target>
+      </trans-unit>
+      <trans-unit id="stat.coverage" datatype="html">
+        <source>test coverage</source>
+        <target>покрытие тестами</target>
+      </trans-unit>
+      <trans-unit id="stat.interviews" datatype="html">
+        <source>interviews run</source>
+        <target>собеседований</target>
+      </trans-unit>
+      <trans-unit id="exp.current.role" datatype="html">
+        <source>Senior Angular Developer</source>
+        <target>Senior Angular Developer</target>
+      </trans-unit>
+      <trans-unit id="exp.current.loc" datatype="html">
+        <source>Remote</source>
+        <target>Удалённо</target>
+      </trans-unit>
+      <trans-unit id="exp.current.period" datatype="html">
+        <source>2023 — Present</source>
+        <target>2023 — наст. время</target>
+      </trans-unit>
+      <trans-unit id="exp.current.desc" datatype="html">
+        <source>Building and architecting large-scale Angular applications — modern reactive architecture (NgRx, Signals, zoneless, OnPush), a strong testing culture and CI/CD. Focused on performance, code quality and developer experience.</source>
+        <target>Проектирую и разрабатываю крупные Angular-приложения — современная реактивная архитектура (NgRx, Signals, zoneless, OnPush), культура тестирования и CI/CD. Фокус на производительности, качестве кода и developer experience.</target>
+      </trans-unit>
+      <trans-unit id="exp.fifthkind.role" datatype="html">
+        <source>Tech Lead / Senior Frontend</source>
+        <target>Tech Lead / Senior Frontend</target>
+      </trans-unit>
+      <trans-unit id="exp.fifthkind.loc" datatype="html">
+        <source>US, Remote</source>
+        <target>США, удалённо</target>
+      </trans-unit>
+      <trans-unit id="exp.fifthkind.desc" datatype="html">
+        <source>Distributed digital-asset management platform. Led the migration to a layered NgRx architecture, built custom virtual-scrolling for dynamic-height items, complex forms via ControlValueAccessor, and an OnPush + immutability performance overhaul. Ran 20+ technical interviews; hired and mentored newcomers.</source>
+        <target>Распределённая система управления цифровыми ассетами. Вёл миграцию на слоистую NgRx-архитектуру, сделал кастомный virtual scroll для элементов с динамической высотой, сложные формы через ControlValueAccessor и переход на OnPush + иммутабельность. Провёл 20+ технических собеседований; нанимал и обучал новичков.</target>
+      </trans-unit>
+      <trans-unit id="exp.arcadia.role" datatype="html">
+        <source>Senior Angular Developer</source>
+        <target>Senior Angular Developer</target>
+      </trans-unit>
+      <trans-unit id="exp.arcadia.loc" datatype="html">
+        <source>Taganrog</source>
+        <target>Таганрог</target>
+      </trans-unit>
+      <trans-unit id="exp.arcadia.desc" datatype="html">
+        <source>Designed the product&apos;s UI architecture, planned refactoring, and shipped 10+ major features. Built the mobile iOS/Android app with Ionic.</source>
+        <target>Спроектировал UI-архитектуру продукта, планировал рефакторинг и реализовал 10+ крупных фич. Сделал мобильное приложение iOS/Android на Ionic.</target>
+      </trans-unit>
+      <trans-unit id="exp.umbrella.role" datatype="html">
+        <source>Senior Full Stack Developer</source>
+        <target>Senior Full Stack Developer</target>
+      </trans-unit>
+      <trans-unit id="exp.umbrella.loc" datatype="html">
+        <source>Taganrog</source>
+        <target>Таганрог</target>
+      </trans-unit>
+      <trans-unit id="exp.umbrella.desc" datatype="html">
+        <source>Full-stack development (Angular + Node.js) for international US/EU clients via Upwork. Top Rated, 100% job success.</source>
+        <target>Full-stack-разработка (Angular + Node.js) для международных клиентов US/EU через Upwork. Top Rated, 100% job success.</target>
+      </trans-unit>
+      <trans-unit id="exp.tutmee.role" datatype="html">
+        <source>Frontend Web Developer</source>
+        <target>Frontend Web Developer</target>
+      </trans-unit>
+      <trans-unit id="exp.tutmee.loc" datatype="html">
+        <source>Taganrog</source>
+        <target>Таганрог</target>
+      </trans-unit>
+      <trans-unit id="exp.tutmee.desc" datatype="html">
+        <source>Built 50+ landing pages and online stores with a focus on responsive layout and performance.</source>
+        <target>Сделал 50+ лендингов и интернет-магазинов с фокусом на адаптивную вёрстку и производительность.</target>
+      </trans-unit>
+      <trans-unit id="proj.litely.badge" datatype="html">
+        <source>Desktop · Open Source</source>
+        <target>Десктоп · Open Source</target>
+      </trans-unit>
+      <trans-unit id="proj.litely.desc" datatype="html">
+        <source>Cross-platform desktop app for batch image / video / PDF compression (WebP, AVIF, JPEG, PNG, SVG). Browser extension pastes compressed files straight into Jira / GitLab via Cmd+V. Watch-folders, system tray, drag&amp;drop, dark/light, before/after compare. Rust backend.</source>
+        <target>Кроссплатформенное десктоп-приложение для пакетного сжатия image / video / PDF (WebP, AVIF, JPEG, PNG, SVG). Расширение для браузера вставляет сжатые файлы прямо в Jira / GitLab по Cmd+V. Watch-папки, трей, drag&amp;drop, тёмная/светлая тема, сравнение до/после. Бэкенд на Rust.</target>
+      </trans-unit>
+      <trans-unit id="proj.bonds.badge" datatype="html">
+        <source>Desktop · Personal</source>
+        <target>Десктоп · Личное</target>
+      </trans-unit>
+      <trans-unit id="proj.bonds.desc" datatype="html">
+        <source>Personal bonds portfolio tracker. Real-time analytics over Tinkoff Invest / MOEX ISS / CBR APIs, Plotly charts, a Telegram bot and quant engines.</source>
+        <target>Личный трекер портфеля облигаций. Аналитика в реальном времени по API Tinkoff Invest / MOEX ISS / ЦБ РФ, графики Plotly, Telegram-бот и квант-движки.</target>
+      </trans-unit>
+      <trans-unit id="proj.vas.badge" datatype="html">
+        <source>Library · Open Source</source>
+        <target>Библиотека · Open Source</target>
+      </trans-unit>
+      <trans-unit id="proj.vas.desc" datatype="html">
+        <source>Typed auto-mocking for Vitest — the missing jest-auto-spies. Typed Spy&lt;T&gt; over conditional/mapped types, Observable mocking (nextWith/throwWith), calledWith dispatch, zoneless Angular, zero dependencies. Published on npm and dogfooded in this site's tests.</source>
+        <target>Типобезопасный авто-мокинг для Vitest — недостающий jest-auto-spies. Типизированный Spy&lt;T&gt; на conditional/mapped types, мокинг Observable (nextWith/throwWith), calledWith-диспетчинг, zoneless Angular, ноль зависимостей. Опубликован в npm и используется в тестах этого сайта.</target>
+      </trans-unit>
+      <trans-unit id="proj.claude.badge" datatype="html">
+        <source>Tooling · Open Source</source>
+        <target>Тулинг · Open Source</target>
+      </trans-unit>
+      <trans-unit id="proj.claude.desc" datatype="html">
+        <source>Custom Claude Code skills, agents and hooks that encode project conventions, code generation and token-optimization — including an AI code-review skill built for large Angular MRs.</source>
+        <target>Кастомные скиллы, агенты и хуки для Claude Code, кодирующие конвенции проекта, кодген и оптимизацию токенов — включая скилл авто-код-ревью для больших Angular MR.</target>
+      </trans-unit>
+      <trans-unit id="lang.switch" datatype="html">
+        <source>Switch language</source>
+        <target>Сменить язык</target>
+      </trans-unit>
+      <trans-unit id="nav.logo" datatype="html">
+        <source>AP</source>
+        <target>AP</target>
+      </trans-unit>
+      <trans-unit id="nav.github" datatype="html">
+        <source>GitHub ↗</source>
+        <target>GitHub ↗</target>
+      </trans-unit>
+      <trans-unit id="hero.cta.github" datatype="html">
+        <source>GitHub</source>
+        <target>GitHub</target>
+      </trans-unit>
+      <trans-unit id="hero.cta.linkedin" datatype="html">
+        <source>LinkedIn</source>
+        <target>LinkedIn</target>
+      </trans-unit>
+      <trans-unit id="hero.cta.email" datatype="html">
+        <source>Email</source>
+        <target>Email</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,24 @@
+<article class="card" [class.card--featured]="project().featured">
+  <div class="card__head">
+    <h3 class="card__title">{{ project().name }}</h3>
+    <span class="card__badge">{{ project().badge }}</span>
+  </div>
+
+  <p class="card__desc">{{ project().description }}</p>
+
+  @if (project().links.length) {
+    <ul class="card__links">
+      @for (link of project().links; track link.href) {
+        <li>
+          <a rel="noreferrer" target="_blank" [href]="link.href">{{ link.label }} ↗</a>
+        </li>
+      }
+    </ul>
+  }
+
+  <ul class="tags">
+    @for (tag of project().tags; track tag) {
+      <li>{{ tag }}</li>
+    }
+  </ul>
+</article>

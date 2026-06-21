@@ -1,0 +1,33 @@
+@use 'styles/card' as c;
+
+:host {
+  @include c.card-base;
+}
+
+.card__head {
+  @include c.card-head;
+}
+
+.card__title {
+  @include c.card-title;
+}
+
+.card__period {
+  @include c.card-meta-label;
+
+  white-space: nowrap;
+}
+
+.card__org {
+  @include c.card-meta-label;
+
+  margin-bottom: 12px;
+}
+
+.card__desc {
+  @include c.card-desc;
+}
+
+.tags {
+  @include c.tags;
+}
