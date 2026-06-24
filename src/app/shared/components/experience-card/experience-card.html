@@ -4,8 +4,26 @@
 </div>
 <p class="card__org">{{ experience().location }}</p>
 <p class="card__desc">{{ experience().description }}</p>
+@if (experience().badge; as badge) {
+  <p class="card__credential"><span aria-hidden="true">★</span> {{ badge }}</p>
+}
+@if (experience().media; as media) {
+  <a class="card__media" rel="noreferrer" target="_blank" [href]="media.href">
+    <img class="card__media-thumb" decoding="async" height="84" loading="lazy" width="160" [alt]="media.imageAlt" [src]="media.image" />
+    <span class="card__media-caption">{{ media.caption }} ↗</span>
+  </a>
+}
+@if (experience().links; as links) {
+  <ul class="card__links">
+    @for (link of links; track link.href) {
+      <li>
+        <a class="card__link" rel="noreferrer" target="_blank" [href]="link.href">{{ link.label }} ↗</a>
+      </li>
+    }
+  </ul>
+}
 <ul class="tags">
   @for (tag of experience().tags; track tag) {
-    <li>{{ tag }}</li>
+    <li class="tags__item">{{ tag }}</li>
   }
 </ul>

@@ -41,4 +41,47 @@ describe('ExperienceCard', () => {
     expect(el.querySelector('.card__org')?.textContent).toContain('Remote');
     expect(el.querySelectorAll('.tags li').length).toBe(2);
   });
+
+  it('renders a credential badge only when one is provided', () => {
+    expect(render(base).nativeElement.querySelector('.card__credential')).toBeNull();
+
+    const badge = 'Top Rated · 100% Job Success · Upwork';
+    const el = render({ ...base, badge }).nativeElement.querySelector('.card__credential');
+
+    expect(el?.textContent).toContain(badge);
+  });
+
+  it('renders a media preview only when media is provided', () => {
+    expect(render(base).nativeElement.querySelector('.card__media')).toBeNull();
+
+    const media = {
+      href: 'https://www.sohonet.com/',
+      image: 'sohonet-5th-kind.webp',
+      imageAlt: 'Sohonet preview',
+      caption: 'Sohonet — 5th Kind CORE platform',
+    };
+    const el = render({ ...base, media }).nativeElement as HTMLElement;
+    const anchor = el.querySelector('.card__media') as HTMLAnchorElement;
+    const img = el.querySelector('.card__media-thumb') as HTMLImageElement;
+
+    expect(anchor.getAttribute('href')).toBe(media.href);
+    expect(anchor.getAttribute('target')).toBe('_blank');
+    expect(img.getAttribute('src')).toBe(media.image);
+    expect(img.getAttribute('alt')).toBe(media.imageAlt);
+    expect(el.querySelector('.card__media-caption')?.textContent).toContain(media.caption);
+  });
+
+  it('renders text links only when links are provided', () => {
+    expect(render(base).nativeElement.querySelector('.card__links')).toBeNull();
+
+    const links = [
+      { label: 'rademacher.de', href: 'https://rademacher.de/' },
+      { label: 'pooltrackr.com', href: 'https://pooltrackr.com/' },
+    ];
+    const items = render({ ...base, links }).nativeElement.querySelectorAll('.card__links a');
+
+    expect(items.length).toBe(2);
+    expect(items[0].getAttribute('href')).toBe(links[0].href);
+    expect(items[0].textContent).toContain('rademacher.de');
+  });
 });

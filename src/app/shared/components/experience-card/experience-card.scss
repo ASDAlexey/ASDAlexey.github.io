@@ -1,4 +1,5 @@
 @use 'styles/card' as c;
+@use 'styles/typography' as t;
 
 :host {
   @include c.card-base;
@@ -26,6 +27,61 @@
 
 .card__desc {
   @include c.card-desc;
+}
+
+.card__credential {
+  @include t.text('label', 'small');
+
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 6px 12px;
+  gap: 6px;
+  border: 1px solid rgb(124, 58, 237, 0.3);
+  border-radius: 999px;
+  background: var(--accent-glow);
+  color: var(--accent-light);
+}
+
+.card__media {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 6px;
+  gap: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-subtle);
+  text-decoration: none;
+  transition: border-color 0.25s var(--ease);
+
+  &:hover {
+    border-color: var(--border-hover);
+  }
+
+  &:hover .card__media-caption {
+    color: var(--accent-light);
+  }
+
+  &-thumb {
+    display: block;
+    width: 160px;
+    height: 84px;
+    object-fit: cover;
+    border-radius: var(--radius-xs);
+  }
+
+  &-caption {
+    @include t.text('label', 'medium');
+
+    padding-right: 8px;
+    color: var(--text-secondary);
+    transition: color 0.25s var(--ease);
+  }
+}
+
+.card__links {
+  @include c.card-links;
 }
 
 .tags {
