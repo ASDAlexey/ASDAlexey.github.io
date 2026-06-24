@@ -338,7 +338,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="proj.litely.badge" datatype="html">
-        <source>Desktop · Open Source</source>
+        <source>Desktop · Personal</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
           <context context-type="linenumber">76</context>

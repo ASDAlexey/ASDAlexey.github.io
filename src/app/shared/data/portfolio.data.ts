@@ -73,12 +73,9 @@ export const EXPERIENCES: readonly Experience[] = [
 export const PROJECTS: readonly Project[] = [
   {
     name: 'Litely',
-    badge: $localize`:@@proj.litely.badge:Desktop · Open Source`,
+    badge: $localize`:@@proj.litely.badge:Desktop · Personal`,
     description: $localize`:@@proj.litely.desc:Cross-platform desktop app for batch image / video / PDF compression (WebP, AVIF, JPEG, PNG, SVG). Browser extension pastes compressed files straight into Jira / GitLab via Cmd+V. Watch-folders, system tray, drag&drop, dark/light, before/after compare. Rust backend.`,
-    links: [
-      { label: 'Live', href: 'https://asdalexey.github.io/litely/' },
-      { label: 'GitHub', href: 'https://github.com/ASDAlexey/litely' },
-    ],
+    links: [{ label: 'Live', href: 'https://asdalexey.github.io/litely/' }],
     tags: ['Tauri', 'Angular 22', 'Rust', 'TypeScript'],
     featured: true,
   },

@@ -167,8 +167,8 @@
         <target>Сделал 50+ лендингов и интернет-магазинов с фокусом на адаптивную вёрстку и производительность.</target>
       </trans-unit>
       <trans-unit id="proj.litely.badge" datatype="html">
-        <source>Desktop · Open Source</source>
-        <target>Десктоп · Open Source</target>
+        <source>Desktop · Personal</source>
+        <target>Десктоп · Личное</target>
       </trans-unit>
       <trans-unit id="proj.litely.desc" datatype="html">
         <source>Cross-platform desktop app for batch image / video / PDF compression (WebP, AVIF, JPEG, PNG, SVG). Browser extension pastes compressed files straight into Jira / GitLab via Cmd+V. Watch-folders, system tray, drag&amp;drop, dark/light, before/after compare. Rust backend.</source>
