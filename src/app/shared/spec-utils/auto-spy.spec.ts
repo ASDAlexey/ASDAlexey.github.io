@@ -52,23 +52,22 @@ describe('vitest-auto-spy showcase', () => {
   });
 
   describe('observable property spies', () => {
-    it('emits through nextWith', async () => {
+    let service: Spy<DemoService>;
+
+    beforeEach(() => {
       TestBed.configureTestingModule({
         providers: [provideAutoSpy(DemoService, { observablePropsToSpyOn: ['value$'] })],
       });
-      const service = injectSpy(DemoService);
+      service = injectSpy(DemoService);
+    });
 
+    it('emits through nextWith', async () => {
       service.value$.nextWith(42);
 
       expect(await firstValueFrom(service.value$)).toBe(42);
     });
 
     it('errors the stream with throwWith', async () => {
-      TestBed.configureTestingModule({
-        providers: [provideAutoSpy(DemoService, { observablePropsToSpyOn: ['value$'] })],
-      });
-      const service = injectSpy(DemoService);
-
       service.value$.throwWith(new Error('connection lost'));
 
       await expect(firstValueFrom(service.value$)).rejects.toThrow('connection lost');
