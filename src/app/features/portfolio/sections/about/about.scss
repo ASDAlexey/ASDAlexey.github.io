@@ -18,13 +18,15 @@
 }
 
 .prose {
-  p {
+  &__text {
     @include t.text('body', 'large');
 
     margin-bottom: 1rem;
     color: var(--text-secondary);
   }
 
+  // Inline emphasis lives inside i18n-translated text, so it cannot carry a
+  // class without breaking the translation placeholders — element selector by necessity.
   strong {
     @include t.semibold;
 

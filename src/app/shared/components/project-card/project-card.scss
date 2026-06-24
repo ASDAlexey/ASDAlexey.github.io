@@ -1,5 +1,4 @@
 @use 'styles/card' as c;
-@use 'styles/typography' as t;
 
 :host {
   display: block;
@@ -45,22 +44,7 @@
 }
 
 .card__links {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 14px;
-  gap: 14px;
-  list-style: none;
-
-  a {
-    @include t.text('label', 'medium');
-
-    color: var(--accent-blue);
-    transition: color 0.2s var(--ease);
-
-    &:hover {
-      color: var(--accent-light);
-    }
-  }
+  @include c.card-links;
 }
 
 .tags {

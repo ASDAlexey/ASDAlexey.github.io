@@ -64,7 +64,7 @@
   gap: 7px;
   list-style: none;
 
-  li {
+  &__item {
     @include t.text('label', 'small');
 
     padding: 5px 10px;
@@ -72,6 +72,25 @@
     border-radius: 999px;
     background: var(--bg-subtle);
     color: var(--text-secondary);
+  }
+}
+
+@mixin card-links {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  gap: 14px;
+  list-style: none;
+
+  .card__link {
+    @include t.text('label', 'medium');
+
+    color: var(--accent-blue);
+    transition: color 0.2s var(--ease);
+
+    &:hover {
+      color: var(--accent-light);
+    }
   }
 }
 

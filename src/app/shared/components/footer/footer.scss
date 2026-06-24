@@ -27,16 +27,16 @@
     display: flex;
     gap: 20px;
     list-style: none;
+  }
 
-    a {
-      @include t.text('body', 'medium');
+  &__link {
+    @include t.text('body', 'medium');
 
-      color: var(--text-secondary);
-      transition: color 0.2s var(--ease);
+    color: var(--text-secondary);
+    transition: color 0.2s var(--ease);
 
-      &:hover {
-        color: var(--accent-light);
-      }
+    &:hover {
+      color: var(--accent-light);
     }
   }
 }
