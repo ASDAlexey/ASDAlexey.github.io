@@ -67,8 +67,8 @@
         <target>Что я сделал в своё свободное время</target>
       </trans-unit>
       <trans-unit id="footer.copy" datatype="html">
-        <source>Designed &amp; built with Angular 22 — prerendered, EN/RU, 100% tested.</source>
-        <target>Сделано на Angular 22 — prerender, EN/RU, 100% покрытие тестами.</target>
+        <source>Designed &amp; built with Angular 22 — SSG (prerender), EN/RU, 100% tested.</source>
+        <target>Сделано на Angular 22 — SSG (prerender), EN/RU, 100% покрытие тестами.</target>
       </trans-unit>
       <trans-unit id="hero.role" datatype="html">
         <source>Tech Lead &amp; Senior Frontend Developer</source>
