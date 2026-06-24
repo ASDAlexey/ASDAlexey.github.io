@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { injectSpy, provideAutoSpy } from 'vitest-auto-spy';
+import { injectSpy, provideAutoSpy } from 'vitest-auto-spy/angular';
 
 import { App } from './app';
 import { SeoService } from '@core/services/seo.service';

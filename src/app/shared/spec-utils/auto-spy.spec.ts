@@ -1,20 +1,15 @@
 import { Injectable, signal } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { firstValueFrom, Observable } from 'rxjs';
-import {
-  createSpyFromClass,
-  injectSpy,
-  mockAccessorsProp,
-  mockReadonlyProp,
-  mockReadonlyPropGetter,
-  provideAutoSpy,
-  Spy,
-} from 'vitest-auto-spy';
+import { createSpyFromClass, Spy } from 'vitest-auto-spy';
+import { injectSpy, mockAccessorsProp, mockReadonlyProp, mockReadonlyPropGetter, provideAutoSpy } from 'vitest-auto-spy/angular';
+import 'vitest-auto-spy/rxjs';
 
 @Injectable({ providedIn: 'root' })
 class DemoService {
   readonly value$ = new Observable<number>();
   readonly count = signal(0);
+  readonly version: number = 1;
   label = 'initial';
 
   getConfig(key: string): string {
@@ -83,16 +78,11 @@ describe('vitest-auto-spy showcase', () => {
       expect(spy.save('x')).toBe(true);
     });
 
-    it('mocks a readonly signal with mockReadonlyProp', () => {
+    it('overrides a readonly property with a static value via mockReadonlyProp', () => {
       const spy = createSpyFromClass(DemoService);
-      const count = signal(0);
-      mockReadonlyProp(spy, 'count', count);
+      mockReadonlyProp(spy, 'version', 2);
 
-      expect(spy.count()).toBe(0);
-
-      count.set(7);
-
-      expect(spy.count()).toBe(7);
+      expect(spy.version).toBe(2);
     });
 
     it('supports dynamic getters with mockReadonlyPropGetter', () => {
