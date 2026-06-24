@@ -5,9 +5,9 @@ import { Stat } from '@core/models/portfolio.interface';
 @Component({
   selector: 'app-stat-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './stat-card.component.html',
-  styleUrl: './stat-card.component.scss',
+  templateUrl: './stat-card.html',
+  styleUrl: './stat-card.scss',
 })
-export class StatCardComponent {
+export class StatCard {
   readonly stat = input.required<Stat>();
 }

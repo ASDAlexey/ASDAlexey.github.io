@@ -5,9 +5,9 @@ import { SocialIcon } from '@core/models/portfolio.interface';
 @Component({
   selector: 'app-icon',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './icon.component.html',
+  templateUrl: './icon.html',
 })
-export class IconComponent {
+export class Icon {
   readonly name = input.required<SocialIcon>();
   readonly size = input(20);
 }

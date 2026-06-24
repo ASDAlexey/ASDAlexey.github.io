@@ -1,15 +1,15 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { EXPERIENCES } from '@shared/data/portfolio.data';
-import { ExperienceCardComponent } from '@shared/components/experience-card/experience-card.component';
+import { ExperienceCard } from '@shared/components/experience-card/experience-card';
 
 @Component({
   selector: 'app-experience',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ExperienceCardComponent],
-  templateUrl: './experience.component.html',
-  styleUrl: './experience.component.scss',
+  imports: [ExperienceCard],
+  templateUrl: './experience.html',
+  styleUrl: './experience.scss',
 })
-export class ExperienceComponent {
+export class Experience {
   readonly experiences = EXPERIENCES;
 }

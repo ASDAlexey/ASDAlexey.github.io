@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
 
-import { PortfolioComponent } from './features/portfolio/portfolio.component';
+import { Portfolio } from './features/portfolio/portfolio';
 
-export const routes: Routes = [{ path: '', component: PortfolioComponent }];
+export const routes: Routes = [{ path: '', component: Portfolio }];

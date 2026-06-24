@@ -1,14 +1,14 @@
 import { LOCALE_ID } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavComponent } from './nav.component';
+import { Nav } from './nav';
 
-describe('NavComponent', () => {
-  let fixture: ComponentFixture<NavComponent>;
+describe('Nav', () => {
+  let fixture: ComponentFixture<Nav>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({ providers: [{ provide: LOCALE_ID, useValue: 'en' }] });
-    fixture = TestBed.createComponent(NavComponent);
+    fixture = TestBed.createComponent(Nav);
     fixture.detectChanges();
   });
 

@@ -1,15 +1,15 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { PROJECTS } from '@shared/data/portfolio.data';
-import { ProjectCardComponent } from '@shared/components/project-card/project-card.component';
+import { ProjectCard } from '@shared/components/project-card/project-card';
 
 @Component({
   selector: 'app-projects',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ProjectCardComponent],
-  templateUrl: './projects.component.html',
-  styleUrl: './projects.component.scss',
+  imports: [ProjectCard],
+  templateUrl: './projects.html',
+  styleUrl: './projects.scss',
 })
-export class ProjectsComponent {
+export class Projects {
   readonly projects = PROJECTS;
 }

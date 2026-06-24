@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Experience } from '@core/models/portfolio.interface';
-import { ExperienceCardComponent } from './experience-card.component';
+import { ExperienceCard } from './experience-card';
 
 const base: Experience = {
   role: 'Senior Frontend Engineer',
@@ -12,15 +12,15 @@ const base: Experience = {
   tags: ['Angular', 'NgRx'],
 };
 
-function render(experience: Experience): ComponentFixture<ExperienceCardComponent> {
-  const fixture = TestBed.createComponent(ExperienceCardComponent);
+function render(experience: Experience): ComponentFixture<ExperienceCard> {
+  const fixture = TestBed.createComponent(ExperienceCard);
   fixture.componentRef.setInput('experience', experience);
   fixture.detectChanges();
 
   return fixture;
 }
 
-describe('ExperienceCardComponent', () => {
+describe('ExperienceCard', () => {
   it('shows only the role when there is no company', () => {
     const fixture = render(base);
 

@@ -2,17 +2,17 @@ import { LOCALE_ID } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { vi } from 'vitest';
 
-import { LANG_CHOICE_KEY, LanguageSwitcherComponent } from './language-switcher.component';
+import { LANG_CHOICE_KEY, LanguageSwitcher } from './language-switcher';
 
-function render(localeId: string): ComponentFixture<LanguageSwitcherComponent> {
+function render(localeId: string): ComponentFixture<LanguageSwitcher> {
   TestBed.configureTestingModule({ providers: [{ provide: LOCALE_ID, useValue: localeId }] });
-  const fixture = TestBed.createComponent(LanguageSwitcherComponent);
+  const fixture = TestBed.createComponent(LanguageSwitcher);
   fixture.detectChanges();
 
   return fixture;
 }
 
-describe('LanguageSwitcherComponent', () => {
+describe('LanguageSwitcher', () => {
   it('links to the alternate locale', () => {
     const fixture = render('en');
     const link = fixture.nativeElement.querySelector('a');

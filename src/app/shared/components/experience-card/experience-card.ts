@@ -5,10 +5,10 @@ import { Experience } from '@core/models/portfolio.interface';
 @Component({
   selector: 'app-experience-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './experience-card.component.html',
-  styleUrl: './experience-card.component.scss',
+  templateUrl: './experience-card.html',
+  styleUrl: './experience-card.scss',
 })
-export class ExperienceCardComponent {
+export class ExperienceCard {
   readonly experience = input.required<Experience>();
 
   readonly title = computed(() => {

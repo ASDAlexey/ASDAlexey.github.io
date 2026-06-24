@@ -1,10 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ExperienceComponent } from './experience.component';
+import { Experience } from './experience';
 
-describe('ExperienceComponent', () => {
+describe('Experience', () => {
   it('renders a card for every experience entry', () => {
-    const fixture = TestBed.createComponent(ExperienceComponent);
+    const fixture = TestBed.createComponent(Experience);
     fixture.detectChanges();
     const el = fixture.nativeElement as HTMLElement;
 

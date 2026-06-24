@@ -1,10 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IconComponent } from './icon.component';
+import { Icon } from './icon';
 import { SocialIcon } from '@core/models/portfolio.interface';
 
-function render(name: SocialIcon, size?: number): ComponentFixture<IconComponent> {
-  const fixture = TestBed.createComponent(IconComponent);
+function render(name: SocialIcon, size?: number): ComponentFixture<Icon> {
+  const fixture = TestBed.createComponent(Icon);
   fixture.componentRef.setInput('name', name);
 
   if (size !== undefined) {
@@ -16,7 +16,7 @@ function render(name: SocialIcon, size?: number): ComponentFixture<IconComponent
   return fixture;
 }
 
-describe('IconComponent', () => {
+describe('Icon', () => {
   it('renders the github icon with the default size', () => {
     const svg = render('github').nativeElement.querySelector('svg');
 

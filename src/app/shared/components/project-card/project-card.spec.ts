@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Project } from '@core/models/portfolio.interface';
-import { ProjectCardComponent } from './project-card.component';
+import { ProjectCard } from './project-card';
 
 const withLinks: Project = {
   name: 'vitest-auto-spy',
@@ -24,15 +24,15 @@ const noLinks: Project = {
   featured: false,
 };
 
-function render(project: Project): ComponentFixture<ProjectCardComponent> {
-  const fixture = TestBed.createComponent(ProjectCardComponent);
+function render(project: Project): ComponentFixture<ProjectCard> {
+  const fixture = TestBed.createComponent(ProjectCard);
   fixture.componentRef.setInput('project', project);
   fixture.detectChanges();
 
   return fixture;
 }
 
-describe('ProjectCardComponent', () => {
+describe('ProjectCard', () => {
   it('renders a featured card with all project links', () => {
     const el = render(withLinks).nativeElement;
 

@@ -1,10 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AboutComponent } from './about.component';
+import { About } from './about';
 
-describe('AboutComponent', () => {
+describe('About', () => {
   it('renders the section title and three paragraphs', () => {
-    const fixture = TestBed.createComponent(AboutComponent);
+    const fixture = TestBed.createComponent(About);
     fixture.detectChanges();
     const el = fixture.nativeElement as HTMLElement;
 

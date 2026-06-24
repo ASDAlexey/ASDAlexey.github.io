@@ -1,17 +1,17 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { IconComponent } from '@shared/components/icon/icon.component';
+import { Icon } from '@shared/components/icon/icon';
 import { PLATFORMS, PROFILE, STATS } from '@shared/data/portfolio.data';
-import { StatCardComponent } from '@shared/components/stat-card/stat-card.component';
+import { StatCard } from '@shared/components/stat-card/stat-card';
 
 @Component({
   selector: 'app-hero',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [IconComponent, StatCardComponent],
-  templateUrl: './hero.component.html',
-  styleUrl: './hero.component.scss',
+  imports: [Icon, StatCard],
+  templateUrl: './hero.html',
+  styleUrl: './hero.scss',
 })
-export class HeroComponent {
+export class Hero {
   readonly profile = PROFILE;
   readonly platforms = PLATFORMS;
   readonly stats = STATS;

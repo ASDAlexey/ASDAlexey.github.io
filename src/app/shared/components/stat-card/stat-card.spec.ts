@@ -1,10 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 
-import { StatCardComponent } from './stat-card.component';
+import { StatCard } from './stat-card';
 
-describe('StatCardComponent', () => {
+describe('StatCard', () => {
   it('renders the value, suffix and caption', () => {
-    const fixture = TestBed.createComponent(StatCardComponent);
+    const fixture = TestBed.createComponent(StatCard);
     fixture.componentRef.setInput('stat', { value: '14', suffix: '+', caption: 'years shipping' });
     fixture.detectChanges();
 

@@ -5,9 +5,9 @@ import { Project } from '@core/models/portfolio.interface';
 @Component({
   selector: 'app-project-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './project-card.component.html',
-  styleUrl: './project-card.component.scss',
+  templateUrl: './project-card.html',
+  styleUrl: './project-card.scss',
 })
-export class ProjectCardComponent {
+export class ProjectCard {
   readonly project = input.required<Project>();
 }

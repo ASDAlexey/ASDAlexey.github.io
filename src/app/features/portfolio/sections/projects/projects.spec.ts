@@ -1,10 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ProjectsComponent } from './projects.component';
+import { Projects } from './projects';
 
-describe('ProjectsComponent', () => {
+describe('Projects', () => {
   it('renders a card for every project', () => {
-    const fixture = TestBed.createComponent(ProjectsComponent);
+    const fixture = TestBed.createComponent(Projects);
     fixture.detectChanges();
     const el = fixture.nativeElement as HTMLElement;
 

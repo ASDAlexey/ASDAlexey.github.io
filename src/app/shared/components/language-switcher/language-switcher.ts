@@ -8,10 +8,10 @@ export const LANG_CHOICE_KEY = 'portfolio-lang';
 @Component({
   selector: 'app-language-switcher',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './language-switcher.component.html',
-  styleUrl: './language-switcher.component.scss',
+  templateUrl: './language-switcher.html',
+  styleUrl: './language-switcher.scss',
 })
-export class LanguageSwitcherComponent {
+export class LanguageSwitcher {
   readonly #locale = inject(LocaleService);
 
   readonly option: LocaleOption = this.#locale.alternateOption;

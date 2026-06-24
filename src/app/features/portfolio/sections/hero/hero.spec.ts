@@ -1,13 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeroComponent } from './hero.component';
+import { Hero } from './hero';
 
-describe('HeroComponent', () => {
-  let fixture: ComponentFixture<HeroComponent>;
+describe('Hero', () => {
+  let fixture: ComponentFixture<Hero>;
   let el: HTMLElement;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeroComponent);
+    fixture = TestBed.createComponent(Hero);
     fixture.detectChanges();
     el = fixture.nativeElement;
   });
