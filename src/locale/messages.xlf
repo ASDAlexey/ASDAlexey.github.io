@@ -155,6 +155,87 @@
           <context context-type="linenumber">4,6</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="nav.recommendations" datatype="html">
+        <source>Recommendations</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/recommendations/recommendations.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/nav/nav.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="recommendations.title" datatype="html">
+        <source>What the people I worked with say</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/recommendations/recommendations.html</context>
+          <context context-type="linenumber">4,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="rec.cronan.quote" datatype="html">
+        <source>I had the pleasure of working with Alexey for over 5 years. A great developer and team player, who jumped into a complex product, got up to speed quickly and was flexible to the needs of the business. Also a great communicator in English and would recommend him for any lead technical role.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">130</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="rec.cronan.title" datatype="html">
+        <source>Ex-CEO / CTO, The 5th Kind</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">132</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="rec.golubev.quote" datatype="html">
+        <source>I worked with Alexey for about 5 years, he did a great job as a Senior Frontend Engineer. I can mark him as an executive developer who can be trusted to solve any technical problems. He also helped with the introduction of new employees to the project and the training of juniors.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">136</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="rec.golubev.title" datatype="html">
+        <source>Director of Frontend &amp; Mobile Engineering</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">138</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="rec.open" datatype="html">
+        <source>Open profile ↗</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/testimonial-card/testimonial-card.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="rec.confirm.title" datatype="html">
+        <source>Open this LinkedIn profile?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/testimonial-card/testimonial-card.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="rec.confirm.body" datatype="html">
+        <source>External link — it opens in a new tab.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/testimonial-card/testimonial-card.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="rec.confirm.cancel" datatype="html">
+        <source>Cancel</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/testimonial-card/testimonial-card.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="rec.confirm.open" datatype="html">
+        <source>Open ↗</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/testimonial-card/testimonial-card.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="footer.copy" datatype="html">
         <source>Designed &amp; built with Angular 22 — SSG (prerender), EN/RU, 100% tested.</source>
         <context-group purpose="location">
@@ -274,6 +355,20 @@
           <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="exp.fifthkind.link.alt" datatype="html">
+        <source>Sohonet — 5th Kind CORE platform</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="exp.fifthkind.link.caption" datatype="html">
+        <source>Sohonet — 5th Kind CORE platform</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="exp.arcadia.role" datatype="html">
         <source>Senior Angular Developer</source>
         <context-group purpose="location">
@@ -310,7 +405,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="exp.umbrella.desc" datatype="html">
-        <source>Full-stack development (Angular + Node.js) for international US/EU clients via Upwork. Top Rated, 100% job success.</source>
+        <source>Full-stack development (Angular + Node.js) for international US/EU clients via Upwork.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
           <context context-type="linenumber">60</context>

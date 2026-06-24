@@ -1,0 +1,14 @@
+<section class="section" id="recommendations">
+  <div class="container">
+    <p class="section__eyebrow">
+      <span class="section__num">04</span>&nbsp;—&nbsp;<span i18n="@@nav.recommendations">Recommendations</span>
+    </p>
+    <h2 class="section__title" i18n="@@recommendations.title">What the people I worked with say</h2>
+
+    <div class="card-grid">
+      @for (testimonial of testimonials; track testimonial.author) {
+        <app-testimonial-card [testimonial]="testimonial" />
+      }
+    </div>
+  </div>
+</section>

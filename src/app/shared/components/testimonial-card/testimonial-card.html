@@ -1,0 +1,36 @@
+<figure class="card">
+  <blockquote class="card__quote">{{ testimonial().quote }}</blockquote>
+  <figcaption class="card__author">
+    @if (testimonial().image; as image) {
+      <img
+        class="card__avatar card__avatar_photo"
+        decoding="async"
+        height="40"
+        loading="lazy"
+        width="40"
+        [alt]="testimonial().author"
+        [src]="image"
+      />
+    } @else {
+      <span aria-hidden="true" class="card__avatar">{{ initials() }}</span>
+    }
+    <span class="card__meta">
+      <span class="card__name">{{ testimonial().author }}</span>
+      <span class="card__title">{{ testimonial().title }}</span>
+    </span>
+    @if (testimonial().href) {
+      <button class="card__open" i18n="@@rec.open" type="button" (click)="openConfirm()">Open profile ↗</button>
+    }
+  </figcaption>
+
+  @if (testimonial().href) {
+    <dialog #dialog class="confirm" (close)="cancel()">
+      <h3 class="confirm__title" i18n="@@rec.confirm.title">Open this LinkedIn profile?</h3>
+      <p class="confirm__body" i18n="@@rec.confirm.body">External link — it opens in a new tab.</p>
+      <div class="confirm__actions">
+        <button class="confirm__btn confirm__btn_ghost" i18n="@@rec.confirm.cancel" type="button" (click)="cancel()">Cancel</button>
+        <button class="confirm__btn confirm__btn_primary" i18n="@@rec.confirm.open" type="button" (click)="confirm()">Open ↗</button>
+      </div>
+    </dialog>
+  }
+</figure>

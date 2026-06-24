@@ -1,4 +1,4 @@
-import { Experience, LocaleCode, Project, SocialLink, Stat } from '@core/models/portfolio.interface';
+import { Experience, LocaleCode, Project, SocialLink, Stat, Testimonial } from '@core/models/portfolio.interface';
 
 export const PROFILE = {
   name: 'Alexey Popov',
@@ -43,6 +43,12 @@ export const EXPERIENCES: readonly Experience[] = [
     period: '2019 — 2023',
     description: $localize`:@@exp.fifthkind.desc:Distributed digital-asset management platform. Led the migration to a layered NgRx architecture, built custom virtual-scrolling for dynamic-height items, complex forms via ControlValueAccessor, and an OnPush + immutability performance overhaul. Ran 20+ technical interviews; hired and mentored newcomers.`,
     tags: ['Angular', 'NgRx', 'RxJS', 'Ionic', 'Angular Material', 'WebSocket', 'Ag-grid'],
+    media: {
+      href: 'https://www.sohonet.com/',
+      image: 'sohonet-5th-kind.webp',
+      imageAlt: $localize`:@@exp.fifthkind.link.alt:Sohonet — 5th Kind CORE platform`,
+      caption: $localize`:@@exp.fifthkind.link.caption:Sohonet — 5th Kind CORE platform`,
+    },
   },
   {
     role: $localize`:@@exp.arcadia.role:Senior Angular Developer`,
@@ -57,8 +63,13 @@ export const EXPERIENCES: readonly Experience[] = [
     company: 'Umbrella IT',
     location: $localize`:@@exp.umbrella.loc:Taganrog`,
     period: '2015 — 2018',
-    description: $localize`:@@exp.umbrella.desc:Full-stack development (Angular + Node.js) for international US/EU clients via Upwork. Top Rated, 100% job success.`,
+    description: $localize`:@@exp.umbrella.desc:Full-stack development (Angular + Node.js) for international US/EU clients via Upwork.`,
     tags: ['Angular', 'Node.js', 'TypeScript'],
+    badge: 'Top Rated · 100% Job Success · Upwork',
+    links: [
+      { label: 'rademacher.de', href: 'https://rademacher.de/' },
+      { label: 'pooltrackr.com', href: 'https://pooltrackr.com/' },
+    ],
   },
   {
     role: $localize`:@@exp.tutmee.role:Frontend Web Developer`,
@@ -105,6 +116,23 @@ export const PROJECTS: readonly Project[] = [
     links: [],
     tags: ['Claude Code', 'AI', 'Automation'],
     featured: false,
+  },
+];
+
+export const TESTIMONIALS: readonly Testimonial[] = [
+  {
+    quote: $localize`:@@rec.cronan.quote:I had the pleasure of working with Alexey for over 5 years. A great developer and team player, who jumped into a complex product, got up to speed quickly and was flexible to the needs of the business. Also a great communicator in English and would recommend him for any lead technical role.`,
+    author: 'Steve Cronan',
+    title: $localize`:@@rec.cronan.title:Ex-CEO / CTO, The 5th Kind`,
+    href: 'https://www.linkedin.com/in/stevecronan/',
+    image: 'steve.webp',
+  },
+  {
+    quote: $localize`:@@rec.golubev.quote:I worked with Alexey for about 5 years, he did a great job as a Senior Frontend Engineer. I can mark him as an executive developer who can be trusted to solve any technical problems. He also helped with the introduction of new employees to the project and the training of juniors.`,
+    author: 'Eugene Golubev',
+    title: $localize`:@@rec.golubev.title:Director of Frontend & Mobile Engineering`,
+    href: 'https://www.linkedin.com/in/emgolubev/',
+    image: 'eugene.webp',
   },
 ];
 

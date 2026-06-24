@@ -66,6 +66,50 @@
         <source>Things I&apos;ve built on my own time</source>
         <target>Что я сделал в своё свободное время</target>
       </trans-unit>
+      <trans-unit id="nav.recommendations" datatype="html">
+        <source>Recommendations</source>
+        <target>Отзывы</target>
+      </trans-unit>
+      <trans-unit id="recommendations.title" datatype="html">
+        <source>What the people I worked with say</source>
+        <target>Что обо мне говорят коллеги</target>
+      </trans-unit>
+      <trans-unit id="rec.cronan.quote" datatype="html">
+        <source>I had the pleasure of working with Alexey for over 5 years. A great developer and team player, who jumped into a complex product, got up to speed quickly and was flexible to the needs of the business. Also a great communicator in English and would recommend him for any lead technical role.</source>
+        <target>Мне посчастливилось работать с Алексеем более 5 лет. Отличный разработчик и командный игрок: он быстро вник в сложный продукт, оперативно вышел на полную продуктивность и гибко подстраивался под потребности бизнеса. Прекрасно общается на английском — рекомендую его на любую ведущую техническую роль.</target>
+      </trans-unit>
+      <trans-unit id="rec.cronan.title" datatype="html">
+        <source>Ex-CEO / CTO, The 5th Kind</source>
+        <target>Экс-CEO / CTO, The 5th Kind</target>
+      </trans-unit>
+      <trans-unit id="rec.golubev.quote" datatype="html">
+        <source>I worked with Alexey for about 5 years, he did a great job as a Senior Frontend Engineer. I can mark him as an executive developer who can be trusted to solve any technical problems. He also helped with the introduction of new employees to the project and the training of juniors.</source>
+        <target>Я работал с Алексеем около 5 лет — он отлично справлялся с ролью Senior Frontend Engineer. Могу охарактеризовать его как ответственного разработчика, которому можно доверить решение любых технических задач. Он также помогал вводить в проект новых сотрудников и обучал джунов.</target>
+      </trans-unit>
+      <trans-unit id="rec.golubev.title" datatype="html">
+        <source>Director of Frontend &amp; Mobile Engineering</source>
+        <target>Директор Frontend и Mobile разработки</target>
+      </trans-unit>
+      <trans-unit id="rec.open" datatype="html">
+        <source>Open profile ↗</source>
+        <target>Открыть профиль ↗</target>
+      </trans-unit>
+      <trans-unit id="rec.confirm.title" datatype="html">
+        <source>Open this LinkedIn profile?</source>
+        <target>Открыть этот профиль в LinkedIn?</target>
+      </trans-unit>
+      <trans-unit id="rec.confirm.body" datatype="html">
+        <source>External link — it opens in a new tab.</source>
+        <target>Внешняя ссылка — откроется в новой вкладке.</target>
+      </trans-unit>
+      <trans-unit id="rec.confirm.cancel" datatype="html">
+        <source>Cancel</source>
+        <target>Отмена</target>
+      </trans-unit>
+      <trans-unit id="rec.confirm.open" datatype="html">
+        <source>Open ↗</source>
+        <target>Открыть ↗</target>
+      </trans-unit>
       <trans-unit id="footer.copy" datatype="html">
         <source>Designed &amp; built with Angular 22 — SSG (prerender), EN/RU, 100% tested.</source>
         <target>Сделано на Angular 22 — SSG (prerender), EN/RU, 100% покрытие тестами.</target>
@@ -130,6 +174,14 @@
         <source>Distributed digital-asset management platform. Led the migration to a layered NgRx architecture, built custom virtual-scrolling for dynamic-height items, complex forms via ControlValueAccessor, and an OnPush + immutability performance overhaul. Ran 20+ technical interviews; hired and mentored newcomers.</source>
         <target>Распределённая система управления цифровыми ассетами. Вёл миграцию на слоистую NgRx-архитектуру, сделал кастомный virtual scroll для элементов с динамической высотой, сложные формы через ControlValueAccessor и переход на OnPush + иммутабельность. Провёл 20+ технических собеседований; нанимал и обучал новичков.</target>
       </trans-unit>
+      <trans-unit id="exp.fifthkind.link.alt" datatype="html">
+        <source>Sohonet — 5th Kind CORE platform</source>
+        <target>Sohonet — 5th Kind CORE platform</target>
+      </trans-unit>
+      <trans-unit id="exp.fifthkind.link.caption" datatype="html">
+        <source>Sohonet — 5th Kind CORE platform</source>
+        <target>Sohonet — 5th Kind CORE platform</target>
+      </trans-unit>
       <trans-unit id="exp.arcadia.role" datatype="html">
         <source>Senior Angular Developer</source>
         <target>Senior Angular Developer</target>
@@ -151,8 +203,8 @@
         <target>Таганрог</target>
       </trans-unit>
       <trans-unit id="exp.umbrella.desc" datatype="html">
-        <source>Full-stack development (Angular + Node.js) for international US/EU clients via Upwork. Top Rated, 100% job success.</source>
-        <target>Full-stack-разработка (Angular + Node.js) для международных клиентов US/EU через Upwork. Top Rated, 100% job success.</target>
+        <source>Full-stack development (Angular + Node.js) for international US/EU clients via Upwork.</source>
+        <target>Full-stack-разработка (Angular + Node.js) для международных клиентов US/EU через Upwork.</target>
       </trans-unit>
       <trans-unit id="exp.tutmee.role" datatype="html">
         <source>Frontend Web Developer</source>

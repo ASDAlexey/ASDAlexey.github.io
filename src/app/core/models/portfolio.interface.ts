@@ -1,3 +1,10 @@
+export interface ExperienceMedia {
+  readonly href: string;
+  readonly image: string;
+  readonly imageAlt: string;
+  readonly caption: string;
+}
+
 export interface Experience {
   readonly role: string;
   readonly company: string | null;
@@ -5,6 +12,9 @@ export interface Experience {
   readonly period: string;
   readonly description: string;
   readonly tags: readonly string[];
+  readonly badge?: string;
+  readonly media?: ExperienceMedia;
+  readonly links?: readonly ProjectLink[];
 }
 
 export interface ProjectLink {
@@ -25,6 +35,14 @@ export interface Stat {
   readonly value: string;
   readonly suffix: string;
   readonly caption: string;
+}
+
+export interface Testimonial {
+  readonly quote: string;
+  readonly author: string;
+  readonly title: string;
+  readonly href?: string;
+  readonly image?: string;
 }
 
 export type SocialIcon = 'email' | 'github' | 'linkedin';
