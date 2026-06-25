@@ -1,19 +1,21 @@
+@let item = experience();
+
 <div class="card__head">
   <h3 class="card__title">{{ title() }}</h3>
-  <span class="card__period">{{ experience().period }}</span>
+  <span class="card__period">{{ item.period }}</span>
 </div>
-<p class="card__org">{{ experience().location }}</p>
-<p class="card__desc">{{ experience().description }}</p>
-@if (experience().badge; as badge) {
+<p class="card__org">{{ item.location }}</p>
+<p class="card__desc">{{ item.description }}</p>
+@if (item.badge; as badge) {
   <p class="card__credential"><span aria-hidden="true">★</span> {{ badge }}</p>
 }
-@if (experience().media; as media) {
+@if (item.media; as media) {
   <a class="card__media" rel="noreferrer" target="_blank" [href]="media.href">
     <img class="card__media-thumb" decoding="async" height="84" loading="lazy" width="160" [alt]="media.imageAlt" [src]="media.image" />
     <span class="card__media-caption">{{ media.caption }} ↗</span>
   </a>
 }
-@if (experience().links; as links) {
+@if (item.links; as links) {
   <ul class="card__links">
     @for (link of links; track link.href) {
       <li>
@@ -23,7 +25,7 @@
   </ul>
 }
 <ul class="tags">
-  @for (tag of experience().tags; track tag) {
+  @for (tag of item.tags; track tag) {
     <li class="tags__item">{{ tag }}</li>
   }
 </ul>
