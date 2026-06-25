@@ -96,7 +96,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="hero.subtitle" datatype="html">
-        <source> 14+ years building <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Angular across every platform<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — web (SSR), Smart TV, mobile (Ionic) and desktop (Tauri/Rust). Nx · NgRx · GitLab CI/CD · 90%+ test coverage · AI code-review · frontend team lead. </source>
+        <source> 14+ years building <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Angular across every platform<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — Web (SSR), Smart TV, mobile (Ionic) and desktop (Tauri/Rust). Nx · NgRx · GitLab CI/CD · 90%+ test coverage · AI code-review · frontend team lead. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/portfolio/sections/hero/hero.html</context>
           <context context-type="linenumber">12,13</context>
