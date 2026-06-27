@@ -6,6 +6,7 @@ import { SocialIcon } from '@core/models/portfolio.interface';
   selector: 'app-icon',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './icon.html',
+  styleUrl: './icon.scss',
 })
 export class Icon {
   readonly name = input.required<SocialIcon>();

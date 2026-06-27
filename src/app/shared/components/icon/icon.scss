@@ -1,0 +1,9 @@
+:host {
+  display: inline-flex;
+}
+
+// Block removes the inline-baseline descender gap, so the glyph sits on the
+// true vertical centre inside flex rows (buttons, links, captions).
+svg {
+  display: block;
+}
