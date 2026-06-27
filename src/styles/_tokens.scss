@@ -1,25 +1,35 @@
 // ===========================================================
 //  Design tokens — Litely design language
-//  Dark · purple→blue accent · Inter + JetBrains Mono
+//  Dark · amber/gold signature · cool counter-glow for depth
+//  Inter + JetBrains Mono
 // ===========================================================
 
 :root {
-  --bg: #06060a;
-  --bg-subtle: #0b0b12;
-  --surface: #111118;
-  --surface-hover: #191922;
-  --border: #1c1c2a;
-  --border-hover: #2a2a3e;
+  --bg: #060607;
+  --bg-alt: #0a0a0d;
+  --bg-subtle: #101013;
+  --surface: #131316;
+  --surface-hover: #1b1b20;
+  --border: #232329;
+  --border-hover: #36363f;
 
-  --text: #eeeef0;
-  --text-secondary: #9898b0;
-  --text-muted: #9494ae;
+  --text: #f2f2f0;
+  --text-secondary: #a2a2a0;
+  --text-muted: #82827f;
 
-  --accent: #7c3aed;
-  --accent-light: #a78bfa;
-  --accent-blue: #3b82f6;
-  --accent-glow: rgba(124, 58, 237, 0.12);
-  --green: #10b981;
+  // Signature accent — warm amber/gold
+  --accent: #f5a524;
+  --accent-light: #fcd34d;
+  --accent-warm: #fb8c3c;
+  --accent-deep: #c2740f;
+
+  // Cool counter-tone — used only for atmospheric depth (glow), never for text
+  --accent-cool: #3b6dff;
+  --accent-blue: #3b6dff;
+
+  --accent-glow: rgba(245, 165, 36, 0.14);
+  --accent-line: rgba(245, 165, 36, 0.32);
+  --green: #34d399;
   --white: #fff;
 
   --radius: 16px;
