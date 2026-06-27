@@ -25,7 +25,7 @@ describe('Hero', () => {
     expect(el.querySelectorAll('app-stat-card').length).toBe(4);
   });
 
-  it('renders GitHub, LinkedIn, Email and Résumé actions', () => {
+  it('renders GitHub, LinkedIn, Telegram and Résumé actions', () => {
     const actions = [...el.querySelectorAll('.hero__actions a')];
 
     expect(actions.length).toBe(4);

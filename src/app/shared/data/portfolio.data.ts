@@ -3,6 +3,7 @@ import { Experience, LocaleCode, Project, SocialLink, Stat, Testimonial } from '
 export const PROFILE = {
   name: 'Alexey Popov',
   email: 'ASDAlexey@yandex.ru',
+  telegram: 'https://t.me/ASDAlexey',
   github: 'https://github.com/ASDAlexey',
   linkedin: 'https://www.linkedin.com/in/alexey-popov-7988a874/',
   resume: $localize`:@@hero.resume.file:Alexey-Popov-Resume.pdf`,
@@ -24,7 +25,7 @@ export const STATS: readonly Stat[] = [
 export const SOCIALS: readonly SocialLink[] = [
   { label: 'GitHub', href: PROFILE.github, icon: 'github' },
   { label: 'LinkedIn', href: PROFILE.linkedin, icon: 'linkedin' },
-  { label: 'Email', href: `mailto:${PROFILE.email}`, icon: 'email' },
+  { label: 'Telegram', href: PROFILE.telegram, icon: 'telegram' },
 ];
 
 export const EXPERIENCES: readonly Experience[] = [

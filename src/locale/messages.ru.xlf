@@ -270,9 +270,9 @@
         <source>LinkedIn</source>
         <target>LinkedIn</target>
       </trans-unit>
-      <trans-unit id="hero.cta.email" datatype="html">
-        <source>Email</source>
-        <target>Email</target>
+      <trans-unit id="hero.cta.telegram" datatype="html">
+        <source>Telegram</source>
+        <target>Telegram</target>
       </trans-unit>
     </body>
   </file>

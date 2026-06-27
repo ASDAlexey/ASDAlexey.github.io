@@ -26,7 +26,7 @@ export class StructuredDataService {
           jobTitle,
           image: `${PROFILE.siteUrl}/og-image.png`,
           email: `mailto:${PROFILE.email}`,
-          sameAs: [PROFILE.github, PROFILE.linkedin],
+          sameAs: [PROFILE.github, PROFILE.linkedin, PROFILE.telegram],
           knowsAbout: [
             'Angular',
             'TypeScript',

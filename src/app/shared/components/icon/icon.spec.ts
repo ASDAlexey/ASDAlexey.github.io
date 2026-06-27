@@ -28,8 +28,8 @@ describe('Icon', () => {
     expect(render('linkedin').nativeElement.querySelector('svg')).toBeTruthy();
   });
 
-  it('renders the email icon with a custom size', () => {
-    const svg = render('email', 30).nativeElement.querySelector('svg');
+  it('renders the telegram icon with a custom size', () => {
+    const svg = render('telegram', 30).nativeElement.querySelector('svg');
 
     expect(svg).toBeTruthy();
     expect(svg.getAttribute('width')).toBe('30');

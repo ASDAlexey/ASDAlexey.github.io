@@ -21,6 +21,7 @@
     "madge": "bun ./scripts/check-circular-dependencies.js",
     "check:code-quality": "bun run prettier && concurrently --kill-others-on-fail \"bun run eslint\" \"bun run stylelint:check\"",
     "assemble": "node scripts/assemble-dist.mjs",
+    "resume": "bash scripts/resume/render.sh",
     "prepare": "husky"
   },
   "private": true,
