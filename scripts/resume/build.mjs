@@ -136,7 +136,7 @@ const EN = {
   education: [{ title: 'Taganrog State Pedagogical Institute (A.P. Chekhov)', meta: 'Physics & Mathematics, 2004 — 2009 · GPA 4.97 / 5' }],
   languages: [
     { name: 'Russian', level: 'Native' },
-    { name: 'English', level: 'Professional working (B2)' },
+    { name: 'English', level: 'Professional (B2)' },
   ],
 };
 
@@ -265,7 +265,7 @@ const RU = {
   ],
   languages: [
     { name: 'Русский', level: 'Родной' },
-    { name: 'Английский', level: 'Professional working (B2)' },
+    { name: 'Английский', level: 'Professional (B2)' },
   ],
 };
 
@@ -297,7 +297,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:9.
 .loc{margin-top:6px;color:var(--muted);font-size:8.6px;font-family:var(--mono)}
 .eyebrow{font-family:var(--mono);font-size:7.6px;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent);
   font-weight:600;margin:0 0 7px;display:flex;align-items:center;gap:6px}
-.eyebrow::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green)}
+.eyebrow::before{content:'';flex:none;width:5px;height:5px;border-radius:50%;background:var(--green)}
 .side .block{margin-top:14px}
 .side .block:first-of-type{margin-top:18px}
 .c-row{display:block;margin-bottom:7px}
@@ -307,8 +307,9 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:9.
 .skill{margin-bottom:8px}
 .skill .g{font-weight:700;font-size:9px;color:#fff;margin-bottom:2px}
 .skill .i{color:var(--text-2);font-size:8.4px;line-height:1.45}
-.lang{display:flex;justify-content:space-between;margin-bottom:4px;font-size:8.8px}
-.lang .lv{color:var(--muted);font-family:var(--mono);font-size:8px}
+.lang{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px;font-size:8.8px}
+.lang>span:first-child{flex:none}
+.lang .lv{color:var(--muted);font-family:var(--mono);font-size:8px;text-align:right;line-height:1.35}
 .edu .t{font-weight:600;font-size:9px;color:#fff}
 .edu .m{color:var(--text-2);font-size:8.2px;margin-top:1px}
 .summary{color:var(--text-2);font-size:9.4px;line-height:1.6;margin-bottom:4px}

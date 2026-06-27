@@ -101,11 +101,11 @@
         text-transform: uppercase;
       }
       .eyebrow::before {
+        flex: none;
         width: 5px;
         height: 5px;
         border-radius: 50%;
         background: var(--green);
-        box-shadow: 0 0 6px var(--green);
         content: '';
       }
       .side .block {
@@ -150,14 +150,21 @@
       }
       .lang {
         display: flex;
+        align-items: baseline;
         justify-content: space-between;
         margin-bottom: 4px;
+        gap: 8px;
         font-size: 8.8px;
+      }
+      .lang > span:first-child {
+        flex: none;
       }
       .lang .lv {
         color: var(--muted);
         font-size: 8px;
+        line-height: 1.35;
         font-family: var(--mono);
+        text-align: right;
       }
       .edu .t {
         color: #fff;
@@ -345,7 +352,7 @@
         <div class="block">
           <div class="eyebrow">Languages</div>
           <div class="lang"><span>Russian</span><span class="lv">Native</span></div>
-          <div class="lang"><span>English</span><span class="lv">Professional working (B2)</span></div>
+          <div class="lang"><span>English</span><span class="lv">Professional (B2)</span></div>
         </div>
 
         <div class="block edu">
