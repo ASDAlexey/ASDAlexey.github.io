@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Alexey Popov — Résumé</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      @page {
+        size: A4;
+        margin: 0;
+      }
+      :root {
+        --bg: #06060a;
+        --surface: #0e0e16;
+        --surface-2: #111118;
+        --border: #1f1f2e;
+        --text: #eeeef0;
+        --text-2: #a6a6be;
+        --muted: #7e7e98;
+        --accent: #a78bfa;
+        --accent-2: #7c3aed;
+        --blue: #60a5fa;
+        --green: #34d399;
+        --font: 'Inter', -apple-system, 'Segoe UI', Roboto, sans-serif;
+        --mono: 'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
+      }
+      html {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-size: 9.6px;
+        line-height: 1.5;
+        font-family: var(--font);
+        letter-spacing: 0.1px;
+      }
+      .page {
+        display: grid;
+        grid-template-columns: 62mm 1fr;
+        width: 210mm;
+        min-height: 297mm;
+        background:
+          radial-gradient(900px 500px at 78% -8%, rgba(124, 58, 237, 0.16), transparent 60%),
+          radial-gradient(700px 500px at -5% 8%, rgba(59, 130, 246, 0.1), transparent 55%), var(--bg);
+      }
+      .side {
+        padding: 13mm 8mm 12mm;
+        border-right: 1px solid var(--border);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+      }
+      .main {
+        padding: 13mm 11mm 12mm 10mm;
+      }
+      .name {
+        background: linear-gradient(120deg, #fff 30%, var(--accent) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: 800;
+        font-size: 25px;
+        line-height: 1.05;
+        letter-spacing: -0.6px;
+      }
+      .role {
+        margin-top: 5px;
+        background: linear-gradient(90deg, var(--accent), var(--blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: 600;
+        font-size: 11px;
+      }
+      .loc {
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 8.6px;
+        font-family: var(--mono);
+      }
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        margin: 0 0 7px;
+        gap: 6px;
+        color: var(--accent);
+        font-weight: 600;
+        font-size: 7.6px;
+        font-family: var(--mono);
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+      }
+      .eyebrow::before {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--green);
+        box-shadow: 0 0 6px var(--green);
+        content: '';
+      }
+      .side .block {
+        margin-top: 14px;
+      }
+      .side .block:first-of-type {
+        margin-top: 18px;
+      }
+      .c-row {
+        display: block;
+        margin-bottom: 7px;
+      }
+      .c-row .k {
+        color: var(--muted);
+        font-size: 7.2px;
+        font-family: var(--mono);
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+      }
+      .c-row .v {
+        color: var(--text);
+        font-size: 9px;
+        word-break: break-word;
+      }
+      .c-row .v a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      .skill {
+        margin-bottom: 8px;
+      }
+      .skill .g {
+        margin-bottom: 2px;
+        color: #fff;
+        font-weight: 700;
+        font-size: 9px;
+      }
+      .skill .i {
+        color: var(--text-2);
+        font-size: 8.4px;
+        line-height: 1.45;
+      }
+      .lang {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4px;
+        font-size: 8.8px;
+      }
+      .lang .lv {
+        color: var(--muted);
+        font-size: 8px;
+        font-family: var(--mono);
+      }
+      .edu .t {
+        color: #fff;
+        font-weight: 600;
+        font-size: 9px;
+      }
+      .edu .m {
+        margin-top: 1px;
+        color: var(--text-2);
+        font-size: 8.2px;
+      }
+      .summary {
+        margin-bottom: 4px;
+        color: var(--text-2);
+        font-size: 9.4px;
+        line-height: 1.6;
+      }
+      .main .block {
+        margin-top: 13px;
+      }
+      .hl {
+        list-style: none;
+      }
+      .hl li {
+        position: relative;
+        margin-bottom: 4px;
+        padding-left: 14px;
+        color: var(--text-2);
+        font-size: 9px;
+      }
+      .hl li::before {
+        position: absolute;
+        left: 0;
+        content: '▹';
+        color: var(--accent);
+        font-size: 9px;
+      }
+      .job {
+        margin-bottom: 10px;
+        break-inside: avoid;
+      }
+      .job-h {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .job-r {
+        color: #fff;
+        font-weight: 700;
+        font-size: 10px;
+      }
+      .job-p {
+        color: var(--accent);
+        font-size: 8px;
+        font-family: var(--mono);
+        white-space: nowrap;
+      }
+      .job-c {
+        margin: 1px 0 4px;
+        color: var(--blue);
+        font-weight: 500;
+        font-size: 8.8px;
+      }
+      .job ul {
+        list-style: none;
+      }
+      .job li {
+        position: relative;
+        margin-bottom: 2.5px;
+        padding-left: 12px;
+        color: var(--text-2);
+        font-size: 8.8px;
+        line-height: 1.5;
+      }
+      .job li::before {
+        position: absolute;
+        top: 6px;
+        left: 2px;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: var(--accent-2);
+        content: '';
+      }
+      .proj {
+        margin-bottom: 7px;
+        break-inside: avoid;
+      }
+      .proj-h {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 8px;
+      }
+      .proj-n {
+        color: #fff;
+        font-weight: 700;
+        font-size: 9.4px;
+      }
+      .proj-m {
+        color: var(--muted);
+        font-size: 7.4px;
+        font-family: var(--mono);
+        white-space: nowrap;
+      }
+      .proj-d {
+        margin-top: 1px;
+        color: var(--text-2);
+        font-size: 8.6px;
+        line-height: 1.45;
+      }
+      .divider {
+        height: 1px;
+        margin-top: 13px;
+        background: linear-gradient(90deg, var(--border), transparent);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <aside class="side">
+        <div class="name">Alexey Popov</div>
+        <div class="role">Tech Lead / Senior Frontend (Angular) Engineer</div>
+        <div class="loc">Taganrog, Russia · UTC+3 · Remote-first</div>
+
+        <div class="block">
+          <div class="eyebrow">Contact</div>
+          <div class="c-row">
+            <div class="k">Telegram</div>
+            <div class="v"><a href="https://t.me/ASDAlexey">@ASDAlexey</a></div>
+          </div>
+          <div class="c-row">
+            <div class="k">GitHub</div>
+            <div class="v"><a href="https://github.com/ASDAlexey">github.com/ASDAlexey</a></div>
+          </div>
+          <div class="c-row">
+            <div class="k">LinkedIn</div>
+            <div class="v"><a href="https://www.linkedin.com/in/alexey-popov-7988a874/">in/alexey-popov</a></div>
+          </div>
+          <div class="c-row">
+            <div class="k">Portfolio</div>
+            <div class="v"><a href="https://asdalexey.github.io">asdalexey.github.io</a></div>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="eyebrow">Core Skills</div>
+          <div class="skill">
+            <div class="g">Angular</div>
+            <div class="i">
+              Angular 2–22, Standalone, Signals, Zoneless, OnPush, NgRx, RxJS, ControlValueAccessor, Angular Material, Ag-Grid
+            </div>
+          </div>
+          <div class="skill">
+            <div class="g">Language</div>
+            <div class="i">TypeScript, JavaScript (ES2015+), HTML5, SCSS / CSS, BEM, Responsive Design, Web Components</div>
+          </div>
+          <div class="skill">
+            <div class="g">Architecture</div>
+            <div class="i">Nx Monorepo, Micro-frontends, Design Systems, Clean Architecture, i18n / Localization, SSR (@angular/ssr)</div>
+          </div>
+          <div class="skill">
+            <div class="g">Platforms</div>
+            <div class="i">Web (SSR), Smart TV (Tizen / webOS), Mobile (Ionic, iOS/Android), Desktop (Tauri + Rust)</div>
+          </div>
+          <div class="skill">
+            <div class="g">CI/CD &amp; Infra</div>
+            <div class="i">GitLab CI/CD, Docker (multi-stage), Nginx, Kubernetes / Kustomize, Feature Flags</div>
+          </div>
+          <div class="skill">
+            <div class="g">Testing</div>
+            <div class="i">Jest, Vitest, TestBed, vitest-auto-spy, 90%+ coverage gates, TDD</div>
+          </div>
+          <div class="skill">
+            <div class="g">Backend &amp; Tools</div>
+            <div class="i">Node.js, Express, REST, WebSocket, PostgreSQL, SQLite, Redis, Rust, Figma, ESLint / Prettier / Stylelint</div>
+          </div>
+          <div class="skill">
+            <div class="g">Leadership</div>
+            <div class="i">Tech Lead, Frontend Architecture, Code Review, Mentoring, Hiring, Performance Optimization, AI-assisted Dev</div>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="eyebrow">Languages</div>
+          <div class="lang"><span>Russian</span><span class="lv">Native</span></div>
+          <div class="lang"><span>English</span><span class="lv">Professional working (B2)</span></div>
+        </div>
+
+        <div class="block edu">
+          <div class="eyebrow">Education</div>
+          <div class="t">Taganrog State Pedagogical Institute (A.P. Chekhov)</div>
+          <div class="m">Physics &amp; Mathematics, 2004 — 2009 · GPA 4.97 / 5</div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <div class="eyebrow">Summary</div>
+        <p class="summary">
+          Tech Lead and Senior Frontend Engineer with 14+ years building production web apps — 11+ of them on Angular (v2 → v22). I
+          architect large-scale Angular applications end-to-end and ship them across every platform: web (SSR), Smart TV, mobile (Ionic) and
+          desktop (Tauri/Rust). Reactive-first with NgRx, RxJS, Signals and a zoneless, standalone, OnPush architecture. I build GitLab
+          CI/CD from scratch, drive a testing-first culture (90%+ coverage) and lead frontend teams — code review, mentoring and hiring.
+          Currently driving AI-assisted development with custom Claude Code skills, agents and hooks.
+        </p>
+
+        <div class="block">
+          <div class="eyebrow">Key Highlights</div>
+          <ul class="hl">
+            <li>Sped up multi-select on large virtualized lists ~200× — from 180–200 ms down to 0.4–0.5 ms per item.</li>
+            <li>Led migration from service-based to a layered NgRx architecture with clean business-logic separation.</li>
+            <li>Raised unit-test coverage to 90%+ with enforced coverage gates in CI.</li>
+            <li>Ran 70+ technical interviews; hired, onboarded and mentored frontend engineers.</li>
+            <li>Published vitest-auto-spy on npm — typed auto-mocking for Vitest.</li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <div class="eyebrow">Experience</div>
+          <div class="job">
+            <div class="job-h"><span class="job-r">Senior Angular Developer</span><span class="job-p">2023 — Present</span></div>
+            <div class="job-c">Remote</div>
+            <ul>
+              <li>
+                Architect large-scale Angular apps with a modern reactive stack — NgRx, Signals, zoneless, OnPush — plus a shared design
+                system and libraries.
+              </li>
+              <li>Enforce a testing-first culture and CI/CD: coverage gates, performance budgets and automated code-quality checks.</li>
+              <li>Drive AI-assisted development to accelerate delivery and code review.</li>
+            </ul>
+          </div>
+          <div class="job">
+            <div class="job-h"><span class="job-r">Tech Lead / Senior Frontend</span><span class="job-p">2019 — 2023</span></div>
+            <div class="job-c">The 5th Kind · US, Remote</div>
+            <ul>
+              <li>
+                Built a distributed digital-asset-management platform used by Marvel, Disney, Warner Bros., Epic Games and Universal (via
+                Sohonet).
+              </li>
+              <li>Led the migration to a layered NgRx architecture with clean business-logic separation across effects.</li>
+              <li>
+                Sped up multi-select on large virtualized lists ~200× (180–200 ms → 0.4–0.5 ms) via an OnPush + immutability overhaul.
+              </li>
+              <li>Wrote custom virtual-scroll strategies for dynamic-height items and complex forms via ControlValueAccessor.</li>
+              <li>Ran 20+ technical interviews and helped build the team’s code-review process.</li>
+            </ul>
+          </div>
+          <div class="job">
+            <div class="job-h"><span class="job-r">Senior Angular Developer / Tech Lead</span><span class="job-p">2018 — 2019</span></div>
+            <div class="job-c">Arcadia Inc. · Taganrog</div>
+            <ul>
+              <li>Designed the product’s UI architecture and refactoring roadmap; shipped 10+ major features.</li>
+              <li>Introduced CSS variables and the OnPush + immutability strategy across the codebase.</li>
+              <li>Built the mobile iOS/Android app with Ionic; conducted 20+ Angular/JS interviews and trained new hires.</li>
+            </ul>
+          </div>
+          <div class="job">
+            <div class="job-h"><span class="job-r">Senior Full-Stack Developer</span><span class="job-p">2015 — 2018</span></div>
+            <div class="job-c">Umbrella IT · Taganrog</div>
+            <ul>
+              <li>Full-stack delivery (Angular + Node.js) for international US/EU clients — Top Rated, 100% Job Success on Upwork.</li>
+              <li>Shipped SPAs and Node.js back ends (rademacher.de, pooltrackr.com).</li>
+            </ul>
+          </div>
+          <div class="job">
+            <div class="job-h"><span class="job-r">Frontend Web Developer</span><span class="job-p">2012 — 2015</span></div>
+            <div class="job-c">TutMee Agency · Taganrog</div>
+            <ul>
+              <li>Built 50+ landing pages and online stores with heavy SVG/animation; focus on responsive layout and performance.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="eyebrow">Personal Projects / Open Source</div>
+          <div class="proj">
+            <div class="proj-h"><span class="proj-n">Litely</span><span class="proj-m">Tauri · Angular 22 · Rust</span></div>
+            <div class="proj-d">
+              Cross-platform desktop app for batch image / video / PDF compression (WebP, AVIF, JPEG, PNG, SVG). Browser extension pastes
+              compressed files straight into Jira / GitLab with Cmd+V. Watch-folders, system tray, before/after compare. →
+              asdalexey.github.io/litely
+            </div>
+          </div>
+          <div class="proj">
+            <div class="proj-h"><span class="proj-n">vitest-auto-spy</span><span class="proj-m">TypeScript · Open Source · npm</span></div>
+            <div class="proj-d">
+              Typed auto-mocking for Vitest — the missing jest-auto-spies. Typed Spy&lt;T&gt;, Observable mocking, zoneless Angular, zero
+              dependencies. → github.com/ASDAlexey/vitest-auto-spy
+            </div>
+          </div>
+          <div class="proj">
+            <div class="proj-h">
+              <span class="proj-n">Bonds Tracker</span><span class="proj-m">Angular 22 · Tauri 2 · Rust · SQLite</span>
+            </div>
+            <div class="proj-d">
+              Personal bonds-portfolio tracker — smart-portfolio optimizer, scored screener and coupon calendar over Tinkoff / MOEX ISS /
+              CBR APIs with KMV-Merton default risk and a Telegram bot.
+            </div>
+          </div>
+          <div class="proj">
+            <div class="proj-h"><span class="proj-n">Claude Code config &amp; skills</span><span class="proj-m">AI · Automation</span></div>
+            <div class="proj-d">
+              Custom Claude Code skills, agents and hooks that encode project conventions, code generation and an AI code-review workflow
+              for large Angular MRs.
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
