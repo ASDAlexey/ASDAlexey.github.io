@@ -29,9 +29,9 @@
     height: 38px;
     overflow: hidden;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent), var(--accent-blue));
+    background: linear-gradient(135deg, var(--accent-warm), var(--accent));
     box-shadow:
-      0 0 0 2px rgb(124, 58, 237, 0.35),
+      0 0 0 2px rgb(245, 165, 36, 0.35),
       0 0 0 4px var(--bg);
     color: var(--white);
 
