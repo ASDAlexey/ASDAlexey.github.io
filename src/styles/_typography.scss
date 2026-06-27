@@ -117,7 +117,7 @@
 // Shared helpers ------------------------------------------------
 
 @mixin gradient-text {
-  background: linear-gradient(135deg, var(--accent-light), var(--accent-blue));
+  background: linear-gradient(115deg, var(--accent-light) 10%, var(--accent-warm) 90%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

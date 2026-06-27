@@ -85,7 +85,7 @@
   .card__link {
     @include t.text('label', 'medium');
 
-    color: var(--accent-blue);
+    color: var(--accent);
     transition: color 0.2s var(--ease);
 
     &:hover {
