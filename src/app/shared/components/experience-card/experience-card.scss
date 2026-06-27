@@ -3,6 +3,36 @@
 
 :host {
   @include c.card-base;
+
+  position: relative;
+
+  // Accent rail that animates in on hover — a quiet cue that breaks the
+  // uniform run of identical experience cards.
+  &::before {
+    position: absolute;
+    top: 24px;
+    left: 0;
+    width: 2px;
+    height: 0;
+    border-radius: 2px;
+    background: linear-gradient(180deg, var(--accent), var(--accent-deep));
+    content: '';
+    transition: height 0.35s var(--ease);
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-hover);
+    box-shadow: 0 16px 50px rgb(0, 0, 0, 0.4);
+  }
+
+  &:hover::before {
+    height: calc(100% - 48px);
+  }
+
+  &:hover .card__title {
+    color: var(--accent-light);
+  }
 }
 
 .card__head {
@@ -37,7 +67,7 @@
   margin-bottom: 16px;
   padding: 6px 12px;
   gap: 6px;
-  border: 1px solid rgb(124, 58, 237, 0.3);
+  border: 1px solid var(--accent-line);
   border-radius: 999px;
   background: var(--accent-glow);
   color: var(--accent-light);
