@@ -3,22 +3,24 @@
 <figure class="card">
   <blockquote class="card__quote">{{ item.quote }}</blockquote>
   <figcaption class="card__author">
-    @if (item.image; as image) {
-      <img
-        class="card__avatar card__avatar_photo"
-        decoding="async"
-        height="40"
-        loading="lazy"
-        width="40"
-        [alt]="item.author"
-        [src]="image"
-      />
-    } @else {
-      <span aria-hidden="true" class="card__avatar">{{ initials() }}</span>
-    }
-    <span class="card__meta">
-      <span class="card__name">{{ item.author }}</span>
-      <span class="card__title">{{ item.title }}</span>
+    <span class="card__person">
+      @if (item.image; as image) {
+        <img
+          class="card__avatar card__avatar_photo"
+          decoding="async"
+          height="40"
+          loading="lazy"
+          width="40"
+          [alt]="item.author"
+          [src]="image"
+        />
+      } @else {
+        <span aria-hidden="true" class="card__avatar">{{ initials() }}</span>
+      }
+      <span class="card__meta">
+        <span class="card__name">{{ item.author }}</span>
+        <span class="card__title">{{ item.title }}</span>
+      </span>
     </span>
     @if (item.href) {
       <button class="card__open" i18n="@@rec.open" type="button" (click)="openConfirm()">Open profile ↗</button>

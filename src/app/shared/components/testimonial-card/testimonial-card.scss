@@ -8,6 +8,7 @@
 
 .card {
   @include c.card-base;
+  container-type: inline-size;
 
   display: flex;
   flex-direction: column;
@@ -37,6 +38,7 @@
 
 .card__author {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 12px;
 }
@@ -59,21 +61,32 @@
   }
 }
 
+.card__person {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  min-width: 0;
+  gap: 12px;
+}
+
 .card__meta {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .card__name {
   @include t.text('label', 'medium');
 
   color: var(--text);
+  text-wrap: balance;
 }
 
 .card__title {
   @include t.text('label', 'small');
 
   color: var(--text-muted);
+  text-wrap: pretty;
 }
 
 .card__open {
@@ -95,6 +108,16 @@
   &:hover {
     border-color: var(--border-hover);
     color: var(--accent-light);
+  }
+}
+
+@container (width < 360px) {
+  .card__person {
+    flex-basis: 100%;
+  }
+
+  .card__open {
+    margin-left: 52px;
   }
 }
 
