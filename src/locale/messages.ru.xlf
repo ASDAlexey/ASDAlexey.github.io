@@ -18,6 +18,10 @@
         <source>Tech Lead / Senior Angular Developer</source>
         <target>Tech Lead / Senior Angular Developer</target>
       </trans-unit>
+      <trans-unit id="ld.description" datatype="html">
+        <source>Tech Lead and Senior Angular Developer with 14+ years of experience, shipping Angular on web (SSR), Smart TV, mobile (Ionic) and desktop (Tauri/Rust).</source>
+        <target>Tech Lead и Senior Angular-разработчик с опытом 14+ лет — Angular на web (SSR), Smart TV, mobile (Ionic) и desktop (Tauri/Rust).</target>
+      </trans-unit>
       <trans-unit id="nav.about" datatype="html">
         <source>About</source>
         <target>Обо мне</target>

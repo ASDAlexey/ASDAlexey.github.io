@@ -36,15 +36,24 @@ export class SeoService {
     const ogAlternate = current === 'ru' ? 'en_US' : 'ru_RU';
     const ogImage = `${PROFILE.siteUrl}/og-image.png`;
 
+    // Reflect the build locale on <html lang> — search engines (especially
+    // Yandex) weight it heavily for language targeting; it ships baked into
+    // each prerendered locale instead of the static "en" from index.html.
+    this.#doc.documentElement.lang = current;
+
     this.#title.setTitle(copy.title);
     this.#meta.updateTag({ name: 'description', content: copy.description });
     this.#meta.updateTag({ name: 'author', content: PROFILE.name });
 
     this.#meta.updateTag({ property: 'og:type', content: 'website' });
+    this.#meta.updateTag({ property: 'og:site_name', content: PROFILE.name });
     this.#meta.updateTag({ property: 'og:title', content: copy.title });
     this.#meta.updateTag({ property: 'og:description', content: copy.description });
     this.#meta.updateTag({ property: 'og:url', content: this.#locale.localeUrl(current) });
     this.#meta.updateTag({ property: 'og:image', content: ogImage });
+    this.#meta.updateTag({ property: 'og:image:width', content: '1200' });
+    this.#meta.updateTag({ property: 'og:image:height', content: '630' });
+    this.#meta.updateTag({ property: 'og:image:alt', content: copy.title });
     this.#meta.updateTag({ property: 'og:locale', content: ogLocale });
     this.#meta.updateTag({ property: 'og:locale:alternate', content: ogAlternate });
 
@@ -52,6 +61,7 @@ export class SeoService {
     this.#meta.updateTag({ name: 'twitter:title', content: copy.title });
     this.#meta.updateTag({ name: 'twitter:description', content: copy.description });
     this.#meta.updateTag({ name: 'twitter:image', content: ogImage });
+    this.#meta.updateTag({ name: 'twitter:image:alt', content: copy.title });
 
     this.#setLink('canonical', null, this.#locale.localeUrl(current));
     this.#setLink('alternate', 'en', this.#locale.localeUrl('en'));

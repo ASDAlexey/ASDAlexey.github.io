@@ -38,6 +38,13 @@
           <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="ld.description" datatype="html">
+        <source>Tech Lead and Senior Angular Developer with 14+ years of experience, shipping Angular on web (SSR), Smart TV, mobile (Ionic) and desktop (Tauri/Rust).</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/structured-data.service.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="nav.about" datatype="html">
         <source>About</source>
         <context-group purpose="location">
