@@ -2,7 +2,7 @@
 
 @mixin section {
   position: relative;
-  padding: 72px 0;
+  padding: clamp(44px, 8vw, 72px) 0;
 }
 
 // Full-bleed hairline divider sitting flush with the top edge of a section.
