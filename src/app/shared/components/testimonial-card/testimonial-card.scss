@@ -11,9 +11,45 @@
   container-type: inline-size;
 
   display: flex;
+  position: relative;
   flex-direction: column;
   height: 100%;
+  overflow: hidden;
   gap: 20px;
+  transition:
+    border-color 0.3s var(--ease),
+    box-shadow 0.3s var(--ease),
+    transform 0.3s var(--ease);
+
+  // Oversized decorative quotation mark — editorial flourish anchoring the card.
+  &::before {
+    z-index: 0;
+    position: absolute;
+    top: -38px;
+    right: 8px;
+    content: '”';
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 9rem;
+    line-height: 1;
+    font-family: var(--font);
+    opacity: 0.1;
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-hover);
+    box-shadow: 0 16px 50px rgb(0, 0, 0, 0.4);
+  }
+
+  &:hover::before {
+    opacity: 0.16;
+  }
+
+  > * {
+    position: relative;
+  }
 }
 
 .card__quote {
@@ -49,8 +85,8 @@
   display: grid;
   flex-shrink: 0;
   place-items: center;
-  width: 40px;
-  height: 40px;
+  width: 46px;
+  height: 46px;
   border: 1px solid var(--border);
   border-radius: 999px;
   background: var(--bg-subtle);
@@ -117,7 +153,7 @@
   }
 
   .card__open {
-    margin-left: 52px;
+    margin-left: 58px;
   }
 }
 
@@ -179,7 +215,7 @@
     &_primary {
       border-color: var(--accent);
       background: var(--accent);
-      color: var(--text);
+      color: #1a1205;
 
       &:hover {
         border-color: var(--accent-light);
