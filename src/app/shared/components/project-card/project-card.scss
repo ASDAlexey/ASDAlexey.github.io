@@ -8,19 +8,34 @@
 .card {
   @include c.card-base;
 
+  display: flex;
+  flex-direction: column;
   height: 100%;
+  transition:
+    border-color 0.3s var(--ease),
+    box-shadow 0.3s var(--ease),
+    transform 0.3s var(--ease);
 
   &:hover {
+    transform: translateY(-3px);
     border-color: var(--border-hover);
     box-shadow: 0 16px 50px rgb(0, 0, 0, 0.4);
   }
 
+  &:hover .card__title {
+    color: var(--accent-light);
+  }
+
   &--featured {
-    border-color: rgb(124, 58, 237, 0.45);
-    background: linear-gradient(160deg, rgb(124, 58, 237, 0.1), var(--surface) 60%);
+    border-color: var(--accent-line);
+    background: linear-gradient(160deg, rgb(245, 165, 36, 0.08), var(--surface) 55%);
     box-shadow:
-      0 0 0 1px rgb(124, 58, 237, 0.2),
+      0 0 0 1px rgb(245, 165, 36, 0.18),
       0 12px 40px var(--accent-glow);
+
+    &:hover {
+      border-color: var(--accent);
+    }
   }
 }
 
@@ -47,6 +62,11 @@
   @include c.card-links;
 }
 
+// Tags settle to the bottom edge so cards of differing copy length stay
+// visually balanced across a grid row.
 .tags {
   @include c.tags;
+
+  margin-top: auto;
+  padding-top: 4px;
 }
