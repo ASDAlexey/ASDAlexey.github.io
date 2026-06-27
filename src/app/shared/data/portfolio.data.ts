@@ -1,11 +1,12 @@
 import { Experience, LocaleCode, Project, SocialLink, Stat, Testimonial } from '@core/models/portfolio.interface';
 
 export const PROFILE = {
-  name: 'Alexey Popov',
+  name: $localize`:@@hero.name:Alexey Popov`,
   email: 'ASDAlexey@yandex.ru',
   telegram: 'https://t.me/ASDAlexey',
   github: 'https://github.com/ASDAlexey',
   linkedin: 'https://www.linkedin.com/in/alexey-popov-7988a874/',
+  linkedinRecommendations: 'https://www.linkedin.com/in/alexey-popov-7988a874/details/recommendations/?detailScreenTabIndex=0',
   resume: $localize`:@@hero.resume.file:Alexey-Popov-Resume.pdf`,
   siteUrl: 'https://asdalexey.github.io',
   role: $localize`:@@hero.role:Tech Lead & Senior Frontend Developer`,

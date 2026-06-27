@@ -74,6 +74,10 @@
         <source>What the people I worked with say</source>
         <target>Что обо мне говорят коллеги</target>
       </trans-unit>
+      <trans-unit id="recommendations.more" datatype="html">
+        <source>See all recommendations on LinkedIn</source>
+        <target>Все отзывы на LinkedIn</target>
+      </trans-unit>
       <trans-unit id="rec.cronan.quote" datatype="html">
         <source>I had the pleasure of working with Alexey for over 5 years. A great developer and team player, who jumped into a complex product, got up to speed quickly and was flexible to the needs of the business. Also a great communicator in English and would recommend him for any lead technical role.</source>
         <target>Мне посчастливилось работать с Алексеем более 5 лет. Отличный разработчик и командный игрок: он быстро вник в сложный продукт, оперативно вышел на полную продуктивность и гибко подстраивался под потребности бизнеса. Прекрасно общается на английском — рекомендую его на любую ведущую техническую роль.</target>
@@ -113,6 +117,10 @@
       <trans-unit id="footer.copy" datatype="html">
         <source>Designed &amp; built with Angular 22 — SSG (prerender), EN/RU, 100% tested.</source>
         <target>Сделано на Angular 22 — SSG (prerender), EN/RU, 100% покрытие тестами.</target>
+      </trans-unit>
+      <trans-unit id="hero.name" datatype="html">
+        <source>Alexey Popov</source>
+        <target>Алексей Попов</target>
       </trans-unit>
       <trans-unit id="hero.role" datatype="html">
         <source>Tech Lead &amp; Senior Frontend Developer</source>

@@ -173,6 +173,13 @@
           <context context-type="linenumber">4,6</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="recommendations.more" datatype="html">
+        <source>See all recommendations on LinkedIn</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/recommendations/recommendations.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="rec.cronan.quote" datatype="html">
         <source>I had the pleasure of working with Alexey for over 5 years. A great developer and team player, who jumped into a complex product, got up to speed quickly and was flexible to the needs of the business. Also a great communicator in English and would recommend him for any lead technical role.</source>
         <context-group purpose="location">
@@ -255,6 +262,13 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/nav/nav.html</context>
           <context context-type="linenumber">15,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.name" datatype="html">
+        <source>Alexey Popov</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
       <trans-unit id="hero.role" datatype="html">
