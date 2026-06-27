@@ -1,14 +1,41 @@
 @use 'typography' as t;
 
 @mixin section {
-  padding: 44px 0;
+  position: relative;
+  padding: 72px 0;
+}
+
+// Full-bleed hairline divider sitting flush with the top edge of a section.
+// Centred and width-capped so it reads as a drawn rule, not a hard band.
+@mixin section-divider {
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: min(100% - 48px, var(--maxw));
+    height: 1px;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, transparent, var(--border) 12%, var(--border) 88%, transparent);
+    content: '';
+  }
+}
+
+// Tinted, slightly raised background for alternating sections.
+@mixin section-alt {
+  background: linear-gradient(180deg, var(--bg-alt), var(--bg) 92%);
 }
 
 @mixin section-eyebrow {
   @include t.text('label', 'medium');
 
-  display: block;
-  margin-bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 14px;
+  padding: 5px 11px;
+  gap: 2px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-subtle);
   color: var(--accent-light);
 }
 

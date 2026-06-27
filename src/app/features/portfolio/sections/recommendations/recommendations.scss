@@ -3,6 +3,8 @@
 
 .section {
   @include s.section;
+  @include s.section-divider;
+  @include s.section-alt;
 }
 
 .section__eyebrow {
