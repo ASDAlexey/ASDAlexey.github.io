@@ -13,7 +13,7 @@
     width: 900px;
     height: 600px;
     transform: translateX(-65%);
-    background: radial-gradient(ellipse, rgb(124, 58, 237, 0.14) 0, transparent 70%);
+    background: radial-gradient(ellipse, rgb(245, 165, 36, 0.16) 0, transparent 70%);
     animation: glow-drift 10s ease-in-out infinite alternate;
     pointer-events: none;
     will-change: transform;
@@ -23,7 +23,7 @@
       width: 700px;
       height: 500px;
       transform: translateX(-25%);
-      background: radial-gradient(ellipse, rgb(59, 130, 246, 0.1) 0, transparent 70%);
+      background: radial-gradient(ellipse, rgb(59, 109, 255, 0.1) 0, transparent 70%);
       animation-delay: -5s;
       animation-direction: alternate-reverse;
     }
@@ -37,9 +37,12 @@
   &__title {
     @include t.text('display', 'large');
 
-    background: linear-gradient(180deg, var(--white) 32%, var(--text-secondary) 100%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--white);
+
+    // Warm sliver underlining the name — ties it to the signature accent
+    // without resorting to the over-used metallic-silver text fill.
+    text-shadow: 0 1px 60px rgb(245, 165, 36, 0.18);
+    text-wrap: balance;
   }
 
   &__role {
@@ -114,10 +117,18 @@
     @include t.text('label', 'small');
 
     padding: 6px 12px;
-    border: 1px solid rgb(124, 58, 237, 0.3);
+    border: 1px solid var(--accent-line);
     border-radius: 999px;
     background: var(--accent-glow);
     color: var(--accent-light);
+    transition:
+      border-color 0.2s var(--ease),
+      transform 0.2s var(--ease);
+
+    &:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+    }
   }
 }
 
@@ -125,7 +136,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   max-width: 720px;
-  margin: 56px auto 0;
+  margin: 40px auto 0;
   gap: 12px;
 }
 
@@ -149,13 +160,13 @@
     border-color 0.2s;
 
   &--primary {
-    background: linear-gradient(135deg, var(--accent), var(--accent-blue));
-    box-shadow: 0 8px 30px var(--accent-glow);
-    color: var(--white);
+    background: linear-gradient(135deg, var(--accent-warm), var(--accent));
+    box-shadow: 0 8px 30px rgb(245, 165, 36, 0.25);
+    color: #1a1205;
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgb(124, 58, 237, 0.35);
+      box-shadow: 0 12px 44px rgb(245, 165, 36, 0.4);
     }
   }
 
