@@ -17,6 +17,12 @@
     @include t.bold;
   }
 
+  &__handle {
+    @include t.text('label', 'medium');
+
+    color: var(--text-muted);
+  }
+
   &__copy {
     @include t.text('label', 'medium');
 

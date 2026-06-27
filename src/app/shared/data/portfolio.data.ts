@@ -2,6 +2,7 @@ import { Experience, LocaleCode, Project, SocialLink, Stat, Testimonial } from '
 
 export const PROFILE = {
   name: $localize`:@@hero.name:Alexey Popov`,
+  handle: 'ASDAlexey',
   email: 'ASDAlexey@yandex.ru',
   telegram: 'https://t.me/ASDAlexey',
   github: 'https://github.com/ASDAlexey',

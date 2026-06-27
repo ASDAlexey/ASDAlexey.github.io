@@ -1,6 +1,8 @@
 <footer class="footer">
   <div class="container footer__inner">
-    <p class="footer__brand">{{ profile.name }}</p>
+    <p class="footer__brand">
+      {{ profile.name }} <span class="footer__handle">·&nbsp;&commat;{{ profile.handle }}</span>
+    </p>
     <p class="footer__copy" i18n="@@footer.copy">Designed &amp; built with Angular 22 — SSG (prerender), EN/RU, 100% tested.</p>
     <ul class="footer__links">
       @for (social of socials; track social.label) {

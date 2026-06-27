@@ -10,8 +10,11 @@ describe('Footer', () => {
     fixture.detectChanges();
   });
 
-  it('renders the brand name', () => {
-    expect(fixture.nativeElement.querySelector('.footer__brand').textContent).toContain('Alexey Popov');
+  it('renders the brand name and handle', () => {
+    const brand = fixture.nativeElement.querySelector('.footer__brand').textContent;
+
+    expect(brand).toContain('Alexey Popov');
+    expect(brand).toContain('ASDAlexey');
   });
 
   it('renders all social links', () => {

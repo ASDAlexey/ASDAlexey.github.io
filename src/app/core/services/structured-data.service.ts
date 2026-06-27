@@ -61,9 +61,10 @@ export class StructuredDataService {
       '@type': 'Person',
       '@id': `${url}#person`,
       name: PROFILE.name,
-      // Both spellings on every locale so Google and Yandex resolve the
-      // Latin and Cyrillic name to one entity.
-      alternateName: ['Alexey Popov', 'Алексей Попов'],
+      // Both name spellings plus the public handle on every locale, so Google
+      // and Yandex resolve the Latin name, Cyrillic name and "ASDAlexey" to
+      // one entity — the niche brand queries we target.
+      alternateName: ['Alexey Popov', 'Алексей Попов', PROFILE.handle],
       url,
       jobTitle,
       description,
