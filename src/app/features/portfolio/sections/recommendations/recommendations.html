@@ -10,5 +10,11 @@
         <app-testimonial-card [testimonial]="testimonial" />
       }
     </div>
+
+    <a class="more" rel="noreferrer" target="_blank" [href]="recommendationsUrl">
+      <app-icon name="linkedin" [size]="18" />
+      <span i18n="@@recommendations.more">See all recommendations on LinkedIn</span>
+      <span aria-hidden="true" class="more__arrow">↗</span>
+    </a>
   </div>
 </section>

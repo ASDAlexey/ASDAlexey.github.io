@@ -10,5 +10,6 @@ describe('Recommendations', () => {
 
     expect(el.querySelector('#recommendations')).toBeTruthy();
     expect(el.querySelectorAll('app-testimonial-card').length).toBe(fixture.componentInstance.testimonials.length);
+    expect(el.querySelector<HTMLAnchorElement>('.more')?.href).toBe(fixture.componentInstance.recommendationsUrl);
   });
 });
