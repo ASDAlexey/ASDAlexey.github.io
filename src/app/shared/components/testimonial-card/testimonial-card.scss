@@ -8,8 +8,8 @@
 
 .card {
   @include c.card-base;
-  container-type: inline-size;
 
+  container-type: inline-size;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -23,16 +23,14 @@
 
   // Oversized decorative quotation mark — editorial flourish anchoring the card.
   &::before {
+    @include t.quote-glyph;
+
     z-index: 0;
     position: absolute;
     top: -38px;
     right: 8px;
     content: '”';
     color: var(--accent);
-    font-weight: 800;
-    font-size: 9rem;
-    line-height: 1;
-    font-family: var(--font);
     opacity: 0.1;
     pointer-events: none;
   }
@@ -215,7 +213,7 @@
     &_primary {
       border-color: var(--accent);
       background: var(--accent);
-      color: #1a1205;
+      color: var(--accent-contrast);
 
       &:hover {
         border-color: var(--accent-light);

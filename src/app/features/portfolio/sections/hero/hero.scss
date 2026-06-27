@@ -162,7 +162,7 @@
   &--primary {
     background: linear-gradient(135deg, var(--accent-warm), var(--accent));
     box-shadow: 0 8px 30px rgb(245, 165, 36, 0.25);
-    color: #1a1205;
+    color: var(--accent-contrast);
 
     &:hover {
       transform: translateY(-2px);

@@ -39,7 +39,7 @@ body::before {
     100% 100%,
     26px 26px;
   content: '';
-  mask-image: linear-gradient(180deg, #000 0%, transparent 70%);
+  mask-image: linear-gradient(180deg, rgb(0, 0, 0) 0%, transparent 70%);
   pointer-events: none;
 }
 
