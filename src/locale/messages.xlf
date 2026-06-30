@@ -21,7 +21,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="seo.desc" datatype="html">
-        <source>Tech Lead / Senior Angular Developer (NgRx). 14+ years of Angular across every platform — Web (SSR), Smart TV, Mobile (Ionic), Desktop (Tauri/Rust). Nx, GitLab CI/CD, 90%+ test coverage, AI code-review. Frontend team lead.</source>
+        <source>Tech Lead / Senior Angular Developer (NgRx). 14+ years of Angular across every platform — Web (SSR), Smart TV, Mobile (Ionic), Desktop (Tauri/Rust). Angular 22, zoneless, signals, Nx, OpenAPI/zod codegen, design systems, GitLab CI/CD, 90%+ test coverage, AI code-review. Frontend team lead.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/seo.service.ts</context>
           <context context-type="linenumber">24</context>
@@ -349,7 +349,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="exp.current.desc" datatype="html">
-        <source>Building and architecting large-scale Angular applications — modern reactive architecture (NgRx, Signals, zoneless, OnPush), a strong testing culture and CI/CD. Focused on performance, code quality and developer experience.</source>
+        <source>Architecting Angular 22 applications end-to-end — zoneless, signals, standalone and OnPush throughout, with NgRx Signals stores. Designed a type-safe API layer: an Orval client auto-generated from OpenAPI with zod runtime validation — signal-based httpResource for reads, HttpClient services for mutations. Built an Nx monorepo of shared Angular libraries (design system, theming, icons, dev tooling) auto-published to a private GitLab registry. Quality enforced by a custom ESLint plugin (private #fields, inject()-only DI, RxJS hygiene), a multi-plugin Prettier stack, 100% test coverage and duplication / circular-dependency gates in CI.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
           <context context-type="linenumber">36</context>
@@ -493,6 +493,20 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
           <context context-type="linenumber">96</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="proj.metalibs.badge" datatype="html">
+        <source>Design System · Work</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">116</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="proj.metalibs.desc" datatype="html">
+        <source>Self-authored Nx monorepo of shared Angular libraries (@meta/*) — design-system tokens generated from Figma, theming, inline-SVG icons, notifications, feature flags and dev-auth tooling. GitLab CI auto-versions, assembles and idempotently publishes them to GitLab Package Registry, gated by coverage, lint, code-duplication and circular-dependency checks.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
+          <context context-type="linenumber">117</context>
         </context-group>
       </trans-unit>
       <trans-unit id="proj.claude.badge" datatype="html">
