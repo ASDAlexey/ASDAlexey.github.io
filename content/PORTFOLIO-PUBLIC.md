@@ -25,12 +25,12 @@
 ## 1. Tech Stack / Навыки
 
 **Core:** Angular (4 → 22), TypeScript, RxJS, NgRx, Angular Signals, HTML/SCSS, BEM
-**Architecture:** Nx monorepo, micro-frontends (single-spa), multi-tenancy, zoneless, standalone components, OnPush, design systems, ControlValueAccessor, clean architecture (domain/data/features)
+**Architecture:** Nx monorepo, micro-frontends (single-spa), multi-tenancy, zoneless, standalone components, OnPush, design systems & published shared-library monorepo, type-safe API layer (OpenAPI/Orval codegen + zod runtime validation; signal `httpResource` for reads, `HttpClient` for mutations), ControlValueAccessor, clean architecture (domain/data/features)
 **Platforms:** Web SSR (@angular/ssr), Smart TV (Tizen / webOS, spatial navigation), Mobile (Ionic, iOS/Android), Desktop (Tauri)
-**CI/CD & Infra:** GitLab CI/CD (reusable templates, nx affected, test sharding, auto-semver, idempotent publish), Docker (multi-stage Dockerfiles), Nginx (reverse-proxy, runtime config), Kubernetes / Kustomize, feature flags
+**CI/CD & Infra:** GitLab CI/CD (reusable templates, nx affected, test sharding, auto-semver, idempotent dual-registry npm publishing, custom approval gates, Figma-token drift checks), Docker (multi-stage Dockerfiles), Nginx (reverse-proxy, runtime config), Kubernetes / Kustomize, feature flags
 **Backend / Other:** Node.js, REST, WebSocket, SQLite, Rust (AI-assisted)
-**Testing (сильная сторона):** Jest, Vitest — **поднял проект до 90%+ покрытия** unit-тестами, свой код держу не ниже; собственный auto-spy; 90% coverage gates в CI; TestBed, мокинг, тест-архитектура
-**Tools:** Bun, ESLint/Prettier/Stylelint, madge, jscpd, Sentry, Plotly, Leaflet, Turf, Ag-grid, CKEditor
+**Testing (сильная сторона):** Jest, Vitest — **поднял проект до 90%+ покрытия** unit-тестами (100% на общих библиотеках), свой код держу не ниже; собственный auto-spy; coverage gates в CI; TestBed, мокинг, тест-архитектура
+**Tools:** Bun, ESLint (+ кастомный local-плагин), мультиплагинный Prettier, Stylelint, madge, jscpd, Orval, Sentry, Plotly, Leaflet, Turf, Ag-grid, CKEditor
 **AI-assisted development:** power user of **Claude Code** — автор кастомных skills, agents и hooks (конвенции проекта, кодген, token-optimization), включая **скилл авто-код-ревью** для огромных Angular MR. Конфиг/скиллы: https://github.com/ASDAlexey/claude
 
 **Leadership:** ведёт команду из **9 штатных фронтендеров** (нанял сам) + **~6 на субподряде** (15+ инженеров) · **70+ собеседований** · нанял отдельного код-ревьюера, сам ревьюит код подрядчиков · процесс code-review (включая **AI авто-ревью** больших MR) · инженерные стандарты · менторинг · drives AI-assisted workflows
@@ -78,7 +78,7 @@ Tech Lead & Senior Frontend Developer — 14+ years, Angular at the core.
 I've shipped Angular on every platform there is: web (SSR), Smart TV (Samsung/LG/Hisense), mobile (Ionic, iOS/Android) and desktop (Tauri). My job is turning complex designs into fast, scalable products — clean architecture, strict performance budgets and automated delivery.
 
 ⚙️ What I do
-• Architect large Angular apps end-to-end — Nx monorepos, micro-frontends, multi-tenant builds, zoneless change detection, signals, NgRx, design systems & shared libraries.
+• Architect large Angular apps end-to-end — Nx monorepos, micro-frontends, multi-tenant builds, zoneless change detection, signals, NgRx, design systems & published shared libraries, plus a type-safe API layer (OpenAPI→Orval codegen with zod validation, signal httpResource for reads / HttpClient for mutations).
 • Own performance — strict bundle budgets, OnPush everywhere, circular-dependency & duplication checks in CI. Once took a critical selection workflow from ~200ms to <0.5ms (≈400× faster).
 • Build CI/CD from scratch — GitLab reusable templates, nx affected, parallel test sharding, automated semantic versioning, idempotent publishing, Docker multi-stage, Nginx.
 • Test relentlessly — Jest/Vitest as a core strength; raised a project to 90%+ unit-test coverage and hold my own code to the same bar.
@@ -95,7 +95,7 @@ I've shipped Angular on every platform there is: web (SSR), Smart TV (Samsung/LG
 
 🎓 Background in physics & mathematics (M.Sc., GPA 4.97/5) — where the structured, performance-first mindset comes from.
 
-Core stack: Angular (2 → 22, every version since launch), NgRx, RxJS, single-spa, WebSockets, AG-Grid, Jest, Vitest, Nx, GitLab CI/CD, Docker, Nginx, Node.js.
+Core stack: Angular (2 → 22, every version since launch), NgRx, Signals, RxJS, single-spa, Orval, zod, WebSockets, AG-Grid, Jest, Vitest, Nx, GitLab CI/CD, Docker, Nginx, Node.js, Bun.
 
 Open to Senior / Lead Angular roles (remote / relocation).
 📂 github.com/ASDAlexey · 🌐 asdalexey.github.io
@@ -106,7 +106,7 @@ Open to Senior / Lead Angular roles (remote / relocation).
 Tech Lead и Senior Frontend-разработчик, 14+ лет опыта. Angular — моя сильная сторона, и я выпускал его на всех платформах: web (SSR), Smart TV (Samsung/LG/Hisense), мобильные (Ionic, iOS/Android) и десктоп (Tauri).
 
 Что делаю:
-• Проектирую крупные Angular-приложения целиком — Nx-монорепо, micro-frontends, мульти-тенант, zoneless, signals, NgRx, дизайн-система и общие библиотеки.
+• Проектирую крупные Angular-приложения целиком — Nx-монорепо, micro-frontends, мульти-тенант, zoneless, signals, NgRx, дизайн-система и публикуемые общие библиотеки, плюс типобезопасный API-слой (кодген из OpenAPI через Orval с zod-валидацией, signal httpResource для чтений / HttpClient для мутаций).
 • Строю GitLab CI/CD с нуля — переиспользуемые шаблоны, nx affected, параллельный шардинг тестов, авто-семвер и идемпотентная публикация пакетов, многостадийные Docker-сборки, Nginx.
 • Отвечаю за производительность — бюджеты бандла, OnPush, гейты на 90% покрытия, проверки циклических зависимостей и дублей в CI.
 • Руковожу людьми — собрал и веду команду из 9 фронтендеров (нанял всю команду сам) и ещё ~6 на субподряде, провёл 70+ технических собеседований, отвечаю за процесс code-review.
@@ -133,12 +133,15 @@ Tech Lead и Senior Frontend-разработчик, 14+ лет опыта. Angu
 
 - Спроектировал и развиваю масштабное Angular-приложение: **Nx-монорепо**, **micro-frontend** архитектура (single-spa), **NgRx + Angular Signals**, zoneless, OnPush, дизайн-система и общие библиотеки.
 - Реализую фичи на Angular под **разные платформы** — web (SSR), Smart TV (Samsung/LG/Hisense), mobile (Ionic), desktop — общий код и платформенные адаптации.
-- Построил **GitLab CI/CD с нуля**: переиспользуемые шаблоны, nx affected, **параллельный шардинг тестов**, авто-семвер и идемпотентная публикация npm-пакетов, многостадийные **Dockerfiles**, Nginx, гейт 90% покрытия.
-- Отвечаю за **производительность**: бюджеты бандла, OnPush, проверки циклических зависимостей (madge) и дублей кода (jscpd) в CI.
+- Спроектировал **типобезопасный API-слой**: авто-генерация Orval-клиента из OpenAPI с **рантайм-валидацией zod** — signal-based **`httpResource` для чтений**, **`HttpClient`-сервисы для мутаций** (чистка operationId, tree-shaking по операциям, base-url интерсептор).
+- Спроектировал и опубликовал **монорепо общих Angular-библиотек** (@meta/*): дизайн-система из **Figma-токенов**, темизация, иконки, уведомления, feature-флаги, dev-auth — **идемпотентная авто-публикация в приватный GitLab Package Registry** (два инстанса) через CI.
+- Построил **GitLab CI/CD с нуля**: переиспользуемые шаблоны, nx affected, **параллельный шардинг тестов**, авто-семвер и идемпотентная публикация npm-пакетов, кастомный гейт аппрувов, многостадийные **Dockerfiles**, Nginx, гейт покрытия.
+- Автоматизировал **код-стандарты**: **кастомный ESLint-плагин** (приватные `#поля`, DI только через `inject()`, гигиена RxJS), мультиплагинный Prettier, проверки циклических зависимостей (madge) и дублей кода (jscpd) в CI.
+- Отвечаю за **производительность**: бюджеты бандла, OnPush, zoneless change detection.
 - **Unit-тесты (Jest/Vitest)** — моя сильная сторона: **поднял проект до 90%+ покрытия** и держу свой код не ниже этой планки.
 - **Руковожу командой из 9 штатных фронтендеров** (нанял всю команду сам) **+ ~6 на субподряде** (15+ инженеров): провёл **70+ технических собеседований**, нанял отдельного код-ревьюера, сам ревьюю код подрядчиков, выстроил процесс code-review и инженерные стандарты.
 - Внедрил **AI-assisted разработку**: написал кастомные скиллы/агентов/хуки для **Claude Code** (конвенции проекта, кодген, экономия токенов), включая **скилл авто-код-ревью** для огромных Angular MR — ускорил рутину и стандартизировал код.
-- Стек: Angular, single-spa, NgRx, TypeScript, RxJS, Node.js, WebSocket, Nx, GitLab CI/CD, Docker, Nginx.
+- Стек: Angular 22, single-spa, NgRx, Angular Signals, TypeScript, RxJS, Orval, zod, httpResource, Node.js, WebSocket, Nx, GitLab CI/CD, Docker, Nginx, Bun.
 
 ### The 5th Kind — Tech Lead / Senior Frontend (Angular) · США, удалённо · 2019–2023
 Распределённая система управления цифровыми ассетами (документы, аудио, видео) для совместной работы.
@@ -202,7 +205,8 @@ Tech Lead и Senior Frontend-разработчик, 14+ лет опыта. Angu
 - **GitLab CI/CD с нуля**: 8 стадий, шардинг тестов, авто-version-up с retry, Trivy, многостадийные Dockerfiles.
 - **Real-time pixel streaming** (WebRTC), геовизуализация (Leaflet, Turf).
 - **Runtime-конфиг и фича-флаги** на K8s/Nginx (Kustomize/ConfigMap), 25+ окружений; nginx reverse-proxy на 7+ сервисов.
-- Общая **npm-библиотека** (Nx, Vitest, Bun) с авто-релизом; инструмент **dev-auth** (Chrome ext + Node + Angular interceptor) для авто-обновления токенов в локальной разработке.
+- Общая **npm-библиотека** (Nx монорепо, Vitest 100%, Bun): дизайн-система из **Figma-токенов** (CI-проверка дрейфа), темизация, иконки, уведомления, feature-флаги; **идемпотентная авто-публикация в два GitLab-реестра**; инструмент **dev-auth** (Chrome ext + Node SSE + Angular interceptor) для авто-обновления Keycloak-токенов локально.
+- **Авто-генерация типизированного API-клиента** из OpenAPI (Orval) с **рантайм-валидацией zod**: signal `httpResource` для GET, `HttpClient`-сервисы для мутаций; чистка operationId, tree-shaking по операциям.
 
 ### SSR web-фичи (streaming-продукт)
 - Система возрастных ограничений (PIN к 18+, детские профили, переключение профилей, SSR-safe, авто-логаут).
