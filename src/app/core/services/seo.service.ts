@@ -21,11 +21,11 @@ export class SeoService {
   readonly #copy: Record<LocaleCode, SeoCopy> = {
     en: {
       title: $localize`:@@seo.title:Alexey Popov — Tech Lead / Senior Angular Developer`,
-      description: $localize`:@@seo.desc:Tech Lead / Senior Angular Developer (NgRx). 14+ years of Angular across every platform — Web (SSR), Smart TV, Mobile (Ionic), Desktop (Tauri/Rust). Nx, GitLab CI/CD, 90%+ test coverage, AI code-review. Frontend team lead.`,
+      description: $localize`:@@seo.desc:Tech Lead / Senior Angular Developer (NgRx). 14+ years of Angular across every platform — Web (SSR), Smart TV, Mobile (Ionic), Desktop (Tauri/Rust). Angular 22, zoneless, signals, Nx, OpenAPI/zod codegen, design systems, GitLab CI/CD, 90%+ test coverage, AI code-review. Frontend team lead.`,
     },
     ru: {
       title: $localize`:@@seo.title:Alexey Popov — Tech Lead / Senior Angular Developer`,
-      description: $localize`:@@seo.desc:Tech Lead / Senior Angular Developer (NgRx). 14+ years of Angular across every platform — Web (SSR), Smart TV, Mobile (Ionic), Desktop (Tauri/Rust). Nx, GitLab CI/CD, 90%+ test coverage, AI code-review. Frontend team lead.`,
+      description: $localize`:@@seo.desc:Tech Lead / Senior Angular Developer (NgRx). 14+ years of Angular across every platform — Web (SSR), Smart TV, Mobile (Ionic), Desktop (Tauri/Rust). Angular 22, zoneless, signals, Nx, OpenAPI/zod codegen, design systems, GitLab CI/CD, 90%+ test coverage, AI code-review. Frontend team lead.`,
     },
   };
 

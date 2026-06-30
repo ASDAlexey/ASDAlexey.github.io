@@ -12,7 +12,11 @@ const KNOWS_ABOUT = [
   'RxJS',
   'NgRx',
   'Angular Signals',
+  'Zoneless Angular',
   'Nx monorepo',
+  'Design systems',
+  'OpenAPI code generation',
+  'zod validation',
   'Micro-frontends',
   'Server-Side Rendering',
   'Smart TV',
@@ -25,7 +29,7 @@ const KNOWS_ABOUT = [
   'AI-assisted development',
 ] as const;
 
-const OCCUPATION_SKILLS = 'Angular, TypeScript, RxJS, NgRx, Signals, Nx, SSR, GitLab CI/CD';
+const OCCUPATION_SKILLS = 'Angular, TypeScript, RxJS, NgRx, Signals, Zoneless, Nx, OpenAPI codegen, Design systems, SSR, GitLab CI/CD';
 
 @Injectable({ providedIn: 'root' })
 export class StructuredDataService {
