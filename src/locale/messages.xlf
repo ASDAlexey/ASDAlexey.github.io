@@ -503,7 +503,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="proj.metalibs.desc" datatype="html">
-        <source>Self-authored Nx monorepo of shared Angular libraries (@meta/*) — design-system tokens generated from Figma, theming, inline-SVG icons, notifications, feature flags and dev-auth tooling. GitLab CI auto-versions, assembles and idempotently publishes them to GitLab Package Registry, gated by coverage, lint, code-duplication and circular-dependency checks.</source>
+        <source>Self-authored Nx monorepo of shared Angular libraries (@shared/*) — design-system tokens generated from Figma, theming, inline-SVG icons, notifications, feature flags and dev-auth tooling. GitLab CI auto-versions, assembles and idempotently publishes every package to a private GitLab Package Registry, gated by coverage, lint, code-duplication and circular-dependency checks.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
           <context context-type="linenumber">117</context>

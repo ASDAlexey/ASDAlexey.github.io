@@ -259,8 +259,8 @@
         <target>Дизайн-система · Работа</target>
       </trans-unit>
       <trans-unit id="proj.metalibs.desc" datatype="html">
-        <source>Self-authored Nx monorepo of shared Angular libraries (@meta/*) — design-system tokens generated from Figma, theming, inline-SVG icons, notifications, feature flags and dev-auth tooling. GitLab CI auto-versions, assembles and idempotently publishes them to GitLab Package Registry, gated by coverage, lint, code-duplication and circular-dependency checks.</source>
-        <target>Самостоятельно созданный Nx-монорепозиторий общих Angular-библиотек (@meta/*) — токены дизайн-системы из Figma, темизация, inline-SVG иконки, уведомления, feature-флаги и dev-auth тулинг. GitLab CI авто-версионирует, собирает и идемпотентно публикует их в GitLab Package Registry под контролем coverage, линтинга, проверок дублирования и циклических зависимостей.</target>
+        <source>Self-authored Nx monorepo of shared Angular libraries (@shared/*) — design-system tokens generated from Figma, theming, inline-SVG icons, notifications, feature flags and dev-auth tooling. GitLab CI auto-versions, assembles and idempotently publishes every package to a private GitLab Package Registry, gated by coverage, lint, code-duplication and circular-dependency checks.</source>
+        <target>Самостоятельно созданный Nx-монорепозиторий общих Angular-библиотек (@shared/*) — токены дизайн-системы из Figma, темизация, inline-SVG иконки, уведомления, feature-флаги и dev-auth тулинг. GitLab CI авто-версионирует, собирает и идемпотентно публикует каждый пакет в приватный GitLab Package Registry под контролем coverage, линтинга, проверок дублирования и циклических зависимостей.</target>
       </trans-unit>
       <trans-unit id="proj.claude.badge" datatype="html">
         <source>Tooling · Open Source</source>

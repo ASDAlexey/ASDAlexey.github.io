@@ -113,9 +113,9 @@ export const PROJECTS: readonly Project[] = [
     featured: true,
   },
   {
-    name: 'META shared libraries',
+    name: 'Angular shared libraries',
     badge: $localize`:@@proj.metalibs.badge:Design System · Work`,
-    description: $localize`:@@proj.metalibs.desc:Self-authored Nx monorepo of shared Angular libraries (@meta/*) — design-system tokens generated from Figma, theming, inline-SVG icons, notifications, feature flags and dev-auth tooling. GitLab CI auto-versions, assembles and idempotently publishes them to GitLab Package Registry, gated by coverage, lint, code-duplication and circular-dependency checks.`,
+    description: $localize`:@@proj.metalibs.desc:Self-authored Nx monorepo of shared Angular libraries (@shared/*) — design-system tokens generated from Figma, theming, inline-SVG icons, notifications, feature flags and dev-auth tooling. GitLab CI auto-versions, assembles and idempotently publishes every package to a private GitLab Package Registry, gated by coverage, lint, code-duplication and circular-dependency checks.`,
     links: [],
     tags: ['Nx', 'Angular 21', 'GitLab CI/CD', 'Design System', 'Bun'],
     featured: true,
