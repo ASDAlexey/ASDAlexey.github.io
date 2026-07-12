@@ -36,7 +36,7 @@ export const EXPERIENCES: readonly Experience[] = [
     company: null,
     location: $localize`:@@exp.current.loc:Remote`,
     period: $localize`:@@exp.current.period:2023 — Present`,
-    description: $localize`:@@exp.current.desc:Architecting Angular 22 applications end-to-end — zoneless, signals, standalone and OnPush throughout, with NgRx Signals stores. Designed a type-safe API layer: an Orval client auto-generated from OpenAPI with zod runtime validation — signal-based httpResource for reads, HttpClient services for mutations. Built an Nx monorepo of shared Angular libraries (design system, theming, icons, dev tooling) auto-published to a private GitLab registry. Quality enforced by a custom ESLint plugin (private #fields, inject()-only DI, RxJS hygiene), a multi-plugin Prettier stack, 100% test coverage and duplication / circular-dependency gates in CI.`,
+    description: $localize`:@@exp.current.desc:Architecting Angular 22 applications end-to-end — zoneless, signals, standalone and OnPush throughout, with NgRx Signals stores. Designed a type-safe API layer: an Orval client auto-generated from OpenAPI with zod runtime validation — signal-based httpResource for reads, HttpClient services for mutations.`,
     tags: ['Angular', 'NgRx', 'Signals', 'RxJS', 'TypeScript', 'CI/CD'],
   },
   {
@@ -115,7 +115,7 @@ export const PROJECTS: readonly Project[] = [
   {
     name: 'Angular shared libraries',
     badge: $localize`:@@proj.metalibs.badge:Design System · Work`,
-    description: $localize`:@@proj.metalibs.desc:Self-authored Nx monorepo of shared Angular libraries (@shared/*) — design-system tokens generated from Figma, theming, inline-SVG icons, notifications, feature flags and dev-auth tooling. GitLab CI auto-versions, assembles and idempotently publishes every package to a private GitLab Package Registry, gated by coverage, lint, code-duplication and circular-dependency checks.`,
+    description: $localize`:@@proj.metalibs.desc:Self-authored Nx monorepo of shared Angular libraries (@shared/*) — design-system tokens generated from Figma, theming, inline-SVG icons, notifications, feature flags and dev-auth tooling. GitLab CI auto-versions, assembles and idempotently publishes every package to a private GitLab Package Registry. Quality enforced by a custom ESLint plugin (private #fields, inject()-only DI, RxJS hygiene), a multi-plugin Prettier stack, 100% test coverage and duplication / circular-dependency gates in CI.`,
     links: [],
     tags: ['Nx', 'Angular 21', 'GitLab CI/CD', 'Design System', 'Bun'],
     featured: true,
