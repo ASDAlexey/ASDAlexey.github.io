@@ -55,7 +55,7 @@
   &__subtitle {
     @include t.text('body', 'large');
 
-    max-width: 600px;
+    max-width: 720px;
     margin: 22px auto 28px;
     color: var(--text-secondary);
 
@@ -135,7 +135,7 @@
 .stats {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  max-width: 720px;
+  max-width: 920px;
   margin: 40px auto 0;
   gap: 12px;
 }

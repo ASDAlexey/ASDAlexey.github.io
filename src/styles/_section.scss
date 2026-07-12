@@ -42,6 +42,6 @@
 @mixin section-title {
   @include t.text('display', 'medium');
 
-  max-width: 24ch;
+  max-width: 30ch;
   margin-bottom: 32px;
 }
