@@ -171,8 +171,8 @@
         <target>2023 — наст. время</target>
       </trans-unit>
       <trans-unit id="exp.current.desc" datatype="html">
-        <source>Architecting Angular 22 applications end-to-end — zoneless, signals, standalone and OnPush throughout, with NgRx Signals stores. Designed a type-safe API layer: an Orval client auto-generated from OpenAPI with zod runtime validation — signal-based httpResource for reads, HttpClient services for mutations.</source>
-        <target>Проектирую Angular 22-приложения целиком — zoneless, сигналы, standalone и OnPush повсюду, сторы на NgRx Signals. Спроектировал типобезопасный API-слой: Orval-клиент, авто-генерируемый из OpenAPI с рантайм-валидацией zod — signal-based httpResource для чтений, HttpClient-сервисы для мутаций.</target>
+        <source>Architecting Angular 22 applications end-to-end — zoneless, signals, standalone and OnPush throughout, with NgRx Signals stores. Designed a type-safe API layer: an Orval client auto-generated from OpenAPI with zod runtime validation — signal-based httpResource for reads, HttpClient services for mutations. Built a self-authored Nx monorepo of shared Angular libraries (design-system tokens from Figma, theming, inline-SVG icons, notifications, feature flags, dev-auth tooling), auto-versioned and idempotently published to a private GitLab Package Registry. Quality enforced by a custom ESLint plugin (private #fields, inject()-only DI, RxJS hygiene), a multi-plugin Prettier stack, 100% test coverage and duplication / circular-dependency gates in CI.</source>
+        <target>Проектирую Angular 22-приложения целиком — zoneless, сигналы, standalone и OnPush повсюду, сторы на NgRx Signals. Спроектировал типобезопасный API-слой: Orval-клиент, авто-генерируемый из OpenAPI с рантайм-валидацией zod — signal-based httpResource для чтений, HttpClient-сервисы для мутаций. Самостоятельно построил Nx-монорепозиторий общих Angular-библиотек (токены дизайн-системы из Figma, темизация, inline-SVG иконки, уведомления, feature-флаги, dev-auth тулинг) с авто-версионированием и идемпотентной публикацией в приватный GitLab Package Registry. Качество держат кастомный ESLint-плагин (приватные #поля, DI только через inject(), гигиена RxJS), мультиплагинный Prettier, 100% покрытие тестами и проверки дублирования / циклических зависимостей в CI.</target>
       </trans-unit>
       <trans-unit id="exp.fifthkind.role" datatype="html">
         <source>Tech Lead / Senior Frontend</source>
@@ -253,14 +253,6 @@
       <trans-unit id="proj.vas.desc" datatype="html">
         <source>Typed auto-mocking for Vitest — the missing jest-auto-spies. Typed Spy&lt;T&gt; over conditional/mapped types, Observable mocking (nextWith/throwWith), calledWith dispatch, zoneless Angular, zero dependencies. Published on npm and dogfooded in this site's tests.</source>
         <target>Типобезопасный авто-мокинг для Vitest — недостающий jest-auto-spies. Типизированный Spy&lt;T&gt; на conditional/mapped types, мокинг Observable (nextWith/throwWith), calledWith-диспетчинг, zoneless Angular, ноль зависимостей. Опубликован в npm и используется в тестах этого сайта.</target>
-      </trans-unit>
-      <trans-unit id="proj.metalibs.badge" datatype="html">
-        <source>Design System · Work</source>
-        <target>Дизайн-система · Работа</target>
-      </trans-unit>
-      <trans-unit id="proj.metalibs.desc" datatype="html">
-        <source>Self-authored Nx monorepo of shared Angular libraries (@shared/*) — design-system tokens generated from Figma, theming, inline-SVG icons, notifications, feature flags and dev-auth tooling. GitLab CI auto-versions, assembles and idempotently publishes every package to a private GitLab Package Registry. Quality enforced by a custom ESLint plugin (private #fields, inject()-only DI, RxJS hygiene), a multi-plugin Prettier stack, 100% test coverage and duplication / circular-dependency gates in CI.</source>
-        <target>Самостоятельно созданный Nx-монорепозиторий общих Angular-библиотек (@shared/*) — токены дизайн-системы из Figma, темизация, inline-SVG иконки, уведомления, feature-флаги и dev-auth тулинг. GitLab CI авто-версионирует, собирает и идемпотентно публикует каждый пакет в приватный GitLab Package Registry. Качество держат кастомный ESLint-плагин (приватные #поля, DI только через inject(), гигиена RxJS), мультиплагинный Prettier, 100% покрытие тестами и проверки дублирования / циклических зависимостей в CI.</target>
       </trans-unit>
       <trans-unit id="proj.claude.badge" datatype="html">
         <source>Tooling · Open Source</source>
