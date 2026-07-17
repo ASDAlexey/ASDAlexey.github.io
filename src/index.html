@@ -17,6 +17,15 @@
       name="keywords"
     />
     <link href="favicon.svg" rel="icon" type="image/svg+xml" />
+    <!-- Without JS the scroll-reveal directive never runs — keep all content visible. -->
+    <noscript>
+      <style>
+        .reveal {
+          transform: none !important;
+          opacity: 1 !important;
+        }
+      </style>
+    </noscript>
     <!-- JSON-LD structured data is injected per-locale by StructuredDataService (Person + WebSite + ProfilePage). -->
     <!-- Search-engine ownership verification — paste the codes from the consoles, then redeploy:
          Google Search Console (https://search.google.com/search-console) and
