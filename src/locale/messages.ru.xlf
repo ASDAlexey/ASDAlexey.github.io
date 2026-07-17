@@ -254,6 +254,14 @@
         <source>Typed auto-mocking for Vitest — the missing jest-auto-spies. Typed Spy&lt;T&gt; over conditional/mapped types, Observable mocking (nextWith/throwWith), calledWith dispatch, zoneless Angular, zero dependencies. Published on npm and dogfooded in this site's tests.</source>
         <target>Типобезопасный авто-мокинг для Vitest — недостающий jest-auto-spies. Типизированный Spy&lt;T&gt; на conditional/mapped types, мокинг Observable (nextWith/throwWith), calledWith-диспетчинг, zoneless Angular, ноль зависимостей. Опубликован в npm и используется в тестах этого сайта.</target>
       </trans-unit>
+      <trans-unit id="proj.sundayrun.badge" datatype="html">
+        <source>Web · Community</source>
+        <target>Веб · Сообщество</target>
+      </trans-unit>
+      <trans-unit id="proj.sundayrun.desc" datatype="html">
+        <source>Web app for a community park-run club (Taganrog). Organizers upload race results (stopwatch xlsx export) → the app detects participant gender, computes rankings and generates an official-format PDF protocol on the fly in the browser. Every result set is published to the repo archive in one atomic commit; the home page is an archive of all published runs with downloadable PDF protocols. Zoneless Angular, 100% test coverage.</source>
+        <target>Веб-приложение клуба парковых пробегов (Таганрог). Организаторы загружают результаты забега (xlsx-экспорт секундомера) → приложение определяет пол участников, считает места и генерирует PDF-протокол по официальному образцу на лету в браузере. Каждый забег публикуется в архив репозитория одним атомарным коммитом; главная страница — архив всех опубликованных пробегов со скачиванием протоколов в PDF. Zoneless Angular, 100% покрытие тестами.</target>
+      </trans-unit>
       <trans-unit id="proj.claude.badge" datatype="html">
         <source>Tooling · Open Source</source>
         <target>Тулинг · Open Source</target>

@@ -113,6 +113,17 @@ export const PROJECTS: readonly Project[] = [
     featured: true,
   },
   {
+    name: 'SundayRun',
+    badge: $localize`:@@proj.sundayrun.badge:Web · Community`,
+    description: $localize`:@@proj.sundayrun.desc:Web app for a community park-run club (Taganrog). Organizers upload race results (stopwatch xlsx export) → the app detects participant gender, computes rankings and generates an official-format PDF protocol on the fly in the browser. Every result set is published to the repo archive in one atomic commit; the home page is an archive of all published runs with downloadable PDF protocols. Zoneless Angular, 100% test coverage.`,
+    links: [
+      { label: 'Live', href: 'https://asdalexey.github.io/sundayrun/ru/' },
+      { label: 'GitHub', href: 'https://github.com/ASDAlexey/sundayrun' },
+    ],
+    tags: ['Angular 22', 'Bun', 'Vitest', 'pdfmake', 'GitHub Pages'],
+    featured: false,
+  },
+  {
     name: 'Claude Code config & skills',
     badge: $localize`:@@proj.claude.badge:Tooling · Open Source`,
     description: $localize`:@@proj.claude.desc:Custom Claude Code skills, agents and hooks that encode project conventions, code generation and token-optimization — including an AI code-review skill built for large Angular MRs.`,
