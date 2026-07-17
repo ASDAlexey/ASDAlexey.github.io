@@ -1,17 +1,17 @@
 <section class="section" id="recommendations">
   <div class="container">
-    <p class="section__eyebrow">
+    <p appScrollReveal class="section__eyebrow">
       <span class="section__num">04</span>&nbsp;—&nbsp;<span i18n="@@nav.recommendations">Recommendations</span>
     </p>
-    <h2 class="section__title" i18n="@@recommendations.title">What the people I worked with say</h2>
+    <h2 appScrollReveal class="section__title" i18n="@@recommendations.title">What the people I worked with say</h2>
 
-    <div class="card-grid">
+    <div appScrollReveal class="card-grid">
       @for (testimonial of testimonials; track testimonial.author) {
         <app-testimonial-card [testimonial]="testimonial" />
       }
     </div>
 
-    <a class="more" rel="noreferrer" target="_blank" [href]="recommendationsUrl">
+    <a appScrollReveal class="more" rel="noreferrer" target="_blank" [href]="recommendationsUrl">
       <app-icon name="linkedin" [size]="18" />
       <span i18n="@@recommendations.more">See all recommendations on LinkedIn</span>
       <span aria-hidden="true" class="more__arrow">↗</span>

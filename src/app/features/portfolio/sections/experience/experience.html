@@ -1,9 +1,11 @@
 <section class="section" id="experience">
   <div class="container">
-    <p class="section__eyebrow"><span class="section__num">02</span>&nbsp;—&nbsp;<span i18n="@@nav.experience">Experience</span></p>
-    <h2 class="section__title" i18n="@@experience.title">Where I've shipped</h2>
+    <p appScrollReveal class="section__eyebrow">
+      <span class="section__num">02</span>&nbsp;—&nbsp;<span i18n="@@nav.experience">Experience</span>
+    </p>
+    <h2 appScrollReveal class="section__title" i18n="@@experience.title">Where I've shipped</h2>
 
-    <div class="timeline">
+    <div appScrollReveal class="timeline">
       @for (experience of experiences; track experience.period) {
         <app-experience-card [experience]="experience" />
       }
