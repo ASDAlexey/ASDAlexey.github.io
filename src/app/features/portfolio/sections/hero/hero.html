@@ -24,12 +24,18 @@
         <app-icon name="github" [size]="18" />
         GitHub
       </a>
-      <a class="btn btn--ghost btn--lg" i18n="@@hero.cta.linkedin" rel="noreferrer" target="_blank" [href]="profile.linkedin">LinkedIn</a>
+      <a class="btn btn--ghost btn--lg" i18n="@@hero.cta.linkedin" rel="noreferrer" target="_blank" [href]="profile.linkedin">
+        <app-icon name="linkedin" [size]="18" />
+        LinkedIn
+      </a>
       <a class="btn btn--ghost btn--lg" i18n="@@hero.cta.telegram" rel="noreferrer" target="_blank" [href]="profile.telegram">
         <app-icon name="telegram" [size]="18" />
         Telegram
       </a>
-      <a class="btn btn--ghost btn--lg" download i18n="@@hero.resume" rel="noreferrer" target="_blank" [href]="profile.resume">Résumé</a>
+      <a class="btn btn--ghost btn--lg" download i18n="@@hero.resume" rel="noreferrer" target="_blank" [href]="profile.resume">
+        <app-icon name="resume" [size]="18" />
+        Résumé
+      </a>
     </div>
 
     <p class="hero__hint">{{ profile.hint }}</p>
