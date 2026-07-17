@@ -2,6 +2,10 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" target-language="ru" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="scrollTop.aria" datatype="html">
+        <source>Scroll to top</source>
+        <target>Наверх</target>
+      </trans-unit>
       <trans-unit id="skip" datatype="html">
         <source>Skip to content</source>
         <target>Перейти к содержимому</target>
