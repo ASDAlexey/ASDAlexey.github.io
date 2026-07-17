@@ -69,8 +69,8 @@
   }
 
   &__actions {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 150px);
     justify-content: center;
     gap: 12px;
   }
