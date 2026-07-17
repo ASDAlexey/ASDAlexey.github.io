@@ -27,4 +27,12 @@
   .card-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  // A lone trailing card (odd total) centers across both columns
+  // instead of being left-aligned in the first column.
+  .card-grid app-project-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 8px);
+  }
 }
