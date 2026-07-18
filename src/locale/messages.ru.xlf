@@ -200,7 +200,7 @@
       </trans-unit>
       <trans-unit id="exp.current.hl6" datatype="html">
         <source>Built a design system and a shared library (tests, utilities, components) reused across projects — improving consistency and cutting delivery time by 15%.</source>
-        <target>Разработал дизайн-систему и общую библиотеку (тесты, утилиты, компоненты), переиспользуемую между проектами — повысил consistency и сократил время разработки на 15%.</target>
+        <target>Разработал дизайн-систему и общую библиотеку (компоненты, утилиты, тестовые хелперы) для нескольких проектов — обеспечил единообразие UI и сократил время разработки на 15%.</target>
       </trans-unit>
       <trans-unit id="exp.current.hl7" datatype="html">
         <source>Planned product architecture with backend and design, ran stand-ups, and set up unified CI/CD templates that sped up my team and the adjacent teams I hired and led.</source>
