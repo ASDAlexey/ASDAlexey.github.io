@@ -68,9 +68,13 @@ const EN = {
       company: 'Remote',
       period: '2023 — Present',
       points: [
-        'Architect large-scale Angular apps with a modern reactive stack — NgRx, Signals, zoneless, OnPush — plus a shared design system and libraries.',
-        'Enforce a testing-first culture and CI/CD: coverage gates, performance budgets and automated code-quality checks.',
-        'Drive AI-assisted development to accelerate delivery and code review.',
+        'Led a team of 5+ developers — decomposed complex work, estimated timelines, set goals and shipped a release at the end of every sprint.',
+        'Owned the frontend architecture — modular Nx boundaries, NgRx Signals state and reusable patterns that keep large apps maintainable as they scale.',
+        'Set architectural standards and eliminated anti-patterns (god components, leaky effects, cross-layer coupling) via custom lint rules, ADRs and code review.',
+        'Mentored engineers and ran code reviews with constructive feedback, raising code quality and accelerating the team’s growth.',
+        'Cut critical production bugs by 25% through test automation (Vitest / Jest) and CI/CD pipelines.',
+        'Built a design system and a shared library (tests, utilities, components) reused across projects — improving consistency and cutting delivery time by 15%.',
+        'Planned product architecture with backend and design, ran stand-ups, and set up unified CI/CD templates that sped up my team and the adjacent teams I hired and led.',
       ],
     },
     {
@@ -192,9 +196,13 @@ const RU = {
       company: 'Удалённо',
       period: '2023 — н.в.',
       points: [
-        'Проектирую крупные Angular-приложения на современном реактивном стеке — NgRx, Signals, zoneless, OnPush — с общим design-системой и библиотеками.',
-        'Выстраиваю testing-first культуру и CI/CD: coverage-гейты, performance-бюджеты и автоматические проверки качества кода.',
-        'Развиваю AI-assisted разработку для ускорения поставки и code review.',
+        'Руководил командой из 5+ разработчиков — декомпозировал сложные задачи, оценивал сроки, ставил цели и делал релиз в конце каждого спринта.',
+        'Отвечал за фронтенд-архитектуру — модульные границы в Nx, состояние на NgRx Signals и переиспользуемые паттерны, сохраняющие крупные приложения поддерживаемыми при росте.',
+        'Задавал архитектурные стандарты и устранял антипаттерны (god-компоненты, неизолированные эффекты, связность между слоями) через кастомные lint-правила, ADR и code review.',
+        'Менторил разработчиков и проводил code review с конструктивной обратной связью, повышая качество кода и ускоряя рост команды.',
+        'Снизил количество критических багов в проде на 25% за счёт автоматизации тестов (Vitest / Jest) и CI/CD.',
+        'Разработал дизайн-систему и общую библиотеку (тесты, утилиты, компоненты), переиспользуемую между проектами — повысил consistency и сократил время разработки на 15%.',
+        'Проектировал архитектуру продукта с бэкендом и дизайном, ввёл stand-up-встречи и настроил единые CI/CD-шаблоны, ускорившие мою и смежные команды, которые я нанимал и вёл.',
       ],
     },
     {
