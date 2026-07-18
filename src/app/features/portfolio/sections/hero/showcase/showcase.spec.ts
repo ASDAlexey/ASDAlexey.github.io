@@ -7,7 +7,7 @@ import { SHOWCASE_CHIPS, SHOWCASE_COVERAGE, SHOWCASE_FILES, SHOWCASE_LINE_COUNT,
 const REST = 'rotateX(9deg) rotateY(0deg)';
 
 function move(pointerType: string, clientX: number, clientY: number): PointerEvent {
-  return { pointerType, clientX, clientY } as PointerEvent;
+  return new PointerEvent('pointermove', { pointerType, clientX, clientY });
 }
 
 describe('HeroShowcase', () => {
@@ -20,7 +20,7 @@ describe('HeroShowcase', () => {
     const fixture = TestBed.createComponent(HeroShowcase);
     fixture.detectChanges();
 
-    const el = fixture.nativeElement as HTMLElement;
+    const el: HTMLElement = fixture.nativeElement;
     const c = fixture.componentInstance;
 
     expect(el.querySelectorAll('.chip')).toHaveLength(SHOWCASE_CHIPS.length);
@@ -40,7 +40,7 @@ describe('HeroShowcase', () => {
     const fixture = TestBed.createComponent(HeroShowcase);
     fixture.detectChanges();
 
-    const el = fixture.nativeElement as HTMLElement;
+    const el: HTMLElement = fixture.nativeElement;
     const c = fixture.componentInstance;
     const lines = (): NodeListOf<Element> => el.querySelectorAll('.code__line');
     const code = (): string => el.querySelector('.code__lines')?.textContent ?? '';
@@ -67,7 +67,7 @@ describe('HeroShowcase', () => {
   it('tilts toward a fine pointer but respects touch, reduced motion and a missing view or rect', () => {
     const fixture = TestBed.createComponent(HeroShowcase);
     const c = fixture.componentInstance;
-    const el = fixture.nativeElement as HTMLElement;
+    const el: HTMLElement = fixture.nativeElement;
 
     expect(c.stageTransform()).toBe(REST);
 
@@ -88,7 +88,7 @@ describe('HeroShowcase', () => {
     vi.restoreAllMocks();
 
     // matchMedia absent (default jsdom) + a real rect → the stage leans; leaving resets it.
-    vi.spyOn(el, 'getBoundingClientRect').mockReturnValue({ left: 0, top: 0, width: 200, height: 100 } as DOMRect);
+    vi.spyOn(el, 'getBoundingClientRect').mockReturnValue(new DOMRect(0, 0, 200, 100));
     c.onPointerMove(move('mouse', 200, 100));
     expect(c.stageTransform()).toBe('rotateX(6deg) rotateY(3deg)');
 

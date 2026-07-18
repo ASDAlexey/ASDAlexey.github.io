@@ -6,7 +6,7 @@ describe('Experience', () => {
   it('renders a card for every experience entry', () => {
     const fixture = TestBed.createComponent(Experience);
     fixture.detectChanges();
-    const el = fixture.nativeElement as HTMLElement;
+    const el: HTMLElement = fixture.nativeElement;
 
     expect(el.querySelector('#experience')).toBeTruthy();
     expect(el.querySelectorAll('app-experience-card').length).toBe(fixture.componentInstance.experiences.length);
