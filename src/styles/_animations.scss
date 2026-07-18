@@ -1,29 +1,97 @@
-// Scroll-reveal — hidden state + transition live here; the ScrollReveal directive
-// adds `.reveal` on the host and toggles `.is-visible` as the element enters and
-// leaves the viewport. Because it's a transition (not a re-triggered keyframe),
-// it interpolates smoothly in both directions and reverses naturally on scroll-up.
+// Scroll-reveal — elements fade + travel into place as they enter the viewport and
+// reset as they leave, so the entrance replays whichever way you scroll.
 //
-// Applied only to non-hover elements (section text and card containers) so it
-// never replaces a card's own hover transition.
+// Single elements use `.reveal` (a transition that interpolates both ways, with a
+// per-direction offset picked from the `data-reveal` attribute the directive sets).
+// Grids and lists use `.reveal--stagger`: the container stays put while its direct
+// children play a keyframed cascade, re-triggered each time it re-enters view.
+//
+// Motion lives on the `translate`/`scale` properties (not the `transform` shorthand)
+// so it composes with cards' own hover `transform` instead of clobbering it.
 
 .reveal {
-  transform: translateY(30px);
+  --reveal-x: 0;
+  --reveal-y: 32px;
+  --reveal-scale: 1;
+  translate: var(--reveal-x) var(--reveal-y);
+  scale: var(--reveal-scale);
+
   opacity: 0;
   transition:
     opacity 0.8s var(--ease),
-    transform 0.8s var(--ease);
-  will-change: opacity, transform;
+    translate 0.8s var(--ease),
+    scale 0.8s var(--ease);
+  will-change: opacity, translate, scale;
 
   &.is-visible {
-    transform: none;
+    translate: none;
+    scale: 1;
+    opacity: 1;
+  }
+
+  &[data-reveal='down'] {
+    --reveal-y: -32px;
+  }
+
+  &[data-reveal='left'] {
+    --reveal-x: -48px;
+    --reveal-y: 0;
+  }
+
+  &[data-reveal='right'] {
+    --reveal-x: 48px;
+    --reveal-y: 0;
+  }
+
+  &[data-reveal='scale'] {
+    --reveal-y: 14px;
+    --reveal-scale: 0.94;
+  }
+}
+
+// Staggered container — passive itself; its direct children cascade in. Applied
+// alongside `.reveal`, so the directive still toggles `.is-visible` on the container.
+.reveal--stagger {
+  translate: none;
+  scale: 1;
+  opacity: 1;
+  transition: none;
+  will-change: auto;
+
+  > * {
+    opacity: 0;
+  }
+
+  &.is-visible > * {
+    animation: reveal-rise 0.7s var(--ease) both;
+  }
+
+  @for $i from 1 through 8 {
+    &.is-visible > *:nth-child(#{$i}) {
+      animation-delay: #{($i - 1) * 0.09}s;
+    }
+  }
+}
+
+@keyframes reveal-rise {
+  from {
+    translate: 0 34px;
+    opacity: 0;
+  }
+
+  to {
+    translate: none;
     opacity: 1;
   }
 }
 
-// Respect reduced-motion: show everything immediately, no slide, no reliance on JS.
+// Respect reduced-motion: show everything immediately, no travel, no reliance on JS.
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
-    transform: none;
+  .reveal,
+  .reveal--stagger > * {
+    translate: none;
+    scale: 1;
+    animation: none;
     opacity: 1;
     transition: none;
   }

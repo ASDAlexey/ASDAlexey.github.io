@@ -42,7 +42,7 @@
 
     <app-hero-showcase />
 
-    <div class="stats">
+    <div appScrollReveal class="stats reveal--stagger">
       @for (stat of stats; track stat.caption) {
         <app-stat-card [stat]="stat" />
       }

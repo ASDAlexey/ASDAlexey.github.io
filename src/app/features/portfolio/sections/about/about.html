@@ -1,21 +1,23 @@
 <section class="section" id="about">
   <div class="container container--narrow">
-    <p appScrollReveal class="section__eyebrow"><span class="section__num">01</span>&nbsp;—&nbsp;<span i18n="@@nav.about">About</span></p>
+    <p class="section__eyebrow" [appScrollReveal]="'left'">
+      <span class="section__num">01</span>&nbsp;—&nbsp;<span i18n="@@nav.about">About</span>
+    </p>
     <h2 appScrollReveal class="section__title" i18n="@@about.title">Angular specialist who closes every platform with one stack</h2>
 
-    <div class="prose">
-      <p appScrollReveal class="prose__text" i18n="@@about.p1">
+    <div appScrollReveal class="prose reveal--stagger">
+      <p class="prose__text" i18n="@@about.p1">
         Tech Lead and Senior Frontend Developer with <strong>14+ years</strong> of experience. Angular is my core strength — and I've
         shipped it on every platform there is: web&nbsp;(SSR), Smart&nbsp;TV (Samsung/LG/Hisense), mobile (Ionic, iOS/Android) and desktop
         (Tauri).
       </p>
-      <p appScrollReveal class="prose__text" i18n="@@about.p2">
+      <p class="prose__text" i18n="@@about.p2">
         I <strong>architect large Angular apps end-to-end</strong> — Nx monorepos, micro-frontends, multilingual (i18n), zoneless change
         detection, signals, NgRx, design systems and shared libraries. I build <strong>GitLab CI/CD from scratch</strong> — reusable
         templates, builds scoped to only the changed projects, parallel test sharding, automated semantic versioning, Docker multi-stage
         builds and Nginx.
       </p>
-      <p appScrollReveal class="prose__text" i18n="@@about.p3">
+      <p class="prose__text" i18n="@@about.p3">
         I <strong>lead people</strong> — I've built and led frontend teams, run technical interviews, and own the code-review process. I
         <strong>test relentlessly</strong> — I raised a project to <strong>90%+ unit-test coverage</strong> and hold my own code to the same
         bar. And I drive <strong>AI-assisted development</strong> — custom Claude Code skills, agents and hooks, including an AI code-review

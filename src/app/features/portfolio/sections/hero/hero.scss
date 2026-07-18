@@ -183,6 +183,16 @@
   }
 }
 
+// From 560px up the showcase's floating "Nx monorepo" chip (.chip--bl) is
+// visible and overflows the panel's bottom edge; add clearance so it no longer
+// collides with the stats row below. Chips are hidden under 560px, so the
+// tighter mobile margin stays.
+@media (width >= 560px) {
+  .stats {
+    margin-top: 84px;
+  }
+}
+
 @media (width >= 620px) {
   .stats {
     grid-template-columns: repeat(4, 1fr);
@@ -192,6 +202,44 @@
 @keyframes glow-drift {
   to {
     transform: translateX(-55%) translateY(30px);
+  }
+}
+
+// Scroll-linked parallax — the glows drift down as the hero scrolls away, adding
+// depth. Driven on the `translate` property so it composes with the time-based
+// `glow-drift` on `transform`. The full shorthand is restated per glow so the
+// scroll-driven track keeps its own fill/iteration instead of inheriting the
+// drift's `infinite alternate`. Progressive enhancement: browsers without
+// scroll-driven animations (and reduced-motion users) simply skip it.
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero__glow {
+      animation:
+        glow-drift 10s ease-in-out infinite alternate,
+        glow-parallax auto linear both;
+      animation-timeline: auto, scroll(root block);
+      animation-range:
+        auto,
+        0 90vh;
+
+      &--blue {
+        --parallax-shift: 70px;
+
+        animation:
+          glow-drift 10s ease-in-out infinite alternate-reverse -5s,
+          glow-parallax auto linear both;
+        animation-timeline: auto, scroll(root block);
+        animation-range:
+          auto,
+          0 90vh;
+      }
+    }
+  }
+}
+
+@keyframes glow-parallax {
+  to {
+    translate: 0 var(--parallax-shift, 130px);
   }
 }
 

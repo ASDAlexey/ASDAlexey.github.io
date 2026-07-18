@@ -42,7 +42,10 @@ class MockIntersectionObserver implements IntersectionObserver {
   selector: 'app-reveal-host',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [ScrollReveal],
-  template: '<div class="target" appScrollReveal></div>',
+  template: `
+    <div class="target-directed" [appScrollReveal]="'left'"></div>
+    <div appScrollReveal class="target"></div>
+  `,
 })
 class RevealHost {}
 
@@ -76,6 +79,31 @@ describe('ScrollReveal', () => {
     expect(target.classList.contains('is-visible')).toBe(true);
 
     observer.fire(false);
+    expect(target.classList.contains('is-visible')).toBe(false);
+  });
+
+  it('defaults the direction attribute to up and honours an explicit direction', () => {
+    fixture = TestBed.createComponent(RevealHost);
+    fixture.detectChanges();
+    TestBed.tick();
+
+    const bare: HTMLElement = fixture.nativeElement.querySelector('.target');
+    const directed: HTMLElement = fixture.nativeElement.querySelector('.target-directed');
+
+    expect(bare.getAttribute('data-reveal')).toBe('up');
+    expect(directed.getAttribute('data-reveal')).toBe('left');
+  });
+
+  it('does nothing when IntersectionObserver is unavailable (SSR)', () => {
+    vi.stubGlobal('IntersectionObserver', undefined);
+
+    fixture = TestBed.createComponent(RevealHost);
+    fixture.detectChanges();
+    TestBed.tick();
+
+    const target: HTMLElement = fixture.nativeElement.querySelector('.target');
+
+    expect(MockIntersectionObserver.last).toBeUndefined();
     expect(target.classList.contains('is-visible')).toBe(false);
   });
 });

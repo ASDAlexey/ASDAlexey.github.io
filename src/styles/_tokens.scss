@@ -39,8 +39,12 @@
 
   --maxw: 1100px;
 
-  --font: 'Inter Variable', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, sans-serif;
-  --mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+  // 'Inter Latin' / 'JBMono Latin' are the self-hosted, preloaded Latin subsets
+  // (declared inline in index.html) — first in the stack so above-the-fold text
+  // paints the real font immediately. 'Inter Variable' / 'JetBrains Mono Variable'
+  // (fontsource) cover Cyrillic and extended ranges as automatic fallbacks.
+  --font: 'Inter Latin', 'Inter Variable', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, sans-serif;
+  --mono: 'JBMono Latin', 'JetBrains Mono Variable', ui-monospace, monospace;
 
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }

@@ -1,11 +1,11 @@
 <section class="section" id="projects">
   <div class="container">
-    <p appScrollReveal class="section__eyebrow">
+    <p class="section__eyebrow" [appScrollReveal]="'left'">
       <span class="section__num">03</span>&nbsp;—&nbsp;<span i18n="@@nav.projects">Projects</span>
     </p>
     <h2 appScrollReveal class="section__title" i18n="@@projects.title">Things I've built on my own time</h2>
 
-    <div appScrollReveal class="card-grid">
+    <div appScrollReveal class="card-grid reveal--stagger">
       @for (project of projects; track project.name) {
         <app-project-card [project]="project" />
       }

@@ -10,7 +10,32 @@
   display: block;
   max-width: 580px;
   margin: 52px auto 30px;
+
+  // CSS-only entrance — runs on load (not gated by JS/IntersectionObserver, so it
+  // never delays LCP the way the scroll-reveal directive did). Stays fully opaque
+  // and animates only `scale`/`translate`: CSS transforms don't change the
+  // element's measured layout size, so the panel is "contentful" at first paint
+  // while still visibly settling in. Leaves the stage's tilt `transform` untouched.
+  animation: showcase-in 0.7s var(--ease) both;
   perspective: 1400px;
+}
+
+@keyframes showcase-in {
+  from {
+    translate: 0 16px;
+    scale: 0.94;
+  }
+
+  to {
+    translate: none;
+    scale: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :host {
+    animation: none;
+  }
 }
 
 .showcase {
