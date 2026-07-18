@@ -30,6 +30,10 @@ export interface Project {
   readonly links: readonly ProjectLink[];
   readonly tags: readonly string[];
   readonly featured: boolean;
+  readonly image?: string;
+  readonly imageAlt?: string;
+  // Diagrams/logos are shown in full (contain); screenshots fill the banner (cover).
+  readonly imageContain?: boolean;
 }
 
 export interface Stat {
@@ -52,6 +56,7 @@ export interface SocialLink {
   readonly label: string;
   readonly href: string;
   readonly icon: SocialIcon;
+  readonly download?: boolean;
 }
 
 export type LocaleCode = 'en' | 'ru';

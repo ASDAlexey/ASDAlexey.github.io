@@ -28,6 +28,7 @@ export const SOCIALS: readonly SocialLink[] = [
   { label: 'GitHub', href: PROFILE.github, icon: 'github' },
   { label: 'LinkedIn', href: PROFILE.linkedin, icon: 'linkedin' },
   { label: 'Telegram', href: PROFILE.telegram, icon: 'telegram' },
+  { label: $localize`:@@social.resume:Résumé`, href: PROFILE.resume, icon: 'resume', download: true },
 ];
 
 export const EXPERIENCES: readonly Experience[] = [
@@ -101,6 +102,8 @@ export const PROJECTS: readonly Project[] = [
     links: [{ label: 'Live', href: 'https://asdalexey.github.io/litely/' }],
     tags: ['Tauri', 'Angular 22', 'Rust', 'TypeScript'],
     featured: true,
+    image: 'litely.webp',
+    imageAlt: $localize`:@@proj.litely.img.alt:Litely desktop app — compression settings screen`,
   },
   {
     name: 'Bonds Tracker',
@@ -109,17 +112,22 @@ export const PROJECTS: readonly Project[] = [
     links: [],
     tags: ['Angular 22', 'Tauri 2', 'Rust', 'SQLite', 'WebSocket'],
     featured: false,
+    image: 'bonds-tracker.webp',
+    imageAlt: $localize`:@@proj.bonds.img.alt:Bonds Tracker desktop app — portfolio dashboard`,
   },
   {
     name: 'vitest-auto-spy',
     badge: $localize`:@@proj.vas.badge:Library · Open Source`,
-    description: $localize`:@@proj.vas.desc:Typed auto-mocking for Vitest — the missing jest-auto-spies. Typed Spy<T> over conditional/mapped types, Observable mocking (nextWith/throwWith), calledWith dispatch, zoneless Angular, zero dependencies. Published on npm and dogfooded in this site's tests.`,
+    description: $localize`:@@proj.vas.desc:Typed auto-mocking for Vitest — the spiritual successor to jest-auto-spies. One API, three runtimes: the same helpers run on Vitest, Bun (bun:test) and Node.js (node:test) behind a swappable MockAdapter. Generate fully-typed spies from a class (createSpyFromClass) or from a TypeScript type alone (createAutoMock, Proxy-based — never instantiates the class). Return-type-aware controls: mockReturnValue, resolveWith / rejectWith for promises, nextWith / throwWith / complete for Observables, plus calledWith dispatch and readonly / signal property mocking. First-class RxJS entry point and DI helpers (provideAutoSpy / injectSpy) for Angular, NestJS, React, Vue and Svelte. Zero runtime dependencies, 100% coverage, published on npm and dogfooded in this site's tests.`,
     links: [
       { label: 'npm', href: 'https://www.npmjs.com/package/vitest-auto-spy' },
       { label: 'GitHub', href: 'https://github.com/ASDAlexey/vitest-auto-spy' },
     ],
-    tags: ['Vitest', 'TypeScript', 'Testing'],
+    tags: ['Vitest', 'Bun', 'Node.js', 'TypeScript', 'RxJS'],
     featured: true,
+    image: 'vitest-auto-spy.svg',
+    imageAlt: $localize`:@@proj.vas.img.alt:vitest-auto-spy — one API, three runtimes diagram`,
+    imageContain: true,
   },
   {
     name: 'SundayRun',
@@ -131,6 +139,18 @@ export const PROJECTS: readonly Project[] = [
     ],
     tags: ['Angular 22', 'Bun', 'Vitest', 'pdfmake', 'GitHub Pages'],
     featured: false,
+    image: 'sundayrun.webp',
+    imageAlt: $localize`:@@proj.sundayrun.img.alt:SundayRun web app — park-run landing page`,
+  },
+  {
+    name: 'Sportdiary',
+    badge: $localize`:@@proj.sportdiary.badge:Mobile · Personal`,
+    description: $localize`:@@proj.sportdiary.desc:Full-stack running tracker for iOS & Android, built solo end to end. Built-in GPS tracking with live route maps, automatic lap detection and rich per-workout stats — pace, cadence, step length, heart rate, calories and elevation. Weekly / monthly volume analysis with personal-record tables, plus a social feed to follow, comment on and compare workouts with other runners. Ionic + Angular front end, Node.js backend self-hosted on my own VPS. Ran in production for over a year.`,
+    links: [],
+    tags: ['Ionic', 'Angular', 'Node.js', 'iOS / Android', 'GPS'],
+    featured: false,
+    image: $localize`:@@proj.sportdiary.img:sportdiary-en.webp`,
+    imageAlt: $localize`:@@proj.sportdiary.img.alt:Sportdiary mobile app — workout detail with route map and stats`,
   },
   {
     name: 'Claude Code config & skills',
