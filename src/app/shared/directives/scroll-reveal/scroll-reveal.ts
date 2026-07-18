@@ -23,6 +23,10 @@ export class ScrollReveal {
   }
 
   #observe(): void {
+    if (typeof IntersectionObserver === 'undefined') {
+      return;
+    }
+
     const el = this.#host.nativeElement;
 
     const observer = new IntersectionObserver((entries) => {
