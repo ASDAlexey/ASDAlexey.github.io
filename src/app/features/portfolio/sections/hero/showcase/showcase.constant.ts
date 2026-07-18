@@ -14,7 +14,7 @@ export interface ShowcaseBar {
 }
 
 export const SHOWCASE_CHIPS: readonly ShowcaseChip[] = [
-  { label: '90%+ coverage', tone: 'gold', pos: 'tl' },
+  { label: '100% coverage', tone: 'gold', pos: 'tl' },
   { label: 'SSR · prerendered', tone: 'blue', pos: 'tr' },
   { label: 'Nx monorepo', tone: 'gold', pos: 'bl' },
   { label: 'Tauri · Rust', tone: 'blue', pos: 'br' },
@@ -28,7 +28,7 @@ export const SHOWCASE_PLATFORM_BARS: readonly ShowcaseBar[] = [
 ];
 
 // Coverage ring — percentage shown as the panel's focal metric.
-export const SHOWCASE_COVERAGE = 92;
+export const SHOWCASE_COVERAGE = 100;
 
 // Switchable editor tabs — component, template, styles and a live-looking test.
 // Angular 20+ suffix-less file naming (hero.ts / hero.html / hero.scss / hero.spec.ts).

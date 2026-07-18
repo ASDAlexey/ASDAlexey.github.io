@@ -21,7 +21,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="seo.desc" datatype="html">
-        <source>Tech Lead / Senior Angular Developer (NgRx). 14+ years of Angular across every platform — Web (SSR), Smart TV, Mobile (Ionic), Desktop (Tauri/Rust). Angular 22, zoneless, signals, Nx, OpenAPI/zod codegen, design systems, GitLab CI/CD, 90%+ test coverage, AI code-review. Frontend team lead.</source>
+        <source>Tech Lead / Senior Angular Developer (NgRx). 14+ years of Angular across every platform — Web (SSR), Smart TV, Mobile (Ionic), Desktop (Tauri/Rust). Angular 22, zoneless, signals, Nx, OpenAPI/zod codegen, design systems, GitLab CI/CD, 97% test coverage, AI code-review. Frontend team lead.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/seo.service.ts</context>
           <context context-type="linenumber">24</context>
@@ -78,7 +78,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="about.p3" datatype="html">
-        <source> I <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>lead people<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — I&apos;ve built and led frontend teams, run technical interviews, and own the code-review process. I <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>test relentlessly<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — I raised a project to <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>90%+ unit-test coverage<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> and hold my own code to the same bar. And I drive <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>AI-assisted development<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — custom Claude Code skills, agents and hooks, including an AI code-review skill that handles huge MRs. </source>
+        <source> I <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>lead people<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — I&apos;ve built and led frontend teams, run technical interviews, and own the code-review process. I <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>test relentlessly<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — I raised a project to <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>97% unit-test coverage<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> and hold my own code to the same bar. And I drive <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>AI-assisted development<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — custom Claude Code skills, agents and hooks, including an AI code-review skill that handles huge MRs. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/portfolio/sections/about/about.html</context>
           <context context-type="linenumber">19,24</context>
@@ -103,7 +103,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="hero.subtitle" datatype="html">
-        <source> 14+ years building <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Angular across every platform<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — Web (SSR), Smart TV, mobile (Ionic) and desktop (Tauri/Rust). Nx · NgRx · GitLab CI/CD · 90%+ test coverage · AI code-review · frontend team lead. </source>
+        <source> 14+ years building <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Angular across every platform<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — Web (SSR), Smart TV, mobile (Ionic) and desktop (Tauri/Rust). Nx · NgRx · GitLab CI/CD · 97% test coverage · AI code-review · frontend team lead. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/portfolio/sections/hero/hero.html</context>
           <context context-type="linenumber">12,13</context>
