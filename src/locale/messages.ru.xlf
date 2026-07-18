@@ -16,7 +16,7 @@
       </trans-unit>
       <trans-unit id="seo.desc" datatype="html">
         <source>Tech Lead / Senior Angular Developer (NgRx). 14+ years of Angular across every platform — Web (SSR), Smart TV, Mobile (Ionic), Desktop (Tauri/Rust). Angular 22, zoneless, signals, Nx, OpenAPI/zod codegen, design systems, GitLab CI/CD, 90%+ test coverage, AI code-review, Frontend Team Lead.</source>
-        <target>Tech Lead / Senior Angular Developer (NgRx). 14+ лет Angular на всех платформах — Web (SSR), Smart TV, Mobile (Ionic), Desktop (Tauri/Rust). Angular 22, zoneless, сигналы, Nx, кодген из OpenAPI с zod, дизайн-системы, GitLab CI/CD, 90%+ покрытие тестами, AI code-review, тимлид фронтенд-команд.</target>
+        <target>Tech Lead / Senior Angular Developer (NgRx). 14+ лет Angular на всех платформах — Web (SSR), Smart TV, Mobile (Ionic), Desktop (Tauri/Rust). Angular 22, zoneless, сигналы, Nx, кодген из OpenAPI с zod, дизайн-системы, GitLab CI/CD, 90%+ покрытие тестами, AI code-review, Тимлид фронтенд-команд.</target>
       </trans-unit>
       <trans-unit id="ld.jobTitle" datatype="html">
         <source>Tech Lead / Senior Angular Developer</source>
@@ -56,7 +56,7 @@
       </trans-unit>
       <trans-unit id="hero.subtitle" datatype="html">
         <source> 14+ years building <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Angular across every platform<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — Web (SSR), Smart TV, mobile (Ionic) and desktop (Tauri/Rust). Nx · NgRx · GitLab CI/CD · 90%+ test coverage · AI code-review · Frontend Team Lead. </source>
-        <target> 14+ лет создаю <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Angular на всех платформах<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — Web (SSR), Smart TV, mobile (Ionic) и desktop (Tauri/Rust). Nx · NgRx · GitLab CI/CD · 90%+ покрытие тестами · AI code-review · тимлид фронтенд-команд. </target>
+        <target> 14+ лет создаю <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Angular на всех платформах<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — Web (SSR), Smart TV, mobile (Ionic) и desktop (Tauri/Rust). Nx · NgRx · GitLab CI/CD · 90%+ покрытие тестами · AI code-review · Тимлид фронтенд-команд. </target>
       </trans-unit>
       <trans-unit id="hero.platforms" datatype="html">
         <source>Platforms</source>
