@@ -6,6 +6,14 @@
         <source>Scroll to top</source>
         <target>Наверх</target>
       </trans-unit>
+      <trans-unit id="project.preview" datatype="html">
+        <source>Open full image ↗</source>
+        <target>Открыть картинку ↗</target>
+      </trans-unit>
+      <trans-unit id="lightbox.close" datatype="html">
+        <source>Close image</source>
+        <target>Закрыть картинку</target>
+      </trans-unit>
       <trans-unit id="skip" datatype="html">
         <source>Skip to content</source>
         <target>Перейти к содержимому</target>
@@ -63,6 +71,10 @@
         <target>Платформы</target>
       </trans-unit>
       <trans-unit id="hero.resume" datatype="html">
+        <source>Résumé</source>
+        <target>Резюме</target>
+      </trans-unit>
+      <trans-unit id="social.resume" datatype="html">
         <source>Résumé</source>
         <target>Резюме</target>
       </trans-unit>
@@ -270,6 +282,10 @@
         <source>Cross-platform desktop app for batch image / video / PDF compression (WebP, AVIF, JPEG, PNG, SVG). Browser extension pastes compressed files straight into Jira / GitLab via Cmd+V. Watch-folders, system tray, drag&amp;drop, dark/light, before/after compare. Rust backend.</source>
         <target>Кроссплатформенное десктоп-приложение для пакетного сжатия image / video / PDF (WebP, AVIF, JPEG, PNG, SVG). Расширение для браузера вставляет сжатые файлы прямо в Jira / GitLab по Cmd+V. Watch-папки, трей, drag&amp;drop, тёмная/светлая тема, сравнение до/после. Бэкенд на Rust.</target>
       </trans-unit>
+      <trans-unit id="proj.litely.img.alt" datatype="html">
+        <source>Litely desktop app — compression settings screen</source>
+        <target>Десктоп-приложение Litely — экран настроек сжатия</target>
+      </trans-unit>
       <trans-unit id="proj.bonds.badge" datatype="html">
         <source>Desktop · Personal</source>
         <target>Десктоп · Личное</target>
@@ -278,13 +294,21 @@
         <source>Personal bonds portfolio tracker across multiple T-Bank Invest accounts. Smart-portfolio optimizer, audit with swap suggestions, scored screener, coupon calendar and a goal dashboard with growth roadmap. Real-time analytics over Tinkoff / MOEX ISS / CBR APIs, KMV-Merton default risk, Plotly, Telegram bot, Rust engines.</source>
         <target>Личный трекер портфеля облигаций с поддержкой нескольких счетов T-Bank Invest. Умный портфель, аудит с рекомендациями по замене, скринер с баллами, купонный календарь и дашборд цели с дорожной картой роста. Аналитика в реальном времени по API Tinkoff / MOEX ISS / ЦБ РФ, риск дефолта по KMV-Merton, Plotly, Telegram-бот и движки на Rust.</target>
       </trans-unit>
+      <trans-unit id="proj.bonds.img.alt" datatype="html">
+        <source>Bonds Tracker desktop app — portfolio dashboard</source>
+        <target>Десктоп-приложение Bonds Tracker — дашборд портфеля</target>
+      </trans-unit>
       <trans-unit id="proj.vas.badge" datatype="html">
         <source>Library · Open Source</source>
         <target>Библиотека · Open Source</target>
       </trans-unit>
       <trans-unit id="proj.vas.desc" datatype="html">
-        <source>Typed auto-mocking for Vitest — the missing jest-auto-spies. Typed Spy&lt;T&gt; over conditional/mapped types, Observable mocking (nextWith/throwWith), calledWith dispatch, zoneless Angular, zero dependencies. Published on npm and dogfooded in this site's tests.</source>
-        <target>Типобезопасный авто-мокинг для Vitest — недостающий jest-auto-spies. Типизированный Spy&lt;T&gt; на conditional/mapped types, мокинг Observable (nextWith/throwWith), calledWith-диспетчинг, zoneless Angular, ноль зависимостей. Опубликован в npm и используется в тестах этого сайта.</target>
+        <source>Typed auto-mocking for Vitest — the spiritual successor to jest-auto-spies. One API, three runtimes: the same helpers run on Vitest, Bun (bun:test) and Node.js (node:test) behind a swappable MockAdapter. Generate fully-typed spies from a class (createSpyFromClass) or from a TypeScript type alone (createAutoMock, Proxy-based — never instantiates the class). Return-type-aware controls: mockReturnValue, resolveWith / rejectWith for promises, nextWith / throwWith / complete for Observables, plus calledWith dispatch and readonly / signal property mocking. First-class RxJS entry point and DI helpers (provideAutoSpy / injectSpy) for Angular, NestJS, React, Vue and Svelte. Zero runtime dependencies, 100% coverage, published on npm and dogfooded in this site's tests.</source>
+        <target>Типобезопасный авто-мокинг для Vitest — идейный наследник jest-auto-spies. Один API, три рантайма: одни и те же хелперы работают в Vitest, Bun (bun:test) и Node.js (node:test) через сменный MockAdapter. Генерация полностью типизированных спаев из класса (createSpyFromClass) или из одного лишь TypeScript-типа (createAutoMock, на Proxy — без инстанцирования класса). Хелперы с учётом возвращаемого типа: mockReturnValue, resolveWith / rejectWith для промисов, nextWith / throwWith / complete для Observable, плюс calledWith-диспетчинг и мокинг readonly / signal-свойств. Отдельный вход для RxJS и DI-хелперы (provideAutoSpy / injectSpy) для Angular, NestJS, React, Vue и Svelte. Ноль зависимостей, 100% покрытие, опубликован в npm и используется в тестах этого сайта.</target>
+      </trans-unit>
+      <trans-unit id="proj.vas.img.alt" datatype="html">
+        <source>vitest-auto-spy — one API, three runtimes diagram</source>
+        <target>vitest-auto-spy — схема «один API, три рантайма»</target>
       </trans-unit>
       <trans-unit id="proj.sundayrun.badge" datatype="html">
         <source>Web · Community</source>
@@ -293,6 +317,26 @@
       <trans-unit id="proj.sundayrun.desc" datatype="html">
         <source>Web app for a community park-run club (Taganrog). Organizers upload race results (stopwatch xlsx export) → the app detects participant gender, computes rankings and generates an official-format PDF protocol on the fly in the browser. Every result set is published to the repo archive in one atomic commit; the home page is an archive of all published runs with downloadable PDF protocols. Zoneless Angular, 100% test coverage.</source>
         <target>Веб-приложение клуба парковых пробегов (Таганрог). Организаторы загружают результаты забега (xlsx-экспорт секундомера) → приложение определяет пол участников, считает места и генерирует PDF-протокол по официальному образцу на лету в браузере. Каждый забег публикуется в архив репозитория одним атомарным коммитом; главная страница — архив всех опубликованных пробегов со скачиванием протоколов в PDF. Zoneless Angular, 100% покрытие тестами.</target>
+      </trans-unit>
+      <trans-unit id="proj.sundayrun.img.alt" datatype="html">
+        <source>SundayRun web app — park-run landing page</source>
+        <target>Веб-приложение SundayRun — лендинг паркового пробега</target>
+      </trans-unit>
+      <trans-unit id="proj.sportdiary.badge" datatype="html">
+        <source>Mobile · Personal</source>
+        <target>Мобильное · Личное</target>
+      </trans-unit>
+      <trans-unit id="proj.sportdiary.desc" datatype="html">
+        <source>Full-stack running tracker for iOS &amp; Android, built solo end to end. Built-in GPS tracking with live route maps, automatic lap detection and rich per-workout stats — pace, cadence, step length, heart rate, calories and elevation. Weekly / monthly volume analysis with personal-record tables, plus a social feed to follow, comment on and compare workouts with other runners. Ionic + Angular front end, Node.js backend self-hosted on my own VPS. Ran in production for over a year.</source>
+        <target>Full-stack трекер бега для iOS и Android, полностью сделан в одиночку. Встроенный GPS-трекинг с картой маршрута в реальном времени, автоматический подсчёт кругов и подробная статистика по тренировке — темп, каденс, длина шага, пульс, калории и набор высоты. Анализ недельных и месячных объёмов с таблицами личных рекордов, плюс социальная лента, чтобы подписываться, комментировать и сравнивать тренировки с другими бегунами. Фронтенд на Ionic + Angular, бэкенд на Node.js, самостоятельно развёрнутый на собственном VPS. Больше года проработал в продакшене.</target>
+      </trans-unit>
+      <trans-unit id="proj.sportdiary.img" datatype="html">
+        <source>sportdiary-en.webp</source>
+        <target>sportdiary-ru.webp</target>
+      </trans-unit>
+      <trans-unit id="proj.sportdiary.img.alt" datatype="html">
+        <source>Sportdiary mobile app — workout detail with route map and stats</source>
+        <target>Мобильное приложение Sportdiary — экран тренировки с картой маршрута и статистикой</target>
       </trans-unit>
       <trans-unit id="proj.claude.badge" datatype="html">
         <source>Tooling · Open Source</source>
