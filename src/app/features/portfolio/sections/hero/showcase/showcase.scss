@@ -610,11 +610,60 @@
   }
 }
 
-// Hide the whole ornament on very small screens — it competes with the copy
-// and the flanking chips overflow. The stats grid below still carries the numbers.
+// On small screens the ornament stays visible but reflows: it spans the full
+// column, the body stacks the editor above the metrics, and the flanking chips
+// (anchored on negative offsets) are dropped so nothing overflows the viewport.
 @media (width < 560px) {
   :host {
+    max-width: 100%;
+    margin: 40px 0 26px;
+  }
+
+  // The tilt is applied inline via [style.transform]; under perspective it
+  // offsets tap hit-testing so touches on the tabs land on the container and
+  // are swallowed. Flatten the stage on mobile (there is no pointer tilt on
+  // touch anyway) so the tabs' tap targets match their painted position.
+  .showcase__stage {
+    transform: none !important;
+  }
+
+  .chip {
     display: none;
+  }
+
+  // The tab strip is wider than a phone-width panel, so let the tabs wrap and
+  // drop the branch pill (the status bar below already carries "main").
+  .tabs {
+    row-gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .branch {
+    display: none;
+  }
+
+  .panel__body {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  // Fluid editor: fill the column and let long lines scroll horizontally
+  // inside the block instead of being clipped by the panel's overflow.
+  .code {
+    width: auto;
+    min-width: 0;
+    min-height: 0;
+    overflow-x: auto;
+  }
+
+  .metrics {
+    min-width: 0;
+  }
+
+  // Let the status chips reflow instead of overflowing the panel edge.
+  .panel__status {
+    row-gap: 6px;
+    flex-wrap: wrap;
   }
 }
 
