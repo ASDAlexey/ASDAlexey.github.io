@@ -101,6 +101,20 @@ a {
   }
 }
 
+// Registered so it can be animated (unregistered custom properties can't tween).
+// Drives the rotating conic-gradient frame in the `glow-border` mixin.
+@property --border-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes glow-spin {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
