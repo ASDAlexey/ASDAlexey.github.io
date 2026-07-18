@@ -1,7 +1,11 @@
 @use 'styles/typography' as t;
+@use 'styles/animated-border' as ab;
 
 :host {
+  @include ab.glow-border;
+
   display: flex;
+  position: relative;
   flex-direction: column;
   padding: 22px 18px;
   gap: 6px;
