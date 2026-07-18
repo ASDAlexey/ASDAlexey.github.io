@@ -40,6 +40,8 @@
 
     <p class="hero__hint">{{ profile.hint }}</p>
 
+    <app-hero-showcase />
+
     <div class="stats">
       @for (stat of stats; track stat.caption) {
         <app-stat-card [stat]="stat" />
