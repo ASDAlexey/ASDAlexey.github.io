@@ -11,6 +11,7 @@ export interface Experience {
   readonly location: string;
   readonly period: string;
   readonly description: string;
+  readonly highlights?: readonly string[];
   readonly tags: readonly string[];
   readonly badge?: string;
   readonly media?: ExperienceMedia;
@@ -45,7 +46,7 @@ export interface Testimonial {
   readonly image?: string;
 }
 
-export type SocialIcon = 'github' | 'linkedin' | 'telegram' | 'resume';
+export type SocialIcon = 'github' | 'linkedin' | 'resume' | 'telegram';
 
 export interface SocialLink {
   readonly label: string;

@@ -37,7 +37,16 @@ export const EXPERIENCES: readonly Experience[] = [
     location: $localize`:@@exp.current.loc:Remote`,
     period: $localize`:@@exp.current.period:2023 — Present`,
     description: $localize`:@@exp.current.desc:Architecting Angular 22 applications end-to-end — zoneless, signals, standalone and OnPush throughout, with NgRx Signals stores. Designed a type-safe API layer: an Orval client auto-generated from OpenAPI with zod runtime validation — signal-based httpResource for reads, HttpClient services for mutations. Built a self-authored Nx monorepo of shared Angular libraries (design-system tokens from Figma, theming, inline-SVG icons, notifications, feature flags, dev-auth tooling), auto-versioned and idempotently published to a private GitLab Package Registry. Quality enforced by a custom ESLint plugin (private #fields, inject()-only DI, RxJS hygiene), a multi-plugin Prettier stack, 100% test coverage and duplication / circular-dependency gates in CI.`,
-    tags: ['Angular', 'NgRx', 'Signals', 'RxJS', 'TypeScript', 'CI/CD'],
+    highlights: [
+      $localize`:@@exp.current.hl1:Led a team of 5+ developers — decomposed complex work, estimated timelines, set goals and shipped a release at the end of every sprint.`,
+      $localize`:@@exp.current.hl2:Owned the frontend architecture — modular Nx boundaries, NgRx Signals state and reusable patterns that keep large apps maintainable as they scale.`,
+      $localize`:@@exp.current.hl3:Set architectural standards and eliminated anti-patterns (god components, leaky effects, cross-layer coupling) via custom lint rules, ADRs and code review.`,
+      $localize`:@@exp.current.hl4:Mentored engineers and ran code reviews with constructive feedback, raising code quality and accelerating the team's growth.`,
+      $localize`:@@exp.current.hl5:Cut critical production bugs by 25% through test automation (Vitest / Jest) and CI/CD pipelines.`,
+      $localize`:@@exp.current.hl6:Built a design system and a shared library (tests, utilities, components) reused across projects — improving consistency and cutting delivery time by 15%.`,
+      $localize`:@@exp.current.hl7:Planned product architecture with backend and design, ran stand-ups, and set up unified CI/CD templates that sped up my team and the adjacent teams I hired and led.`,
+    ],
+    tags: ['Angular', 'NgRx', 'Signals', 'RxJS', 'TypeScript', 'CI/CD', 'Jira', 'Confluence'],
   },
   {
     role: $localize`:@@exp.fifthkind.role:Tech Lead / Senior Frontend`,

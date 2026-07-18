@@ -71,6 +71,16 @@ describe('ExperienceCard', () => {
     expect(el.querySelector('.card__media-caption')?.textContent).toContain(media.caption);
   });
 
+  it('renders highlight bullets only when provided', () => {
+    expect(render(base).nativeElement.querySelector('.card__highlights')).toBeNull();
+
+    const highlights = ['Led a team of 5+ developers', 'Owned the frontend architecture'];
+    const items = render({ ...base, highlights }).nativeElement.querySelectorAll('.card__highlight');
+
+    expect(items.length).toBe(2);
+    expect(items[0].textContent).toContain('Led a team');
+  });
+
   it('renders text links only when links are provided', () => {
     expect(render(base).nativeElement.querySelector('.card__links')).toBeNull();
 

@@ -6,6 +6,13 @@
 </div>
 <p class="card__org">{{ item.location }}</p>
 <p class="card__desc">{{ item.description }}</p>
+@if (item.highlights; as highlights) {
+  <ul class="card__highlights">
+    @for (highlight of highlights; track highlight) {
+      <li class="card__highlight">{{ highlight }}</li>
+    }
+  </ul>
+}
 @if (item.badge; as badge) {
   <p class="card__credential"><span aria-hidden="true">★</span> {{ badge }}</p>
 }
