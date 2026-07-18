@@ -8,6 +8,28 @@
       <span class="chip chip--{{ chip.tone }} chip--{{ chip.pos }}"> <span class="chip__dot"></span>{{ chip.label }} </span>
     }
 
+    @if (!touched() && active() !== 'spec') {
+      <span class="cue">
+        <svg
+          class="cue__hand"
+          fill="none"
+          height="18"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="18"
+        >
+          <path d="m9 9 5 12 1.8-5.2L21 14Z" />
+          <path d="M7.2 2.2 8 5.1" />
+          <path d="m5.1 8-2.9-.8" />
+          <path d="M14 4.1 12 6" />
+          <path d="m6 12-1.9 2" /></svg
+        ><span class="cue__text">click here</span>
+      </span>
+    }
+
     <div class="panel">
       <div class="panel__bar">
         <span class="panel__lights"><i></i><i></i><i></i></span>
@@ -19,11 +41,8 @@
               [class.tabs__tab--lead]="!touched() && file.key === 'spec' && active() !== 'spec'"
               [class.tabs__tab--on]="active() === file.key"
               (click)="select(file.key)"
-              >{{ file.name }}
-              @if (!touched() && file.key === 'spec' && active() !== 'spec') {
-                <span class="tabs__hint">&#128070; click to open the tests</span>
-              }
-            </span>
+              >{{ file.name }}</span
+            >
           }
         </span>
         <span class="branch"><span class="branch__ico"></span>main</span>

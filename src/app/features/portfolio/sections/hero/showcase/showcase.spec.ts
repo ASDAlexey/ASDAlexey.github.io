@@ -31,7 +31,7 @@ describe('HeroShowcase', () => {
     expect(el.querySelector('.code__lines')?.textContent).toContain('$localize');
     expect(el.querySelector('.panel__console')?.textContent).toContain('Claude Code');
     expect(el.querySelector('.console__lib')?.textContent).toContain('vitest-auto-spy');
-    expect(el.querySelector('.tabs__hint')).not.toBeNull();
+    expect(el.querySelector('.cue')).not.toBeNull();
     expect(c.ringOffset()).toBeCloseTo(c.ringCircumference * (1 - SHOWCASE_COVERAGE / 100), 5);
     expect(el.querySelector('[aria-hidden="true"].showcase')).not.toBeNull();
   });
@@ -48,7 +48,7 @@ describe('HeroShowcase', () => {
     c.select('spec');
     fixture.detectChanges();
     expect(c.touched()).toBe(true);
-    expect(el.querySelector('.tabs__hint')).toBeNull();
+    expect(el.querySelector('.cue')).toBeNull();
     expect(lines()).toHaveLength(SHOWCASE_LINE_COUNT.spec);
     expect(code()).toContain('vitest-auto-spy');
     expect(code()).toContain('provideAutoSpy');

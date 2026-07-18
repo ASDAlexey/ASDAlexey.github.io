@@ -282,39 +282,53 @@
       animation: none;
     }
   }
+}
 
-  // Tooltip above the panel, pointing down at hero.spec.ts (2nd tab).
-  // Sits outside the editor, floating above to draw the eye.
-  &__hint {
-    @include t.text('label', 'small');
+// Elongated "click here" pill tucked into the free space just above the panel,
+// its arrow pointing down at hero.spec.ts. Lives in the (unclipped) stage rather
+// than the panel, so it sits above the tab bar without being clipped.
+.cue {
+  display: inline-flex;
+  z-index: 20;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 35%;
+  align-items: center;
+  padding: 7px 14px;
+  gap: 8px;
+  transform: translateX(-50%);
+  border: 1px solid var(--accent-line);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgb(245, 165, 36, 0.18), var(--surface) 72%);
+  box-shadow:
+    0 10px 26px -8px rgb(0, 0, 0, 0.7),
+    0 0 20px -4px rgb(245, 165, 36, 0.45);
+  white-space: nowrap;
+  animation: cue-bob 2.2s var(--ease) infinite;
+  pointer-events: none;
 
-    z-index: 20;
+  // Arrow pointing down at hero.spec.ts.
+  &::after {
     position: absolute;
-    bottom: calc(100% + 18px);
-    left: 88px;
-    padding: 6px 12px;
-    border: 1px solid var(--accent-line);
-    border-radius: var(--radius-xs);
-    background: var(--surface);
-    box-shadow:
-      0 -10px 26px -8px rgb(0, 0, 0, 0.7),
-      0 0 18px -4px rgb(245, 165, 36, 0.4);
-    color: var(--text);
-    white-space: nowrap;
-    animation: hint-bounce 1.6s var(--ease) infinite;
-    pointer-events: none;
-
-    // Arrow tail pointing down at hero.spec.ts.
-    &::after {
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      border: 5px solid transparent;
-      border-top-color: var(--surface);
-      content: '';
-    }
+    top: calc(100% - 1px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 7px solid transparent;
+    border-top-color: var(--accent);
+    content: '';
   }
+}
+
+.cue__hand {
+  color: var(--accent-light);
+  filter: drop-shadow(0 0 6px rgb(245, 165, 36, 0.5));
+}
+
+.cue__text {
+  @include t.text('label', 'medium');
+
+  color: var(--accent-light);
+  text-transform: uppercase;
 }
 
 .branch {
@@ -682,14 +696,14 @@
   }
 }
 
-@keyframes hint-bounce {
+@keyframes cue-bob {
   0%,
   100% {
     transform: translateX(-50%) translateY(0);
   }
 
   50% {
-    transform: translateX(-50%) translateY(-4px);
+    transform: translateX(-50%) translateY(-5px);
   }
 }
 
@@ -765,7 +779,7 @@
   .code__caret,
   .console__caret,
   .console__spark,
-  .tabs__hint,
+  .cue,
   .ring__value {
     animation: none;
     transition: none;

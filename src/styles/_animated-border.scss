@@ -1,0 +1,47 @@
+// Animated "running" accent border — a warm highlight sweeps around the
+// element's perimeter, echoing the moving-frame look on card grids.
+//
+// A pseudo-element is filled with a rotating conic-gradient and masked down to a
+// thin frame (padding-box XOR border-box). The sweep is driven by the global
+// `--border-angle` @property + `glow-spin` keyframes declared in styles.scss, so
+// it degrades to a static arc under reduced-motion. The host must establish a
+// stacking context — set `position: relative` on it before including this.
+
+@mixin glow-border($thickness: 1px, $duration: 13.3s, $rest-opacity: 0.5) {
+  &::after {
+    z-index: 1;
+    position: absolute;
+    inset: 0;
+    padding: $thickness;
+    border-radius: inherit;
+    // Two highlights 180° apart so the frame lights up from both sides at once,
+    // both sweeping round together as `--border-angle` rotates.
+    background: conic-gradient(
+      from var(--border-angle),
+      transparent 0deg,
+      var(--accent-deep) 22deg,
+      var(--accent-light) 45deg,
+      var(--accent-deep) 68deg,
+      transparent 90deg,
+      transparent 180deg,
+      var(--accent-deep) 202deg,
+      var(--accent-light) 225deg,
+      var(--accent-deep) 248deg,
+      transparent 270deg,
+      transparent 360deg
+    );
+    content: '';
+    animation: glow-spin $duration linear infinite;
+    mask:
+      linear-gradient(rgb(0, 0, 0) 0 0) content-box,
+      linear-gradient(rgb(0, 0, 0) 0 0);
+    mask-composite: exclude;
+    opacity: $rest-opacity;
+    pointer-events: none;
+    transition: opacity 0.3s var(--ease);
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
