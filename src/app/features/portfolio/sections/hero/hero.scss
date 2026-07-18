@@ -219,7 +219,7 @@
         glow-parallax auto linear both;
       animation-timeline: auto, scroll(root block);
       animation-range:
-        auto,
+        normal,
         0 90vh;
 
       &--blue {
@@ -230,7 +230,7 @@
           glow-parallax auto linear both;
         animation-timeline: auto, scroll(root block);
         animation-range:
-          auto,
+          normal,
           0 90vh;
       }
     }

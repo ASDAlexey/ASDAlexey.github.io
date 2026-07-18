@@ -13,9 +13,9 @@
   --reveal-x: 0;
   --reveal-y: 32px;
   --reveal-scale: 1;
+
   translate: var(--reveal-x) var(--reveal-y);
   scale: var(--reveal-scale);
-
   opacity: 0;
   transition:
     opacity 0.8s var(--ease),
