@@ -1,0 +1,15 @@
+<dialog #dialog class="lightbox" [attr.aria-label]="alt() || null" (click)="onBackdropClick($event)">
+  <button aria-label="Close image" class="lightbox__close" i18n-aria-label="@@lightbox.close" type="button" (click)="close()">
+    <svg aria-hidden="true" fill="none" height="18" viewBox="0 0 24 24" width="18">
+      <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+    </svg>
+  </button>
+
+  <figure class="lightbox__figure">
+    <img class="lightbox__img" decoding="async" [alt]="alt()" [src]="src()" />
+
+    @if (alt()) {
+      <figcaption class="lightbox__caption">{{ alt() }}</figcaption>
+    }
+  </figure>
+</dialog>
