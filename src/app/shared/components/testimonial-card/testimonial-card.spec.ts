@@ -22,7 +22,7 @@ describe('TestimonialCard', () => {
   afterEach(() => vi.restoreAllMocks());
 
   it('renders the quote, author and title', () => {
-    const el = render(base).nativeElement as HTMLElement;
+    const el: HTMLElement = render(base).nativeElement;
 
     expect(el.querySelector('.card__quote')?.textContent).toContain('A great developer');
     expect(el.querySelector('.card__name')?.textContent).toContain('Steve Cronan');
@@ -35,16 +35,22 @@ describe('TestimonialCard', () => {
     expect(render({ ...base, author: 'Eugene Golubev' }).componentInstance.initials()).toBe('EG');
     expect(render({ ...base, author: 'Cher' }).componentInstance.initials()).toBe('C');
 
-    const img = render({ ...base, image: 'steve.webp' }).nativeElement.querySelector('.card__avatar_photo') as HTMLImageElement;
+    const host: HTMLElement = render({ ...base, image: 'steve.webp' }).nativeElement;
+    const img = host.querySelector<HTMLImageElement>('.card__avatar_photo');
 
-    expect(img.getAttribute('src')).toBe('steve.webp');
-    expect(img.getAttribute('alt')).toBe('Steve Cronan');
+    expect(img?.getAttribute('src')).toBe('steve.webp');
+    expect(img?.getAttribute('alt')).toBe('Steve Cronan');
   });
 
   it('confirms before opening the external profile, then navigates', () => {
     const href = 'https://www.linkedin.com/in/stevecronan/';
-    const host = render({ ...base, href }).nativeElement as HTMLElement;
-    const dialog = host.querySelector('dialog') as HTMLDialogElement;
+    const host: HTMLElement = render({ ...base, href }).nativeElement;
+    const dialog = host.querySelector('dialog');
+
+    if (!dialog) {
+      throw new Error('dialog was not rendered');
+    }
+
     // jsdom does not implement showModal/close — replace them with mocks.
     dialog.showModal = vi.fn();
     dialog.close = vi.fn();
@@ -61,8 +67,13 @@ describe('TestimonialCard', () => {
   });
 
   it('cancels without navigating', () => {
-    const host = render({ ...base, href: 'https://example.test/' }).nativeElement as HTMLElement;
-    const dialog = host.querySelector('dialog') as HTMLDialogElement;
+    const host: HTMLElement = render({ ...base, href: 'https://example.test/' }).nativeElement;
+    const dialog = host.querySelector('dialog');
+
+    if (!dialog) {
+      throw new Error('dialog was not rendered');
+    }
+
     dialog.close = vi.fn();
     const open = vi.spyOn(globalThis.window, 'open').mockReturnValue(null);
 

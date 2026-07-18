@@ -24,7 +24,17 @@ class MockIntersectionObserver implements IntersectionObserver {
   }
 
   fire(isIntersecting: boolean): void {
-    this.#callback([{ isIntersecting } as IntersectionObserverEntry], this);
+    const entry: IntersectionObserverEntry = {
+      isIntersecting,
+      intersectionRatio: isIntersecting ? 1 : 0,
+      boundingClientRect: new DOMRectReadOnly(),
+      intersectionRect: new DOMRectReadOnly(),
+      rootBounds: null,
+      target: globalThis.document.createElement('div'),
+      time: 0,
+    };
+
+    this.#callback([entry], this);
   }
 }
 

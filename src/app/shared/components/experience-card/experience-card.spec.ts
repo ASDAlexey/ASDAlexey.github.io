@@ -35,7 +35,7 @@ describe('ExperienceCard', () => {
   });
 
   it('renders period, location and tags', () => {
-    const el = render(base).nativeElement as HTMLElement;
+    const el: HTMLElement = render(base).nativeElement;
 
     expect(el.querySelector('.card__period')?.textContent).toContain('2023');
     expect(el.querySelector('.card__org')?.textContent).toContain('Remote');
@@ -60,14 +60,14 @@ describe('ExperienceCard', () => {
       imageAlt: 'Sohonet preview',
       caption: 'Sohonet — 5th Kind CORE platform',
     };
-    const el = render({ ...base, media }).nativeElement as HTMLElement;
-    const anchor = el.querySelector('.card__media') as HTMLAnchorElement;
-    const img = el.querySelector('.card__media-thumb') as HTMLImageElement;
+    const el: HTMLElement = render({ ...base, media }).nativeElement;
+    const anchor = el.querySelector<HTMLAnchorElement>('.card__media');
+    const img = el.querySelector<HTMLImageElement>('.card__media-thumb');
 
-    expect(anchor.getAttribute('href')).toBe(media.href);
-    expect(anchor.getAttribute('target')).toBe('_blank');
-    expect(img.getAttribute('src')).toBe(media.image);
-    expect(img.getAttribute('alt')).toBe(media.imageAlt);
+    expect(anchor?.getAttribute('href')).toBe(media.href);
+    expect(anchor?.getAttribute('target')).toBe('_blank');
+    expect(img?.getAttribute('src')).toBe(media.image);
+    expect(img?.getAttribute('alt')).toBe(media.imageAlt);
     expect(el.querySelector('.card__media-caption')?.textContent).toContain(media.caption);
   });
 
