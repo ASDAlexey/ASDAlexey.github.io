@@ -3,11 +3,20 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ScrollReveal } from './scroll-reveal';
 
-class MockIntersectionObserver {
+class MockIntersectionObserver implements IntersectionObserver {
+  readonly #callback: IntersectionObserverCallback;
+
   static last: MockIntersectionObserver | undefined;
 
+  readonly root = null;
+  readonly rootMargin = '';
+  readonly scrollMargin = '';
+  readonly thresholds: readonly number[] = [];
+
   readonly observe = vi.fn();
-  readonly #callback: IntersectionObserverCallback;
+  readonly unobserve = vi.fn();
+  readonly disconnect = vi.fn();
+  readonly takeRecords = vi.fn<() => IntersectionObserverEntry[]>(() => []);
 
   constructor(callback: IntersectionObserverCallback) {
     this.#callback = callback;
@@ -15,7 +24,7 @@ class MockIntersectionObserver {
   }
 
   fire(isIntersecting: boolean): void {
-    this.#callback([{ isIntersecting } as IntersectionObserverEntry], this as unknown as IntersectionObserver);
+    this.#callback([{ isIntersecting } as IntersectionObserverEntry], this);
   }
 }
 
@@ -44,7 +53,11 @@ describe('ScrollReveal', () => {
     TestBed.tick();
 
     const target: HTMLElement = fixture.nativeElement.querySelector('.target');
-    const observer = MockIntersectionObserver.last!;
+    const observer = MockIntersectionObserver.last;
+
+    if (!observer) {
+      throw new Error('IntersectionObserver was not created');
+    }
 
     expect(target.classList.contains('reveal')).toBe(true);
     expect(observer.observe).toHaveBeenCalledWith(target);
