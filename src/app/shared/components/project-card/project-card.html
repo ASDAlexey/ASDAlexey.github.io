@@ -6,6 +6,24 @@
 
   <p class="card__desc">{{ project().description }}</p>
 
+  @if (project().image; as image) {
+    <button class="card__media" type="button" (click)="lightbox.open()">
+      <img
+        class="card__media-thumb"
+        decoding="async"
+        height="84"
+        loading="lazy"
+        width="160"
+        [alt]="project().imageAlt"
+        [class.card__media-thumb_contain]="project().imageContain"
+        [src]="image"
+      />
+      <span class="card__media-caption" i18n="@@project.preview">Open full image ↗</span>
+    </button>
+
+    <app-image-lightbox #lightbox [alt]="project().imageAlt ?? ''" [src]="image" />
+  }
+
   @if (project().links.length) {
     <ul class="card__links">
       @for (link of project().links; track link.href) {

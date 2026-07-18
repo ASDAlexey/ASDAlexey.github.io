@@ -1,5 +1,6 @@
 @use 'styles/card' as c;
 @use 'styles/typography' as t;
+@use 'styles/animated-border' as ab;
 
 :host {
   display: block;
@@ -8,6 +9,7 @@
 
 .card {
   @include c.card-base;
+  @include ab.glow-border;
 
   container-type: inline-size;
   display: flex;

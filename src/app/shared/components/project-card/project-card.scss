@@ -1,4 +1,6 @@
 @use 'styles/card' as c;
+@use 'styles/typography' as t;
+@use 'styles/animated-border' as ab;
 
 :host {
   display: block;
@@ -7,8 +9,10 @@
 
 .card {
   @include c.card-base;
+  @include ab.glow-border;
 
   display: flex;
+  position: relative;
   flex-direction: column;
   height: 100%;
   transition:
@@ -36,6 +40,64 @@
     &:hover {
       border-color: var(--accent);
     }
+  }
+}
+
+// Compact clickable preview — a cover-cropped rectangle that opens the full
+// image in an in-page lightbox (see app-image-lightbox). Rendered as a button,
+// so the default chrome is reset back to the card's own surface treatment.
+.card__media {
+  display: inline-flex;
+  appearance: none;
+  align-items: center;
+  align-self: flex-start;
+  margin-bottom: 16px;
+  padding: 6px;
+  gap: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-subtle);
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.25s var(--ease);
+
+  &:hover {
+    border-color: var(--border-hover);
+  }
+
+  // Replace the browser's default blue focus ring with an on-brand accent outline
+  // (shows for keyboard users and when focus returns here after the lightbox closes).
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  &:hover .card__media-caption,
+  &:focus-visible .card__media-caption {
+    color: var(--accent-light);
+  }
+
+  &-thumb {
+    display: block;
+    width: 160px;
+    height: 84px;
+    object-fit: cover;
+    border-radius: var(--radius-xs);
+
+    // Diagrams/logos: fit the whole graphic instead of cropping it.
+    &_contain {
+      object-fit: contain;
+    }
+  }
+
+  &-caption {
+    @include t.text('label', 'medium');
+
+    padding-right: 8px;
+    color: var(--text-secondary);
+    transition: color 0.25s var(--ease);
   }
 }
 
