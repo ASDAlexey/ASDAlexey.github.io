@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, HostListener, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, inject, signal } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 import { SCROLL_TOP_THRESHOLD } from './scroll-top.constant';
 
@@ -9,14 +10,18 @@ import { SCROLL_TOP_THRESHOLD } from './scroll-top.constant';
   styleUrl: './scroll-top.scss',
 })
 export class ScrollTop {
+  readonly #document = inject(DOCUMENT);
+
   readonly visible = signal(false);
 
   @HostListener('window:scroll')
   protected onScroll(): void {
-    this.visible.set(window.scrollY > SCROLL_TOP_THRESHOLD);
+    const view = this.#document.defaultView;
+
+    this.visible.set((view?.scrollY ?? 0) > SCROLL_TOP_THRESHOLD);
   }
 
   protected scrollToTop(): void {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    this.#document.defaultView?.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
