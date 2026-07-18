@@ -59,6 +59,11 @@
     margin: 22px auto 28px;
     color: var(--text-secondary);
 
+    // Balance the lines so short platform terms don't dangle onto their own row.
+    // (Angular's i18n pipeline strips NBSP from translations, so this is the
+    // locale-agnostic way to keep the wrap tidy in both EN and RU.)
+    text-wrap: balance;
+
     // Inline emphasis lives inside i18n-translated text, so it cannot carry a
     // class without breaking the translation placeholders — element selector by necessity.
     strong {
