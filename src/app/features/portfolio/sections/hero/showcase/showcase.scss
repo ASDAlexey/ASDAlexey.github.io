@@ -159,7 +159,9 @@
   }
 
   &__spark {
+    flex-shrink: 0;
     color: var(--accent);
+    animation: spark-glow 3.4s ease-in-out infinite;
   }
 
   &__line {
@@ -233,16 +235,64 @@
       box-shadow: inset 0 -2px 0 var(--accent);
       color: var(--accent-light);
     }
+
+    // The test file is the money tab — clicking it reveals the vitest-auto-spy
+    // specs. Give it a persistent accent glow so the eye lands here first.
+    &--lead {
+      color: var(--accent-light);
+      text-shadow: 0 0 10px rgb(245, 165, 36, 0.6);
+    }
+
+    // Until the first tab switch, the inactive tabs pulse in a staggered wave —
+    // a clear "these are all clickable" affordance that stops on first use.
+    &--hint {
+      animation: tab-hint-pulse 1.9s ease-in-out infinite;
+
+      &:nth-child(2) {
+        animation-delay: 0.16s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 0.32s;
+      }
+
+      &:nth-child(4) {
+        animation-delay: 0.48s;
+      }
+    }
   }
 
-  // Material-style tooltip gently hovering above the tab group — signals that
-  // every tab is clickable. Floats to draw the eye, then hides after first use.
+  @keyframes tab-hint-pulse {
+    0%,
+    100% {
+      background: transparent;
+      box-shadow: inset 0 -2px 0 transparent;
+      color: var(--text-muted);
+    }
+
+    50% {
+      background: var(--surface-hover);
+      box-shadow: inset 0 -2px 0 var(--accent-line);
+      color: var(--accent-light);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &__tab--hint {
+      animation: none;
+    }
+  }
+
+  // Material-style tooltip nudging the visitor to open the test file. Sits just
+  // below the hero.spec.ts tab (inside the panel body, so the panel's overflow
+  // clip can't hide it) and points up at it. Floats to draw the eye, then hides
+  // after the first tab interaction.
   &__hint {
     @include t.text('label', 'small');
 
-    z-index: 5;
+    z-index: 20;
     position: absolute;
-    bottom: calc(100% + 10px);
+    top: calc(100% + 10px);
     left: 50%;
     padding: 5px 11px;
     transform: translateX(-50%);
@@ -250,21 +300,21 @@
     border-radius: var(--radius-xs);
     background: var(--surface);
     box-shadow:
-      0 10px 26px -8px rgb(0, 0, 0, 0.7),
-      0 0 18px -4px rgb(245, 165, 36, 0.4);
+      0 12px 28px -8px rgb(0, 0, 0, 0.75),
+      0 0 20px -4px rgb(245, 165, 36, 0.5);
     color: var(--text);
     white-space: nowrap;
     animation: hint-bounce 1.6s var(--ease) infinite;
     pointer-events: none;
 
-    // Little tail pointing down at the tab.
+    // Little tail pointing up at the tab.
     &::after {
       position: absolute;
-      top: 100%;
+      bottom: 100%;
       left: 50%;
       transform: translateX(-50%);
       border: 5px solid transparent;
-      border-top-color: var(--surface);
+      border-bottom-color: var(--surface);
       content: '';
     }
   }
@@ -610,6 +660,17 @@
   }
 }
 
+@keyframes spark-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 3px rgb(245, 165, 36, 0.4));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 7px rgb(245, 165, 36, 0.75));
+  }
+}
+
 @keyframes showcase-pulse {
   0% {
     box-shadow: 0 0 0 0 rgb(52, 211, 153, 0.5);
@@ -706,9 +767,14 @@
   .stbit__pulse,
   .code__caret,
   .console__caret,
+  .console__spark,
   .tabs__hint,
   .ring__value {
     animation: none;
     transition: none;
+  }
+
+  .console__spark {
+    filter: drop-shadow(0 0 4px rgb(245, 165, 36, 0.55));
   }
 }
