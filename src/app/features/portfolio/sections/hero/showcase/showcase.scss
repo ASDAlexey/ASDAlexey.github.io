@@ -1,0 +1,640 @@
+@use 'styles/typography' as t;
+
+// ===========================================================
+//  Hero "command center" showcase
+//  A tilted glass IDE mock on a glowing plinth, flanked by
+//  floating stat chips. Purely decorative (aria-hidden).
+// ===========================================================
+
+:host {
+  display: block;
+  max-width: 580px;
+  margin: 52px auto 30px;
+  perspective: 1400px;
+}
+
+.showcase {
+  position: relative;
+
+  &__stage {
+    position: relative;
+    transform-style: preserve-3d;
+
+    // The pitch/yaw come from a cursor-driven [style.transform] binding; the
+    // transition smooths the return to the resting pose on pointer-leave.
+    transition: transform 0.4s var(--ease);
+    will-change: transform;
+  }
+
+  // Elliptical glow + soft reflection anchoring the panel to the "floor".
+  &__plinth {
+    position: absolute;
+    right: 6%;
+    bottom: -46px;
+    left: 6%;
+    height: 130px;
+    background: radial-gradient(ellipse at center top, rgb(245, 165, 36, 0.22) 0, transparent 68%);
+    filter: blur(6px);
+    pointer-events: none;
+  }
+}
+
+// --- The IDE panel -------------------------------------------
+
+.panel {
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--surface) 0, var(--bg-subtle) 100%);
+  box-shadow:
+    0 2px 0 rgb(255, 255, 255, 0.04) inset,
+    0 40px 80px -30px rgb(0, 0, 0, 0.75),
+    0 18px 40px -24px rgb(245, 165, 36, 0.28);
+
+  // The hero centres its text; the panel is a left-aligned UI surface.
+  text-align: left;
+
+  // Slow diagonal light sweep across the glass.
+  &::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, transparent 30%, rgb(255, 255, 255, 0.05) 46%, transparent 62%);
+    background-size: 260% 100%;
+    content: '';
+    animation: panel-sweep 7s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    gap: 14px;
+    border-bottom: 1px solid var(--border);
+    background: rgb(255, 255, 255, 0.02);
+  }
+
+  &__lights {
+    display: inline-flex;
+    gap: 6px;
+
+    i {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--border-hover);
+    }
+
+    i:first-child {
+      background: var(--accent-warm);
+    }
+
+    i:nth-child(2) {
+      background: var(--accent);
+    }
+  }
+
+  &__body {
+    display: flex;
+    padding: 16px;
+    gap: 14px;
+  }
+
+  &__console {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 16px;
+    gap: 5px;
+    border-top: 1px solid var(--border);
+    background: rgb(0, 0, 0, 0.28);
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+    padding: 9px 16px;
+    gap: 16px;
+    border-top: 1px solid var(--border);
+    background: rgb(255, 255, 255, 0.015);
+  }
+}
+
+// Read-only terminal strip — a mock test run tying the tabs together.
+.console {
+  &__brand {
+    @include t.text('label', 'small');
+
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 2px;
+    gap: 7px;
+    color: var(--text-muted);
+  }
+
+  &__spark {
+    color: var(--accent);
+  }
+
+  &__line {
+    @include t.text('label', 'small');
+
+    color: var(--text-secondary);
+
+    &--ok {
+      color: var(--text-muted);
+    }
+
+    &--sum {
+      color: var(--accent-light);
+    }
+  }
+
+  // The signature — highlights the author's own published library.
+  &__lib {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-shadow: 0 0 12px rgb(245, 165, 36, 0.5);
+  }
+
+  &__prompt {
+    color: var(--accent);
+  }
+
+  &__tick {
+    color: var(--green);
+  }
+
+  &__caret {
+    display: inline-block;
+    width: 7px;
+    height: 0.85em;
+    margin-left: 6px;
+    background: var(--accent);
+    vertical-align: text-bottom;
+    animation: caret-blink 1.1s steps(1) infinite;
+  }
+}
+
+// Editor tabs --------------------------------------------------
+
+.tabs {
+  display: inline-flex;
+  position: relative;
+  flex: 1;
+  gap: 6px;
+
+  &__tab {
+    @include t.text('label', 'small');
+
+    position: relative;
+    padding: 4px 12px;
+    border-radius: var(--radius-xs) var(--radius-xs) 0 0;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition:
+      color 0.2s var(--ease),
+      background 0.2s var(--ease);
+
+    &:hover {
+      background: var(--surface-hover);
+      color: var(--text-secondary);
+    }
+
+    &--on {
+      background: var(--bg);
+      box-shadow: inset 0 -2px 0 var(--accent);
+      color: var(--accent-light);
+    }
+  }
+
+  // Material-style tooltip gently hovering above the tab group — signals that
+  // every tab is clickable. Floats to draw the eye, then hides after first use.
+  &__hint {
+    @include t.text('label', 'small');
+
+    z-index: 5;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    padding: 5px 11px;
+    transform: translateX(-50%);
+    border: 1px solid var(--accent-line);
+    border-radius: var(--radius-xs);
+    background: var(--surface);
+    box-shadow:
+      0 10px 26px -8px rgb(0, 0, 0, 0.7),
+      0 0 18px -4px rgb(245, 165, 36, 0.4);
+    color: var(--text);
+    white-space: nowrap;
+    animation: hint-bounce 1.6s var(--ease) infinite;
+    pointer-events: none;
+
+    // Little tail pointing down at the tab.
+    &::after {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: var(--surface);
+      content: '';
+    }
+  }
+}
+
+.branch {
+  @include t.text('label', 'small');
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--text-secondary);
+
+  &__ico {
+    width: 8px;
+    height: 8px;
+    border: 1.5px solid var(--accent);
+    border-radius: 50%;
+  }
+}
+
+// --- Code editor ---------------------------------------------
+
+.code {
+  display: flex;
+  flex: none;
+  align-items: flex-start;
+  width: 340px;
+
+  // Fixed viewport so switching to a shorter file never resizes the panel.
+  min-height: 322px;
+  overflow: hidden;
+  gap: 12px;
+
+  &__gutter {
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    gap: 4px;
+    text-align: right;
+
+    span {
+      @include t.text('label', 'small');
+
+      color: var(--text-muted);
+      opacity: 0.55;
+    }
+  }
+
+  &__lines {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 4px;
+  }
+
+  &__line {
+    @include t.text('label', 'small');
+
+    color: var(--text-secondary);
+    white-space: nowrap;
+  }
+
+  // Blinking cursor trailing the last line.
+  &__caret {
+    display: inline-block;
+    width: 2px;
+    height: 0.85em;
+    margin-left: 3px;
+    background: var(--accent);
+    vertical-align: text-bottom;
+    animation: caret-blink 1.1s steps(1) infinite;
+  }
+}
+
+// Restricted syntax palette — only signature tokens, harmonised with the theme.
+.tok {
+  &--deco {
+    color: var(--accent);
+  }
+
+  &--kw {
+    color: var(--accent-blue);
+  }
+
+  &--fn {
+    color: var(--accent-light);
+  }
+
+  &--type {
+    color: var(--green);
+  }
+
+  &--str {
+    color: var(--accent-warm);
+  }
+
+  &--prop {
+    color: var(--text);
+  }
+
+  &--punc {
+    color: var(--text-muted);
+  }
+}
+
+// --- Metrics column ------------------------------------------
+
+.metrics {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 150px;
+  gap: 12px;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgb(255, 255, 255, 0.015);
+
+  &__num {
+    @include t.text('title', 'medium');
+
+    color: var(--text);
+  }
+
+  &__cap {
+    @include t.text('label', 'small');
+
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  &--ring {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+// Coverage ring ------------------------------------------------
+
+.ring {
+  width: 60px;
+  height: 60px;
+  transform: rotate(-90deg);
+
+  &__track {
+    fill: none;
+    stroke: var(--surface-hover);
+    stroke-width: 6;
+  }
+
+  &__value {
+    fill: none;
+    stroke: var(--accent);
+    stroke-linecap: round;
+    stroke-width: 6;
+    filter: drop-shadow(0 0 4px rgb(245, 165, 36, 0.5));
+    transition: stroke-dashoffset 1.2s var(--ease);
+  }
+}
+
+// Platform bars ------------------------------------------------
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  height: 66px;
+  gap: 7px;
+
+  &__group {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    gap: 5px;
+  }
+
+  &__col {
+    width: 100%;
+    min-height: 8px;
+    border-radius: 4px 4px 0 0;
+    background: linear-gradient(180deg, var(--accent-light), var(--accent-deep));
+    box-shadow: 0 0 10px rgb(245, 165, 36, 0.2);
+  }
+
+  &__label {
+    @include t.text('label', 'small');
+
+    color: var(--text-muted);
+  }
+}
+
+// --- Status bar ----------------------------------------------
+
+.stbit {
+  @include t.text('label', 'small');
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+
+  &--accent {
+    color: var(--accent-light);
+  }
+
+  &--live {
+    color: var(--green);
+  }
+
+  &__tick {
+    color: var(--green);
+  }
+
+  &__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  &__pulse {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 0 0 rgb(52, 211, 153, 0.5);
+    animation: showcase-pulse 2.4s infinite;
+  }
+}
+
+// --- Floating stat chips -------------------------------------
+
+.chip {
+  @include t.text('label', 'small');
+
+  display: inline-flex;
+  z-index: 3;
+  position: absolute;
+  align-items: center;
+  padding: 8px 13px;
+  gap: 8px;
+  transform: translate3d(0, 0, 60px);
+  border: 1px solid var(--border-hover);
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  background: rgb(19, 19, 22, 0.72);
+  box-shadow: 0 14px 34px -14px rgb(0, 0, 0, 0.8);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  animation: chip-float 6s var(--ease) infinite;
+
+  &__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+  }
+
+  &--gold {
+    border-color: var(--accent-line);
+
+    .chip__dot {
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+    }
+  }
+
+  &--blue {
+    border-color: rgb(59, 109, 255, 0.4);
+
+    .chip__dot {
+      background: var(--accent-blue);
+      box-shadow: 0 0 8px var(--accent-blue);
+    }
+  }
+
+  &--tl {
+    top: -8%;
+    left: -3%;
+    animation-delay: -0.4s;
+  }
+
+  &--tr {
+    top: 5%;
+    right: -6%;
+    animation-delay: -2.6s;
+  }
+
+  &--bl {
+    bottom: -13%;
+    left: -5%;
+    animation-delay: -1.6s;
+  }
+
+  &--br {
+    right: -7%;
+    bottom: 7%;
+    animation-delay: -3.4s;
+  }
+}
+
+// --- Motion ---------------------------------------------------
+
+@keyframes chip-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 60px);
+  }
+
+  50% {
+    transform: translate3d(0, -11px, 60px);
+  }
+}
+
+@keyframes panel-sweep {
+  0%,
+  100% {
+    background-position: 150% 0;
+  }
+
+  55% {
+    background-position: -50% 0;
+  }
+}
+
+@keyframes caret-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes showcase-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(52, 211, 153, 0.5);
+  }
+
+  70% {
+    box-shadow: 0 0 0 6px rgb(52, 211, 153, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgb(52, 211, 153, 0);
+  }
+}
+
+@keyframes hint-bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-4px);
+  }
+}
+
+// Hide the whole ornament on very small screens — it competes with the copy
+// and the flanking chips overflow. The stats grid below still carries the numbers.
+@media (width < 560px) {
+  :host {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showcase__stage {
+    transition: none;
+  }
+
+  .chip {
+    transform: none;
+    animation: none;
+  }
+
+  .panel::after,
+  .stbit__pulse,
+  .code__caret,
+  .console__caret,
+  .tabs__hint,
+  .ring__value {
+    animation: none;
+    transition: none;
+  }
+}

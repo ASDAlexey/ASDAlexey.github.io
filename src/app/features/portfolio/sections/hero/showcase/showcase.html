@@ -1,0 +1,305 @@
+<!-- Decorative IDE "command center" mock — reinforces the copy above; hidden from AT.
+     The content is illustrative source code, not user-facing copy, so it is not localised. -->
+<!-- eslint-disable @angular-eslint/template/i18n -->
+
+<div aria-hidden="true" class="showcase" (pointerleave)="onPointerLeave()" (pointermove)="onPointerMove($event)">
+  <div class="showcase__stage" [style.transform]="stageTransform()">
+    @for (chip of chips; track chip.label) {
+      <span class="chip chip--{{ chip.tone }} chip--{{ chip.pos }}"> <span class="chip__dot"></span>{{ chip.label }} </span>
+    }
+
+    <div class="panel">
+      <div class="panel__bar">
+        <span class="panel__lights"><i></i><i></i><i></i></span>
+        <span class="tabs">
+          @for (file of files; track file.key) {
+            <span class="tabs__tab" [class.tabs__tab--on]="active() === file.key" (click)="select(file.key)">{{ file.name }}</span>
+          }
+
+          @if (!touched()) {
+            <span class="tabs__hint">tabs are clickable — try one</span>
+          }
+        </span>
+        <span class="branch"><span class="branch__ico"></span>main</span>
+      </div>
+
+      <div class="panel__body">
+        <div class="code">
+          <div class="code__gutter">
+            @for (n of gutter(); track n) {
+              <span>{{ n }}</span>
+            }
+          </div>
+
+          <div class="code__lines">
+            @switch (active()) {
+              @case ('html') {
+                <span class="code__line"
+                  ><span class="tok tok--punc">&lt;</span><span class="tok tok--type">section</span> <span class="tok tok--prop">class</span
+                  ><span class="tok tok--punc">=</span><span class="tok tok--str">"hero"</span><span class="tok tok--punc">&gt;</span></span
+                >
+                <span class="code__line"
+                  >&nbsp;&nbsp;<span class="tok tok--punc">&lt;</span><span class="tok tok--type">p</span>
+                  <span class="tok tok--prop">class</span><span class="tok tok--punc">=</span
+                  ><span class="tok tok--str">"hero__eyebrow"</span><span class="tok tok--punc">&gt;</span></span
+                >
+                <span class="code__line"
+                  >&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok tok--punc">&#123;&#123;</span> <span class="tok tok--prop">profile</span
+                  ><span class="tok tok--punc">.</span><span class="tok tok--prop">role</span>
+                  <span class="tok tok--punc">&#125;&#125;</span></span
+                >
+                <span class="code__line"
+                  >&nbsp;&nbsp;<span class="tok tok--punc">&lt;/</span><span class="tok tok--type">p</span
+                  ><span class="tok tok--punc">&gt;</span></span
+                >
+                <span class="code__line">&nbsp;</span>
+                <span class="code__line"
+                  >&nbsp;&nbsp;<span class="tok tok--punc">&lt;</span><span class="tok tok--type">h1</span>
+                  <span class="tok tok--prop">class</span><span class="tok tok--punc">=</span><span class="tok tok--str">"hero__title"</span
+                  ><span class="tok tok--punc">&gt;</span></span
+                >
+                <span class="code__line"
+                  >&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok tok--punc">&#123;&#123;</span> <span class="tok tok--prop">profile</span
+                  ><span class="tok tok--punc">.</span><span class="tok tok--prop">name</span>
+                  <span class="tok tok--punc">&#125;&#125;</span></span
+                >
+                <span class="code__line"
+                  >&nbsp;&nbsp;<span class="tok tok--punc">&lt;/</span><span class="tok tok--type">h1</span
+                  ><span class="tok tok--punc">&gt;</span></span
+                >
+                <span class="code__line">&nbsp;</span>
+                <span class="code__line"
+                  >&nbsp;&nbsp;<span class="tok tok--deco">&#64;for</span> <span class="tok tok--punc">(</span
+                  ><span class="tok tok--prop">s</span> <span class="tok tok--kw">of</span> <span class="tok tok--fn">stats</span
+                  ><span class="tok tok--punc">();</span> <span class="tok tok--kw">track</span> <span class="tok tok--prop">s</span
+                  ><span class="tok tok--punc">.</span><span class="tok tok--prop">id</span
+                  ><span class="tok tok--punc">) &#123;</span></span
+                >
+                <span class="code__line"
+                  >&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok tok--punc">&lt;</span><span class="tok tok--type">app-stat-card</span>
+                  <span class="tok tok--punc">[</span><span class="tok tok--prop">stat</span><span class="tok tok--punc">]=</span
+                  ><span class="tok tok--str">"s"</span> <span class="tok tok--punc">/&gt;</span></span
+                >
+                <span class="code__line">&nbsp;&nbsp;<span class="tok tok--punc">&#125;</span></span>
+                <span class="code__line"
+                  ><span class="tok tok--punc">&lt;/</span><span class="tok tok--type">section</span><span class="tok tok--punc">&gt;</span
+                  ><span class="code__caret"></span
+                ></span>
+              }
+              @case ('scss') {
+                <span class="code__line"
+                  ><span class="tok tok--deco">&#64;use</span> <span class="tok tok--str">'typography'</span>
+                  <span class="tok tok--kw">as</span> <span class="tok tok--prop">t</span><span class="tok tok--punc">;</span></span
+                >
+                <span class="code__line">&nbsp;</span>
+                <span class="code__line"><span class="tok tok--type">.hero</span> <span class="tok tok--punc">&#123;</span></span>
+                <span class="code__line"
+                  >&nbsp;&nbsp;<span class="tok tok--prop">text-align</span><span class="tok tok--punc">:</span>
+                  <span class="tok tok--fn">center</span><span class="tok tok--punc">;</span></span
+                >
+                <span class="code__line">&nbsp;</span>
+                <span class="code__line"
+                  >&nbsp;&nbsp;<span class="tok tok--type">&amp;__title</span> <span class="tok tok--punc">&#123;</span></span
+                >
+                <span class="code__line"
+                  >&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok tok--deco">&#64;include</span> <span class="tok tok--prop">t</span
+                  ><span class="tok tok--punc">.</span><span class="tok tok--fn">text</span><span class="tok tok--punc">(</span
+                  ><span class="tok tok--str">'display'</span><span class="tok tok--punc">,</span> <span class="tok tok--str">'large'</span
+                  ><span class="tok tok--punc">);</span></span
+                >
+                <span class="code__line">&nbsp;</span>
+                <span class="code__line"
+                  >&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok tok--prop">color</span><span class="tok tok--punc">:</span>
+                  <span class="tok tok--fn">var</span><span class="tok tok--punc">(</span><span class="tok tok--str">--white</span
+                  ><span class="tok tok--punc">);</span></span
+                >
+                <span class="code__line">&nbsp;&nbsp;<span class="tok tok--punc">&#125;</span></span>
+                <span class="code__line">&nbsp;</span>
+                <span class="code__line"
+                  >&nbsp;&nbsp;<span class="tok tok--type">&amp;__eyebrow</span> <span class="tok tok--punc">&#123;</span></span
+                >
+                <span class="code__line"
+                  >&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok tok--prop">color</span><span class="tok tok--punc">:</span>
+                  <span class="tok tok--fn">var</span><span class="tok tok--punc">(</span><span class="tok tok--str">--accent</span
+                  ><span class="tok tok--punc">);</span></span
+                >
+                <span class="code__line">&nbsp;&nbsp;<span class="tok tok--punc">&#125;</span></span>
+                <span class="code__line"><span class="tok tok--punc">&#125;</span><span class="code__caret"></span></span>
+              }
+              @case ('spec') {
+                <span class="code__line"
+                  ><span class="tok tok--kw">import</span> <span class="tok tok--punc">&#123;</span>
+                  <span class="tok tok--fn">injectSpy</span><span class="tok tok--punc">,</span>
+                  <span class="tok tok--fn">provideAutoSpy</span> <span class="tok tok--punc">&#125;</span></span
+                >
+                <span class="code__line"
+                  >&nbsp;&nbsp;<span class="tok tok--kw">from</span> <span class="tok tok--str">'vitest-auto-spy/angular'</span
+                  ><span class="tok tok--punc">;</span></span
+                >
+                <span class="code__line">&nbsp;</span>
+                <span class="code__line"
+                  ><span class="tok tok--fn">describe</span><span class="tok tok--punc">(</span><span class="tok tok--str">'Hero'</span
+                  ><span class="tok tok--punc">,</span> <span class="tok tok--punc">() =&gt; &#123;</span></span
+                >
+                <span class="code__line"
+                  >&nbsp;&nbsp;<span class="tok tok--fn">beforeEach</span><span class="tok tok--punc">(() =&gt;</span>
+                  <span class="tok tok--type">TestBed</span></span
+                >
+                <span class="code__line"
+                  >&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok tok--punc">.</span><span class="tok tok--fn">configureTestingModule</span
+                  ><span class="tok tok--punc">(&#123;</span></span
+                >
+                <span class="code__line"
+                  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok tok--prop">providers</span><span class="tok tok--punc">:</span>
+                  <span class="tok tok--punc">[</span><span class="tok tok--fn">provideAutoSpy</span><span class="tok tok--punc">(</span
+                  ><span class="tok tok--type">StatsStore</span><span class="tok tok--punc">)],</span></span
+                >
+                <span class="code__line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok tok--punc">&#125;));</span></span>
+                <span class="code__line">&nbsp;</span>
+                <span class="code__line"
+                  >&nbsp;&nbsp;<span class="tok tok--fn">it</span><span class="tok tok--punc">(</span
+                  ><span class="tok tok--str">'maps range → coverage'</span><span class="tok tok--punc">,</span>
+                  <span class="tok tok--punc">() =&gt; &#123;</span></span
+                >
+                <span class="code__line"
+                  >&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok tok--kw">const</span> <span class="tok tok--prop">store</span>
+                  <span class="tok tok--punc">=</span> <span class="tok tok--fn">injectSpy</span><span class="tok tok--punc">(</span
+                  ><span class="tok tok--type">StatsStore</span><span class="tok tok--punc">);</span></span
+                >
+                <span class="code__line"
+                  >&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok tok--prop">store</span><span class="tok tok--punc">.</span
+                  ><span class="tok tok--prop">byRange</span><span class="tok tok--punc">.</span><span class="tok tok--fn">calledWith</span
+                  ><span class="tok tok--punc">(</span><span class="tok tok--str">'ytd'</span><span class="tok tok--punc">)</span></span
+                >
+                <span class="code__line"
+                  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok tok--punc">.</span><span class="tok tok--fn">mockReturnValue</span
+                  ><span class="tok tok--punc">(</span><span class="tok tok--type">COVERAGE</span
+                  ><span class="tok tok--punc">);</span></span
+                >
+                <span class="code__line">&nbsp;</span>
+                <span class="code__line"
+                  >&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok tok--fn">expect</span><span class="tok tok--punc">(</span
+                  ><span class="tok tok--prop">host</span><span class="tok tok--punc">.</span><span class="tok tok--fn">coverage</span
+                  ><span class="tok tok--punc">()).</span><span class="tok tok--fn">toBe</span><span class="tok tok--punc">(</span
+                  ><span class="tok tok--type">COVERAGE</span><span class="tok tok--punc">);</span></span
+                >
+                <span class="code__line">&nbsp;&nbsp;<span class="tok tok--punc">&#125;);</span></span>
+                <span class="code__line"><span class="tok tok--punc">&#125;);</span><span class="code__caret"></span></span>
+              }
+              @default {
+                <span class="code__line"><span class="tok tok--deco">&#64;Component</span><span class="tok tok--punc">(&#123;</span></span>
+                <span class="code__line"
+                  >&nbsp;&nbsp;<span class="tok tok--prop">selector</span><span class="tok tok--punc">:</span>
+                  <span class="tok tok--str">'app-hero'</span><span class="tok tok--punc">,</span></span
+                >
+                <span class="code__line"
+                  >&nbsp;&nbsp;<span class="tok tok--prop">imports</span><span class="tok tok--punc">:</span>
+                  <span class="tok tok--punc">[</span><span class="tok tok--type">StatCard</span><span class="tok tok--punc">,</span>
+                  <span class="tok tok--type">Icon</span><span class="tok tok--punc">],</span></span
+                >
+                <span class="code__line"><span class="tok tok--punc">&#125;)</span></span>
+                <span class="code__line"
+                  ><span class="tok tok--kw">export class</span> <span class="tok tok--type">Hero</span>
+                  <span class="tok tok--punc">&#123;</span></span
+                >
+                <span class="code__line"
+                  >&nbsp;&nbsp;<span class="tok tok--kw">readonly</span> <span class="tok tok--prop">#store</span>
+                  <span class="tok tok--punc">=</span> <span class="tok tok--fn">inject</span><span class="tok tok--punc">(</span
+                  ><span class="tok tok--type">StatsStore</span><span class="tok tok--punc">);</span></span
+                >
+                <span class="code__line"
+                  >&nbsp;&nbsp;<span class="tok tok--kw">readonly</span> <span class="tok tok--prop">#locale</span>
+                  <span class="tok tok--punc">=</span> <span class="tok tok--fn">inject</span><span class="tok tok--punc">(</span
+                  ><span class="tok tok--type">LocaleService</span><span class="tok tok--punc">);</span></span
+                >
+                <span class="code__line">&nbsp;</span>
+                <span class="code__line"
+                  >&nbsp;&nbsp;<span class="tok tok--kw">readonly</span> <span class="tok tok--prop">range</span>
+                  <span class="tok tok--punc">=</span> <span class="tok tok--fn">input</span><span class="tok tok--punc">.</span
+                  ><span class="tok tok--fn">required</span><span class="tok tok--punc">&lt;</span><span class="tok tok--type">Range</span
+                  ><span class="tok tok--punc">&gt;();</span></span
+                >
+                <span class="code__line"
+                  >&nbsp;&nbsp;<span class="tok tok--kw">readonly</span> <span class="tok tok--prop">title</span>
+                  <span class="tok tok--punc">=</span> <span class="tok tok--fn">$localize</span
+                  ><span class="tok tok--str">`:&#64;&#64;hero.greet:Привет`</span><span class="tok tok--punc">;</span></span
+                >
+                <span class="code__line">&nbsp;</span>
+                <span class="code__line"
+                  >&nbsp;&nbsp;<span class="tok tok--kw">readonly</span> <span class="tok tok--prop">stats</span>
+                  <span class="tok tok--punc">=</span> <span class="tok tok--kw">this</span><span class="tok tok--punc">.</span
+                  ><span class="tok tok--prop">#store</span><span class="tok tok--punc">.</span><span class="tok tok--prop">stats</span
+                  ><span class="tok tok--punc">;</span></span
+                >
+                <span class="code__line"
+                  >&nbsp;&nbsp;<span class="tok tok--kw">readonly</span> <span class="tok tok--prop">coverage</span>
+                  <span class="tok tok--punc">=</span> <span class="tok tok--fn">computed</span
+                  ><span class="tok tok--punc">(() =&gt;</span></span
+                >
+                <span class="code__line"
+                  >&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok tok--kw">this</span><span class="tok tok--punc">.</span
+                  ><span class="tok tok--prop">#store</span><span class="tok tok--punc">.</span><span class="tok tok--fn">byRange</span
+                  ><span class="tok tok--punc">(</span><span class="tok tok--kw">this</span><span class="tok tok--punc">.</span
+                  ><span class="tok tok--prop">range</span><span class="tok tok--punc">()));</span></span
+                >
+                <span class="code__line"><span class="tok tok--punc">&#125;</span><span class="code__caret"></span></span>
+              }
+            }
+          </div>
+        </div>
+
+        <aside class="metrics">
+          <div class="tile tile--ring">
+            <svg class="ring" viewBox="0 0 64 64">
+              <circle class="ring__track" cx="32" cy="32" r="26" />
+              <circle
+                class="ring__value"
+                cx="32"
+                cy="32"
+                r="26"
+                [style.stroke-dasharray]="ringCircumference"
+                [style.stroke-dashoffset]="ringOffset()"
+              />
+            </svg>
+            <span class="tile__num">{{ coverage }}%</span>
+            <span class="tile__cap">coverage</span>
+          </div>
+
+          <div class="tile tile--bars">
+            <div class="bars">
+              @for (bar of bars; track bar.label) {
+                <span class="bars__group">
+                  <span class="bars__col" [style.height.%]="bar.value"></span>
+                  <span class="bars__label">{{ bar.label }}</span>
+                </span>
+              }
+            </div>
+            <span class="tile__cap">platforms</span>
+          </div>
+        </aside>
+      </div>
+
+      <div class="panel__console">
+        <span class="console__brand"><span class="console__spark">&#10035;</span> Claude Code</span>
+        <span class="console__line"
+          ><span class="console__prompt">&rsaquo;</span> write Hero tests with <span class="console__lib">vitest-auto-spy</span></span
+        >
+        <span class="console__line console__line--ok"
+          ><span class="console__tick">&#9679;</span> generated autoSpy mocks &middot; 57 passed &middot; 100%</span
+        >
+        <span class="console__line console__line--sum"
+          ><span class="console__lib">vitest-auto-spy</span> &mdash; my open-source test lib &rarr;<span class="console__caret"></span
+        ></span>
+      </div>
+
+      <div class="panel__status">
+        <span class="stbit stbit--accent"><span class="stbit__dot"></span>main</span>
+        <span class="stbit"><span class="stbit__tick">&#10003;</span>lint</span>
+        <span class="stbit"><span class="stbit__tick">&#10003;</span>57 tests</span>
+        <span class="stbit stbit--live"><span class="stbit__pulse"></span>prerendered</span>
+      </div>
+    </div>
+
+    <div class="showcase__plinth"></div>
+  </div>
+</div>
