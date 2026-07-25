@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StatCard } from './stat-card';
-import { NUMERIC_STAT, TEXT_STAT } from './stat-card.mock';
+import { createIntersectionEntry, NUMERIC_STAT, TEXT_STAT } from './stat-card.mock';
 
 class MockIntersectionObserver implements IntersectionObserver {
   readonly #callback: IntersectionObserverCallback;
@@ -13,10 +13,15 @@ class MockIntersectionObserver implements IntersectionObserver {
   readonly scrollMargin = '';
   readonly thresholds: readonly number[] = [];
 
-  readonly observe = vi.fn();
+  readonly observe = vi.fn<(target: Element) => void>((target) => {
+    this.#target = target;
+  });
+
   readonly unobserve = vi.fn();
   readonly disconnect = vi.fn();
   readonly takeRecords = vi.fn<() => IntersectionObserverEntry[]>(() => []);
+
+  #target: Element | undefined;
 
   constructor(callback: IntersectionObserverCallback) {
     this.#callback = callback;
@@ -24,9 +29,11 @@ class MockIntersectionObserver implements IntersectionObserver {
   }
 
   fire(isIntersecting: boolean): void {
-    const entry = { isIntersecting } as IntersectionObserverEntry;
+    if (!this.#target) {
+      throw new Error('fire() called before observe()');
+    }
 
-    this.#callback([entry], this);
+    this.#callback([createIntersectionEntry(this.#target, isIntersecting)], this);
   }
 }
 
