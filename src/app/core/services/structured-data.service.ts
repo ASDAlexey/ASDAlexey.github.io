@@ -44,7 +44,17 @@ export class StructuredDataService {
       '@context': 'https://schema.org',
       '@graph': [
         this.#person(url),
-        { '@type': 'WebSite', '@id': `${url}#website`, name: PROFILE.name, url, inLanguage: lang },
+        {
+          '@type': 'WebSite',
+          '@id': `${url}#website`,
+          name: PROFILE.name,
+          url,
+          inLanguage: lang,
+          // Site and profile both point back at the one Person node, so the
+          // whole graph resolves to a single entity instead of three loose ones.
+          author: { '@id': `${url}#person` },
+          publisher: { '@id': `${url}#person` },
+        },
         {
           '@type': 'ProfilePage',
           url,
@@ -72,7 +82,9 @@ export class StructuredDataService {
       url,
       jobTitle,
       description,
-      image: `${PROFILE.siteUrl}/og-image.png`,
+      // Portrait first: it is what a Person rich result wants. The social
+      // banner stays as a second option for consumers that prefer 1200×630.
+      image: [`${url}avatar.webp`, `${PROFILE.siteUrl}/og-image.png`],
       email: `mailto:${PROFILE.email}`,
       nationality: { '@type': 'Country', name: 'Russia' },
       sameAs: [PROFILE.github, PROFILE.linkedin, PROFILE.telegram, PROFILE.max],
