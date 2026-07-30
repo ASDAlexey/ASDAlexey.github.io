@@ -1,3 +1,12 @@
+@if (hasRing()) {
+  <!-- Ring mirroring the count-up: it fills as the number climbs, so the
+       percentage is read twice — once as a figure, once as a shape. -->
+  <svg aria-hidden="true" class="stat__ring" fill="none" viewBox="0 0 46 46">
+    <circle class="stat__ring-track" cx="23" cy="23" pathLength="1" r="20" />
+    <circle class="stat__ring-fill" cx="23" cy="23" pathLength="1" r="20" [style.stroke-dashoffset]="ringOffset()" />
+  </svg>
+}
+
 <span class="stat__num"
   >{{ display() }}<span class="stat__plus">{{ stat().suffix }}</span></span
 >

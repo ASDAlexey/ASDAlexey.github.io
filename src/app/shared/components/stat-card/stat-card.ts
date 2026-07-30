@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, ElementRef, afterNextRender, comput
 
 import { Stat } from '@core/models/portfolio.interface';
 
-import { COUNT_UP_DURATION_MS, STAT_OBSERVER_OPTIONS } from './stat-card.constant';
+import { COUNT_UP_DURATION_MS, PERCENT_SUFFIX, RING_FULL, STAT_OBSERVER_OPTIONS } from './stat-card.constant';
 
 /**
  * Stat tile whose value counts up from zero every time it scrolls into view.
@@ -13,6 +13,9 @@ import { COUNT_UP_DURATION_MS, STAT_OBSERVER_OPTIONS } from './stat-card.constan
  * entry and resetting to zero on exit. Set up in `afterNextRender`, so nothing
  * runs on the server. Users who prefer reduced motion see the final value
  * immediately.
+ *
+ * Percentage stats additionally get a ring that fills in step with the count,
+ * driven off the same signal so the number and the arc can never disagree.
  */
 @Component({
   selector: 'app-stat-card',
@@ -33,6 +36,15 @@ export class StatCard {
 
   /** What the template paints: the animated count for numbers, the raw string otherwise. */
   readonly display = computed(() => (this.#isNumeric() ? this.#current().toString() : this.stat().value));
+
+  /** Only percentages get a ring — they are the ones with a meaningful "out of". */
+  readonly hasRing = computed(() => this.#isNumeric() && this.stat().suffix === PERCENT_SUFFIX);
+
+  /**
+   * Dash offset for the ring's filled arc. The circle is normalised to
+   * `pathLength="1"`, so this is simply the share still to go.
+   */
+  readonly ringOffset = computed(() => 1 - Math.min(this.#current() / RING_FULL, 1));
 
   /** In-flight rAF handle, so a re-entry can cancel the previous run before replaying. */
   #frame: number | null = null;

@@ -22,6 +22,31 @@
   }
 }
 
+// Progress ring for percentage stats — parked in the corner so it reads as a
+// gauge beside the figure, never as decoration competing with it. Rotated so
+// the arc starts at twelve o'clock.
+.stat__ring {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  rotate: -90deg;
+
+  &-track {
+    stroke: var(--border);
+    stroke-width: 3;
+  }
+
+  &-fill {
+    stroke: var(--accent);
+    stroke-dasharray: 1;
+    stroke-linecap: round;
+    stroke-width: 3;
+    filter: drop-shadow(0 0 5px var(--accent-glow));
+  }
+}
+
 .stat__num {
   @include t.gradient-text;
   @include t.stat-value;
