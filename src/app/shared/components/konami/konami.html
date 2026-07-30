@@ -1,0 +1,17 @@
+<!-- Illustrative terminal output, not user-facing copy — left unlocalised the
+     same way the hero's code showcase is. -->
+<!-- eslint-disable @angular-eslint/template/i18n -->
+
+@if (open()) {
+  <div class="egg" role="presentation" (click)="close()">
+    <div class="egg__window" (click)="$event.stopPropagation()">
+      <div class="egg__bar">
+        <span class="egg__dots"><i></i><i></i><i></i></span>
+        <span class="egg__name">~/alexey — zsh</span>
+        <button aria-label="Close" class="egg__close" type="button" (click)="close()">esc</button>
+      </div>
+
+      <pre class="egg__out">@for (line of lines(); track $index) {<span class="egg__line">{{ line }}</span>}</pre>
+    </div>
+  </div>
+}

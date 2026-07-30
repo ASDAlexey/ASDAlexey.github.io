@@ -1,0 +1,108 @@
+@use 'styles/typography' as t;
+
+.egg {
+  display: grid;
+  z-index: 200;
+  position: fixed;
+  place-items: center;
+  inset: 0;
+  padding: 24px;
+  backdrop-filter: blur(6px);
+  background: rgb(0, 0, 0, 0.62);
+  animation: egg-in 0.25s var(--ease) both;
+
+  &__window {
+    width: min(560px, 100%);
+    overflow: hidden;
+    border: 1px solid var(--border-hover);
+    border-radius: var(--radius);
+    background: var(--bg-alt);
+    box-shadow: 0 30px 90px rgb(0, 0, 0, 0.6);
+    animation: egg-rise 0.3s var(--ease) both;
+  }
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  &__dots {
+    display: flex;
+    gap: 6px;
+
+    i {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--border-hover);
+    }
+  }
+
+  &__name {
+    @include t.text('label', 'small');
+
+    flex: 1;
+    color: var(--text-muted);
+  }
+
+  &__close {
+    @include t.text('label', 'small');
+
+    padding: 3px 9px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xs);
+    background: var(--bg-subtle);
+    color: var(--text-secondary);
+    font-family: var(--mono);
+    cursor: pointer;
+    transition: border-color 0.2s var(--ease);
+
+    &:hover {
+      border-color: var(--accent-line);
+      color: var(--accent-light);
+    }
+  }
+
+  &__out {
+    display: flex;
+    flex-direction: column;
+    padding: 18px 20px 22px;
+    overflow-x: auto;
+    color: var(--green);
+    font-family: var(--mono);
+
+    @include t.text('label', 'medium');
+  }
+
+  // Each line drops in as it is printed, so the output reads as a live shell.
+  &__line {
+    min-height: 1.35em;
+    white-space: pre;
+    animation: egg-line 0.18s var(--ease) both;
+  }
+}
+
+@keyframes egg-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes egg-rise {
+  from {
+    translate: 0 14px;
+    scale: 0.97;
+    opacity: 0;
+  }
+}
+
+@keyframes egg-line {
+  from {
+    translate: -6px 0;
+    opacity: 0;
+  }
+}
