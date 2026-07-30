@@ -145,38 +145,6 @@
   }
 }
 
-@keyframes pipe-fill {
-  to {
-    scale: 1 1;
-  }
-}
-
-@keyframes pipe-run {
-  to {
-    left: 100%;
-  }
-}
-
-@keyframes pipe-pass {
-  to {
-    border-color: var(--green);
-    background: var(--green);
-    box-shadow: 0 0 0 4px rgb(52, 211, 153, 0.14);
-  }
-}
-
-@keyframes pipe-label {
-  to {
-    color: var(--text);
-  }
-}
-
-@keyframes pipe-lit {
-  to {
-    opacity: 1;
-  }
-}
-
 // No scroll timelines (or reduced motion): show the run already finished.
 @mixin pipe-settled {
   .pipe__fill {

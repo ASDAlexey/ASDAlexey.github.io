@@ -65,18 +65,6 @@
   }
 }
 
-@keyframes rail-draw {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes rail-run {
-  to {
-    offset-distance: 100%;
-  }
-}
-
 // Without scroll-driven animations the route is simply shown complete; the dot
 // would have nothing to move it, so it stays out of the picture.
 @supports not (animation-timeline: view()) {

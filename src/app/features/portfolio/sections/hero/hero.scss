@@ -224,12 +224,6 @@
   }
 }
 
-@keyframes glow-drift {
-  to {
-    transform: translateX(-55%) translateY(30px);
-  }
-}
-
 // Scroll-linked parallax — the glows drift down as the hero scrolls away, adding
 // depth. Driven on the `translate` property so it composes with the time-based
 // `glow-drift` on `transform`. The full shorthand is restated per glow so the
@@ -259,12 +253,6 @@
           0 90vh;
       }
     }
-  }
-}
-
-@keyframes glow-parallax {
-  to {
-    translate: 0 var(--parallax-shift, 130px);
   }
 }
 

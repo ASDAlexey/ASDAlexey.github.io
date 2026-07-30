@@ -125,12 +125,6 @@
   }
 }
 
-@keyframes nav-progress {
-  to {
-    scale: 1 1;
-  }
-}
-
 @media (width <= 640px) {
   .nav__name {
     display: none;

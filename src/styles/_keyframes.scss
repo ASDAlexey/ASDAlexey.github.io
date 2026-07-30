@@ -1,0 +1,79 @@
+// Keyframes that components reference from inside an `@supports` block live
+// here, in global scope, instead of next to the rules that use them.
+//
+// Angular's emulated encapsulation renames a component's `@keyframes` (to
+// `_ngcontent-<id>_<name>`) and rewrites the matching `animation-name` values —
+// but the rewrite only walks top-level rules. A reference nested inside
+// `@supports` keeps the original name, so in a production build it points at a
+// `@keyframes` that no longer exists under that name and the animation silently
+// does nothing. Every scroll-driven animation on the page is declared inside
+// `@supports (animation-timeline: …)`, which is exactly the case that breaks.
+//
+// Declared globally the names are never rewritten, so both nested and top-level
+// references resolve. Keep them prefixed by component to stay collision-free.
+
+// Nav — reading-progress bar under the header.
+@keyframes nav-progress {
+  to {
+    scale: 1 1;
+  }
+}
+
+// Hero — background glows: the endless drift and the scroll-linked parallax.
+@keyframes glow-drift {
+  to {
+    transform: translateX(-55%) translateY(30px);
+  }
+}
+
+@keyframes glow-parallax {
+  to {
+    translate: 0 var(--parallax-shift, 130px);
+  }
+}
+
+// About — the illustrative CI/CD run: rail fill, travelling dot, passed stages.
+@keyframes pipe-fill {
+  to {
+    scale: 1 1;
+  }
+}
+
+@keyframes pipe-run {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes pipe-pass {
+  to {
+    border-color: var(--green);
+    background: var(--green);
+    box-shadow: 0 0 0 4px rgb(52, 211, 153, 0.14);
+  }
+}
+
+@keyframes pipe-label {
+  to {
+    color: var(--text);
+  }
+}
+
+@keyframes pipe-lit {
+  to {
+    opacity: 1;
+  }
+}
+
+// Experience — the career rail drawing itself as the section is read.
+@keyframes rail-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes rail-run {
+  to {
+    offset-distance: 100%;
+  }
+}
