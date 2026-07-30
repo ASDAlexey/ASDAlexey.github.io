@@ -60,13 +60,52 @@
     a:not(.nav__cta) {
       @include t.text('body', 'medium');
 
+      position: relative;
       color: var(--text-secondary);
       transition: color 0.2s var(--ease);
 
       &:hover {
         color: var(--text);
       }
+
+      // "You are here" underline — grows out from the centre when the section
+      // the link points at is the one crossing the middle of the viewport.
+      &::after {
+        position: absolute;
+        right: 0;
+        bottom: -6px;
+        left: 0;
+        height: 2px;
+        transform-origin: 50% 50%;
+        scale: 0 1;
+        border-radius: 2px;
+        background: var(--accent);
+        content: '';
+        transition: scale 0.35s var(--ease);
+      }
+
+      &.is-active {
+        color: var(--text);
+
+        &::after {
+          scale: 1 1;
+        }
+      }
     }
+  }
+
+  // Reading progress — fills left to right across the whole page scroll.
+  &__progress {
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    height: 2px;
+    transform-origin: 0 50%;
+    scale: 0 1;
+    background: linear-gradient(90deg, var(--accent-deep), var(--accent) 60%, var(--accent-light));
+    box-shadow: 0 0 14px var(--accent-glow);
+    pointer-events: none;
   }
 
   &__cta {
@@ -74,6 +113,21 @@
     @include t.semibold;
 
     color: var(--text);
+  }
+}
+
+// Progressive enhancement: browsers with scroll-driven animations tie the bar
+// to the document scroll. Elsewhere it stays collapsed and simply never shows.
+@supports (animation-timeline: scroll()) {
+  .nav__progress {
+    animation: nav-progress auto linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+@keyframes nav-progress {
+  to {
+    scale: 1 1;
   }
 }
 
