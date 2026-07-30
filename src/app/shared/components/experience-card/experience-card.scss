@@ -33,6 +33,15 @@
   &:hover .card__title {
     color: var(--accent-light);
   }
+
+  // Stack chips cascade in on hover — the stack "unpacks" itself rather than
+  // sitting there as a static list. Delays are per-position, capped at eight,
+  // which covers the longest tag row on the page.
+  @for $i from 1 through 8 {
+    &:hover .tags__item:nth-child(#{$i}) {
+      transition-delay: #{($i - 1) * 0.045}s;
+    }
+  }
 }
 
 .card__head {
@@ -145,4 +154,21 @@
 
 .tags {
   @include c.tags;
+
+  // Resting state is the plain chip; the lift, tint and delay above turn the
+  // row into a cascade while the card is hovered.
+  &__item {
+    transition:
+      border-color 0.3s var(--ease),
+      background 0.3s var(--ease),
+      color 0.3s var(--ease),
+      translate 0.3s var(--ease);
+  }
+
+  :host:hover &__item {
+    translate: 0 -3px;
+    border-color: var(--accent-line);
+    background: var(--accent-glow);
+    color: var(--accent-light);
+  }
 }
