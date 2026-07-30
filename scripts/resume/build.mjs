@@ -9,7 +9,11 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const SHARED = {
   name: 'Alexey Popov',
   links: {
+    email: { label: 'Email', value: 'ASDAlexey@yandex.ru', href: 'mailto:ASDAlexey@yandex.ru' },
     telegram: { label: 'Telegram', value: '@ASDAlexey', href: 'https://t.me/ASDAlexey' },
+    // MAX profile URLs are opaque one-way tokens with no public handle, so the
+    // row shows the bare domain and carries the full link in the PDF anchor.
+    max: { label: 'MAX', value: 'max.ru', href: 'https://max.ru/u/f9LHodD0cOIvsoWjpCYHxdF8aiJ7csO8bFyeafox3xVes4OWbQgToULJSRE' },
     github: { label: 'GitHub', value: 'github.com/ASDAlexey', href: 'https://github.com/ASDAlexey' },
     linkedin: { label: 'LinkedIn', value: 'in/alexey-popov', href: 'https://www.linkedin.com/in/alexey-popov-7988a874/' },
     site: { label: 'Portfolio', value: 'asdalexey.github.io', href: 'https://asdalexey.github.io' },
@@ -32,11 +36,11 @@ const EN = {
     highlights: 'Key Highlights',
   },
   summary:
-    'Tech Lead and Senior Frontend Engineer with 14+ years building production web apps — 11+ of them on Angular (v2 → v22). I architect large-scale Angular applications end-to-end and ship them across every platform: web (SSR), Smart TV, mobile (Ionic) and desktop (Tauri/Rust). Reactive-first with NgRx, RxJS, Signals and a zoneless, standalone, OnPush architecture. I build GitLab CI/CD from scratch, drive a testing-first culture (90%+ coverage) and lead frontend teams — code review, mentoring and hiring. Currently driving AI-assisted development with custom Claude Code skills, agents and hooks.',
+    'Tech Lead and Senior Frontend Engineer with 14+ years building production web apps — 11+ of them on Angular (v2 → v22). I architect large-scale Angular applications end-to-end and ship them across every platform: web (SSR), Smart TV, mobile (Ionic) and desktop (Tauri/Rust). Reactive-first with NgRx, RxJS, Signals and a zoneless, standalone, OnPush architecture. I build GitLab CI/CD from scratch, drive a testing-first culture (up to 100% coverage, enforced by CI gates) and lead frontend teams — code review, mentoring and hiring. Currently driving AI-assisted development with custom Claude Code skills, agents and hooks.',
   highlights: [
     'Sped up multi-select on large virtualized lists ~200× — from 180–200 ms down to 0.4–0.5 ms per item.',
     'Led migration from service-based to a layered NgRx architecture with clean business-logic separation.',
-    'Raised unit-test coverage to 90%+ with enforced coverage gates in CI.',
+    'Raised unit-test coverage to 100% on shared libraries, gated in CI alongside duplication and circular-dependency checks.',
     'Ran 70+ technical interviews; hired, onboarded and mentored frontend engineers.',
     'Published vitest-auto-spy on npm — typed auto-mocking for Vitest.',
   ],
@@ -52,7 +56,7 @@ const EN = {
     },
     { group: 'Platforms', items: 'Web (SSR), Smart TV (Tizen / webOS), Mobile (Ionic, iOS/Android), Desktop (Tauri + Rust)' },
     { group: 'CI/CD & Infra', items: 'GitLab CI/CD, Docker (multi-stage), Nginx, Kubernetes / Kustomize, Feature Flags' },
-    { group: 'Testing', items: 'Jest, Vitest, TestBed, vitest-auto-spy, 90%+ coverage gates, TDD' },
+    { group: 'Testing', items: 'Jest, Vitest, TestBed, vitest-auto-spy, 100% coverage gates, TDD' },
     {
       group: 'Backend & Tools',
       items: 'Node.js, Express, REST, WebSocket, PostgreSQL, SQLite, Redis, Rust, Figma, ESLint / Prettier / Stylelint',
@@ -90,7 +94,7 @@ const EN = {
       ],
     },
     {
-      role: 'Senior Angular Developer / Tech Lead',
+      role: 'Senior Angular Developer',
       company: 'Arcadia Inc. · Taganrog',
       period: '2018 — 2019',
       points: [
@@ -124,17 +128,27 @@ const EN = {
     {
       name: 'vitest-auto-spy',
       meta: 'TypeScript · Open Source · npm',
-      desc: 'Typed auto-mocking for Vitest — the missing jest-auto-spies. Typed Spy<T>, Observable mocking, zoneless Angular, zero dependencies. → github.com/ASDAlexey/vitest-auto-spy',
+      desc: 'Typed auto-mocking for Vitest — the spiritual successor to jest-auto-spies. One API, three runtimes (Vitest, Bun, Node.js) behind a swappable MockAdapter. Typed spies from a class or from a type alone, Observable / promise / signal controls, DI helpers for Angular and NestJS. Zero dependencies, 100% coverage. → github.com/ASDAlexey/vitest-auto-spy',
     },
     {
       name: 'Bonds Tracker',
       meta: 'Angular 22 · Tauri 2 · Rust · SQLite',
-      desc: 'Personal bonds-portfolio tracker — smart-portfolio optimizer, scored screener and coupon calendar over Tinkoff / MOEX ISS / CBR APIs with KMV-Merton default risk and a Telegram bot.',
+      desc: 'Personal bonds-portfolio tracker across multiple T-Bank Invest accounts — smart-portfolio optimizer, audit with swap suggestions, scored screener, coupon calendar and a goal dashboard. Real-time analytics over Tinkoff / MOEX ISS / CBR APIs, KMV-Merton default risk, Plotly, Telegram bot, Rust engines.',
+    },
+    {
+      name: 'SundayRun',
+      meta: 'Angular 22 · Bun · Vitest · GitHub Pages',
+      desc: 'Web app for a community park-run club (Taganrog). Organizers upload stopwatch results, the app computes rankings and generates the official PDF protocol in the browser, then publishes each result set to the repo archive in one atomic commit. Zoneless Angular, 100% test coverage. → asdalexey.github.io/sundayrun',
+    },
+    {
+      name: 'Sportdiary',
+      meta: 'Ionic · Angular · Node.js · iOS / Android',
+      desc: 'Full-stack running tracker for iOS & Android, built solo end to end — GPS tracking with live route maps, automatic lap detection, per-workout stats, volume analysis with personal records and a social feed. Node.js backend self-hosted on my own VPS; ran in production for over a year.',
     },
     {
       name: 'Claude Code config & skills',
       meta: 'AI · Automation',
-      desc: 'Custom Claude Code skills, agents and hooks that encode project conventions, code generation and an AI code-review workflow for large Angular MRs.',
+      desc: 'Custom Claude Code skills, agents and hooks that encode project conventions, code generation and token-optimization — including an AI code-review workflow built for large Angular MRs.',
     },
   ],
   education: [{ title: 'Taganrog State Pedagogical Institute (A.P. Chekhov)', meta: 'Physics & Mathematics, 2004 — 2009 · GPA 4.97 / 5' }],
@@ -160,11 +174,11 @@ const RU = {
     highlights: 'Достижения',
   },
   summary:
-    'Tech Lead и Senior Frontend-разработчик с опытом 14+ лет, из них 11+ на Angular (v2 → v22). Проектирую крупные Angular-приложения целиком и выпускаю их на всех платформах: web (SSR), Smart TV, mobile (Ionic) и desktop (Tauri/Rust). Реактивный стек: NgRx, RxJS, Signals, zoneless, standalone, OnPush. Настраиваю GitLab CI/CD с нуля, выстраиваю testing-first культуру (90%+ покрытие) и руковожу фронтенд-командами — code review, менторинг, найм. Развиваю AI-assisted разработку через собственные скиллы, агенты и хуки Claude Code.',
+    'Tech Lead и Senior Frontend-разработчик с опытом 14+ лет, из них 11+ на Angular (v2 → v22). Проектирую крупные Angular-приложения целиком и выпускаю их на всех платформах: web (SSR), Smart TV, mobile (Ionic) и desktop (Tauri/Rust). Реактивный стек: NgRx, RxJS, Signals, zoneless, standalone, OnPush. Настраиваю GitLab CI/CD с нуля, выстраиваю testing-first культуру (покрытие до 100%, с гейтами в CI) и руковожу фронтенд-командами — code review, менторинг, найм. Развиваю AI-assisted разработку через собственные скиллы, агенты и хуки Claude Code.',
   highlights: [
     'Ускорил мультивыбор в больших виртуализированных списках в ~200 раз — со 180–200 мс до 0,4–0,5 мс на элемент.',
     'Перевёл проект с сервисной архитектуры на слоистую NgRx с чистым разделением бизнес-логики.',
-    'Поднял покрытие unit-тестами до 90%+ с обязательными coverage-гейтами в CI.',
+    'Поднял покрытие unit-тестами общих библиотек до 100% — с гейтами в CI наряду с проверками дублирования и циклических зависимостей.',
     'Провёл 70+ технических собеседований; нанимал, адаптировал и менторил инженеров.',
     'Опубликовал vitest-auto-spy в npm — типизированный auto-mock для Vitest.',
   ],
@@ -180,7 +194,7 @@ const RU = {
     },
     { group: 'Платформы', items: 'Web (SSR), Smart TV (Tizen / webOS), Mobile (Ionic, iOS/Android), Desktop (Tauri + Rust)' },
     { group: 'CI/CD & Infra', items: 'GitLab CI/CD, Docker (multi-stage), Nginx, Kubernetes / Kustomize, Feature Flags' },
-    { group: 'Тестирование', items: 'Jest, Vitest, TestBed, vitest-auto-spy, coverage-гейты 90%+, TDD' },
+    { group: 'Тестирование', items: 'Jest, Vitest, TestBed, vitest-auto-spy, coverage-гейты 100%, TDD' },
     {
       group: 'Backend & Tools',
       items: 'Node.js, Express, REST, WebSocket, PostgreSQL, SQLite, Redis, Rust, Figma, ESLint / Prettier / Stylelint',
@@ -218,7 +232,7 @@ const RU = {
       ],
     },
     {
-      role: 'Senior Angular Developer / Tech Lead',
+      role: 'Senior Angular Developer',
       company: 'Arcadia Inc. · Таганрог',
       period: '2018 — 2019',
       points: [
@@ -252,17 +266,27 @@ const RU = {
     {
       name: 'vitest-auto-spy',
       meta: 'TypeScript · Open Source · npm',
-      desc: 'Типизированный auto-mock для Vitest — недостающий jest-auto-spies. Типизированный Spy<T>, мокирование Observable, zoneless Angular, без зависимостей. → github.com/ASDAlexey/vitest-auto-spy',
+      desc: 'Типизированный auto-mock для Vitest — идейный наследник jest-auto-spies. Один API, три рантайма (Vitest, Bun, Node.js) за сменным MockAdapter. Типизированные спаи из класса или из одного типа, управление Observable / промисами / сигналами, DI-хелперы для Angular и NestJS. Без зависимостей, 100% покрытие. → github.com/ASDAlexey/vitest-auto-spy',
     },
     {
       name: 'Bonds Tracker',
       meta: 'Angular 22 · Tauri 2 · Rust · SQLite',
-      desc: 'Личный трекер портфеля облигаций — умный оптимизатор портфеля, скринер с баллами и купонный календарь по API Tinkoff / MOEX ISS / ЦБ РФ с риском дефолта по KMV-Merton и Telegram-ботом.',
+      desc: 'Личный трекер портфеля облигаций по нескольким счетам Т-Банк Инвестиций — умный оптимизатор портфеля, аудит с предложениями замен, скринер с баллами, купонный календарь и дашборд целей. Аналитика в реальном времени по API Tinkoff / MOEX ISS / ЦБ РФ, риск дефолта по KMV-Merton, Plotly, Telegram-бот, движки на Rust.',
+    },
+    {
+      name: 'SundayRun',
+      meta: 'Angular 22 · Bun · Vitest · GitHub Pages',
+      desc: 'Веб-приложение для клуба любительских забегов (Таганрог). Организаторы загружают результаты с секундомера, приложение считает рейтинги и генерирует официальный PDF-протокол прямо в браузере, публикуя каждый забег в архив репозитория одним атомарным коммитом. Zoneless Angular, 100% покрытие тестами. → asdalexey.github.io/sundayrun',
+    },
+    {
+      name: 'Sportdiary',
+      meta: 'Ionic · Angular · Node.js · iOS / Android',
+      desc: 'Full-stack трекер бега для iOS и Android, сделан в одиночку от и до — GPS-трекинг с картой маршрута, автоопределение кругов, статистика по тренировке, анализ объёмов с личными рекордами и социальная лента. Бэкенд на Node.js на собственном VPS; больше года в продакшене.',
     },
     {
       name: 'Claude Code config & skills',
       meta: 'AI · Automation',
-      desc: 'Собственные скиллы, агенты и хуки Claude Code, кодирующие конвенции проекта, генерацию кода и AI code-review для крупных Angular MR.',
+      desc: 'Собственные скиллы, агенты и хуки Claude Code, кодирующие конвенции проекта, генерацию кода и оптимизацию токенов — включая AI code-review для крупных Angular MR.',
     },
   ],
   education: [
@@ -356,7 +380,7 @@ function render(d) {
     <div class="loc">${esc(d.location)}</div>
 
     <div class="block"><div class="eyebrow">${esc(L.contact)}</div>
-      ${link(SHARED.links.telegram)}${link(SHARED.links.github)}${link(SHARED.links.linkedin)}${link(SHARED.links.site)}
+      ${link(SHARED.links.email)}${link(SHARED.links.telegram)}${link(SHARED.links.max)}${link(SHARED.links.github)}${link(SHARED.links.linkedin)}${link(SHARED.links.site)}
     </div>
 
     <div class="block"><div class="eyebrow">${esc(L.skills)}</div>

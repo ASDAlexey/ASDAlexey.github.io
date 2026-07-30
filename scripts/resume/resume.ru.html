@@ -294,8 +294,16 @@
         <div class="block">
           <div class="eyebrow">Контакты</div>
           <div class="c-row">
+            <div class="k">Email</div>
+            <div class="v"><a href="mailto:ASDAlexey@yandex.ru">ASDAlexey@yandex.ru</a></div>
+          </div>
+          <div class="c-row">
             <div class="k">Telegram</div>
             <div class="v"><a href="https://t.me/ASDAlexey">@ASDAlexey</a></div>
+          </div>
+          <div class="c-row">
+            <div class="k">MAX</div>
+            <div class="v"><a href="https://max.ru/u/f9LHodD0cOIvsoWjpCYHxdF8aiJ7csO8bFyeafox3xVes4OWbQgToULJSRE">max.ru</a></div>
           </div>
           <div class="c-row">
             <div class="k">GitHub</div>
@@ -337,7 +345,7 @@
           </div>
           <div class="skill">
             <div class="g">Тестирование</div>
-            <div class="i">Jest, Vitest, TestBed, vitest-auto-spy, coverage-гейты 90%+, TDD</div>
+            <div class="i">Jest, Vitest, TestBed, vitest-auto-spy, coverage-гейты 100%, TDD</div>
           </div>
           <div class="skill">
             <div class="g">Backend &amp; Tools</div>
@@ -369,9 +377,9 @@
         <p class="summary">
           Tech Lead и Senior Frontend-разработчик с опытом 14+ лет, из них 11+ на Angular (v2 → v22). Проектирую крупные Angular-приложения
           целиком и выпускаю их на всех платформах: web (SSR), Smart TV, mobile (Ionic) и desktop (Tauri/Rust). Реактивный стек: NgRx, RxJS,
-          Signals, zoneless, standalone, OnPush. Настраиваю GitLab CI/CD с нуля, выстраиваю testing-first культуру (90%+ покрытие) и
-          руковожу фронтенд-командами — code review, менторинг, найм. Развиваю AI-assisted разработку через собственные скиллы, агенты и
-          хуки Claude Code.
+          Signals, zoneless, standalone, OnPush. Настраиваю GitLab CI/CD с нуля, выстраиваю testing-first культуру (покрытие до 100%, с
+          гейтами в CI) и руковожу фронтенд-командами — code review, менторинг, найм. Развиваю AI-assisted разработку через собственные
+          скиллы, агенты и хуки Claude Code.
         </p>
 
         <div class="block">
@@ -379,7 +387,10 @@
           <ul class="hl">
             <li>Ускорил мультивыбор в больших виртуализированных списках в ~200 раз — со 180–200 мс до 0,4–0,5 мс на элемент.</li>
             <li>Перевёл проект с сервисной архитектуры на слоистую NgRx с чистым разделением бизнес-логики.</li>
-            <li>Поднял покрытие unit-тестами до 90%+ с обязательными coverage-гейтами в CI.</li>
+            <li>
+              Поднял покрытие unit-тестами общих библиотек до 100% — с гейтами в CI наряду с проверками дублирования и циклических
+              зависимостей.
+            </li>
             <li>Провёл 70+ технических собеседований; нанимал, адаптировал и менторил инженеров.</li>
             <li>Опубликовал vitest-auto-spy в npm — типизированный auto-mock для Vitest.</li>
           </ul>
@@ -434,7 +445,7 @@
             </ul>
           </div>
           <div class="job">
-            <div class="job-h"><span class="job-r">Senior Angular Developer / Tech Lead</span><span class="job-p">2018 — 2019</span></div>
+            <div class="job-h"><span class="job-r">Senior Angular Developer</span><span class="job-p">2018 — 2019</span></div>
             <div class="job-c">Arcadia Inc. · Таганрог</div>
             <ul>
               <li>Спроектировал UI-архитектуру продукта и план рефакторинга; выпустил 10+ крупных фич.</li>
@@ -472,8 +483,9 @@
           <div class="proj">
             <div class="proj-h"><span class="proj-n">vitest-auto-spy</span><span class="proj-m">TypeScript · Open Source · npm</span></div>
             <div class="proj-d">
-              Типизированный auto-mock для Vitest — недостающий jest-auto-spies. Типизированный Spy&lt;T&gt;, мокирование Observable,
-              zoneless Angular, без зависимостей. → github.com/ASDAlexey/vitest-auto-spy
+              Типизированный auto-mock для Vitest — идейный наследник jest-auto-spies. Один API, три рантайма (Vitest, Bun, Node.js) за
+              сменным MockAdapter. Типизированные спаи из класса или из одного типа, управление Observable / промисами / сигналами,
+              DI-хелперы для Angular и NestJS. Без зависимостей, 100% покрытие. → github.com/ASDAlexey/vitest-auto-spy
             </div>
           </div>
           <div class="proj">
@@ -481,15 +493,36 @@
               <span class="proj-n">Bonds Tracker</span><span class="proj-m">Angular 22 · Tauri 2 · Rust · SQLite</span>
             </div>
             <div class="proj-d">
-              Личный трекер портфеля облигаций — умный оптимизатор портфеля, скринер с баллами и купонный календарь по API Tinkoff / MOEX
-              ISS / ЦБ РФ с риском дефолта по KMV-Merton и Telegram-ботом.
+              Личный трекер портфеля облигаций по нескольким счетам Т-Банк Инвестиций — умный оптимизатор портфеля, аудит с предложениями
+              замен, скринер с баллами, купонный календарь и дашборд целей. Аналитика в реальном времени по API Tinkoff / MOEX ISS / ЦБ РФ,
+              риск дефолта по KMV-Merton, Plotly, Telegram-бот, движки на Rust.
+            </div>
+          </div>
+          <div class="proj">
+            <div class="proj-h">
+              <span class="proj-n">SundayRun</span><span class="proj-m">Angular 22 · Bun · Vitest · GitHub Pages</span>
+            </div>
+            <div class="proj-d">
+              Веб-приложение для клуба любительских забегов (Таганрог). Организаторы загружают результаты с секундомера, приложение считает
+              рейтинги и генерирует официальный PDF-протокол прямо в браузере, публикуя каждый забег в архив репозитория одним атомарным
+              коммитом. Zoneless Angular, 100% покрытие тестами. → asdalexey.github.io/sundayrun
+            </div>
+          </div>
+          <div class="proj">
+            <div class="proj-h">
+              <span class="proj-n">Sportdiary</span><span class="proj-m">Ionic · Angular · Node.js · iOS / Android</span>
+            </div>
+            <div class="proj-d">
+              Full-stack трекер бега для iOS и Android, сделан в одиночку от и до — GPS-трекинг с картой маршрута, автоопределение кругов,
+              статистика по тренировке, анализ объёмов с личными рекордами и социальная лента. Бэкенд на Node.js на собственном VPS; больше
+              года в продакшене.
             </div>
           </div>
           <div class="proj">
             <div class="proj-h"><span class="proj-n">Claude Code config &amp; skills</span><span class="proj-m">AI · Automation</span></div>
             <div class="proj-d">
-              Собственные скиллы, агенты и хуки Claude Code, кодирующие конвенции проекта, генерацию кода и AI code-review для крупных
-              Angular MR.
+              Собственные скиллы, агенты и хуки Claude Code, кодирующие конвенции проекта, генерацию кода и оптимизацию токенов — включая AI
+              code-review для крупных Angular MR.
             </div>
           </div>
         </div>
