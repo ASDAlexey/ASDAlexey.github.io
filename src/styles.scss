@@ -142,6 +142,29 @@ a {
   initial-value: 0deg;
 }
 
+// Pointer position published by `appPointerTrack`, registered so the resting
+// state can ease back instead of snapping when the cursor leaves an element.
+// `--pt-on` gates every cursor effect: 0 at rest, 1 while the pointer is over.
+// Inherited on purpose: the hero tracks the cursor once and its glows, nested
+// several levels down, lean toward it off the same two numbers.
+@property --pt-nx {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+@property --pt-ny {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+@property --pt-on {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
 @keyframes glow-spin {
   to {
     --border-angle: 360deg;

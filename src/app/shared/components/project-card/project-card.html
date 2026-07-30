@@ -1,4 +1,6 @@
-<article class="card" [class.card--featured]="project().featured">
+<!-- appPointerTrack feeds both the spotlight that follows the cursor across the
+     card and the slight 3D tilt it leans into; both are styled in CSS. -->
+<article appPointerTrack class="card" [class.card--featured]="project().featured">
   <div class="card__head">
     <h3 class="card__title">{{ project().name }}</h3>
     <span class="card__badge">{{ project().badge }}</span>

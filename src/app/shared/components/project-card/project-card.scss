@@ -15,13 +15,40 @@
   position: relative;
   flex-direction: column;
   height: 100%;
+
+  // Tilt lives on `transform`, the hover lift on `translate` — separate
+  // properties, so neither has to restate the other. The rotation follows the
+  // cursor via the variables `appPointerTrack` publishes and rests flat at 0.
+  transform: perspective(900px) rotateX(calc(var(--pt-ny) * -5deg)) rotateY(calc(var(--pt-nx) * 7deg));
+  transform-style: preserve-3d;
   transition:
     border-color 0.3s var(--ease),
     box-shadow 0.3s var(--ease),
-    transform 0.3s var(--ease);
+    translate 0.3s var(--ease),
+    transform 0.4s var(--ease);
+
+  // Spotlight — a warm pool of light under the cursor, faded in by `--pt-on`
+  // so it dissolves in place when the pointer leaves instead of snapping off.
+  &::before {
+    z-index: 0;
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(220px circle at var(--pt-x, 50%) var(--pt-y, 50%), rgb(245, 165, 36, 0.13), transparent 70%);
+    content: '';
+    opacity: var(--pt-on, 0);
+    pointer-events: none;
+    transition: opacity 0.35s var(--ease);
+  }
+
+  // Content above the spotlight wash.
+  > * {
+    z-index: 1;
+    position: relative;
+  }
 
   &:hover {
-    transform: translateY(-3px);
+    translate: 0 -3px;
     border-color: var(--border-hover);
     box-shadow: 0 16px 50px rgb(0, 0, 0, 0.4);
   }
