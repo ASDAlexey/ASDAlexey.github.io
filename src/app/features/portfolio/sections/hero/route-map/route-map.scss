@@ -1,0 +1,152 @@
+@use 'styles/typography' as t;
+
+:host {
+  display: block;
+  max-width: 470px;
+  margin: 14px auto 0;
+}
+
+.map {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+
+  &__grid-dot {
+    fill: var(--border);
+  }
+
+  // Arcs draw themselves once on load, then simply sit there as the route.
+  &__arc {
+    stroke: var(--accent-line);
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    stroke-width: 1.4;
+    animation: map-draw 1.6s var(--ease) both;
+
+    // The long-running directions read stronger than the occasional ones.
+    &_primary {
+      stroke: var(--accent);
+      stroke-width: 1.8;
+    }
+  }
+
+  // Country markers — the anchors the cities hang from.
+  &__node {
+    fill: var(--accent-deep);
+    stroke: var(--accent-line);
+    stroke-width: 1;
+
+    &_primary {
+      fill: var(--accent);
+      stroke: var(--accent-light);
+    }
+  }
+
+  // Hairline tying a city back to its country.
+  &__spur {
+    stroke: var(--border-hover);
+    stroke-dasharray: 2 2;
+    stroke-width: 0.9;
+  }
+
+  &__city {
+    fill: var(--text-muted);
+  }
+
+  &__hub {
+    fill: var(--accent);
+  }
+
+  // Expanding ring under the home marker — the "I am here, broadcasting" beat.
+  &__pulse {
+    transform-box: fill-box;
+    transform-origin: center;
+    fill: var(--accent);
+    animation: map-pulse 2.8s ease-out infinite;
+  }
+
+  // The dot itself: rides the arc's own path data, handed over as offset-path.
+  &__runner {
+    offset-distance: 0%;
+    offset-rotate: 0deg;
+    fill: var(--accent-light);
+    animation: map-fly 5.2s linear infinite;
+    filter: drop-shadow(0 0 4px var(--accent));
+  }
+
+  // Countries read first, cities sit under them, home is the brightest of all.
+  &__label {
+    @include t.text('label', 'small');
+
+    fill: var(--text-muted);
+
+    &_country {
+      @include t.text('label', 'medium');
+
+      fill: var(--accent-light);
+    }
+
+    &_city {
+      fill: var(--text-muted);
+      opacity: 0.85;
+    }
+
+    &_hub {
+      @include t.text('label', 'medium');
+
+      fill: var(--text-secondary);
+    }
+  }
+}
+
+@keyframes map-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes map-pulse {
+  from {
+    scale: 0.6;
+    opacity: 0.45;
+  }
+
+  to {
+    scale: 2.8;
+    opacity: 0;
+  }
+}
+
+@keyframes map-fly {
+  0% {
+    offset-distance: 0%;
+    opacity: 0;
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  82% {
+    opacity: 1;
+  }
+
+  100% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+}
+
+// Reduced motion: the map stays, the traffic stops — arcs drawn, dots parked.
+@media (prefers-reduced-motion: reduce) {
+  .map__arc {
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+
+  .map__pulse,
+  .map__runner {
+    display: none;
+  }
+}

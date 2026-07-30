@@ -1,0 +1,43 @@
+<svg aria-hidden="true" class="map" fill="none" [attr.viewBox]="viewBox">
+  <defs>
+    <!-- Faint dot grid standing in for a world map — abstract on purpose, so it
+         reads as "somewhere global" without pretending to be real geography. -->
+    <pattern height="12" id="map-grid" patternUnits="userSpaceOnUse" width="12">
+      <circle class="map__grid-dot" cx="1" cy="1" r="0.7" />
+    </pattern>
+    <radialGradient cx="50%" cy="66%" id="map-fade" r="64%">
+      <stop offset="0%" stop-color="white" stop-opacity="1" />
+      <stop offset="100%" stop-color="white" stop-opacity="0" />
+    </radialGradient>
+    <mask id="map-mask">
+      <rect fill="url(#map-fade)" height="196" width="460" />
+    </mask>
+  </defs>
+
+  <rect fill="url(#map-grid)" height="196" mask="url(#map-mask)" width="460" />
+
+  @for (leg of legs; track leg.id) {
+    <!-- pathLength normalises every arc to 1 unit, so one dash pattern draws
+         them all regardless of their real length. -->
+    <path class="map__arc" pathLength="1" [attr.d]="leg.d" [class.map__arc_primary]="leg.primary" [style.animation-delay]="leg.delay" />
+
+    <!-- Cities hang off their country's node by a spur, so the grouping reads. -->
+    @for (city of leg.cities; track city.label) {
+      <line class="map__spur" [attr.x1]="leg.x" [attr.x2]="city.x" [attr.y1]="leg.y" [attr.y2]="city.y" />
+      <circle class="map__city" r="1.9" [attr.cx]="city.x" [attr.cy]="city.y" />
+      <text class="map__label map__label_city" [attr.text-anchor]="city.anchor" [attr.x]="city.labelX" [attr.y]="city.labelY">
+        {{ city.label }}
+      </text>
+    }
+
+    <circle class="map__node" r="3.4" [attr.cx]="leg.x" [attr.cy]="leg.y" [class.map__node_primary]="leg.primary" />
+    <text class="map__label map__label_country" [attr.text-anchor]="leg.anchor" [attr.x]="leg.labelX" [attr.y]="leg.labelY">
+      {{ leg.label }}
+    </text>
+    <circle class="map__runner" r="2.4" [style.animation-delay]="leg.delay" [style.offset-path]="offsetPath(leg.d)" />
+  }
+
+  <circle class="map__pulse" r="5" [attr.cx]="hub.x" [attr.cy]="hub.y" />
+  <circle class="map__hub" r="3.8" [attr.cx]="hub.x" [attr.cy]="hub.y" />
+  <text class="map__label map__label_hub" text-anchor="middle" [attr.x]="hub.x" [attr.y]="hub.y + 18">{{ hub.label }}</text>
+</svg>

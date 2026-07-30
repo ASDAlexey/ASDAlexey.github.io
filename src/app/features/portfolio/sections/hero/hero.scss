@@ -7,6 +7,17 @@
   overflow: hidden;
   text-align: center;
 
+  // Cursor lean — the whole glow layer drifts toward the pointer. Kept on the
+  // wrapper so the glows themselves keep `transform` (drift) and `translate`
+  // (scroll parallax) free for their own animations.
+  &__glows {
+    position: absolute;
+    inset: 0;
+    translate: calc(var(--pt-nx) * 40px) calc(var(--pt-ny) * 26px);
+    pointer-events: none;
+    transition: translate 0.6s var(--ease);
+  }
+
   &__glow {
     position: absolute;
     top: -280px;
@@ -157,13 +168,18 @@
 
   @include t.button-label;
 
+  // Magnetism — the button leans toward the cursor while it is over it (and,
+  // more faintly, while the cursor is anywhere in the hero, since the position
+  // is inherited until the button starts tracking it itself).
+  translate: calc(var(--pt-nx) * 9px) calc(var(--pt-ny) * 7px);
   font-family: inherit;
   cursor: pointer;
   transition:
     background 0.2s,
     transform 0.15s,
     box-shadow 0.25s,
-    border-color 0.2s;
+    border-color 0.2s,
+    translate 0.35s var(--ease);
 
   &--primary {
     background: linear-gradient(135deg, var(--accent-warm), var(--accent));

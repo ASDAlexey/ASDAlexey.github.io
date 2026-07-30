@@ -1,11 +1,17 @@
-<section class="hero">
-  <div aria-hidden="true" class="hero__glow"></div>
-  <div aria-hidden="true" class="hero__glow hero__glow--blue"></div>
+<!-- appPointerTrack publishes the cursor position for the whole hero; the glows
+     below read it and lean toward the pointer. -->
+<section appPointerTrack class="hero">
+  <!-- The wrapper carries the cursor lean, leaving each glow's own drift and
+       scroll parallax untouched on the properties they already animate. -->
+  <div aria-hidden="true" class="hero__glows">
+    <div class="hero__glow"></div>
+    <div class="hero__glow hero__glow--blue"></div>
+  </div>
 
   <div class="hero__container container">
     <p class="eyebrow"><span class="dot"></span> {{ profile.eyebrow }}</p>
 
-    <h1 class="hero__title">{{ profile.name }}</h1>
+    <h1 appDecodeText class="hero__title">{{ profile.name }}</h1>
     <p class="hero__role">{{ profile.role }}</p>
 
     <p class="hero__subtitle" i18n="@@hero.subtitle">
@@ -19,30 +25,56 @@
       }
     </ul>
 
+    <!-- Each button tracks the pointer on its own, so it can lean toward the
+         cursor (see .btn's `translate` rule) instead of sitting dead still. -->
     <div class="hero__actions">
-      <a class="btn btn--primary btn--lg" i18n="@@hero.cta.github" rel="noreferrer" target="_blank" [href]="profile.github">
+      <a appPointerTrack class="btn btn--primary btn--lg" i18n="@@hero.cta.github" rel="noreferrer" target="_blank" [href]="profile.github">
         <app-icon name="github" [size]="18" />
         GitHub
       </a>
-      <a class="btn btn--ghost btn--lg" i18n="@@hero.cta.linkedin" rel="noreferrer" target="_blank" [href]="profile.linkedin">
+      <a
+        appPointerTrack
+        class="btn btn--ghost btn--lg"
+        i18n="@@hero.cta.linkedin"
+        rel="noreferrer"
+        target="_blank"
+        [href]="profile.linkedin"
+      >
         <app-icon name="linkedin" [size]="18" />
         LinkedIn
       </a>
-      <a class="btn btn--ghost btn--lg" i18n="@@hero.cta.telegram" rel="noreferrer" target="_blank" [href]="profile.telegram">
+      <a
+        appPointerTrack
+        class="btn btn--ghost btn--lg"
+        i18n="@@hero.cta.telegram"
+        rel="noreferrer"
+        target="_blank"
+        [href]="profile.telegram"
+      >
         <app-icon name="telegram" [size]="18" />
         Telegram
       </a>
-      <a class="btn btn--ghost btn--lg" i18n="@@hero.cta.max" rel="noreferrer" target="_blank" [href]="profile.max">
+      <a appPointerTrack class="btn btn--ghost btn--lg" i18n="@@hero.cta.max" rel="noreferrer" target="_blank" [href]="profile.max">
         <app-icon name="max" [size]="18" />
         MAX
       </a>
-      <a class="btn btn--ghost btn--lg" download i18n="@@hero.resume" rel="noreferrer" target="_blank" [href]="profile.resume">
+      <a
+        appPointerTrack
+        class="btn btn--ghost btn--lg"
+        download
+        i18n="@@hero.resume"
+        rel="noreferrer"
+        target="_blank"
+        [href]="profile.resume"
+      >
         <app-icon name="resume" [size]="18" />
         Résumé
       </a>
     </div>
 
     <p class="hero__hint">{{ profile.hint }}</p>
+
+    <app-route-map />
 
     <app-hero-showcase />
 
