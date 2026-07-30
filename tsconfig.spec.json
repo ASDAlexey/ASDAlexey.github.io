@@ -7,5 +7,5 @@
   },
   "extends": "./tsconfig.json",
   "files": ["src/test-providers.ts"],
-  "include": ["src/**/*.d.ts", "src/**/*.spec.ts"]
+  "include": ["src/**/*.d.ts", "src/**/*.mock.ts", "src/**/*.spec.ts"]
 }

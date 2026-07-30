@@ -5,7 +5,7 @@
     "outDir": "./out-tsc/app",
     "types": ["@angular/localize", "node"]
   },
-  "exclude": ["src/**/*.spec.ts"],
+  "exclude": ["src/**/*.spec.ts", "src/**/*.mock.ts"],
   "extends": "./tsconfig.json",
   "include": ["src/**/*.ts"]
 }
