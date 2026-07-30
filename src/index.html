@@ -58,15 +58,15 @@
       }
     </style>
 
-    <!-- Without JS the scroll-reveal directive never runs — keep all content visible. -->
-    <noscript>
-      <style>
-        .reveal {
-          transform: none !important;
-          opacity: 1 !important;
-        }
-      </style>
-    </noscript>
+    <!-- Marks the document as scripted before the first paint, so the reveal
+         animations can start hidden only where something will reveal them: without
+         JS the directive never toggles `.is-visible` and the page would stay blank
+         for readers and text-only crawlers alike (see `:root:not(.js)` in
+         styles/_animations.scss). A `<noscript><style>` cannot do this job — the
+         prerender serialiser escapes the inner markup into plain text. -->
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
     <!-- JSON-LD structured data is injected per-locale by StructuredDataService (Person + WebSite + ProfilePage). -->
     <!-- Search-engine ownership verification — paste the codes from the consoles, then redeploy:
          Google Search Console (https://search.google.com/search-console) and

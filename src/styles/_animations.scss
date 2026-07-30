@@ -155,6 +155,21 @@
   }
 }
 
+// No scripting — the directive that adds `.is-visible` never runs, so the hidden
+// starting states above would hide the page for good. Undo them last, past the
+// `.is-visible` rules, so nothing can hide content that will never be revealed.
+// The `.js` class is set by an inline script in index.html before the first paint.
+:root:not(.js) {
+  .reveal,
+  .reveal--stagger > * {
+    translate: none;
+    scale: 1;
+    animation: none;
+    opacity: 1;
+    transition: none;
+  }
+}
+
 // Respect reduced-motion: show everything immediately, no travel, no reliance on JS.
 @media (prefers-reduced-motion: reduce) {
   .letter-reveal__char,
