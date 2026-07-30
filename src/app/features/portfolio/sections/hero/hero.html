@@ -28,47 +28,28 @@
     <!-- Each button tracks the pointer on its own, so it can lean toward the
          cursor (see .btn's `translate` rule) instead of sitting dead still. -->
     <div class="hero__actions">
-      <a appPointerTrack class="btn btn--primary btn--lg" i18n="@@hero.cta.github" rel="noreferrer" target="_blank" [href]="profile.github">
+      <!-- The label carries the `i18n` marker on its own span: on the anchor it
+           would cover the icon too, and the translated message replaces the whole
+           marked content — which drops the icon in every non-source locale. -->
+      <a appPointerTrack class="btn btn--primary btn--lg" rel="noreferrer" target="_blank" [href]="profile.github">
         <app-icon name="github" [size]="18" />
-        GitHub
+        <span i18n="@@hero.cta.github">GitHub</span>
       </a>
-      <a
-        appPointerTrack
-        class="btn btn--ghost btn--lg"
-        i18n="@@hero.cta.linkedin"
-        rel="noreferrer"
-        target="_blank"
-        [href]="profile.linkedin"
-      >
+      <a appPointerTrack class="btn btn--ghost btn--lg" rel="noreferrer" target="_blank" [href]="profile.linkedin">
         <app-icon name="linkedin" [size]="18" />
-        LinkedIn
+        <span i18n="@@hero.cta.linkedin">LinkedIn</span>
       </a>
-      <a
-        appPointerTrack
-        class="btn btn--ghost btn--lg"
-        i18n="@@hero.cta.telegram"
-        rel="noreferrer"
-        target="_blank"
-        [href]="profile.telegram"
-      >
+      <a appPointerTrack class="btn btn--ghost btn--lg" rel="noreferrer" target="_blank" [href]="profile.telegram">
         <app-icon name="telegram" [size]="18" />
-        Telegram
+        <span i18n="@@hero.cta.telegram">Telegram</span>
       </a>
-      <a appPointerTrack class="btn btn--ghost btn--lg" i18n="@@hero.cta.max" rel="noreferrer" target="_blank" [href]="profile.max">
+      <a appPointerTrack class="btn btn--ghost btn--lg" rel="noreferrer" target="_blank" [href]="profile.max">
         <app-icon name="max" [size]="18" />
-        MAX
+        <span i18n="@@hero.cta.max">MAX</span>
       </a>
-      <a
-        appPointerTrack
-        class="btn btn--ghost btn--lg"
-        download
-        i18n="@@hero.resume"
-        rel="noreferrer"
-        target="_blank"
-        [href]="profile.resume"
-      >
+      <a appPointerTrack class="btn btn--ghost btn--lg" download rel="noreferrer" target="_blank" [href]="profile.resume">
         <app-icon name="resume" [size]="18" />
-        Résumé
+        <span i18n="@@hero.resume">Résumé</span>
       </a>
     </div>
 
