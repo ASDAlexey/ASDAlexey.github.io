@@ -101,6 +101,39 @@ a {
   }
 }
 
+// Cross-document view transitions — the EN/RU switch is a real navigation to a
+// separately prerendered document, so the browser (not the router) drives this.
+// The shell keeps its identity across the swap while the content cross-fades,
+// which turns a hard white-flash reload into a single continuous move.
+@view-transition {
+  navigation: auto;
+}
+
+.nav {
+  view-transition-name: nav;
+}
+
+::view-transition-old(root) {
+  animation: vt-out 0.18s var(--ease) both;
+}
+
+::view-transition-new(root) {
+  animation: vt-in 0.34s var(--ease) both;
+}
+
+@keyframes vt-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes vt-in {
+  from {
+    translate: 0 8px;
+    opacity: 0;
+  }
+}
+
 // Registered so it can be animated (unregistered custom properties can't tween).
 // Drives the rotating conic-gradient frame in the `glow-border` mixin.
 @property --border-angle {
