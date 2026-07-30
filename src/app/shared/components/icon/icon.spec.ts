@@ -24,8 +24,9 @@ describe('Icon', () => {
     expect(svg.getAttribute('width')).toBe('20');
   });
 
-  it('renders the linkedin icon', () => {
+  it('renders the linkedin and max icons', () => {
     expect(render('linkedin').nativeElement.querySelector('svg')).toBeTruthy();
+    expect(render('max').nativeElement.querySelector('svg')).toBeTruthy();
   });
 
   it('renders the telegram icon with a custom size', () => {

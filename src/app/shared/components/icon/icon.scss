@@ -1,9 +1,32 @@
 :host {
   display: inline-flex;
+  position: relative;
 }
 
 // Block removes the inline-baseline descender gap, so the glyph sits on the
 // true vertical centre inside flex rows (buttons, links, captions).
 svg {
   display: block;
+}
+
+// The colour mark repeats the monochrome glyph's exact silhouette, so fading it
+// in on top reads as the icon recolouring rather than swapping shape. The
+// monochrome layer stays put underneath — cross-fading both would dip through a
+// washed-out midpoint.
+.icon__brand {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.45s ease-in-out;
+}
+
+// Scoped to .btn so a bare :hover ancestor (body, the page) can never match.
+:host-context(.btn:hover) .icon__brand {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon__brand {
+    transition: none;
+  }
 }

@@ -50,7 +50,7 @@ export interface Testimonial {
   readonly image?: string;
 }
 
-export type SocialIcon = 'github' | 'linkedin' | 'resume' | 'telegram';
+export type SocialIcon = 'github' | 'linkedin' | 'max' | 'resume' | 'telegram';
 
 export interface SocialLink {
   readonly label: string;

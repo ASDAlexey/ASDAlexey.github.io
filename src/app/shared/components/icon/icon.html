@@ -1,32 +1,89 @@
 @switch (name()) {
   @case ('github') {
-    <svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" [attr.height]="size()" [attr.width]="size()">
+    <!-- GitHub's mark is monochrome by design — there is no colour version to
+         fade to, so it keeps the resting glyph in both states. -->
+    <svg aria-hidden="true" class="icon__mono" fill="currentColor" viewBox="0 0 24 24" [attr.height]="size()" [attr.width]="size()">
       <path
         d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"
       />
     </svg>
   }
   @case ('linkedin') {
-    <svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" [attr.height]="size()" [attr.width]="size()">
+    <svg aria-hidden="true" class="icon__mono" fill="currentColor" viewBox="0 0 24 24" [attr.height]="size()" [attr.width]="size()">
       <path
         d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"
       />
     </svg>
+    <svg aria-hidden="true" class="icon__brand" viewBox="0 0 24 24" [attr.height]="size()" [attr.width]="size()">
+      <rect fill="#fff" height="24" rx="2.2" width="24" />
+      <path
+        d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"
+        fill="#0a66c2"
+      />
+    </svg>
+  }
+  @case ('max') {
+    <svg aria-hidden="true" class="icon__mono" fill="currentColor" viewBox="0 0 100 100" [attr.height]="size()" [attr.width]="size()">
+      <path
+        clip-rule="evenodd"
+        d="M50.76.26c27.53 0 49.13 22.34 49.13 49.89 0 27.55-22.28 49.34-48.87 49.34-9.43 0-14.01-1.33-21.37-6.54-.51-.36-1.2-.27-1.63.19-5.66 6.04-20.17 10.29-20.83 2.04 0-14.39-7.19-23.73-7.19-45.3C0 21.55 23.22.26 50.76.26Zm.77 24.55c-13.07-.68-23.27 8.39-25.52 22.57-1.86 11.75 1.44 26.07 4.27 26.8 1.2.3 4.08-1.9 6.18-3.88.39-.37.99-.44 1.45-.15 3.27 2 6.97 3.5 11.05 3.71 13.41.7 25.3-9.8 26-23.21.7-13.42-10.02-25.15-23.43-25.85v.01Z"
+        fill-rule="evenodd"
+      />
+    </svg>
+    <svg aria-hidden="true" class="icon__brand" viewBox="0 0 100 100" [attr.height]="size()" [attr.width]="size()">
+      <defs>
+        <!-- Stops lifted from the conic gradient MAX ships on max.ru, unrolled
+             along the mark's cyan-tail → violet-head axis. -->
+        <linearGradient id="icon-max-brand" x1="0" x2="1" y1="1" y2="0">
+          <stop offset="0" stop-color="#00b8ff" />
+          <stop offset="0.34" stop-color="#001cf1" />
+          <stop offset="1" stop-color="#8900ac" />
+        </linearGradient>
+      </defs>
+      <path
+        clip-rule="evenodd"
+        d="M50.76.26c27.53 0 49.13 22.34 49.13 49.89 0 27.55-22.28 49.34-48.87 49.34-9.43 0-14.01-1.33-21.37-6.54-.51-.36-1.2-.27-1.63.19-5.66 6.04-20.17 10.29-20.83 2.04 0-14.39-7.19-23.73-7.19-45.3C0 21.55 23.22.26 50.76.26Zm.77 24.55c-13.07-.68-23.27 8.39-25.52 22.57-1.86 11.75 1.44 26.07 4.27 26.8 1.2.3 4.08-1.9 6.18-3.88.39-.37.99-.44 1.45-.15 3.27 2 6.97 3.5 11.05 3.71 13.41.7 25.3-9.8 26-23.21.7-13.42-10.02-25.15-23.43-25.85v.01Z"
+        fill="url(#icon-max-brand)"
+        fill-rule="evenodd"
+      />
+    </svg>
   }
   @case ('telegram') {
-    <svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" [attr.height]="size()" [attr.width]="size()">
+    <svg aria-hidden="true" class="icon__mono" fill="currentColor" viewBox="0 0 24 24" [attr.height]="size()" [attr.width]="size()">
       <path
         d="M21.94 4.3 18.6 20.06c-.25 1.11-.91 1.39-1.85.86l-5.1-3.76-2.46 2.37c-.27.27-.5.5-1.03.5l.37-5.2L17.99 6.3c.41-.37-.09-.57-.64-.2L5.65 13.42.6 11.84c-1.1-.34-1.12-1.1.23-1.62L20.52 2.7c.92-.34 1.72.2 1.42 1.6Z"
       />
     </svg>
+    <svg aria-hidden="true" class="icon__brand" viewBox="0 0 24 24" [attr.height]="size()" [attr.width]="size()">
+      <defs>
+        <linearGradient id="icon-telegram-brand" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0" stop-color="#2aabee" />
+          <stop offset="1" stop-color="#229ed9" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M21.94 4.3 18.6 20.06c-.25 1.11-.91 1.39-1.85.86l-5.1-3.76-2.46 2.37c-.27.27-.5.5-1.03.5l.37-5.2L17.99 6.3c.41-.37-.09-.57-.64-.2L5.65 13.42.6 11.84c-1.1-.34-1.12-1.1.23-1.62L20.52 2.7c.92-.34 1.72.2 1.42 1.6Z"
+        fill="url(#icon-telegram-brand)"
+      />
+    </svg>
   }
   @case ('resume') {
-    <svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" [attr.height]="size()" [attr.width]="size()">
+    <svg aria-hidden="true" class="icon__mono" fill="currentColor" viewBox="0 0 24 24" [attr.height]="size()" [attr.width]="size()">
       <path
         clip-rule="evenodd"
         d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm-3 7h2v4h2l-3 3-3-3h2V9Z"
         fill-rule="evenodd"
       />
+    </svg>
+    <svg aria-hidden="true" class="icon__brand" viewBox="0 0 24 24" [attr.height]="size()" [attr.width]="size()">
+      <defs>
+        <linearGradient id="icon-resume-brand" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stop-color="#ff6a5e" />
+          <stop offset="1" stop-color="#d8321f" />
+        </linearGradient>
+      </defs>
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Z" fill="url(#icon-resume-brand)" />
+      <path d="M11 9h2v4h2l-3 3-3-3h2V9Z" fill="#fff" />
     </svg>
   }
 }
