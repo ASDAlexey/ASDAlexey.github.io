@@ -31,6 +31,40 @@
   strong {
     @include t.semibold;
 
+    z-index: 0;
+    position: relative;
     color: var(--text);
+
+    // Highlighter stroke, swept on when the paragraph scrolls into view. Sits
+    // behind the glyphs and only covers the lower half of the line, the way a
+    // marker pen would. `box-decoration-break` keeps a phrase that wraps across
+    // two lines highlighted on both of them.
+    &::after {
+      z-index: -1;
+      position: absolute;
+      right: -3px;
+      bottom: 0;
+      left: -3px;
+      box-decoration-break: clone;
+      height: 42%;
+      transform-origin: 0 50%;
+      scale: 0 1;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--accent-glow), rgb(245, 165, 36, 0.05));
+      content: '';
+      transition: scale 0.8s var(--ease);
+    }
+  }
+
+  // The reveal directive flips `.is-visible` on this container; each paragraph's
+  // marks follow a beat later so the sweep reads as reading, not as a flash.
+  &.is-visible strong::after {
+    scale: 1 1;
+  }
+
+  @for $i from 1 through 3 {
+    &.is-visible .prose__text:nth-child(#{$i}) strong::after {
+      transition-delay: #{0.25 + ($i - 1) * 0.18}s;
+    }
   }
 }

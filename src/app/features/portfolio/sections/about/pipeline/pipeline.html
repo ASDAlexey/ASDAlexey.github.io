@@ -1,0 +1,28 @@
+<!-- Branch name and short SHA are illustrative CI output, not user-facing copy —
+     left unlocalised the same way the hero's code showcase is. -->
+<!-- eslint-disable @angular-eslint/template/i18n -->
+
+<div aria-hidden="true" class="pipe">
+  <p class="pipe__head">
+    <span class="pipe__branch">main</span>
+    <span class="pipe__sha">a1c7f9e</span>
+  </p>
+
+  <ol class="pipe__stages">
+    @for (stage of stages; track stage.id) {
+      <li class="pipe__stage">
+        <span class="pipe__node"></span>
+        <span class="pipe__label">{{ stage.label }}</span>
+      </li>
+    }
+
+    <!-- Track sits behind the stage nodes: a grey rail, an accent fill that
+         advances with the scroll, and the dot riding its leading edge. -->
+    <li class="pipe__track">
+      <span class="pipe__fill"></span>
+      <span class="pipe__runner"></span>
+    </li>
+  </ol>
+
+  <p class="pipe__result" i18n="@@about.pipeline.result">✓ deployed · 4m 12s</p>
+</div>
