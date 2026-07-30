@@ -1,0 +1,100 @@
+:host {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 100%;
+  // Named view timeline, published here so the SVG children below can drive
+  // their animations off this element's trip through the viewport.
+  view-timeline-name: --career;
+  view-timeline-axis: block;
+  pointer-events: none;
+}
+
+.rail {
+  display: block;
+  overflow: visible;
+
+  // Unwalked route — always there, so the shape reads even before it is drawn.
+  &__track {
+    stroke: var(--border);
+    stroke-width: 1.5;
+  }
+
+  // Walked route, drawn in step with the scroll.
+  &__line {
+    stroke: var(--accent);
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    stroke-linecap: round;
+    stroke-width: 2;
+    filter: drop-shadow(0 0 6px var(--accent-glow));
+  }
+
+  &__stop {
+    fill: var(--bg-alt);
+    stroke: var(--border-hover);
+    stroke-width: 2;
+  }
+
+  // The dot itself — parked at the start until a scroll timeline moves it.
+  &__runner {
+    offset-distance: 0%;
+    offset-rotate: 0deg;
+    fill: var(--accent-light);
+    filter: drop-shadow(0 0 7px var(--accent));
+  }
+}
+
+// Everything above is static; the motion is added only where the browser can
+// drive it from the scroll position, which keeps it off the main thread.
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .rail__line {
+      animation: rail-draw linear both;
+      animation-timeline: --career;
+      animation-range: contain 0% contain 100%;
+    }
+
+    .rail__runner {
+      animation: rail-run linear both;
+      animation-timeline: --career;
+      animation-range: contain 0% contain 100%;
+    }
+  }
+}
+
+@keyframes rail-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes rail-run {
+  to {
+    offset-distance: 100%;
+  }
+}
+
+// Without scroll-driven animations the route is simply shown complete; the dot
+// would have nothing to move it, so it stays out of the picture.
+@supports not (animation-timeline: view()) {
+  .rail__line {
+    stroke-dashoffset: 0;
+  }
+
+  .rail__runner {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rail__line {
+    stroke-dashoffset: 0;
+  }
+
+  .rail__runner {
+    display: none;
+  }
+}

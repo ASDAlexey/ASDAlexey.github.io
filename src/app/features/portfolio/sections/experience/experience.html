@@ -5,10 +5,16 @@
     </p>
     <h2 appScrollReveal class="section__title" i18n="@@experience.title">Where I've shipped</h2>
 
-    <div appScrollReveal class="timeline reveal--stagger">
-      @for (experience of experiences; track experience.period) {
-        <app-experience-card [experience]="experience" />
-      }
+    <!-- The rail is positioned against this wrapper and measures its height, so
+         the curve always spans exactly as far as the cards beside it. -->
+    <div class="timeline-wrap">
+      <app-career-path [count]="experiences.length" />
+
+      <div appScrollReveal class="timeline reveal--stagger">
+        @for (experience of experiences; track experience.period) {
+          <app-experience-card [experience]="experience" />
+        }
+      </div>
     </div>
   </div>
 </section>

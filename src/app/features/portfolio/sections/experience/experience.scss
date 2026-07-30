@@ -18,7 +18,25 @@
   @include s.section-title;
 }
 
+.timeline-wrap {
+  position: relative;
+}
+
 .timeline {
   display: grid;
   gap: 16px;
+}
+
+// The rail needs a lane of its own. Below this width there is none to spare, so
+// the cards take the full row and the rail is dropped rather than crowded in.
+@media (width >= 860px) {
+  .timeline {
+    padding-left: 56px;
+  }
+}
+
+@media (width < 860px) {
+  app-career-path {
+    display: none;
+  }
 }
