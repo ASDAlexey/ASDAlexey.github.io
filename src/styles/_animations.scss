@@ -85,8 +85,28 @@
   }
 }
 
+// Word-by-word reveal — `appWordReveal` wraps each word after hydration and
+// toggles `.is-spoken` as the line enters view; the per-word delay is set
+// inline by the directive. Styled globally because the words are created in
+// JS, outside any component's emulated encapsulation.
+.word-reveal__word {
+  display: inline-block;
+  translate: 0 0.4em;
+  opacity: 0;
+  transition:
+    opacity 0.5s var(--ease),
+    translate 0.5s var(--ease);
+  will-change: opacity, translate;
+}
+
+.word-reveal.is-spoken .word-reveal__word {
+  translate: none;
+  opacity: 1;
+}
+
 // Respect reduced-motion: show everything immediately, no travel, no reliance on JS.
 @media (prefers-reduced-motion: reduce) {
+  .word-reveal__word,
   .reveal,
   .reveal--stagger > * {
     translate: none;

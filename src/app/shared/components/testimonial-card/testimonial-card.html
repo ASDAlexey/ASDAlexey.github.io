@@ -1,7 +1,7 @@
 @let item = testimonial();
 
 <figure class="card">
-  <blockquote class="card__quote">{{ item.quote }}</blockquote>
+  <blockquote appWordReveal class="card__quote">{{ item.quote }}</blockquote>
   <figcaption class="card__author">
     <span class="card__person">
       @if (item.image; as image) {

@@ -2,10 +2,12 @@ import { DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, ElementRef, inject, input, viewChild } from '@angular/core';
 
 import { Testimonial } from '@core/models/portfolio.interface';
+import { WordReveal } from '@shared/directives/word-reveal/word-reveal';
 
 @Component({
   selector: 'app-testimonial-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [WordReveal],
   templateUrl: './testimonial-card.html',
   styleUrl: './testimonial-card.scss',
 })
