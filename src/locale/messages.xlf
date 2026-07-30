@@ -84,6 +84,27 @@
           <context context-type="linenumber">21,26</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="about.pipeline.commit" datatype="html">
+        <source>commit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/about/pipeline/pipeline.constant.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.pipeline.deploy" datatype="html">
+        <source>deploy</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/about/pipeline/pipeline.constant.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.pipeline.result" datatype="html">
+        <source>✓ deployed · 4m 12s</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/about/pipeline/pipeline.html</context>
+          <context context-type="linenumber">27,29</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="nav.experience" datatype="html">
         <source>Experience</source>
         <context-group purpose="location">
@@ -106,49 +127,126 @@
         <source> 14+ years building <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Angular across every platform<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — Web (SSR), Smart TV, mobile (Ionic) and desktop (Tauri/Rust). Nx · NgRx · GitLab CI/CD · 100% test coverage · AI code-review · Frontend Team Lead. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/portfolio/sections/hero/hero.html</context>
-          <context context-type="linenumber">12,13</context>
+          <context context-type="linenumber">18,19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="hero.platforms" datatype="html">
         <source>Platforms</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/portfolio/sections/hero/hero.html</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="hero.cta.github" datatype="html">
         <source><x id="START_TAG_APP_ICON" ctype="x-app_icon" equiv-text="&lt;app-icon name=&quot;github&quot; [size]=&quot;18&quot; /&gt;"/><x id="CLOSE_TAG_APP_ICON" ctype="x-app_icon" equiv-text="&lt;app-icon name=&quot;github&quot; [size]=&quot;18&quot; /&gt;"/> GitHub </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/portfolio/sections/hero/hero.html</context>
-          <context context-type="linenumber">24,27</context>
+          <context context-type="linenumber">32,35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="hero.cta.linkedin" datatype="html">
         <source><x id="START_TAG_APP_ICON" ctype="x-app_icon" equiv-text="&lt;app-icon name=&quot;linkedin&quot; [size]=&quot;18&quot; /&gt;"/><x id="CLOSE_TAG_APP_ICON" ctype="x-app_icon" equiv-text="&lt;app-icon name=&quot;linkedin&quot; [size]=&quot;18&quot; /&gt;"/> LinkedIn </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/portfolio/sections/hero/hero.html</context>
-          <context context-type="linenumber">28,31</context>
+          <context context-type="linenumber">43,46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="hero.cta.telegram" datatype="html">
         <source><x id="START_TAG_APP_ICON" ctype="x-app_icon" equiv-text="&lt;app-icon name=&quot;telegram&quot; [size]=&quot;18&quot; /&gt;"/><x id="CLOSE_TAG_APP_ICON" ctype="x-app_icon" equiv-text="&lt;app-icon name=&quot;telegram&quot; [size]=&quot;18&quot; /&gt;"/> Telegram </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/portfolio/sections/hero/hero.html</context>
-          <context context-type="linenumber">32,35</context>
+          <context context-type="linenumber">54,57</context>
         </context-group>
       </trans-unit>
       <trans-unit id="hero.cta.max" datatype="html">
         <source><x id="START_TAG_APP_ICON" ctype="x-app_icon" equiv-text="&lt;app-icon name=&quot;max&quot; [size]=&quot;18&quot; /&gt;"/><x id="CLOSE_TAG_APP_ICON" ctype="x-app_icon" equiv-text="&lt;app-icon name=&quot;max&quot; [size]=&quot;18&quot; /&gt;"/> MAX </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/portfolio/sections/hero/hero.html</context>
-          <context context-type="linenumber">36,39</context>
+          <context context-type="linenumber">58,61</context>
         </context-group>
       </trans-unit>
       <trans-unit id="hero.resume" datatype="html">
         <source><x id="START_TAG_APP_ICON" ctype="x-app_icon" equiv-text="&lt;app-icon name=&quot;resume&quot; [size]=&quot;18&quot; /&gt;"/><x id="CLOSE_TAG_APP_ICON" ctype="x-app_icon" equiv-text="&lt;app-icon name=&quot;resume&quot; [size]=&quot;18&quot; /&gt;"/> Résumé </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/portfolio/sections/hero/hero.html</context>
-          <context context-type="linenumber">40,43</context>
+          <context context-type="linenumber">70,73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.map.hub" datatype="html">
+        <source>Taganrog</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/hero/route-map/route-map.constant.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.map.us" datatype="html">
+        <source>USA</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/hero/route-map/route-map.constant.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.map.us.la" datatype="html">
+        <source>Los Angeles</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/hero/route-map/route-map.constant.ts</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.map.de" datatype="html">
+        <source>Germany</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/hero/route-map/route-map.constant.ts</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.map.ru" datatype="html">
+        <source>Russia</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/hero/route-map/route-map.constant.ts</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.map.ru.msk" datatype="html">
+        <source>Moscow</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/hero/route-map/route-map.constant.ts</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.map.ru.spb" datatype="html">
+        <source>SPb</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/hero/route-map/route-map.constant.ts</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.map.ru.nsk" datatype="html">
+        <source>Novosibirsk</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/hero/route-map/route-map.constant.ts</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.map.sg" datatype="html">
+        <source>Singapore</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/hero/route-map/route-map.constant.ts</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.map.au" datatype="html">
+        <source>Australia</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/hero/route-map/route-map.constant.ts</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.map.au.syd" datatype="html">
+        <source>Sydney</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/portfolio/sections/hero/route-map/route-map.constant.ts</context>
+          <context context-type="linenumber">111</context>
         </context-group>
       </trans-unit>
       <trans-unit id="nav.projects" datatype="html">
@@ -226,7 +324,7 @@
         <source>Open full image ↗</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/project-card/project-card.html</context>
-          <context context-type="linenumber">21,24</context>
+          <context context-type="linenumber">23,26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="scrollTop.aria" datatype="html">

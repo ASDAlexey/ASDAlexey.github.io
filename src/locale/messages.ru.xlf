@@ -158,6 +158,62 @@
         <source>Taganrog, Russia · UTC+3 · remote-first</source>
         <target>Таганрог, Россия · UTC+3 · удалённо</target>
       </trans-unit>
+      <trans-unit id="hero.map.hub" datatype="html">
+        <source>Taganrog</source>
+        <target>Таганрог</target>
+      </trans-unit>
+      <trans-unit id="hero.map.us" datatype="html">
+        <source>USA</source>
+        <target>США</target>
+      </trans-unit>
+      <trans-unit id="hero.map.us.la" datatype="html">
+        <source>Los Angeles</source>
+        <target>Лос-Анджелес</target>
+      </trans-unit>
+      <trans-unit id="hero.map.de" datatype="html">
+        <source>Germany</source>
+        <target>Германия</target>
+      </trans-unit>
+      <trans-unit id="hero.map.ru" datatype="html">
+        <source>Russia</source>
+        <target>Россия</target>
+      </trans-unit>
+      <trans-unit id="hero.map.ru.msk" datatype="html">
+        <source>Moscow</source>
+        <target>Москва</target>
+      </trans-unit>
+      <trans-unit id="hero.map.ru.spb" datatype="html">
+        <source>SPb</source>
+        <target>СПб</target>
+      </trans-unit>
+      <trans-unit id="hero.map.ru.nsk" datatype="html">
+        <source>Novosibirsk</source>
+        <target>Новосибирск</target>
+      </trans-unit>
+      <trans-unit id="hero.map.sg" datatype="html">
+        <source>Singapore</source>
+        <target>Сингапур</target>
+      </trans-unit>
+      <trans-unit id="hero.map.au" datatype="html">
+        <source>Australia</source>
+        <target>Австралия</target>
+      </trans-unit>
+      <trans-unit id="hero.map.au.syd" datatype="html">
+        <source>Sydney</source>
+        <target>Сидней</target>
+      </trans-unit>
+      <trans-unit id="about.pipeline.commit" datatype="html">
+        <source>commit</source>
+        <target>коммит</target>
+      </trans-unit>
+      <trans-unit id="about.pipeline.deploy" datatype="html">
+        <source>deploy</source>
+        <target>деплой</target>
+      </trans-unit>
+      <trans-unit id="about.pipeline.result" datatype="html">
+        <source>✓ deployed · 4m 12s</source>
+        <target>✓ задеплоено · 4м 12с</target>
+      </trans-unit>
       <trans-unit id="stat.years" datatype="html">
         <source>years shipping</source>
         <target>лет в разработке</target>
