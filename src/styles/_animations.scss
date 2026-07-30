@@ -104,14 +104,68 @@
   opacity: 1;
 }
 
+// Letter-by-letter reveal — `appLetterReveal` splits the host after hydration,
+// each character carrying its own delay, and hands the plain text node back the
+// moment the last one lands. Styled globally for the same reason as the words
+// above: the spans are created in JS, outside any component's encapsulation.
+//
+// The letters travel on `translate`/`rotate`/`filter`/`opacity` only. Their
+// boxes never change, so the line cannot reflow while the wave crosses it —
+// which is the whole difference between a name assembling and a name flickering.
+.letter-reveal {
+  --letter-from: var(--accent);
+  --letter-to: var(--white);
+
+  // Depth for the tilt. Without it the rotation is orthographic and the letters
+  // read as squashed rather than lifting into the page.
+  perspective: 900px;
+}
+
+.letter-reveal__word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.letter-reveal__char {
+  display: inline-block;
+  animation: letter-settle 0.9s var(--ease) both;
+  will-change: opacity, translate, rotate, filter;
+}
+
+@keyframes letter-settle {
+  0% {
+    translate: 0 0.4em;
+    rotate: x -58deg;
+    color: var(--letter-from);
+    filter: blur(12px);
+    opacity: 0;
+  }
+
+  60% {
+    filter: blur(2px);
+    opacity: 1;
+  }
+
+  100% {
+    translate: none;
+    rotate: none;
+    color: var(--letter-to);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
 // Respect reduced-motion: show everything immediately, no travel, no reliance on JS.
 @media (prefers-reduced-motion: reduce) {
+  .letter-reveal__char,
   .word-reveal__word,
   .reveal,
   .reveal--stagger > * {
     translate: none;
+    rotate: none;
     scale: 1;
     animation: none;
+    filter: none;
     opacity: 1;
     transition: none;
   }
