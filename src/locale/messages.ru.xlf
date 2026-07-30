@@ -370,6 +370,10 @@
         <source>Telegram</source>
         <target>Telegram</target>
       </trans-unit>
+      <trans-unit id="hero.cta.max" datatype="html">
+        <source>MAX</source>
+        <target>MAX</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

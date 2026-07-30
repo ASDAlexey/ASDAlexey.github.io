@@ -20,10 +20,11 @@ describe('Footer', () => {
   it('renders all social links, with the résumé as a download', () => {
     const links = fixture.nativeElement.querySelectorAll('.footer__links a');
 
-    expect(links.length).toBe(4);
+    expect(links.length).toBe(5);
     expect(links[0].textContent).toContain('GitHub');
+    expect(links[3].textContent).toContain('MAX');
 
-    expect(links[3].hasAttribute('download')).toBe(true);
+    expect(links[4].hasAttribute('download')).toBe(true);
     expect(links[0].hasAttribute('download')).toBe(false);
   });
 });

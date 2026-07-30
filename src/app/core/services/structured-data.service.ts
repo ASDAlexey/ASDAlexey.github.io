@@ -75,7 +75,7 @@ export class StructuredDataService {
       image: `${PROFILE.siteUrl}/og-image.png`,
       email: `mailto:${PROFILE.email}`,
       nationality: { '@type': 'Country', name: 'Russia' },
-      sameAs: [PROFILE.github, PROFILE.linkedin, PROFILE.telegram],
+      sameAs: [PROFILE.github, PROFILE.linkedin, PROFILE.telegram, PROFILE.max],
       hasOccupation: { '@type': 'Occupation', name: jobTitle, skills: OCCUPATION_SKILLS },
       knowsAbout: KNOWS_ABOUT,
       knowsLanguage: ['Russian', 'English'],

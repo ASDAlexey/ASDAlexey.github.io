@@ -25,10 +25,11 @@ describe('Hero', () => {
     expect(el.querySelectorAll('app-stat-card').length).toBe(4);
   });
 
-  it('renders GitHub, LinkedIn, Telegram and Résumé actions', () => {
+  it('renders GitHub, LinkedIn, Telegram, MAX and Résumé actions', () => {
     const actions = [...el.querySelectorAll('.hero__actions a')];
 
-    expect(actions.length).toBe(4);
-    expect(actions[3].getAttribute('href')).toContain('Alexey-Popov-Resume.pdf');
+    expect(actions.length).toBe(5);
+    expect(actions[3].getAttribute('href')).toContain('max.ru/u/');
+    expect(actions[4].getAttribute('href')).toContain('Alexey-Popov-Resume.pdf');
   });
 });

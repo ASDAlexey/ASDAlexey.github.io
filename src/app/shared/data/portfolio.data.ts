@@ -5,6 +5,7 @@ export const PROFILE = {
   handle: 'ASDAlexey',
   email: 'ASDAlexey@yandex.ru',
   telegram: 'https://t.me/ASDAlexey',
+  max: 'https://max.ru/u/f9LHodD0cOIvsoWjpCYHxdF8aiJ7csO8bFyeafox3xVes4OWbQgToULJSRE',
   github: 'https://github.com/ASDAlexey',
   linkedin: 'https://www.linkedin.com/in/alexey-popov-7988a874/',
   linkedinRecommendations: 'https://www.linkedin.com/in/alexey-popov-7988a874/details/recommendations/?detailScreenTabIndex=0',
@@ -28,6 +29,7 @@ export const SOCIALS: readonly SocialLink[] = [
   { label: 'GitHub', href: PROFILE.github, icon: 'github' },
   { label: 'LinkedIn', href: PROFILE.linkedin, icon: 'linkedin' },
   { label: 'Telegram', href: PROFILE.telegram, icon: 'telegram' },
+  { label: 'MAX', href: PROFILE.max, icon: 'max' },
   { label: $localize`:@@social.resume:Résumé`, href: PROFILE.resume, icon: 'resume', download: true },
 ];
 
