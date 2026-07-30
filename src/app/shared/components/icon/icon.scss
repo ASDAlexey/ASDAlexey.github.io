@@ -17,7 +17,7 @@ svg {
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 0.45s ease-in-out;
+  transition: opacity 0.16s ease-out;
 }
 
 // Scoped to .btn so a bare :hover ancestor (body, the page) can never match.
