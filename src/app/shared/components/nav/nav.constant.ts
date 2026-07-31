@@ -1,5 +1,19 @@
+/**
+ * The sections the nav points at, in document order.
+ *
+ * One list for both renderings — the row of links on a desktop header and the sheet a phone opens
+ * from the burger. Two hand-written copies of the same four anchors is how one of them ends up
+ * missing a section nobody noticed was added.
+ */
+export const NAV_SECTIONS = [
+  { id: 'about', no: '01', label: $localize`:@@nav.about:About` },
+  { id: 'experience', no: '02', label: $localize`:@@nav.experience:Experience` },
+  { id: 'projects', no: '03', label: $localize`:@@nav.projects:Projects` },
+  { id: 'recommendations', no: '04', label: $localize`:@@nav.recommendations:Recommendations` },
+] as const;
+
 /** Section ids the nav tracks, in document order. */
-export const NAV_SECTION_IDS = ['about', 'experience', 'projects', 'recommendations'] as const;
+export const NAV_SECTION_IDS = NAV_SECTIONS.map((section) => section.id);
 
 /**
  * IntersectionObserver options for the active-link spy.

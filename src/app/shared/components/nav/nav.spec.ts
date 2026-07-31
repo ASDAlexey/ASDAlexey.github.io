@@ -65,6 +65,45 @@ describe('Nav', () => {
     expect(fixture.nativeElement.querySelector('.nav__progress')).toBeTruthy();
   });
 
+  it('opens the phone sheet from the burger and closes it on a link, the backdrop and the ✕', () => {
+    create();
+
+    const el: HTMLElement = fixture.nativeElement;
+    const sheet = el.querySelector<HTMLDialogElement>('dialog.sheet');
+
+    if (!sheet) {
+      throw new Error('the sheet was not rendered');
+    }
+
+    // jsdom implements neither showModal nor close — and `close` has to fire its event by hand.
+    sheet.showModal = vi.fn();
+    sheet.close = vi.fn(() => sheet.dispatchEvent(new Event('close')));
+
+    const rows = [...sheet.querySelectorAll('.sheet__link')];
+    expect(rows.map((row) => row.querySelector('.sheet__index')?.textContent)).toEqual(['01', '02', '03', '04']);
+    expect(rows[1].getAttribute('href')).toBe('#experience');
+
+    el.querySelector<HTMLButtonElement>('.nav__burger')?.click();
+    fixture.detectChanges();
+
+    expect(sheet.showModal).toHaveBeenCalledOnce();
+    expect(fixture.componentInstance.menuOpen()).toBe(true);
+    expect(el.querySelector('.nav__burger')?.getAttribute('aria-expanded')).toBe('true');
+
+    // Following a section closes the sheet behind it…
+    rows[0].dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    fixture.detectChanges();
+    expect(fixture.componentInstance.menuOpen()).toBe(false);
+
+    // …a tap on the sheet's own padding closes it, one on the list inside does not…
+    sheet.querySelector('.sheet__links')?.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    expect(sheet.close).toHaveBeenCalledOnce();
+
+    sheet.click();
+    sheet.querySelector<HTMLButtonElement>('.sheet__close')?.click();
+    expect(sheet.close).toHaveBeenCalledTimes(3);
+  });
+
   it('tracks which section is in view and highlights its link', () => {
     create();
 

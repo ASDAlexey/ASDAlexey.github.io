@@ -1,8 +1,8 @@
 import { DOCUMENT } from '@angular/common';
-import { ChangeDetectionStrategy, Component, afterNextRender, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, afterNextRender, inject, signal } from '@angular/core';
 
 import { LanguageSwitcher } from '../language-switcher/language-switcher';
-import { NAV_SECTION_IDS, NAV_SPY_OPTIONS } from './nav.constant';
+import { NAV_SECTIONS, NAV_SECTION_IDS, NAV_SPY_OPTIONS } from './nav.constant';
 import { PROFILE } from '@shared/data/portfolio.data';
 
 @Component({
@@ -14,8 +14,13 @@ import { PROFILE } from '@shared/data/portfolio.data';
 })
 export class Nav {
   readonly #document = inject(DOCUMENT);
+  readonly #host = inject<ElementRef<HTMLElement>>(ElementRef);
 
   readonly profile = PROFILE;
+  readonly sections = NAV_SECTIONS;
+
+  /** Only ever true on a phone: the burger the sheet belongs to is hidden above 640 px. */
+  readonly menuOpen = signal(false);
 
   /**
    * Id of the section currently crossing the middle of the viewport, or `''`
@@ -26,6 +31,31 @@ export class Nav {
 
   constructor() {
     afterNextRender(() => this.#spy());
+  }
+
+  openMenu(): void {
+    this.menuOpen.set(true);
+    this.#sheet()?.showModal();
+  }
+
+  closeMenu(): void {
+    this.#sheet()?.close();
+  }
+
+  /** A tap on the sheet's own padding, or on the backdrop, closes it — the links do not. */
+  onSheetClick(event: MouseEvent): void {
+    if (event.target === event.currentTarget) {
+      this.closeMenu();
+    }
+  }
+
+  /**
+   * The sheet is a sibling of the header rather than a child of it — a `<dialog>` inside a
+   * `position: sticky` header inherits its stacking context and the backdrop stops covering the
+   * page. Looked up on demand, which is at most twice per visit.
+   */
+  #sheet(): HTMLDialogElement | null {
+    return this.#host.nativeElement.querySelector('dialog.sheet');
   }
 
   #spy(): void {

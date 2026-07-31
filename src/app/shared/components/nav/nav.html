@@ -8,12 +8,27 @@
     </a>
 
     <nav aria-label="Primary" class="nav__links">
-      <a href="#about" i18n="@@nav.about" [class.is-active]="active() === 'about'">About</a>
-      <a href="#experience" i18n="@@nav.experience" [class.is-active]="active() === 'experience'">Experience</a>
-      <a href="#projects" i18n="@@nav.projects" [class.is-active]="active() === 'projects'">Projects</a>
-      <a href="#recommendations" i18n="@@nav.recommendations" [class.is-active]="active() === 'recommendations'">Recommendations</a>
+      @for (section of sections; track section.id) {
+        <a [class.is-active]="active() === section.id" [href]="'#' + section.id">{{ section.label }}</a>
+      }
+
       <app-language-switcher />
       <a class="nav__cta" i18n="@@nav.github" rel="noreferrer" target="_blank" [href]="profile.github">GitHub ↗</a>
+
+      <!-- The same four anchors a desktop header shows in a row. On a phone the row does not fit
+           beside the brand, and hiding it left the page with no way back to a section but the
+           scrollbar. -->
+      <button
+        aria-label="Sections"
+        class="nav__burger"
+        i18n-aria-label="@@nav.menu"
+        type="button"
+        [attr.aria-expanded]="menuOpen()"
+        (click)="openMenu()"
+      >
+        <span aria-hidden="true" class="nav__burger-bar"></span>
+        <span aria-hidden="true" class="nav__burger-bar"></span>
+      </button>
     </nav>
   </div>
 
@@ -21,3 +36,25 @@
        scrolls. Driven by a scroll timeline in CSS, so it costs no JS at all. -->
   <div aria-hidden="true" class="nav__progress"></div>
 </header>
+
+<dialog class="sheet" (click)="onSheetClick($event)" (close)="menuOpen.set(false)">
+  <div class="sheet__head">
+    <p class="sheet__title" i18n="@@nav.menu.title">Sections</p>
+
+    <button aria-label="Close" class="sheet__close" i18n-aria-label="@@nav.menu.close" type="button" (click)="closeMenu()">
+      <svg aria-hidden="true" fill="none" height="18" viewBox="0 0 24 24" width="18">
+        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+      </svg>
+    </button>
+  </div>
+
+  <nav aria-label="Sections" class="sheet__links">
+    @for (section of sections; track section.id) {
+      <a class="sheet__link" [class.is-active]="active() === section.id" [href]="'#' + section.id" (click)="closeMenu()">
+        <span class="sheet__index">{{ section.no }}</span>
+        <span class="sheet__label">{{ section.label }}</span>
+        <span aria-hidden="true" class="sheet__arrow">→</span>
+      </a>
+    }
+  </nav>
+</dialog>

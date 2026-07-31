@@ -125,6 +125,191 @@
   }
 }
 
+// Two bars, not three: at this size the third reads as noise, and the pair already says «list».
+// Hidden entirely on a desktop, where the sections stand in the header as their own row.
+.nav__burger {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  gap: 5px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xs);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease);
+
+  &:hover,
+  &[aria-expanded='true'] {
+    border-color: var(--accent-line);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  &-bar {
+    width: 16px;
+    height: 1.5px;
+    border-radius: 2px;
+    background: var(--text-secondary);
+    transition: background 0.2s var(--ease);
+  }
+
+  &:hover &-bar {
+    background: var(--accent-light);
+  }
+}
+
+// The sections as a sheet dropped from under the header, rather than a drawer sliding in from the
+// side: the reader's thumb is at the bottom of a phone but their eye is on the header they just
+// tapped, and a panel that arrives where the tap was is a panel they do not have to look for.
+.sheet {
+  width: 100%;
+  max-width: 100vw;
+  height: 100%;
+  max-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+
+  &[open] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &::backdrop {
+    backdrop-filter: blur(10px);
+    background: rgb(6, 6, 10, 0.72);
+  }
+
+  &__head {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding: 0 24px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+  }
+
+  &__title {
+    @include t.text('label', 'small');
+    @include t.pill;
+
+    margin: 0;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  &__close {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xs);
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 8px 24px max(20px, env(safe-area-inset-bottom));
+    overflow-y: auto;
+    background: var(--bg);
+  }
+
+  // Each row arrives a beat after the one above it — the list assembles itself top to bottom
+  // instead of appearing all at once, which is the difference between a menu and a flash.
+  &__link {
+    display: flex;
+    align-items: baseline;
+    padding: 18px 2px;
+    gap: 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-secondary);
+    text-decoration: none;
+    animation: sheet-row 0.4s var(--ease) backwards;
+
+    &:nth-child(1) {
+      animation-delay: 0.04s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 0.08s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 0.12s;
+    }
+
+    &:nth-child(4) {
+      animation-delay: 0.16s;
+    }
+
+    &.is-active {
+      color: var(--text);
+    }
+
+    &.is-active .sheet__index,
+    &:hover .sheet__index {
+      color: var(--accent);
+    }
+  }
+
+  &__index {
+    @include t.text('label', 'small');
+
+    flex: none;
+    width: 24px;
+    color: var(--text-muted);
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+    transition: color 0.2s var(--ease);
+  }
+
+  &__label {
+    @include t.text('title', 'medium');
+
+    flex: 1;
+  }
+
+  &__arrow {
+    flex: none;
+    color: var(--text-muted);
+  }
+}
+
+@keyframes sheet-row {
+  from {
+    translate: 0 10px;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet__link {
+    animation: none;
+  }
+}
+
 @media (width <= 640px) {
   .nav__name {
     display: none;
@@ -136,5 +321,9 @@
     a:not(.nav__cta) {
       display: none;
     }
+  }
+
+  .nav__burger {
+    display: flex;
   }
 }
