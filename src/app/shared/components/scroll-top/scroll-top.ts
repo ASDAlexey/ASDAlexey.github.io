@@ -1,11 +1,13 @@
 import { ChangeDetectionStrategy, Component, HostListener, inject, signal } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
+import { PointerTrack } from '@shared/directives/pointer-track/pointer-track';
 import { SCROLL_TOP_THRESHOLD } from './scroll-top.constant';
 
 @Component({
   selector: 'app-scroll-top',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [PointerTrack],
   templateUrl: './scroll-top.html',
   styleUrl: './scroll-top.scss',
 })

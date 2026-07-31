@@ -1,3 +1,7 @@
+// A disc, so it gets the one hover the reference built for a disc: the accent floods in from the
+// edge the pointer crossed rather than fading in everywhere at once. Direction comes from
+// `appPointerTrack`, which already publishes the cursor's position inside the host — the effect
+// costs no JavaScript of its own.
 .scroll-top {
   display: inline-flex;
   z-index: 40;
@@ -8,6 +12,7 @@
   justify-content: center;
   width: 46px;
   height: 46px;
+  overflow: hidden;
   border: 1px solid var(--border);
   border-radius: 50%;
   background: var(--surface);
@@ -17,13 +22,47 @@
   cursor: pointer;
   transition:
     transform 0.2s var(--ease),
-    border-color 0.2s var(--ease),
-    background 0.2s var(--ease);
+    border-color 0.2s var(--ease);
 
   &:hover {
     transform: translateY(-3px);
-    border-color: var(--border-hover);
-    background: var(--surface-hover);
+    border-color: var(--accent-line);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  // Parked at nothing, offset toward the pointer's side of the button. `--pt-nx` / `--pt-ny` run
+  // from -0.5 to 0.5 across the host, so the fill starts where the hand arrived and grows past the
+  // far edge — hence 2.4, not 1: a disc has to overshoot its own square to cover the corners.
+  &__fill {
+    z-index: 0;
+    position: absolute;
+    inset: 0;
+    translate: calc(var(--pt-nx, 0) * 120%) calc(var(--pt-ny, 0) * 120%);
+    scale: 0;
+    border-radius: 50%;
+    background: var(--accent);
+    transition:
+      scale 0.45s var(--ease),
+      translate 0.45s var(--ease);
+  }
+
+  &:hover &__fill {
+    translate: 0 0;
+    scale: 2.4;
+  }
+
+  // The arrow does not swap colours, it inverts what is behind it: over the dark surface the
+  // difference of `--accent-light` reads amber, over the amber fill it collapses to near-black.
+  // The same trick the trail uses, so the two effects are one idea rather than two.
+  &__icon {
+    z-index: 1;
+    position: relative;
+    color: var(--accent-light);
+    mix-blend-mode: difference;
   }
 }
 
@@ -36,5 +75,18 @@
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+// Without a pointer there is no side to flood in from, and the fill would sit dead in the middle
+// of a tap. The button keeps its plain surface and its plain arrow.
+@media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
+  .scroll-top__fill {
+    display: none;
+  }
+
+  .scroll-top__icon {
+    color: var(--text);
+    mix-blend-mode: normal;
   }
 }
