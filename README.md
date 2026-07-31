@@ -20,6 +20,9 @@ application, fully bilingual, prerendered for SEO, and covered by tests at 100%.
 - **Angular 22** — standalone components, **zoneless** change detection, signals, `inject()`, strict TypeScript, OnPush everywhere.
 - **Bilingual (EN / RU)** — `@angular/localize` with prerendered `/en/` and `/ru/` builds, language switcher, browser-language redirect.
 - **SEO-first** — static prerendering (SSG), per-locale meta/Open Graph/Twitter, `hreflang` + canonical, JSON-LD (`Person` / `WebSite` / `ProfilePage`), `sitemap.xml`, `robots.txt`, OG image.
+- **Screenshot galleries** — Swiper carousel in a native `<dialog>`, loaded as its own chunk only when a gallery is opened. Screenshots are re-encoded to AVIF + WebP by a build script that also writes the locale manifest, so a project shot in one language still has a gallery in the other.
+- **Pointer-led motion** — a comet trail that inverts the page beneath it (`mix-blend-mode: difference`), an accent that floods the scroll-top button from the side the cursor arrived on, and a hover wave through the footer's letters. All of it sleeps when the pointer does, and none of it binds a listener without a fine pointer or under `prefers-reduced-motion`.
+- **Scroll-driven animation** — the career rail draws itself and lights each stop as its runner arrives, the CI pipeline flares node by node; both run on CSS scroll timelines with no scroll listener anywhere.
 - **100% test coverage** — Vitest + my own [`vitest-auto-spy`](https://www.npmjs.com/package/vitest-auto-spy) library (dogfooded).
 - **Lighthouse** — Accessibility, Best Practices and SEO at **100**; performance tuned with self-hosted fonts, inlined critical CSS and zero render-blocking third-party requests.
 - **Quality gates** — ESLint (+ custom local rules), Prettier, Stylelint, Husky hooks, madge (circular deps), jscpd.
@@ -27,8 +30,8 @@ application, fully bilingual, prerendered for SEO, and covered by tests at 100%.
 
 ## Tech stack
 
-`Angular 22` · `TypeScript` · `RxJS` · `SCSS` · `@angular/localize` · `Vitest` · `vitest-auto-spy` ·
-`ESLint` · `Prettier` · `Stylelint` · `GitHub Actions` · `Bun`
+`Angular 22` · `TypeScript` · `RxJS` · `SCSS` · `@angular/localize` · `Swiper` · `Vitest` ·
+`vitest-auto-spy` · `sharp` · `ESLint` · `Prettier` · `Stylelint` · `GitHub Actions` · `Bun`
 
 ## Local development
 
@@ -43,6 +46,7 @@ bun run start:ru       # Russian locale
 ```bash
 bun run build          # production build, both locales, prerendered
 bun run assemble       # add redirect / sitemap / robots / og-image to dist
+bun run images:projects      # re-encode project screenshots, rewrite the gallery manifest
 bun run test:coverage  # Vitest with 100% coverage gate
 bun run check:code-quality   # prettier + eslint + stylelint
 bun run madge          # circular-dependency check
@@ -52,16 +56,30 @@ bun run madge          # circular-dependency check
 
 ```
 src/app/
-├── core/            # models + framework services (SEO, structured data, locale)
+├── core/            # models + framework services (SEO, structured data, locale, galleries)
 ├── features/portfolio/
 │   ├── sections/    # hero · about · experience · projects
 │   └── portfolio.component
 └── shared/
-    ├── components/  # nav · footer · language-switcher · cards · icon
-    └── data/        # locale-independent content
+    ├── components/  # nav · footer · language-switcher · cards · icon · gallery-lightbox · cursor
+    ├── directives/  # pointer-track · scroll-reveal · letter-reveal · word-reveal · letter-hover
+    └── data/        # locale-independent content + the generated gallery manifest
 src/locale/          # messages.ru.xlf
+public/my-projects/  # project screenshots, <slug>/<locale>/, AVIF + WebP
+scripts/             # image pipeline · dist assembly · resume renderer
 seo/                 # robots.txt · sitemap.xml · root redirect
+docs/                # design notes (motion references and what was built from them)
 ```
+
+### Project screenshots
+
+Drop the originals into `public/my-projects/<slug>/<en|ru>/` in any raster format and run
+`bun run images:projects`. The script re-encodes each one to AVIF + WebP (a full-size slide and a
+narrow thumb for the card tile), drops the heavy sources, and rewrites
+`src/app/shared/data/project-gallery.generated.ts` — including the locale fallback, so a project
+shot only in Russian still has a gallery in the English build. Re-running it does not re-compress
+what it already converted. Point a project at its folder with `gallery: '<slug>'` in
+`portfolio.data.ts`, and optionally name the tile's shot with `cover: '<file-stem>'`.
 
 ## Deployment
 
