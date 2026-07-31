@@ -21,6 +21,7 @@
     "madge": "bun ./scripts/check-circular-dependencies.js",
     "check:code-quality": "bun run prettier && concurrently --kill-others-on-fail \"bun run eslint\" \"bun run stylelint:check\"",
     "assemble": "node scripts/assemble-dist.mjs",
+    "images:projects": "node scripts/optimize-project-images.mjs",
     "resume": "bash scripts/resume/render.sh",
     "prepare": "husky"
   },
@@ -40,6 +41,7 @@
     "@fontsource-variable/jetbrains-mono": "^5.3.0",
     "express": "^5.2.1",
     "rxjs": "~7.8.2",
+    "swiper": "^14.0.7",
     "tslib": "^2.8.1"
   },
   "devDependencies": {
@@ -75,6 +77,7 @@
     "prettier-plugin-organize-attributes": "^1.0.0",
     "prettier-plugin-sort-json": "^4.2.0",
     "pretty-quick": "^4.2.2",
+    "sharp": "^0.35.3",
     "stylelint": "^17.14.1",
     "stylelint-config-standard": "^40.0.0",
     "stylelint-scss": "^7.2.0",
