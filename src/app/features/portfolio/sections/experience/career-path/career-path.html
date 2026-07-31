@@ -7,7 +7,7 @@
     <path class="rail__line" pathLength="1" [attr.d]="path" />
 
     @for (node of nodes(); track node.index) {
-      <circle class="rail__stop" r="3.4" [attr.cx]="node.x" [attr.cy]="node.y" />
+      <circle class="rail__stop" [attr.cx]="node.x" [attr.cy]="node.y" [style.animation-range]="node.litRange" />
     }
 
     <circle class="rail__runner" cx="0" cy="0" r="4.5" [style.offset-path]="offsetPath()" />

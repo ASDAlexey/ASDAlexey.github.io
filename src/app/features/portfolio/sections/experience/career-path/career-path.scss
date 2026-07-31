@@ -32,8 +32,12 @@
     filter: drop-shadow(0 0 6px var(--accent-glow));
   }
 
+  // A stop the runner has not reached yet: a hollow grey ring, the same weight as the track.
+  // `r` as a CSS property (rather than the attribute) is what lets the flare animate the radius.
   &__stop {
     fill: var(--bg-alt);
+    // stylelint-disable-next-line declaration-property-value-no-unknown
+    r: 3.4;
     stroke: var(--border-hover);
     stroke-width: 2;
   }
@@ -62,6 +66,39 @@
       animation-timeline: --career;
       animation-range: contain 0% contain 100%;
     }
+
+    // Each stop lights as the runner arrives and stays lit behind it — the rail keeps a record of
+    // where the reader has been instead of resetting to grey the moment the dot moves on. The
+    // range is per-node and set inline: it is the one thing about a stop that depends on where in
+    // the section it sits. See `nodes()` in the component.
+    .rail__stop {
+      animation: rail-stop-lit linear both;
+      animation-timeline: --career;
+    }
+  }
+}
+
+// Amber, and briefly bigger: the flare is the same warm the line is drawn in, so the stop reads as
+// part of the route catching light rather than as a second colour arriving from nowhere.
+@keyframes rail-stop-lit {
+  0% {
+    fill: var(--bg-alt);
+    r: 3.4;
+    stroke: var(--border-hover);
+  }
+
+  55% {
+    fill: var(--accent);
+    r: 6.2;
+    stroke: var(--accent-light);
+    filter: drop-shadow(0 0 9px var(--accent));
+  }
+
+  100% {
+    fill: var(--accent-deep);
+    r: 4;
+    stroke: var(--accent);
+    filter: drop-shadow(0 0 5px var(--accent-glow));
   }
 }
 

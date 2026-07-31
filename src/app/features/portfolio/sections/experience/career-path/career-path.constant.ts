@@ -15,3 +15,11 @@ export const MIN_PATH_HEIGHT = 80;
  * corner, without letting the curve overshoot the rail's width.
  */
 export const CURVE_TENSION = 0.5;
+
+/**
+ * How much of the section's scroll a stop takes to light up, in per cent.
+ *
+ * Six is about a fifth of a second at a comfortable scroll: long enough to read as a flare rather
+ * than a repaint, short enough that the dot has not left the stop behind by the time it finishes.
+ */
+export const STOP_FLARE_SPAN = 6;

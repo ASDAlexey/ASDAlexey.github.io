@@ -45,8 +45,21 @@
   }
 }
 
+// A stage does not simply turn green — it goes off. The node swells past its resting size and
+// throws a ring as the runner reaches it, then settles: the same shape a CI dashboard has when a
+// job actually lands, rather than a colour swapped in while nobody was looking.
 @keyframes pipe-pass {
-  to {
+  55% {
+    scale: 1.5;
+    border-color: var(--green);
+    background: var(--green);
+    box-shadow:
+      0 0 0 9px rgb(52, 211, 153, 0.2),
+      0 0 20px rgb(52, 211, 153, 0.55);
+  }
+
+  100% {
+    scale: 1;
     border-color: var(--green);
     background: var(--green);
     box-shadow: 0 0 0 4px rgb(52, 211, 153, 0.14);

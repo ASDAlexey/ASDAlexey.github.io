@@ -87,11 +87,13 @@ describe('CareerPath', () => {
 
     expect(instance.height()).toBe(800);
     expect(instance.viewBox()).toBe(`0 0 ${PATH_WIDTH} 800`);
+    // Each stop also carries the slice of the section's scroll it lights up in — the flare fires
+    // where the runner reaches it, and the last one is clamped to the end of the range.
     expect(instance.nodes()).toEqual([
-      { index: 0, x: PATH_LEFT, y: 100 },
-      { index: 1, x: PATH_RIGHT, y: 300 },
-      { index: 2, x: PATH_LEFT, y: 500 },
-      { index: 3, x: PATH_RIGHT, y: 700 },
+      { index: 0, x: PATH_LEFT, y: 100, litRange: 'contain 13% contain 19%' },
+      { index: 1, x: PATH_RIGHT, y: 300, litRange: 'contain 38% contain 44%' },
+      { index: 2, x: PATH_LEFT, y: 500, litRange: 'contain 63% contain 69%' },
+      { index: 3, x: PATH_RIGHT, y: 700, litRange: 'contain 88% contain 94%' },
     ]);
 
     // Enters at the top edge, curves between the stops, leaves at the bottom.

@@ -10,7 +10,7 @@ import {
   signal,
 } from '@angular/core';
 
-import { CURVE_TENSION, MIN_PATH_HEIGHT, PATH_LEFT, PATH_RIGHT, PATH_WIDTH } from './career-path.constant';
+import { CURVE_TENSION, MIN_PATH_HEIGHT, PATH_LEFT, PATH_RIGHT, PATH_WIDTH, STOP_FLARE_SPAN } from './career-path.constant';
 
 /**
  * The rail beside the experience timeline: a curve weaving past every role,
@@ -64,11 +64,20 @@ export class CareerPath {
 
     const step = height / count;
 
-    return Array.from({ length: count }, (_, index) => ({
-      index,
-      x: index % 2 === 0 ? PATH_LEFT : PATH_RIGHT,
-      y: step * (index + 0.5),
-    }));
+    return Array.from({ length: count }, (_, index) => {
+      const y = step * (index + 0.5);
+      // Where the runner is when it reaches this stop, as a share of the same scroll range that
+      // drives it. The curve is near enough vertical that its length tracks its height, so the
+      // flare fires under the dot rather than a card early or late.
+      const at = Math.round((y / height) * 100);
+
+      return {
+        index,
+        x: index % 2 === 0 ? PATH_LEFT : PATH_RIGHT,
+        y,
+        litRange: `contain ${at}% contain ${Math.min(at + STOP_FLARE_SPAN, 100)}%`,
+      };
+    });
   });
 
   /** Cubic path through every node, with vertical control points at each turn. */
