@@ -16,6 +16,21 @@
     @include t.bold;
   }
 
+  // The last line of the page, and the one place a hand is likely to rest with nothing left to
+  // click. The letters answer it: the one under the cursor rises furthest and warms to the accent,
+  // its neighbours follow in proportion — `--near` is published per character by `appLetterHover`
+  // and is 0 everywhere until a pointer arrives, which is also the whole no-JS resting state.
+  &__name {
+    .letter-hover__char {
+      display: inline-block;
+      translate: 0 calc(var(--near, 0) * -6px);
+      color: color-mix(in srgb, var(--accent-light) calc(var(--near, 0) * 100%), var(--text));
+      transition:
+        translate 0.25s var(--ease),
+        color 0.25s var(--ease);
+    }
+  }
+
   &__handle {
     @include t.text('label', 'medium');
 
