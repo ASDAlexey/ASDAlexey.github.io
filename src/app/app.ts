@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+import { Cursor } from '@shared/components/cursor/cursor';
 import { Footer } from '@shared/components/footer/footer';
 import { Konami } from '@shared/components/konami/konami';
 import { Nav } from '@shared/components/nav/nav';
@@ -11,7 +12,7 @@ import { StructuredDataService } from '@core/services/structured-data.service';
 @Component({
   selector: 'app-root',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterOutlet, Nav, Footer, ScrollTop, Konami],
+  imports: [RouterOutlet, Nav, Footer, ScrollTop, Konami, Cursor],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

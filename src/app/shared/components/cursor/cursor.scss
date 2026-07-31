@@ -1,0 +1,45 @@
+// The trail is one blending group, not seven: `mix-blend-mode` on the host means the circles
+// invert the page beneath them together, and overlapping circles do not double up on each other.
+//
+// Hidden until the pointer reports in — the chain is parked at the origin until then, and a dot
+// sitting in the top-left corner of a freshly loaded page is a bug, not an effect.
+:host {
+  display: block;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  mix-blend-mode: difference;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s var(--ease);
+}
+
+:host(.cursor_on) {
+  opacity: 1;
+}
+
+// White, because `difference` is what does the work: over the near-black page white stays white,
+// and over the amber and green of the accents it flips to their complement. One property instead
+// of a mask, and it never has to know what is underneath.
+.cursor__dot {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  // Head first, each following circle a shade smaller — the taper is what makes it read as one
+  // stroke rather than as a row of dots.
+  width: calc(11px - var(--i) * 1.2px);
+  height: calc(11px - var(--i) * 1.2px);
+  margin: calc((11px - var(--i) * 1.2px) / -2);
+  border-radius: 50%;
+  background: var(--white);
+}
+
+// No pointer to follow, or a visitor who asked for less movement: the component renders its dots
+// and never binds a listener (see the constructor), so all that is left is to keep them hidden.
+@media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
+  :host {
+    display: none;
+  }
+}
