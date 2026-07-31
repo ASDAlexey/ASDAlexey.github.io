@@ -85,11 +85,18 @@
     }
   }
 
+  // Flex rather than a grid of 150 px tracks: five buttons over a two-column phone leave «Résumé»
+  // alone on the last row, and a grid parks a lone item in column one — centred block, off-centre
+  // button. Wrapped flex lines centre themselves, so the odd one out sits under the middle.
   &__actions {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 150px);
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
+
+    > * {
+      flex: 0 0 150px;
+    }
   }
 
   &__hint {
