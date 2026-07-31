@@ -8,22 +8,36 @@
 
   <p class="card__desc">{{ project().description }}</p>
 
-  @if (project().image; as image) {
+  @if (cover(); as shot) {
     <button class="card__media" type="button" (click)="lightbox.open()">
-      <img
-        class="card__media-thumb"
-        decoding="async"
-        height="84"
-        loading="lazy"
-        width="160"
-        [alt]="project().imageAlt"
-        [class.card__media-thumb_contain]="project().imageContain"
-        [src]="image"
-      />
-      <span class="card__media-caption" i18n="@@project.preview">Open full image ↗</span>
+      <picture class="card__media-frame" [class.card__media-frame_portrait]="portrait()">
+        @if (!shot.vector) {
+          <source type="image/avif" [srcset]="shot.thumb" />
+          <source type="image/webp" [srcset]="toWebp(shot.thumb)" />
+        }
+
+        <img
+          class="card__media-thumb"
+          decoding="async"
+          loading="lazy"
+          [alt]="project().imageAlt"
+          [class.card__media-thumb_contain]="shot.vector"
+          [src]="shot.vector ? shot.thumb : toWebp(shot.thumb)"
+        />
+      </picture>
+
+      <span class="card__media-text">
+        @if (slides().length > 1) {
+          <span class="card__media-caption" i18n="@@project.gallery">Open gallery ↗</span>
+
+          <span class="card__media-count">{{ slides().length }}</span>
+        } @else {
+          <span class="card__media-caption" i18n="@@project.preview">Open full image ↗</span>
+        }
+      </span>
     </button>
 
-    <app-image-lightbox #lightbox [alt]="project().imageAlt ?? ''" [src]="image" />
+    <app-gallery-lightbox #lightbox [alt]="project().imageAlt ?? ''" [slides]="slides()" />
   }
 
   @if (project().links.length) {

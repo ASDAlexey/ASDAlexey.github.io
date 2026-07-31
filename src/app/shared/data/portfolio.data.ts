@@ -104,7 +104,7 @@ export const PROJECTS: readonly Project[] = [
     links: [{ label: 'Live', href: 'https://asdalexey.github.io/litely/' }],
     tags: ['Tauri', 'Angular 22', 'Rust', 'TypeScript'],
     featured: true,
-    image: 'litely.webp',
+    gallery: 'litely',
     imageAlt: $localize`:@@proj.litely.img.alt:Litely desktop app — compression settings screen`,
   },
   {
@@ -114,7 +114,7 @@ export const PROJECTS: readonly Project[] = [
     links: [],
     tags: ['Angular 22', 'Tauri 2', 'Rust', 'SQLite', 'WebSocket'],
     featured: false,
-    image: 'bonds-tracker.webp',
+    gallery: 'bonds-tracker',
     imageAlt: $localize`:@@proj.bonds.img.alt:Bonds Tracker desktop app — portfolio dashboard`,
   },
   {
@@ -127,9 +127,8 @@ export const PROJECTS: readonly Project[] = [
     ],
     tags: ['Vitest', 'Bun', 'Node.js', 'TypeScript', 'RxJS'],
     featured: true,
-    image: 'vitest-auto-spy.svg',
+    gallery: 'vitest-auto-spy',
     imageAlt: $localize`:@@proj.vas.img.alt:vitest-auto-spy — one API, three runtimes diagram`,
-    imageContain: true,
   },
   {
     name: 'SundayRun',
@@ -141,7 +140,7 @@ export const PROJECTS: readonly Project[] = [
     ],
     tags: ['Angular 22', 'Bun', 'Vitest', 'pdfmake', 'GitHub Pages'],
     featured: false,
-    image: 'sundayrun.webp',
+    gallery: 'sundayrun',
     imageAlt: $localize`:@@proj.sundayrun.img.alt:SundayRun web app — park-run landing page`,
   },
   {
@@ -151,7 +150,8 @@ export const PROJECTS: readonly Project[] = [
     links: [],
     tags: ['Ionic', 'Angular', 'Node.js', 'iOS / Android', 'GPS'],
     featured: false,
-    image: $localize`:@@proj.sportdiary.img:sportdiary-en.webp`,
+    gallery: 'sportdiary',
+    cover: '1-stopwatch',
     imageAlt: $localize`:@@proj.sportdiary.img.alt:Sportdiary mobile app — workout detail with route map and stats`,
   },
   {

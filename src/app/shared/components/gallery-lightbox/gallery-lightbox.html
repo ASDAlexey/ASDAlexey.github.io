@@ -1,0 +1,93 @@
+<dialog
+  #dialog
+  autofocus
+  class="gallery"
+  tabindex="-1"
+  [attr.aria-label]="alt() || null"
+  (click)="onBackdropClick($event)"
+  (close)="onClosed()"
+>
+  <button aria-label="Close image" class="gallery__close" i18n-aria-label="@@lightbox.close" type="button" (click)="close()">
+    <svg aria-hidden="true" fill="none" height="18" viewBox="0 0 24 24" width="18">
+      <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+    </svg>
+  </button>
+
+  @if (opened()) {
+    <!-- A fraction, not a row of dots: eleven bullets say nothing about where in eleven you are,
+         and the site already counts everything else in tabular mono. -->
+    @if (slides().length > 1) {
+      <p class="gallery__count">
+        <span class="gallery__count-now">{{ index() + 1 }}</span>
+        <span class="gallery__count-sep">/</span>
+        <span class="gallery__count-all">{{ slides().length }}</span>
+      </p>
+    }
+
+    <figure class="gallery__figure">
+      <swiper-container
+        centered-slides="true"
+        class="gallery__swiper"
+        grab-cursor="true"
+        keyboard="true"
+        slides-per-view="auto"
+        space-between="28"
+        [attr.initial-slide]="index()"
+        (swiperslidechange)="onSlideChange()"
+      >
+        @for (slide of slides(); track slide.id; let i = $index) {
+          <swiper-slide class="gallery__slide">
+            <picture>
+              @if (!slide.vector) {
+                <source type="image/avif" [srcset]="slide.src" />
+                <source type="image/webp" [srcset]="toWebp(slide.src)" />
+              }
+
+              <img
+                class="gallery__img"
+                decoding="async"
+                [alt]="alt()"
+                [height]="slide.height"
+                [loading]="i === index() ? 'eager' : 'lazy'"
+                [src]="slide.vector ? slide.src : toWebp(slide.src)"
+                [width]="slide.width"
+              />
+            </picture>
+          </swiper-slide>
+        }
+      </swiper-container>
+
+      @if (alt()) {
+        <figcaption class="gallery__caption">{{ alt() }}</figcaption>
+      }
+    </figure>
+
+    @if (slides().length > 1) {
+      <button
+        aria-label="Previous screenshot"
+        class="gallery__nav gallery__nav_prev"
+        i18n-aria-label="@@gallery.prev"
+        type="button"
+        [disabled]="index() === 0"
+        (click)="step(-1)"
+      >
+        <svg aria-hidden="true" fill="none" height="20" viewBox="0 0 24 24" width="20">
+          <path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+        </svg>
+      </button>
+
+      <button
+        aria-label="Next screenshot"
+        class="gallery__nav gallery__nav_next"
+        i18n-aria-label="@@gallery.next"
+        type="button"
+        [disabled]="index() === slides().length - 1"
+        (click)="step(1)"
+      >
+        <svg aria-hidden="true" fill="none" height="20" viewBox="0 0 24 24" width="20">
+          <path d="M9 5l7 7-7 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+        </svg>
+      </button>
+    }
+  }
+</dialog>

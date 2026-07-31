@@ -1,0 +1,249 @@
+@use 'styles/typography' as t;
+
+// Native <dialog> stretched to fill the viewport so any click outside the figure (and on the
+// ::backdrop) lands on the dialog itself and closes it. The visible dark wash lives on ::backdrop;
+// the dialog box stays transparent.
+.gallery {
+  width: 100%;
+  max-width: 100vw;
+  height: 100%;
+  max-height: 100dvh;
+  margin: 0;
+  padding: clamp(20px, 5vw, 64px) 0;
+  overflow: hidden;
+  border: 0;
+  outline: none;
+  background: transparent;
+
+  &[open] {
+    display: grid;
+    place-items: center;
+    animation: gallery-fade 0.25s var(--ease);
+  }
+
+  &::backdrop {
+    backdrop-filter: blur(10px);
+    background: rgb(6, 6, 7, 0.82);
+  }
+}
+
+.gallery__figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  gap: 18px;
+  animation: gallery-rise 0.35s var(--ease);
+}
+
+// Full-bleed on purpose: with auto-width centred slides the track is the whole viewport, so the
+// screenshots either side of the current one show a hand's width of themselves at the edges. That
+// peek is the only affordance a carousel really needs — it says «there is more» without a label.
+.gallery__swiper {
+  width: 100%;
+  overflow: visible;
+}
+
+.gallery__slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  max-width: min(1100px, 88vw);
+  // The neighbours are present but not competing: dimmed and a shade smaller, they read as the
+  // rest of the roll rather than as three screenshots the eye has to choose between.
+  scale: 0.94;
+  opacity: 0.35;
+  transition:
+    opacity 0.4s var(--ease),
+    scale 0.4s var(--ease);
+
+  &.swiper-slide-active {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+.gallery__img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 74dvh;
+  object-fit: contain;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 24px 80px rgb(0, 0, 0, 0.6);
+}
+
+.gallery__caption {
+  @include t.text('label', 'medium');
+
+  max-width: min(720px, 88vw);
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+// `03 / 08` — the instrument reading of the gallery, in the same mono the rest of the site counts
+// in. Fixed at the top so it does not move as the slides change height.
+.gallery__count {
+  display: flex;
+  position: fixed;
+  top: clamp(16px, 3vw, 28px);
+  left: clamp(16px, 3vw, 28px);
+  align-items: baseline;
+  margin: 0;
+  gap: 6px;
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.gallery__count-now {
+  @include t.text('label', 'medium');
+
+  color: var(--accent-light);
+}
+
+.gallery__count-sep,
+.gallery__count-all {
+  @include t.text('label', 'small');
+
+  color: var(--text-muted);
+}
+
+// Arrows of the site's own make rather than Swiper's: the built-ins live in the shadow root with
+// their own blue and their own chevron, and this cockpit is warm and outlined throughout.
+.gallery__nav {
+  display: grid;
+  z-index: 1;
+  position: fixed;
+  top: 50%;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  translate: 0 -50%;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  backdrop-filter: blur(8px);
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition:
+    color 0.2s var(--ease),
+    border-color 0.2s var(--ease),
+    background 0.2s var(--ease),
+    opacity 0.2s var(--ease);
+
+  &_prev {
+    left: clamp(10px, 2.5vw, 28px);
+  }
+
+  &_next {
+    right: clamp(10px, 2.5vw, 28px);
+  }
+
+  &:hover:not(:disabled),
+  &:focus-visible {
+    border-color: var(--accent-line);
+    background: var(--surface-hover);
+    color: var(--accent-light);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  // Kept in place at the ends rather than removed: an arrow that vanishes at the last slide takes
+  // the other one's position with it, and the pair jumps.
+  &:disabled {
+    cursor: default;
+    opacity: 0.25;
+  }
+}
+
+.gallery__close {
+  display: grid;
+  z-index: 1;
+  position: fixed;
+  top: clamp(16px, 3vw, 28px);
+  right: clamp(16px, 3vw, 28px);
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition:
+    color 0.2s var(--ease),
+    border-color 0.2s var(--ease),
+    background 0.2s var(--ease);
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--border-hover);
+    background: var(--surface-hover);
+    color: var(--text);
+  }
+
+  // On-brand focus ring instead of the browser's blue one (this button is auto-focused when the
+  // modal opens).
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+// A phone holds one screenshot and no room for arrows beside it — the swipe is the navigation
+// there, and the counter says how far it goes.
+@media (width <= 640px) {
+  .gallery__nav {
+    display: none;
+  }
+
+  .gallery__slide {
+    max-width: 82vw;
+  }
+}
+
+@keyframes gallery-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gallery-rise {
+  from {
+    translate: 0 18px;
+    scale: 0.96;
+    opacity: 0;
+  }
+
+  to {
+    translate: none;
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery[open],
+  .gallery__figure {
+    animation: none;
+  }
+
+  .gallery__slide {
+    transition: none;
+  }
+}

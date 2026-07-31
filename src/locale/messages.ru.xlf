@@ -10,6 +10,30 @@
         <source>Open full image ↗</source>
         <target>Открыть картинку ↗</target>
       </trans-unit>
+      <trans-unit id="nav.menu" datatype="html">
+        <source>Sections</source>
+        <target>Разделы</target>
+      </trans-unit>
+      <trans-unit id="nav.menu.title" datatype="html">
+        <source>Sections</source>
+        <target>Разделы</target>
+      </trans-unit>
+      <trans-unit id="nav.menu.close" datatype="html">
+        <source>Close</source>
+        <target>Закрыть</target>
+      </trans-unit>
+      <trans-unit id="project.gallery" datatype="html">
+        <source>Open gallery ↗</source>
+        <target>Открыть галерею ↗</target>
+      </trans-unit>
+      <trans-unit id="gallery.prev" datatype="html">
+        <source>Previous screenshot</source>
+        <target>Предыдущий скриншот</target>
+      </trans-unit>
+      <trans-unit id="gallery.next" datatype="html">
+        <source>Next screenshot</source>
+        <target>Следующий скриншот</target>
+      </trans-unit>
       <trans-unit id="lightbox.close" datatype="html">
         <source>Close image</source>
         <target>Закрыть картинку</target>
@@ -385,10 +409,6 @@
       <trans-unit id="proj.sportdiary.desc" datatype="html">
         <source>Full-stack running tracker for iOS &amp; Android, built solo end to end. Built-in GPS tracking with live route maps, automatic lap detection and rich per-workout stats — pace, cadence, step length, heart rate, calories and elevation. Weekly / monthly volume analysis with personal-record tables, plus a social feed to follow, comment on and compare workouts with other runners. Ionic + Angular front end, Node.js backend self-hosted on my own VPS. Ran in production for over a year.</source>
         <target>Full-stack трекер бега для iOS и Android, полностью сделан в одиночку. Встроенный GPS-трекинг с картой маршрута в реальном времени, автоматический подсчёт кругов и подробная статистика по тренировке — темп, каденс, длина шага, пульс, калории и набор высоты. Анализ недельных и месячных объёмов с таблицами личных рекордов, плюс социальная лента, чтобы подписываться, комментировать и сравнивать тренировки с другими бегунами. Фронтенд на Ionic + Angular, бэкенд на Node.js, самостоятельно развёрнутый на собственном VPS. Больше года проработал в продакшене.</target>
-      </trans-unit>
-      <trans-unit id="proj.sportdiary.img" datatype="html">
-        <source>sportdiary-en.webp</source>
-        <target>sportdiary-ru.webp</target>
       </trans-unit>
       <trans-unit id="proj.sportdiary.img.alt" datatype="html">
         <source>Sportdiary mobile app — workout detail with route map and stats</source>

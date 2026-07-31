@@ -70,9 +70,9 @@
   }
 }
 
-// Compact clickable preview — a cover-cropped rectangle that opens the full
-// image in an in-page lightbox (see app-image-lightbox). Rendered as a button,
-// so the default chrome is reset back to the card's own surface treatment.
+// Compact clickable preview — opens the screenshot gallery in an in-page
+// lightbox (see app-gallery-lightbox). Rendered as a button, so the default
+// chrome is reset back to the card's own surface treatment.
 .card__media {
   display: inline-flex;
   appearance: none;
@@ -106,25 +106,65 @@
     color: var(--accent-light);
   }
 
+  // The tile takes the shape of what is in it. A phone screenshot in a landscape
+  // slot is cropped to a band of its own middle — a strip of a stats table that
+  // could have come from any app — so the portrait shots get a portrait tile and
+  // keep the top of the screen, where an app says what it is.
+  &-frame {
+    display: block;
+    flex: none;
+    width: 160px;
+    height: 90px;
+    overflow: hidden;
+    border-radius: var(--radius-xs);
+    background: var(--bg-alt);
+
+    &_portrait {
+      width: 76px;
+      height: 132px;
+    }
+  }
+
   &-thumb {
     display: block;
-    width: 160px;
-    height: 84px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: var(--radius-xs);
+    // Top, not centre: the header of an app screen is what identifies it, and it
+    // is the first thing a centred crop throws away.
+    object-position: top;
 
     // Diagrams/logos: fit the whole graphic instead of cropping it.
     &_contain {
       object-fit: contain;
+      object-position: center;
     }
+  }
+
+  &-text {
+    display: inline-flex;
+    align-items: baseline;
+    padding-right: 8px;
+    gap: 8px;
   }
 
   &-caption {
     @include t.text('label', 'medium');
 
-    padding-right: 8px;
     color: var(--text-secondary);
     transition: color 0.25s var(--ease);
+  }
+
+  // How many shots are behind the tile — the reason to click rather than to look.
+  &-count {
+    @include t.text('label', 'small');
+
+    padding: 2px 7px;
+    border: 1px solid var(--accent-line);
+    border-radius: 999px;
+    color: var(--accent-light);
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
   }
 }
 

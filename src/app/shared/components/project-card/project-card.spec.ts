@@ -2,44 +2,31 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { vi } from 'vitest';
 
 import { Project } from '@core/models/portfolio.interface';
+import { ProjectGalleryService } from '@core/services/project-gallery.service';
+import { DESK_SLIDE, NO_MEDIA, PHONE_SLIDE, VECTOR_SLIDE, WITH_COVER, WITH_LINKS } from './project-card.mock';
 import { ProjectCard } from './project-card';
 
-const withLinks: Project = {
-  name: 'vitest-auto-spy',
-  badge: 'Library · Open Source',
-  description: 'Typed auto-mocking for Vitest.',
-  links: [
-    { label: 'npm', href: 'https://www.npmjs.com/package/vitest-auto-spy' },
-    { label: 'GitHub', href: 'https://github.com/ASDAlexey/vitest-auto-spy' },
-  ],
-  tags: ['Vitest', 'TypeScript'],
-  featured: true,
-  image: 'vitest-auto-spy.svg',
-  imageAlt: 'one API, three runtimes diagram',
-};
-
-const noLinks: Project = {
-  name: 'Bonds-tracker',
-  badge: 'Desktop · Personal',
-  description: 'Personal bonds tracker.',
-  links: [],
-  tags: ['Angular'],
-  featured: false,
-};
-
-function render(project: Project): ComponentFixture<ProjectCard> {
-  const fixture = TestBed.createComponent(ProjectCard);
-  fixture.componentRef.setInput('project', project);
-  fixture.detectChanges();
-
-  return fixture;
-}
-
 describe('ProjectCard', () => {
+  const gallery = { slides: vi.fn() };
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({ providers: [{ provide: ProjectGalleryService, useValue: gallery }] });
+  });
+
+  function render(project: Project): ComponentFixture<ProjectCard> {
+    const fixture = TestBed.createComponent(ProjectCard);
+    fixture.componentRef.setInput('project', project);
+    fixture.detectChanges();
+
+    return fixture;
+  }
+
   afterEach(() => vi.restoreAllMocks());
 
-  it('renders a featured card with all project links', () => {
-    const el = render(withLinks).nativeElement;
+  it('renders a featured card, a landscape tile and every project link', () => {
+    gallery.slides.mockReturnValue([VECTOR_SLIDE]);
+
+    const el = render(WITH_LINKS).nativeElement;
 
     expect(el.querySelector('.card').classList.contains('card--featured')).toBe(true);
     expect(el.querySelector('.card__title').textContent).toContain('vitest-auto-spy');
@@ -49,30 +36,39 @@ describe('ProjectCard', () => {
     expect(links[0].getAttribute('href')).toContain('npmjs.com');
     expect(links[1].getAttribute('href')).toContain('github.com');
 
-    const media = el.querySelector('button.card__media');
-    expect(media.querySelector('.card__media-thumb').getAttribute('src')).toBe('vitest-auto-spy.svg');
-    expect(media.querySelector('.card__media-thumb').getAttribute('alt')).toBe('one API, three runtimes diagram');
+    const thumb = el.querySelector('.card__media-thumb');
+    expect(thumb.getAttribute('src')).toBe(VECTOR_SLIDE.thumb);
+    expect(thumb.getAttribute('alt')).toBe('one API, three runtimes diagram');
+    expect(thumb.classList.contains('card__media-thumb_contain')).toBe(true);
+    expect(el.querySelector('.card__media-frame').classList.contains('card__media-frame_portrait')).toBe(false);
+
+    // A single shot is a picture, not a gallery: no count, and the old wording stands.
+    expect(el.querySelector('.card__media-count')).toBeNull();
   });
 
-  it('opens the lightbox with the project image when the preview is clicked', () => {
-    const el = render(withLinks).nativeElement;
-    const dialog: HTMLDialogElement | null = el.querySelector('dialog');
+  it('shows the named cover in a portrait tile and opens the gallery when clicked', () => {
+    gallery.slides.mockReturnValue([DESK_SLIDE, PHONE_SLIDE]);
 
-    if (!dialog) {
-      throw new Error('dialog was not rendered');
-    }
+    const fixture = render(WITH_COVER);
+    const el = fixture.nativeElement;
+    const dialog: HTMLDialogElement = el.querySelector('dialog');
 
     // jsdom does not implement showModal — replace it with a mock.
     dialog.showModal = vi.fn();
 
-    expect(dialog.querySelector('.lightbox__img')?.getAttribute('src')).toBe('vitest-auto-spy.svg');
+    expect(fixture.componentInstance.cover()).toBe(PHONE_SLIDE);
+    expect(el.querySelector('.card__media-frame').classList.contains('card__media-frame_portrait')).toBe(true);
+    expect(el.querySelector('.card__media-thumb').getAttribute('src')).toBe(PHONE_SLIDE.thumb.replace('.avif', '.webp'));
+    expect(el.querySelector('.card__media-count').textContent).toContain('2');
 
     el.querySelector('button.card__media').click();
     expect(dialog.showModal).toHaveBeenCalledOnce();
   });
 
   it('renders a plain card without a links row or media', () => {
-    const el = render(noLinks).nativeElement;
+    gallery.slides.mockReturnValue([]);
+
+    const el = render(NO_MEDIA).nativeElement;
 
     expect(el.querySelector('.card').classList.contains('card--featured')).toBe(false);
     expect(el.querySelector('.card__links')).toBeNull();

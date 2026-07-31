@@ -23,6 +23,27 @@ export interface ProjectLink {
   readonly href: string;
 }
 
+/**
+ * One screenshot, already re-encoded. `src` is the AVIF the browser gets first; the WebP beside it
+ * is derived by swapping the extension, so the manifest carries one path instead of four.
+ * `width`/`height` are the encoded pixels — the tile reserves the right box before the file lands.
+ */
+export interface GallerySlide {
+  readonly id: string;
+  readonly src: string;
+  readonly thumb: string;
+  readonly width: number;
+  readonly height: number;
+  // SVG diagrams have no AVIF/WebP pair and are shown whole rather than cropped.
+  readonly vector: boolean;
+}
+
+/** Both locales always resolve: the generator fills an empty one from its neighbour. */
+export interface ProjectGallery {
+  readonly en: readonly GallerySlide[];
+  readonly ru: readonly GallerySlide[];
+}
+
 export interface Project {
   readonly name: string;
   readonly badge: string;
@@ -30,10 +51,12 @@ export interface Project {
   readonly links: readonly ProjectLink[];
   readonly tags: readonly string[];
   readonly featured: boolean;
-  readonly image?: string;
+  // Key into PROJECT_GALLERIES — the folder name under `public/my-projects/`.
+  readonly gallery?: string;
   readonly imageAlt?: string;
-  // Diagrams/logos are shown in full (contain); screenshots fill the banner (cover).
-  readonly imageContain?: boolean;
+  // Which slide the card tile shows; defaults to the first. A gallery's opening shot is not always
+  // its most legible one at 76 px wide.
+  readonly cover?: string;
 }
 
 export interface Stat {
