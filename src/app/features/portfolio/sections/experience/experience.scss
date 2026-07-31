@@ -35,8 +35,15 @@
   }
 }
 
+// Below that the rail has no lane of its own, so it borrows the page gutter: shifted into the
+// margin it costs the cards 26px instead of 56, and a phone keeps the one element that tells the
+// reader the roles are a route rather than a stack of boxes.
 @media (width < 860px) {
+  .timeline {
+    padding-left: 26px;
+  }
+
   app-career-path {
-    display: none;
+    left: -10px;
   }
 }
