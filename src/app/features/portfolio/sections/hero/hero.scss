@@ -162,6 +162,28 @@
   max-width: 920px;
   margin: 40px auto 0;
   gap: 12px;
+  // Depth, so the cards arrive out of the page instead of sliding up it. Four figures landing
+  // one after another reads as a set being dealt; the same four sliding up reads as a list.
+  perspective: 900px;
+
+  &.is-visible > * {
+    animation-duration: 0.8s;
+    animation-name: stat-land;
+  }
+}
+
+@keyframes stat-land {
+  from {
+    transform: rotateX(28deg);
+    translate: 0 26px;
+    opacity: 0;
+  }
+
+  to {
+    transform: none;
+    translate: none;
+    opacity: 1;
+  }
 }
 
 .btn {
