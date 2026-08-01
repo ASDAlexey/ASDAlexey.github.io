@@ -9,7 +9,7 @@
   <p class="card__desc">{{ project().description }}</p>
 
   @if (cover(); as shot) {
-    <button class="card__media" type="button" (click)="lightbox.open()">
+    <button class="card__media" type="button" (click)="openGallery()">
       <picture class="card__media-frame" [class.card__media-frame_portrait]="portrait()">
         @if (!shot.vector) {
           <source type="image/avif" [srcset]="shot.thumb" />
@@ -36,8 +36,8 @@
         }
       </span>
     </button>
-
-    <app-gallery-lightbox #lightbox [alt]="project().imageAlt ?? ''" [slides]="slides()" />
+    <!-- The lightbox itself is not here: `openGallery()` imports and creates it on the first
+         click, so neither its markup nor its stylesheet rides along in the prerendered page. -->
   }
 
   @if (project().links.length) {

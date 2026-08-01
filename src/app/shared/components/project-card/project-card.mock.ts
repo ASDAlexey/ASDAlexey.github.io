@@ -2,8 +2,8 @@ import { GallerySlide, Project } from '@core/models/portfolio.interface';
 
 export const PHONE_SLIDE: GallerySlide = {
   id: '1-stopwatch',
-  src: 'my-projects/sportdiary/ru/1-stopwatch.avif',
-  thumb: 'my-projects/sportdiary/ru/1-stopwatch-thumb.avif',
+  src: '/my-projects/sportdiary/ru/1-stopwatch.avif',
+  thumb: '/my-projects/sportdiary/ru/1-stopwatch-thumb.avif',
   width: 400,
   height: 840,
   vector: false,
@@ -11,8 +11,8 @@ export const PHONE_SLIDE: GallerySlide = {
 
 export const DESK_SLIDE: GallerySlide = {
   id: 'dashboard',
-  src: 'my-projects/sportdiary/ru/dashboard.avif',
-  thumb: 'my-projects/sportdiary/ru/dashboard-thumb.avif',
+  src: '/my-projects/sportdiary/ru/dashboard.avif',
+  thumb: '/my-projects/sportdiary/ru/dashboard-thumb.avif',
   width: 1200,
   height: 620,
   vector: false,
@@ -20,8 +20,8 @@ export const DESK_SLIDE: GallerySlide = {
 
 export const VECTOR_SLIDE: GallerySlide = {
   id: 'vitest-auto-spy',
-  src: 'my-projects/vitest-auto-spy/en/vitest-auto-spy.svg',
-  thumb: 'my-projects/vitest-auto-spy/en/vitest-auto-spy.svg',
+  src: '/my-projects/vitest-auto-spy/en/vitest-auto-spy.svg',
+  thumb: '/my-projects/vitest-auto-spy/en/vitest-auto-spy.svg',
   width: 1200,
   height: 630,
   vector: true,
@@ -52,6 +52,17 @@ export const WITH_COVER: Project = {
   gallery: 'sportdiary',
   cover: '1-stopwatch',
   imageAlt: 'Sportdiary — stopwatch screen',
+};
+
+/** No `imageAlt`: the lightbox is still built, with an empty caption. */
+export const NO_ALT: Project = {
+  name: 'Litely',
+  badge: 'Desktop · Personal',
+  description: 'Portfolio tracker.',
+  links: [],
+  tags: ['Tauri'],
+  featured: false,
+  gallery: 'litely',
 };
 
 export const NO_MEDIA: Project = {
