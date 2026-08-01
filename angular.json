@@ -139,6 +139,7 @@
               "**/spec-utils/**",
               "**/app.config.ts",
               "**/app.ts",
+              "**/portfolio.ts",
               "**/main.ts",
               "**/test-providers.ts",
               "**/portfolio.data.ts"

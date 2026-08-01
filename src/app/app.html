@@ -4,6 +4,14 @@
   <router-outlet />
 </main>
 <app-footer />
-<app-scroll-top />
-<app-konami />
-<app-cursor />
+
+<!-- Chrome and one easter egg: none of it is content, none of it is above the fold, and
+     none of it needs to exist before the page has settled. Deferred with no `hydrate`
+     trigger on purpose — the prerenderer writes the (empty) placeholder instead, so the
+     scroll button, the konami overlay and the cursor trail keep their markup, their code
+     and their styles out of the first byte of the document. -->
+@defer (on idle) {
+  <app-scroll-top />
+  <app-konami />
+  <app-cursor />
+}

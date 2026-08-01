@@ -2,4 +2,21 @@
 <app-about />
 <app-experience />
 <app-projects />
-<app-recommendations />
+
+<!-- Last section on the page, and the only one nobody reaches without scrolling. Incremental
+     hydration (on by default with `provideClientHydration`) keeps every word of it in the
+     prerendered HTML — crawlers and readers see the quotes exactly as before — while the code
+     behind them leaves the initial bundle and arrives on the first idle frame.
+
+     `hydrate on idle` rather than `hydrate on viewport`, and that is measured rather than
+     preferred: with `on viewport` the block never hydrated at all here — Angular 22.0.8, Chrome,
+     prerendered build, section fully inside the viewport for seconds, with and without a
+     `@placeholder`, chunk never requested. `on idle` fires every time. Either way a click
+     hydrates the block through event replay, so the buttons were never dead; `on idle` is simply
+     the trigger whose behaviour matches what it says. Worth re-testing on the next Angular bump.
+
+     No `@placeholder`: it would only ever be used by a client-side render of this route, and the
+     site is a single prerendered page. -->
+@defer (hydrate on idle) {
+  <app-recommendations />
+}
