@@ -4,9 +4,10 @@ name: Lighthouse
 # that claim falsifiable: both locales are audited on every pull request and before
 # every deploy, with the thresholds in `lighthouserc.json`.
 #
-# The site is served by python3's static server rather than a Node dev server so the
-# audit runs against plain files with no framework in the loop — the same thing GitHub
-# Pages serves.
+# The site is served by `scripts/lighthouse-server.mjs` rather than a Node dev server, so
+# the audit runs against plain files with no framework in the loop — the same thing GitHub
+# Pages serves, gzip included. `bun run lighthouse` uses that same module, so a local run
+# reproduces this job.
 
 on:
   workflow_call:
@@ -30,7 +31,7 @@ jobs:
 
       - name: Serve site
         run: |
-          python3 -m http.server 8080 --directory dist/ngportfolio/browser --bind 127.0.0.1 &
+          node scripts/lighthouse-server.mjs &
           for _ in $(seq 1 30); do
             if curl --silent --fail --output /dev/null http://127.0.0.1:8080/en/; then
               echo "static server is up"
