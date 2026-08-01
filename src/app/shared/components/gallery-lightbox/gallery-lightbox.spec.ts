@@ -51,6 +51,8 @@ describe('GalleryLightbox', () => {
     expect(query('.gallery__count-now')?.textContent).toBe('1');
     expect(query('.gallery__count-all')?.textContent).toBe('2');
     expect(fixture.nativeElement.querySelectorAll('swiper-slide').length).toBe(2);
+    // Four corner marks per slide; the stylesheet shows them on the active one only.
+    expect(fixture.nativeElement.querySelectorAll('.gallery__mark').length).toBe(8);
     expect(query('.gallery__img')?.getAttribute('src')).toBe(toWebp(SLIDES[0].src));
 
     // A click inside the figure leaves it open; the dialog itself (backdrop) closes it.

@@ -37,7 +37,14 @@
       >
         @for (slide of slides(); track slide.id; let i = $index) {
           <swiper-slide class="gallery__slide">
-            <picture>
+            <picture class="gallery__plate">
+              <!-- Four marks hugging the shot's corners, the notation a drawing uses to call out
+                   the extents of a part. Only the slide in focus wears them. -->
+              <span class="gallery__mark gallery__mark_tl"></span>
+              <span class="gallery__mark gallery__mark_tr"></span>
+              <span class="gallery__mark gallery__mark_bl"></span>
+              <span class="gallery__mark gallery__mark_br"></span>
+
               @if (!slide.vector) {
                 <source type="image/avif" [srcset]="slide.src" />
                 <source type="image/webp" [srcset]="toWebp(slide.src)" />

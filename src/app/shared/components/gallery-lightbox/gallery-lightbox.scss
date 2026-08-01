@@ -79,6 +79,69 @@
   box-shadow: 0 24px 80px rgb(0, 0, 0, 0.6);
 }
 
+// The shot in focus is framed like a part on a drawing: four corner marks snapping in from
+// outside its own bounds once it settles. They belong to the active slide only — on the dimmed
+// neighbours they would read as four more things to look at.
+.gallery__plate {
+  display: block;
+  position: relative;
+}
+
+.gallery__mark {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--accent);
+  opacity: 0;
+  pointer-events: none;
+
+  &_tl {
+    top: -11px;
+    left: -11px;
+    border-right: 0;
+    border-bottom: 0;
+  }
+
+  &_tr {
+    top: -11px;
+    right: -11px;
+    border-bottom: 0;
+    border-left: 0;
+  }
+
+  &_bl {
+    bottom: -11px;
+    left: -11px;
+    border-top: 0;
+    border-right: 0;
+  }
+
+  &_br {
+    right: -11px;
+    bottom: -11px;
+    border-top: 0;
+    border-left: 0;
+  }
+}
+
+.swiper-slide-active .gallery__mark {
+  animation: gallery-mark 0.45s var(--ease) 0.15s both;
+}
+
+@keyframes gallery-mark {
+  from {
+    translate: -10px -10px;
+    scale: 1.7;
+    opacity: 0;
+  }
+
+  to {
+    translate: none;
+    scale: 1;
+    opacity: 0.7;
+  }
+}
+
 .gallery__caption {
   @include t.text('label', 'medium');
 
@@ -245,5 +308,12 @@
 
   .gallery__slide {
     transition: none;
+  }
+
+  .swiper-slide-active .gallery__mark {
+    translate: none;
+    scale: 1;
+    animation: none;
+    opacity: 0.7;
   }
 }
