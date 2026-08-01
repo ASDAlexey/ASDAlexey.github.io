@@ -39,12 +39,13 @@
 
   --maxw: 1100px;
 
-  // 'Inter Latin' / 'JBMono Latin' are the self-hosted, preloaded Latin subsets
-  // (declared inline in index.html) — first in the stack so above-the-fold text
-  // paints the real font immediately. 'Inter Variable' / 'JetBrains Mono Variable'
-  // (fontsource) cover Cyrillic and extended ranges as automatic fallbacks.
-  --font: 'Inter Latin', 'Inter Cyrillic', 'Inter Variable', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, sans-serif;
-  --mono: 'JBMono Latin', 'JetBrains Mono Variable', ui-monospace, monospace;
+  // Four self-hosted subsets, all declared inline in index.html: Latin first (preloaded,
+  // so above-the-fold text paints the real font immediately), then Cyrillic, which the
+  // browser fetches only for the pages that contain it — `unicode-range` decides, not the
+  // order. The system stack after them is what draws the handful of symbols no subset
+  // carries (→ ↗ ✓ ● ★).
+  --font: 'Inter Latin', 'Inter Cyrillic', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, sans-serif;
+  --mono: 'JBMono Latin', 'JBMono Cyrillic', ui-monospace, monospace;
 
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
