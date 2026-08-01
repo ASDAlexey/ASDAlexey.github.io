@@ -23,10 +23,12 @@ application, fully bilingual, prerendered for SEO, and covered by tests at 100%.
 - **Screenshot galleries** — Swiper carousel in a native `<dialog>`, loaded as its own chunk only when a gallery is opened. Screenshots are re-encoded to AVIF + WebP by a build script that also writes the locale manifest, so a project shot in one language still has a gallery in the other.
 - **Pointer-led motion** — a comet trail that inverts the page beneath it (`mix-blend-mode: difference`), an accent that floods the scroll-top button from the side the cursor arrived on, and a hover wave through the footer's letters. All of it sleeps when the pointer does, and none of it binds a listener without a fine pointer or under `prefers-reduced-motion`.
 - **Scroll-driven animation** — the career rail draws itself and lights each stop as its runner arrives, the CI pipeline flares node by node; both run on CSS scroll timelines with no scroll listener anywhere.
+- **Incremental hydration** — the prerendered DOM is reused, not rebuilt (33 components, 1445 nodes), and the parts nobody needs at first paint — the cursor trail, the konami overlay, the scroll-top button, the recommendations section, the lightbox — arrive in their own chunks afterwards.
 - **100% test coverage** — Vitest + my own [`vitest-auto-spy`](https://www.npmjs.com/package/vitest-auto-spy) library (dogfooded).
-- **Lighthouse** — Accessibility, Best Practices and SEO at **100**; performance tuned with self-hosted fonts, inlined critical CSS and zero render-blocking third-party requests.
-- **Quality gates** — ESLint (+ custom local rules), Prettier, Stylelint, Husky hooks, madge (circular deps), jscpd.
-- **CI/CD** — GitHub Actions builds both locales and deploys to GitHub Pages.
+- **Lighthouse** — Accessibility, Best Practices and SEO at **100**, asserted on every pull request against the built artifact, both locales.
+- **Weighed on every push** — four self-hosted font subsets and nothing else, shared assets copied once instead of per locale, and a weight budget that fails the build when the deploy grows past it.
+- **Quality gates** — Prettier, ESLint (+ custom local rules), Stylelint, TypeScript, madge (circular deps), jscpd, Husky hooks. All of them run in CI, not just locally.
+- **CI/CD** — GitHub Actions: a graph of reusable workflows (quality · test → build → lighthouse → deploy), documented in [`docs/ci.md`](docs/ci.md).
 
 ## Tech stack
 
@@ -45,11 +47,15 @@ bun run start:ru       # Russian locale
 
 ```bash
 bun run build          # production build, both locales, prerendered
-bun run assemble       # add redirect / sitemap / robots / og-image to dist
+bun run assemble       # copy static/ to the site root, add redirect / sitemap / robots
+bun run size           # weight budget for the assembled deploy (the CI gate)
 bun run images:projects      # re-encode project screenshots, rewrite the gallery manifest
+bun run resume         # re-render both résumé PDFs (Chrome + ghostscript)
 bun run test:coverage  # Vitest with 100% coverage gate
+bun run typecheck      # tsc over the app and the specs
 bun run check:code-quality   # prettier + eslint + stylelint
 bun run madge          # circular-dependency check
+bun run jscpd          # copy-paste detection
 ```
 
 ## Project structure
@@ -65,15 +71,22 @@ src/app/
     ├── directives/  # pointer-track · scroll-reveal · letter-reveal · word-reveal · letter-hover
     └── data/        # locale-independent content + the generated gallery manifest
 src/locale/          # messages.ru.xlf
-public/my-projects/  # project screenshots, <slug>/<locale>/, AVIF + WebP
-scripts/             # image pipeline · dist assembly · resume renderer
+public/              # per-locale assets: favicon · fonts · avatars (copied into /en/ and /ru/)
+static/              # shared assets: screenshots · résumé PDFs · og-image (copied to the root once)
+scripts/             # image pipeline · dist assembly · weight budget · resume renderer
 seo/                 # robots.txt · sitemap.xml · root redirect
-docs/                # design notes (motion references and what was built from them)
+docs/                # CI/CD, the applied audit, design notes
+.github/             # composite setup action + one reusable workflow per pipeline stage
 ```
+
+`public/` versus `static/` is the whole reason the deploy is 5.5 MB rather than 12: a localized
+build runs its asset glob once per locale, so anything under `public/` ships twice. Screenshots,
+PDFs and the OG image are identical in both languages, so they live in `static/`, are copied to the
+site root once by `bun run assemble`, and are referenced root-absolutely (`/my-projects/…`).
 
 ### Project screenshots
 
-Drop the originals into `public/my-projects/<slug>/<en|ru>/` in any raster format and run
+Drop the originals into `static/my-projects/<slug>/<en|ru>/` in any raster format and run
 `bun run images:projects`. The script re-encodes each one to AVIF + WebP (a full-size slide and a
 narrow thumb for the card tile), drops the heavy sources, and rewrites
 `src/app/shared/data/project-gallery.generated.ts` — including the locale fallback, so a project
@@ -83,9 +96,19 @@ what it already converted. Point a project at its folder with `gallery: '<slug>'
 
 ## Deployment
 
-Pushing to `main` triggers [`.github/workflows/ci.yml`](.github/workflows/ci.yml): after lint, tests
-and a 100% coverage gate pass, it builds the EN + RU locales, assembles the site root, and publishes to
-GitHub Pages (source: GitHub Actions).
+Every push and pull request runs [`.github/workflows/ci.yml`](.github/workflows/ci.yml):
+
+```
+quality ─┐
+         ├→ build → lighthouse → deploy (main only)
+test ────┘
+```
+
+`quality` covers Prettier, ESLint, Stylelint, TypeScript, jscpd and madge; `test` runs Vitest
+behind the 100% coverage gate; `build` produces both locales, assembles the site root and weighs
+the result against [`scripts/check-dist-budget.mjs`](scripts/check-dist-budget.mjs); `lighthouse`
+audits both locales on that exact artifact. Only `main` deploys, and only what passed. The
+pipeline — including what it deliberately does not gate — is written up in [`docs/ci.md`](docs/ci.md).
 
 ## Contact
 
