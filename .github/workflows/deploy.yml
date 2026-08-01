@@ -1,0 +1,34 @@
+name: Deploy
+
+# Publishes the artifact built earlier in the same run. Nothing is rebuilt here:
+# what passed the gates is exactly what goes live.
+
+on:
+  workflow_call:
+    outputs:
+      page-url:
+        description: Public URL of the deployment.
+        value: ${{ jobs.deploy.outputs.page-url }}
+
+# Declared here as well as on the calling job: a called workflow's own `permissions` block
+# replaces what it inherits, so leaving `contents: read` alone here would take the Pages
+# token away from the deploy step.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    name: GitHub Pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      page-url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

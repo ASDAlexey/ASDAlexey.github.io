@@ -1,0 +1,53 @@
+name: Setup toolchain
+description: Installs Bun, restores the dependency cache and runs `bun install` with retries.
+
+# The GitHub Actions counterpart of `.bun-install` + `.use-bun-cache` in the GitLab
+# pipelines this project's CI is modelled on: one place that knows the Bun version,
+# the cache key and how to survive a flaky registry.
+
+inputs:
+  bun-version:
+    description: Bun release to install. Keep in sync with `packageManager` in package.json.
+    required: false
+    default: '1.3.14'
+  cache-policy:
+    description: >-
+      `read-write` restores the dependency cache and saves it back when the key missed;
+      `read` only restores it. Pull requests use `read` so four parallel jobs do not race
+      to upload the same archive — the cache for a lockfile is written by the `main` run.
+    required: false
+    default: read-write
+
+runs:
+  using: composite
+  steps:
+    - name: Install Bun
+      uses: oven-sh/setup-bun@v2
+      with:
+        bun-version: ${{ inputs.bun-version }}
+
+    - name: Restore dependency cache
+      if: inputs.cache-policy == 'read'
+      uses: actions/cache/restore@v4
+      with:
+        path: ~/.bun/install/cache
+        key: bun-cache-${{ runner.os }}-${{ hashFiles('bun.lock') }}
+        restore-keys: |
+          bun-cache-${{ runner.os }}-
+
+    - name: Restore and refresh dependency cache
+      if: inputs.cache-policy != 'read'
+      uses: actions/cache@v4
+      with:
+        path: ~/.bun/install/cache
+        key: bun-cache-${{ runner.os }}-${{ hashFiles('bun.lock') }}
+        restore-keys: |
+          bun-cache-${{ runner.os }}-
+
+    - name: Install dependencies
+      shell: bash
+      # HUSKY=0 keeps the `prepare` script from re-installing git hooks on a runner
+      # that will never commit anything.
+      env:
+        HUSKY: '0'
+      run: bash .github/scripts/bun-install-retry.sh

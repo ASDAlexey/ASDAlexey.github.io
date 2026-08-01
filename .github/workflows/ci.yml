@@ -1,74 +1,55 @@
 name: CI / Deploy
 
+# The pipeline graph. Every stage lives in its own reusable workflow, the way the
+# GitLab pipelines this is modelled on keep job templates in `common.yml`:
+#
+#   quality ─┐
+#            ├→ build → lighthouse → deploy (main only)
+#   test ────┘
+#
+# Pull requests run everything except the deploy, against the same artifact.
+
 on:
   push:
     branches: [main]
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
   workflow_dispatch:
+
+# A superseded pull request commit is worth nothing; a superseded deploy is worth
+# finishing, so only PR runs are cancelled.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: ci-${{ github.ref }}
-  cancel-in-progress: true
 
 jobs:
   quality:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+    # Draft pull requests skip the whole pipeline (GitLab: `$CI_MERGE_REQUEST_TITLE !~ /^Draft:/`).
+    if: ${{ github.event.pull_request.draft != true }}
+    uses: ./.github/workflows/quality.yml
 
-      - uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: 1.3.14
-
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
-
-      - name: Lint (ESLint)
-        run: bun run eslint
-
-      - name: Lint (Stylelint)
-        run: bun run stylelint:check
-
-      - name: Unit tests + 100% coverage
-        run: bun run test:coverage
+  test:
+    if: ${{ github.event.pull_request.draft != true }}
+    uses: ./.github/workflows/test.yml
 
   build:
-    needs: quality
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+    needs: [quality, test]
+    uses: ./.github/workflows/build.yml
+    with:
+      upload-pages: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/main' }}
 
-      - uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: 1.3.14
-
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
-
-      - name: Build (EN + RU, prerendered)
-        run: bun run build
-
-      - name: Assemble site root (redirect, robots, sitemap, og-image)
-        run: node scripts/assemble-dist.mjs
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist/ngportfolio/browser
+  lighthouse:
+    needs: build
+    uses: ./.github/workflows/lighthouse.yml
 
   deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+    needs: [build, lighthouse]
+    if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/main' }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy.yml

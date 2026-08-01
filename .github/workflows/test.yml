@@ -1,0 +1,42 @@
+name: Tests
+
+# Vitest through the Angular unit-test builder. The 100% threshold lives in
+# `vitest-base.config.ts`, so the gate is identical locally and here — CI does not
+# get to be more lenient than a laptop.
+#
+# No sharding: `@angular/build:unit-test` has no `--shard`, and at ~110 specs the
+# suite finishes well inside a minute. Split with `--include` if that stops being true.
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  unit-tests:
+    name: Unit tests + 100% coverage
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ./.github/actions/setup
+        with:
+          cache-policy: ${{ github.event_name == 'pull_request' && 'read' || 'read-write' }}
+
+      - name: Unit tests
+        run: bun run test:ci
+
+      - name: Coverage summary
+        if: ${{ !cancelled() }}
+        run: bun run coverage:summary
+
+      - name: Upload coverage report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: coverage/
+          retention-days: 7
+          if-no-files-found: ignore

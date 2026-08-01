@@ -53,3 +53,7 @@ Thumbs.db
 .eslintcache
 .stylelintcache
 *.tsbuildinfo
+
+# CI report output
+/jscpd-report
+/.lighthouseci

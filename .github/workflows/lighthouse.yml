@@ -1,0 +1,52 @@
+name: Lighthouse
+
+# The README claims Accessibility / Best Practices / SEO at 100. This is what makes
+# that claim falsifiable: both locales are audited on every pull request and before
+# every deploy, with the thresholds in `lighthouserc.json`.
+#
+# The site is served by python3's static server rather than a Node dev server so the
+# audit runs against plain files with no framework in the loop — the same thing GitHub
+# Pages serves.
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  lighthouse:
+    name: Lighthouse (EN + RU)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download site artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: dist/ngportfolio/browser
+
+      - name: Serve site
+        run: |
+          python3 -m http.server 8080 --directory dist/ngportfolio/browser --bind 127.0.0.1 &
+          for _ in $(seq 1 30); do
+            if curl --silent --fail --output /dev/null http://127.0.0.1:8080/en/; then
+              echo "static server is up"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "ERROR: static server did not come up in 30s"
+          exit 1
+
+      - name: Audit
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            http://127.0.0.1:8080/en/
+            http://127.0.0.1:8080/ru/
+          configPath: ./lighthouserc.json
+          uploadArtifacts: true
+          temporaryPublicStorage: false

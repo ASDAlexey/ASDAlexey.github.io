@@ -1,0 +1,53 @@
+name: Build
+
+# Produces the deployable site once, for every consumer: the Lighthouse gate reads
+# the same bytes that get published, so a green audit is an audit of the real artifact.
+
+on:
+  workflow_call:
+    inputs:
+      upload-pages:
+        description: Also upload the GitHub Pages artifact consumed by the deploy workflow.
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build EN + RU, assemble, weigh
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ./.github/actions/setup
+        with:
+          cache-policy: ${{ github.event_name == 'pull_request' && 'read' || 'read-write' }}
+
+      - name: Build (EN + RU, prerendered)
+        run: bun run build
+
+      - name: Assemble site root (redirect, robots, sitemap, shared assets)
+        run: bun run assemble
+
+      # Weight budget. `angular.json` budgets only cover JS and component styles;
+      # this covers what actually ships — images, PDFs, HTML, the whole deploy.
+      - name: Weight budget
+        run: bun run size
+
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: dist/ngportfolio/browser
+          retention-days: 7
+          compression-level: 0
+
+      - name: Upload GitHub Pages artifact
+        if: ${{ inputs.upload-pages }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/ngportfolio/browser

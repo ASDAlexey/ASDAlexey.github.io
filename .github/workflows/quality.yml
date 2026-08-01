@@ -1,0 +1,84 @@
+name: Quality
+
+# Static gates. Three jobs on purpose: linters, duplicate detection and the
+# dependency-graph check fail for unrelated reasons, and a red pipeline should
+# say which one without opening logs.
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+env:
+  CACHE_POLICY: ${{ github.event_name == 'pull_request' && 'read' || 'read-write' }}
+
+jobs:
+  code-quality:
+    name: Lint, format, types
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ./.github/actions/setup
+        with:
+          cache-policy: ${{ env.CACHE_POLICY }}
+
+      # Every gate runs even after an earlier one fails (`!cancelled()`), so one
+      # push shows every problem instead of one per re-run.
+      - name: Prettier
+        run: bun run prettier:check
+
+      - name: ESLint
+        if: ${{ !cancelled() }}
+        run: bun run eslint
+
+      - name: Stylelint
+        if: ${{ !cancelled() }}
+        run: bun run stylelint:check
+
+      - name: TypeScript — app
+        if: ${{ !cancelled() }}
+        run: bun run typecheck:app
+
+      - name: TypeScript — specs
+        if: ${{ !cancelled() }}
+        run: bun run typecheck:spec
+
+  duplicates:
+    name: jscpd
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ./.github/actions/setup
+        with:
+          cache-policy: ${{ env.CACHE_POLICY }}
+
+      - name: Copy-paste detection
+        run: bun run jscpd
+
+      - name: Upload jscpd report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: jscpd-report
+          path: jscpd-report/
+          retention-days: 7
+          if-no-files-found: ignore
+
+  circular-deps:
+    name: madge
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ./.github/actions/setup
+        with:
+          cache-policy: ${{ env.CACHE_POLICY }}
+
+      - name: Circular dependencies
+        run: bun run madge
