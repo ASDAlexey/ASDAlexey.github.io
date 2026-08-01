@@ -1,7 +1,7 @@
 /**
  * Project-gallery pipeline.
  *
- * Walks `public/my-projects/<slug>/<locale>/`, re-encodes every raster it finds into AVIF + WebP
+ * Walks `static/my-projects/<slug>/<locale>/`, re-encodes every raster it finds into AVIF + WebP
  * (a full-size slide and a narrow thumb for the card tile), drops the heavy sources, and writes a
  * typed manifest the app reads at runtime.
  *
@@ -18,7 +18,10 @@ import { basename, extname, join } from 'node:path';
 import sharp from 'sharp';
 
 const ROOT = new URL('..', import.meta.url).pathname;
-const MEDIA_DIR = join(ROOT, 'public/my-projects');
+// `static/`, not `public/`: the screenshots are identical in both locales, so they are copied to
+// the site root once by scripts/assemble-dist.mjs instead of into `/en/` and `/ru/` by the asset
+// glob. That is also why every path in the manifest below is root-absolute.
+const MEDIA_DIR = join(ROOT, 'static/my-projects');
 const MANIFEST = join(ROOT, 'src/app/shared/data/project-gallery.generated.ts');
 
 const LOCALES = ['en', 'ru'];
@@ -98,7 +101,7 @@ async function buildLocale(slug, locale) {
     const ext = extname(name).toLowerCase();
     const path = join(dir, name);
     const id = slugify(name);
-    const base = `my-projects/${slug}/${locale}/${id}`;
+    const base = `/my-projects/${slug}/${locale}/${id}`;
 
     if (VECTOR.has(ext)) {
       const svg = await readFile(path);

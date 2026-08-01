@@ -171,8 +171,8 @@
         <target>Tech Lead и Senior Frontend-разработчик</target>
       </trans-unit>
       <trans-unit id="hero.resume.file" datatype="html">
-        <source>Alexey-Popov-Resume.pdf</source>
-        <target>Alexey-Popov-Resume-ru.pdf</target>
+        <source>/Alexey-Popov-Resume.pdf</source>
+        <target>/Alexey-Popov-Resume-ru.pdf</target>
       </trans-unit>
       <trans-unit id="hero.eyebrow" datatype="html">
         <source>Angular · every platform</source>

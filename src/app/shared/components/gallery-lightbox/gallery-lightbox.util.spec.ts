@@ -12,8 +12,8 @@ describe('gallery-lightbox util', () => {
   afterEach(() => vi.restoreAllMocks());
 
   it('derives the WebP twin of a slide and leaves anything else alone', () => {
-    expect(toWebp('my-projects/demo/ru/1.avif')).toBe('my-projects/demo/ru/1.webp');
-    expect(toWebp('my-projects/demo/en/diagram.svg')).toBe('my-projects/demo/en/diagram.svg');
+    expect(toWebp('/my-projects/demo/ru/1.avif')).toBe('/my-projects/demo/ru/1.webp');
+    expect(toWebp('/my-projects/demo/en/diagram.svg')).toBe('/my-projects/demo/en/diagram.svg');
   });
 
   it('finds no carousel before the element has upgraded, and none at all without a dialog', () => {

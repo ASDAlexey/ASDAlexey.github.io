@@ -51,7 +51,7 @@ export interface Project {
   readonly links: readonly ProjectLink[];
   readonly tags: readonly string[];
   readonly featured: boolean;
-  // Key into PROJECT_GALLERIES — the folder name under `public/my-projects/`.
+  // Key into PROJECT_GALLERIES — the folder name under `static/my-projects/`.
   readonly gallery?: string;
   readonly imageAlt?: string;
   // Which slide the card tile shows; defaults to the first. A gallery's opening shot is not always

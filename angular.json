@@ -38,7 +38,8 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public",
+                "ignore": ["**/.DS_Store"]
               }
             ],
             "styles": [
@@ -75,7 +76,19 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "public",
+                  "ignore": ["**/.DS_Store"]
+                },
+                {
+                  "glob": "**/*",
+                  "input": "static",
+                  "ignore": ["**/.DS_Store"]
+                }
+              ]
             },
             "ru": {
               "localize": ["ru"]

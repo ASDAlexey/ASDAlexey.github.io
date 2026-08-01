@@ -108,6 +108,14 @@ module.exports = {
       rules: tsRules,
     },
     {
+      // Written by scripts/optimize-project-images.mjs, one entry per screenshot. Its length is a
+      // function of how many projects have galleries, not of anyone's judgement.
+      files: ['src/**/*.generated.ts'],
+      rules: {
+        'max-lines': 'off',
+      },
+    },
+    {
       files: ['src/**/spec-utils/**/*.ts'],
       excludedFiles: ['**/*.spec.ts'],
       rules: {

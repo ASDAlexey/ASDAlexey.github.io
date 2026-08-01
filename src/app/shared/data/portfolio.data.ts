@@ -9,7 +9,9 @@ export const PROFILE = {
   github: 'https://github.com/ASDAlexey',
   linkedin: 'https://www.linkedin.com/in/alexey-popov-7988a874/',
   linkedinRecommendations: 'https://www.linkedin.com/in/alexey-popov-7988a874/details/recommendations/?detailScreenTabIndex=0',
-  resume: $localize`:@@hero.resume.file:Alexey-Popov-Resume.pdf`,
+  // Root-absolute: both PDFs live in `static/` and are copied to the site root once,
+  // not into `/en/` and `/ru/` (see scripts/assemble-dist.mjs).
+  resume: $localize`:@@hero.resume.file:/Alexey-Popov-Resume.pdf`,
   siteUrl: 'https://asdalexey.github.io',
   role: $localize`:@@hero.role:Tech Lead & Senior Frontend Developer`,
   eyebrow: $localize`:@@hero.eyebrow:Angular · every platform`,
