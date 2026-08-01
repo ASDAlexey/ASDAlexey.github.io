@@ -19,4 +19,18 @@
     border-color: var(--border-hover);
     color: var(--text);
   }
+
+  // Read by assistive tech, drawn for nobody: it turns the link's name into
+  // "RU Switch language" without touching the 38 px the design allows for.
+  &__hint {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    white-space: nowrap;
+    clip-path: inset(50%);
+  }
 }

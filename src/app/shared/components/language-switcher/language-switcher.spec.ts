@@ -19,7 +19,9 @@ describe('LanguageSwitcher', () => {
 
     expect(fixture.componentInstance.option.code).toBe('ru');
     expect(link.getAttribute('href')).toBe('/ru/');
-    expect(link.textContent.trim()).toBe('RU');
+    // The visible label leads; the hint after it exists only for the accessible name.
+    expect(link.textContent.trim().startsWith('RU')).toBe(true);
+    expect(link.querySelector('.lang__hint').textContent).toBe('Switch language');
   });
 
   it('persists the chosen locale in sessionStorage on click', () => {

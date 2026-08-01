@@ -1,3 +1,10 @@
-<a aria-label="Switch language" class="lang" i18n-aria-label="@@lang.switch" [href]="option.href" (click)="persist()">
+<!-- The accessible name is the visible text plus a hidden hint, rather than an `aria-label` that
+     replaces it. Lighthouse flags the replacement as `label-content-name-mismatch`: the link reads
+     "RU" but announced "Switch language", so voice control had nothing to match when someone said
+     "click RU". A hidden span rather than an interpolated `aria-label` because an interpolated
+     attribute compiles to a property binding, and the prerenderer does not serialise those — the
+     static HTML would ship with no accessible name at all. -->
+<a class="lang" [href]="option.href" (click)="persist()">
   {{ option.label }}
+  <span class="lang__hint" i18n="@@lang.switch">Switch language</span>
 </a>
