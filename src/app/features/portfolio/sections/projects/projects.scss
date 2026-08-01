@@ -17,22 +17,16 @@
   @include s.section-title;
 }
 
+// The column count follows the available width instead of a breakpoint. The
+// 350px track is what makes it land on two columns everywhere it used to: three
+// of them would need 1082px, and the container tops out at 1052px, while two
+// still fit the 720px a tablet leaves. Below that it drops to one column, before
+// the descriptions get squeezed. `min(100%, …)` keeps the track from overflowing
+// the narrowest phones, and `dense` packs the rows so no slot is ever left
+// standing empty behind a card that spans more than one column.
 .card-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+  grid-auto-flow: row dense;
   gap: 16px;
-}
-
-@media (width >= 720px) {
-  .card-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  // A lone trailing card (odd total) centers across both columns
-  // instead of being left-aligned in the first column.
-  .card-grid app-project-card:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: calc(50% - 8px);
-  }
 }
