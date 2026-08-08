@@ -93,8 +93,8 @@ const EN = {
       company: 'Remote',
       period: '2023 — Present',
       points: [
-        'A major streaming service — ~4M web users and ~100k Smart TV devices. Shipped SSR web features (age-gating and PIN compliance, profile, subscriptions, legal consent) and the whole gamification vertical — achievements, levels, leaderboards, fortune wheel — to web and Smart TV, inside an Nx monorepo of 5 apps and 81 libraries.',
-        'Enterprise 3D digital-twin and geospatial platform — sole architect of a multi-tenant Angular 22 app: 286 components, ~107k lines of TypeScript, real-time pixel streaming, deployed to 8+ environments from a single codebase.',
+        'A high-traffic media product — ~4M web users and ~100k Smart TV devices. Shipped SSR web features (age-gating and PIN compliance, profile, subscriptions, legal consent) and the whole gamification vertical — achievements, levels, leaderboards, fortune wheel — to web and Smart TV, inside an Nx monorepo of 5 apps and 81 libraries.',
+        'A large enterprise application with real-time 3D — sole architect of a multi-tenant Angular 22 app: 286 components, ~107k lines of TypeScript, real-time pixel streaming, deployed to 8+ environments from a single codebase.',
         'Inherited a frontend team of one and built it out across three directions — my own group of 4–5, a reporting vertical of 5 and an international one of 2 — hiring every engineer myself over 70+ interviews.',
         'Own the release for all three frontend teams: I cut the epic, the teams raise the MRs, I merge once the approvals land — often as one of the reviewers. Reviewed an external contractor team’s code for a year, then hired the senior who took it over.',
         'Introduced unit testing to a project sitting at 0% coverage and taught 20+ developers to write it — the main app now runs ~10,400 unit tests at 89% coverage gated in CI, and the greenfield projects sit at 100%.',
@@ -263,8 +263,8 @@ const RU = {
       company: 'Удалённо',
       period: '2023 — н.в.',
       points: [
-        'Крупный стриминговый сервис — ~4 млн пользователей на web и ~100 тыс. устройств Smart TV. Реализовал SSR-фичи на web (возрастные ограничения и PIN по требованиям РКН, профиль, подписки, юридические согласия) и вертикаль геймификации целиком — достижения, уровни, лидерборды, колесо фортуны — на web и Smart TV, внутри Nx-монорепо из 5 приложений и 81 библиотеки.',
-        'Enterprise-платформа цифрового двойника и геовизуализации — единственный архитектор мульти-тенант приложения на Angular 22: 286 компонентов, ~107 тыс. строк TypeScript, real-time pixel streaming, деплой в 8+ окружений из одной кодовой базы.',
+        'Высоконагруженный медиа-продукт — ~4 млн пользователей на web и ~100 тыс. устройств Smart TV. Реализовал SSR-фичи на web (возрастные ограничения и PIN по регуляторным требованиям, профиль, подписки, юридические согласия) и вертикаль геймификации целиком — достижения, уровни, лидерборды, колесо фортуны — на web и Smart TV, внутри Nx-монорепо из 5 приложений и 81 библиотеки.',
+        'Крупное enterprise-приложение с real-time 3D — единственный архитектор мульти-тенант приложения на Angular 22: 286 компонентов, ~107 тыс. строк TypeScript, real-time pixel streaming, деплой в 8+ окружений из одной кодовой базы.',
         'Пришёл в команду из одного фронтендера и вырастил её по трём направлениям — своя группа 4–5 человек, вертикаль отчётов на 5 и международное направление на 2 — нанял каждого лично, проведя 70+ собеседований.',
         'Отвечаю за релиз всех трёх фронтенд-команд: нарезаю эпик, команды готовят MR, я мержу после аппрувов — часто сам же и ревьюер. Год ревьюил код внешней команды подрядчиков, потом нанял сеньора, который это перенял.',
         'Внёс культуру unit-тестов в проект с нулевым покрытием и научил писать их 20+ разработчиков — сейчас основное приложение гоняет ~10 400 unit-тестов при 89% покрытия с гейтом в CI, а greenfield-проекты стоят на 100%.',

@@ -491,12 +491,12 @@
         <target>Собрал и выпустил мобильное приложение для iOS / Android на Ionic; проводил интервью по Angular / JS и обучал новичков.</target>
       </trans-unit>
       <trans-unit id="exp.current.proj1" datatype="html">
-        <source>A major streaming service — ~4M web users and ~100k Smart TV devices. Shipped SSR web features (age-gating and PIN compliance, profile, subscriptions, legal consent) and the whole gamification vertical — achievements, levels, leaderboards, fortune wheel — to web and Smart TV, inside an Nx monorepo of 5 apps and 81 libraries.</source>
-        <target>Крупный стриминговый сервис — ~4 млн пользователей на web и ~100 тыс. устройств Smart TV. Реализовал SSR-фичи на web (возрастные ограничения и PIN по требованиям РКН, профиль, подписки, юридические согласия) и вертикаль геймификации целиком — достижения, уровни, лидерборды, колесо фортуны — на web и Smart TV, внутри Nx-монорепо из 5 приложений и 81 библиотеки.</target>
+        <source>A high-traffic media product — ~4M web users and ~100k Smart TV devices. Shipped SSR web features (age-gating and PIN compliance, profile, subscriptions, legal consent) and the whole gamification vertical — achievements, levels, leaderboards, fortune wheel — to web and Smart TV, inside an Nx monorepo of 5 apps and 81 libraries.</source>
+        <target>Высоконагруженный медиа-продукт — ~4 млн пользователей на web и ~100 тыс. устройств Smart TV. Реализовал SSR-фичи на web (возрастные ограничения и PIN по регуляторным требованиям, профиль, подписки, юридические согласия) и вертикаль геймификации целиком — достижения, уровни, лидерборды, колесо фортуны — на web и Smart TV, внутри Nx-монорепо из 5 приложений и 81 библиотеки.</target>
       </trans-unit>
       <trans-unit id="exp.current.proj2" datatype="html">
-        <source>Enterprise 3D digital-twin and geospatial platform — sole architect of a multi-tenant Angular 22 app: 286 components, ~107k lines of TypeScript, real-time pixel streaming, deployed to 8+ environments from a single codebase.</source>
-        <target>Enterprise-платформа цифрового двойника и геовизуализации — единственный архитектор мульти-тенант приложения на Angular 22: 286 компонентов, ~107 тыс. строк TypeScript, real-time pixel streaming, деплой в 8+ окружений из одной кодовой базы.</target>
+        <source>A large enterprise application with real-time 3D — sole architect of a multi-tenant Angular 22 app: 286 components, ~107k lines of TypeScript, real-time pixel streaming, deployed to 8+ environments from a single codebase.</source>
+        <target>Крупное enterprise-приложение с real-time 3D — единственный архитектор мульти-тенант приложения на Angular 22: 286 компонентов, ~107 тыс. строк TypeScript, real-time pixel streaming, деплой в 8+ окружений из одной кодовой базы.</target>
       </trans-unit>
     </body>
   </file>
