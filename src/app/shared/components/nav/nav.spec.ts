@@ -3,7 +3,7 @@ import { LOCALE_ID } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MockIntersectionObserver } from '../../spec-utils/intersection-observer.mock';
-import { NAV_SECTION_IDS } from './nav.constant';
+import { NAV_SECTIONS, NAV_SECTION_IDS } from './nav.constant';
 import { Nav } from './nav';
 
 describe('Nav', () => {
@@ -80,8 +80,10 @@ describe('Nav', () => {
     sheet.close = vi.fn(() => sheet.dispatchEvent(new Event('close')));
 
     const rows = [...sheet.querySelectorAll('.sheet__link')];
-    expect(rows.map((row) => row.querySelector('.sheet__index')?.textContent)).toEqual(['01', '02', '03', '04']);
-    expect(rows[1].getAttribute('href')).toBe('#experience');
+    // Read off the constant rather than spelled out, so adding a section to the nav does not
+    // fail a test that is about the sheet rendering the list it is given.
+    expect(rows.map((row) => row.querySelector('.sheet__index')?.textContent)).toEqual(NAV_SECTIONS.map(({ no }) => no));
+    expect(rows[1].getAttribute('href')).toBe(`#${NAV_SECTION_IDS[1]}`);
 
     el.querySelector<HTMLButtonElement>('.nav__burger')?.click();
     fixture.detectChanges();
@@ -112,20 +114,20 @@ describe('Nav', () => {
     // Entering a section marks it active…
     observer().fire(true, sections[1]);
     fixture.detectChanges();
-    expect(fixture.componentInstance.active()).toBe('experience');
-    expect(isActive('experience')).toBe(true);
-    expect(isActive('about')).toBe(false);
+    expect(fixture.componentInstance.active()).toBe(NAV_SECTION_IDS[1]);
+    expect(isActive(NAV_SECTION_IDS[1])).toBe(true);
+    expect(isActive(NAV_SECTION_IDS[0])).toBe(false);
 
     // …a batch from a fast scroll resolves to the last one entering…
     observer().fireBatch([
       [sections[1], false],
       [sections[2], true],
     ]);
-    expect(fixture.componentInstance.active()).toBe('projects');
+    expect(fixture.componentInstance.active()).toBe(NAV_SECTION_IDS[2]);
 
     // …a different section leaving is ignored…
     observer().fire(false, sections[0]);
-    expect(fixture.componentInstance.active()).toBe('projects');
+    expect(fixture.componentInstance.active()).toBe(NAV_SECTION_IDS[2]);
 
     // …and the active one leaving clears the highlight.
     observer().fire(false, sections[2]);
