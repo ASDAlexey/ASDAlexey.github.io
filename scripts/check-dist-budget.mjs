@@ -22,9 +22,9 @@ const MB = 1024 * KB;
 // Re-measured on 8 Aug 2026, roughly 10% of headroom each. The comment after every limit is what
 // it actually weighed that day, so the next person can see how much room a change has eaten.
 //
-// Two limits moved that day: the experience copy grew into the figures behind it, and the résumé
-// gained the full core-skills table. That is content, not bloat, so the ceilings rose to keep
-// their usual headroom rather than the content being cut to fit a number.
+// The index.html ceiling rose with the experience copy, which grew into the figures behind it.
+// The résumé ceiling fell by half: the light print-first redesign dropped the gradients the dark
+// one needed, and a budget left at the old number would no longer catch anything.
 const BUDGETS = [
   { label: 'Deploy total', limit: 6.4 * MB, measure: () => dirSize(ROOT) }, // 5.73 MB
   { label: 'Locale bundle (en)', limit: 1.1 * MB, measure: () => dirSize(join(ROOT, 'en')) }, // 940 KB
@@ -35,7 +35,7 @@ const BUDGETS = [
   { label: 'og-image.png', limit: 56 * KB, measure: () => fileSize(join(ROOT, 'og-image.png')) }, // 41 KB
   // Only the two designed PDFs are deployed. The plain single-column pair for job boards is built
   // beside them into content/resume-ats/ and never reaches dist, so it is not measured here.
-  { label: 'Résumé PDFs', limit: 700 * KB, measure: () => resumeSize() }, // 629 KB
+  { label: 'Résumé PDFs', limit: 330 * KB, measure: () => resumeSize() }, // 293 KB
 ];
 
 function dirSize(dir) {
