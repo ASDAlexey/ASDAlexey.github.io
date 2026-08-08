@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Alexey Popov — Résumé</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #fff;
+        color: #000;
+        font:
+          9.5pt/1.32 Arial,
+          Helvetica,
+          sans-serif;
+      }
+      .page {
+        max-width: 190mm;
+        margin: 0 auto;
+        padding: 9mm 0;
+      }
+      h1 {
+        margin: 0;
+        font-size: 17pt;
+        line-height: 1.15;
+      }
+      .role {
+        margin: 1px 0 0;
+        font-weight: 700;
+        font-size: 10.5pt;
+      }
+      .loc,
+      .contact {
+        margin: 2px 0 0;
+        font-size: 8.5pt;
+      }
+      .contact a {
+        color: #000;
+        text-decoration: none;
+      }
+      h2 {
+        margin: 10px 0 4px;
+        padding-bottom: 1px;
+        border-bottom: 1px solid #000;
+        font-size: 9.5pt;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      p {
+        margin: 0 0 4px;
+      }
+      ul {
+        margin: 0 0 4px;
+        padding-left: 15px;
+      }
+      li {
+        margin: 0 0 2px;
+      }
+      .job {
+        margin: 0 0 7px;
+      }
+      h2,
+      .job-h {
+        break-after: avoid;
+      }
+      .job,
+      .proj,
+      li {
+        break-inside: avoid;
+      }
+      .job-h {
+        font-weight: 700;
+      }
+      .job-m {
+        font-size: 10pt;
+      }
+      .skill {
+        margin: 0 0 4px;
+      }
+      .skill b {
+        font-weight: 700;
+      }
+      .proj {
+        margin: 0 0 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <h1>Alexey Popov</h1>
+      <p class="role">Tech Lead · Senior Angular Developer</p>
+      <p class="loc">Таганрог, Россия · UTC+3 · только удалённо</p>
+      <p class="contact">
+        <a href="mailto:ASDAlexey@yandex.ru">ASDAlexey@yandex.ru</a> · <a href="https://t.me/ASDAlexey">@ASDAlexey</a> ·
+        <a href="https://max.ru/u/f9LHodD0cOIvsoWjpCYHxdF8aiJ7csO8bFyeafox3xVes4OWbQgToULJSRE">max.ru</a> ·
+        <a href="https://github.com/ASDAlexey">github.com/ASDAlexey</a> ·
+        <a href="https://www.linkedin.com/in/alexey-popov-7988a874/">in/alexey-popov</a> ·
+        <a href="https://asdalexey.github.io">asdalexey.github.io</a>
+      </p>
+
+      <h2>О себе</h2>
+      <p>
+        Tech Lead и Senior Frontend-разработчик с опытом 14+ лет, из них 11+ на Angular (v2 → v22). Проектирую крупные Angular-приложения
+        целиком и выпускаю их на всех платформах: web (SSR), Smart TV, mobile (Ionic) и desktop (Tauri/Rust). Реактивный стек: NgRx, RxJS,
+        Signals, zoneless, standalone, OnPush. Настраиваю GitLab CI/CD с нуля, выстраиваю testing-first культуру (89% на основном
+        приложении, 100% на greenfield, с гейтами в CI) и руковожу фронтенд-командами — code review, менторинг, найм. Развиваю AI-assisted
+        разработку через собственные скиллы, агенты и хуки Claude Code. Работаю только удалённо.
+      </p>
+
+      <h2>Ключевой опыт</h2>
+      <ul>
+        <li>
+          Angular на всех платформах — web (SSR), Smart TV (Tizen / webOS / VIDAA), mobile (Ionic, iOS / Android) и desktop (Tauri 2 +
+          Rust), на всех версиях от v2 до v22.
+        </li>
+        <li>
+          Архитектура в масштабе — единственный архитектор мульти-тенант приложения на Angular 22 (286 компонентов, ~107 тыс. строк, 8+
+          окружений); Nx-монорепозитории до 5 приложений и 81 библиотеки; API-слой по OpenAPI с генерацией Orval и валидацией zod.
+        </li>
+        <li>
+          Производительность — стриминговый сервис с ~4 млн пользователей web и ~100 тыс. устройств TV; мультивыбор в больших
+          виртуализированных списках ускорен примерно в 200 раз; OnPush и иммутабельность по всей кодовой базе.
+        </li>
+        <li>
+          Тестирование и поставка — проект доведён с 0% покрытия до ~10 400 unit-тестов при 89% с гейтом в CI; GitLab CI/CD построен с нуля
+          — шардинг тестов, affected-сборки и гейты качества.
+        </li>
+        <li>
+          Команды и релизы — фронтенд-команда выращена с одного инженера до девяти по трём направлениям за 70+ собеседований, релиз всех
+          трёх на мне.
+        </li>
+      </ul>
+
+      <h2>Ключевые навыки</h2>
+      <div class="skill">
+        <b>Языки:</b> TypeScript (strict mode), JavaScript (ES6+ / ES2023+), Node.js, HTML5, CSS3 / SCSS, Tailwind CSS
+      </div>
+      <div class="skill">
+        <b>Frontend:</b> Angular 2–22, zoneless change detection, Signals, httpResource, standalone-компоненты, OnPush, RxJS, NgRx / NgRx
+        Signals, Angular Material, Ionic, micro-frontends, Module Federation, PWA / offline-first, SSR / SSG, i18n / l10n, высоконагруженные
+        и контентно-насыщенные интерфейсы, real-time UI, дизайн-системы, Ag-Grid, virtual scroll, ControlValueAccessor, lazy loading и code
+        splitting, адаптивная mobile-first вёрстка, доступность (WCAG / ARIA), оптимизация производительности
+      </div>
+      <div class="skill">
+        <b>Архитектура:</b> Nx-монорепозитории, модульные границы, общие библиотеки, микросервисы на Node.js / Express, REST API, WebSocket,
+        API-first разработка по спецификациям OpenAPI, кодогенерация из OpenAPI (Orval) с рантайм-валидацией zod, ADR, feature-флаги, ООП,
+        структуры данных и алгоритмическая сложность, безопасность фронтенда (OWASP, CSP, авторизация по ролям), масштабируемость
+      </div>
+      <div class="skill">
+        <b>Тестирование:</b> TDD, Vitest, Jest, Karma / Jasmine, Playwright, unit-, интеграционные и e2e-тесты, авто-мокинг, покрытие
+        89–100%, гейты дублирования и циклических зависимостей
+      </div>
+      <div class="skill">
+        <b>DevOps:</b> GitLab (экспертный уровень): CI/CD с нуля, GitLab Runners, переиспользуемые шаблоны пайплайнов, affected-сборки,
+        шардинг тестов, семантическое версионирование, Docker multi-stage, Nginx, Kubernetes / Kustomize, GitHub Actions, приватный Package
+        Registry; знаком с Azure DevOps / Azure Pipelines и облачным деплоем (AWS, Azure)
+      </div>
+      <div class="skill">
+        <b>Платформы:</b> Web, Smart TV (Tizen / webOS / VIDAA), iOS / Android (Ionic, Capacitor / Cordova), Desktop (Tauri 2 — выпущенные
+        приложения, Rust в объёме проекта)
+      </div>
+      <div class="skill">
+        <b>Инструменты:</b> Git, Jira, Confluence, Figma, ESLint (кастомные плагины), Prettier, Webpack, Vite, Bun, PostgreSQL, SQLite,
+        Redis, Node.js / Express, REST, Claude Code
+      </div>
+      <div class="skill">
+        <b>Лидерство:</b> Тимлид, найм и онбординг, менторинг junior/middle-разработчиков, 70+ технических собеседований, code review с
+        конструктивной обратной связью, стандарты кодирования и best practices, техническая архитектура и system design, оценка и
+        декомпозиция задач, Agile / Scrum, кросс-функциональная работа с product owner, бэкендом и UX/UI, релиз каждый спринт, полностью
+        удалённая работа с распределёнными командами
+      </div>
+
+      <h2>Опыт работы</h2>
+      <div class="job">
+        <div class="job-h">Tech Lead / Senior Angular Developer — Удалённо</div>
+        <div class="job-m">2023 — н.в.</div>
+        <ul>
+          <li>
+            KION (МТС) — стриминговый сервис с ~4 млн пользователей на web и ~100 тыс. устройств Smart TV. Реализовал SSR-фичи на web
+            (возрастные ограничения и PIN по требованиям РКН, профиль, подписки, юридические согласия) и вертикаль геймификации целиком —
+            достижения, уровни, лидерборды, колесо фортуны — на web и Smart TV, внутри Nx-монорепо из 5 приложений и 81 библиотеки.
+          </li>
+          <li>
+            Enterprise-платформа цифрового двойника и геовизуализации — единственный архитектор мульти-тенант приложения на Angular 22: 286
+            компонентов, ~107 тыс. строк TypeScript, real-time pixel streaming, деплой в 8+ окружений из одной кодовой базы.
+          </li>
+          <li>
+            Пришёл в команду из одного фронтендера и вырастил её по трём направлениям — своя группа 4–5 человек, вертикаль отчётов на 5 и
+            международное направление на 2 — нанял каждого лично, проведя 70+ собеседований.
+          </li>
+          <li>
+            Отвечаю за релиз всех трёх фронтенд-команд: нарезаю эпик, команды готовят MR, я мержу после аппрувов — часто сам же и ревьюер.
+            Год ревьюил код внешней команды подрядчиков, потом нанял сеньора, который это перенял.
+          </li>
+          <li>
+            Внёс культуру unit-тестов в проект с нулевым покрытием и научил писать их 20+ разработчиков — сейчас основное приложение гоняет
+            ~10 400 unit-тестов при 89% покрытия с гейтом в CI, а greenfield-проекты стоят на 100%.
+          </li>
+          <li>
+            Отвечаю за здоровье прода — Sentry, метрики производительности и регресс по всему проекту. Багов, доходящих до прода, стало 2–3
+            за спринт вместо унаследованных 10–12.
+          </li>
+          <li>
+            Построил GitLab CI/CD с нуля на Kubernetes-раннерах — переиспользуемые шаблоны на несколько проектов, nx affected, шардинг на
+            три части, прогоняющий 10 400 тестов за ~3 минуты, и гейты покрытия, дублирования, циклических зависимостей и аппрувов, плюс
+            кастомный ESLint-плагин под конвенции.
+          </li>
+          <li>
+            Опубликовал Nx-монорепо из 13 общих Angular-библиотек — токены дизайн-системы из Figma, темизация, SVG-иконки, уведомления,
+            feature-флаги, dev-auth, сгенерированный Orval-клиент и тест-хелперы — с авто-версионированием в приватный GitLab-registry; их
+            используют 3 приложения.
+          </li>
+        </ul>
+      </div>
+      <div class="job">
+        <div class="job-h">Tech Lead / Senior Frontend — The 5th Kind · США, удалённо</div>
+        <div class="job-m">2019 — 2023</div>
+        <ul>
+          <li>Платформа управления медиа-активами для Marvel, Disney, Warner Bros., Epic Games и Universal (через Sohonet).</li>
+          <li>
+            Возглавил миграцию на слоистую NgRx-архитектуру примерно за год, поэтапно, без остановки поставки — сначала новые фичи, потом
+            авторизация и ключевые сервисы пользователей, прав и ролей, затем всё остальное.
+          </li>
+          <li>
+            Ускорил мультивыбор в больших виртуализированных списках в ~200 раз (180–200 мс → 0,4–0,5 мс) за счёт OnPush + immutability.
+          </li>
+          <li>
+            Написал кастомные стратегии virtual-scroll для элементов с динамической высотой и сложные формы через ControlValueAccessor.
+          </li>
+          <li>
+            Провёл 20+ технических собеседований, нанимал и обучал новичков, участвовал в построении процесса code review в команде из 4–5
+            человек, доходившей до 8.
+          </li>
+        </ul>
+      </div>
+      <div class="job">
+        <div class="job-h">Senior Angular Developer — Arcadia Inc. · Таганрог</div>
+        <div class="job-m">2018 — 2019</div>
+        <ul>
+          <li>Спроектировал UI-архитектуру продукта и план рефакторинга; выпустил 10+ крупных фич.</li>
+          <li>Внедрил CSS-переменные и стратегию OnPush + immutability по всему проекту.</li>
+          <li>Собрал мобильное iOS/Android-приложение на Ionic; провёл 20+ собеседований по Angular/JS и обучал новичков.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <div class="job-h">Senior Full-Stack разработчик — Umbrella IT · Таганрог</div>
+        <div class="job-m">2015 — 2018</div>
+        <ul>
+          <li>Full-stack (Angular + Node.js) для международных клиентов из США/ЕС — Top Rated, 100% Job Success на Upwork.</li>
+          <li>Выпустил SPA и бэкенды на Node.js (rademacher.de, pooltrackr.com).</li>
+        </ul>
+      </div>
+      <div class="job">
+        <div class="job-h">Frontend Web разработчик — TutMee Agency · Таганрог</div>
+        <div class="job-m">2012 — 2015</div>
+        <ul>
+          <li>Сделал 50+ лендингов и интернет-магазинов с активным SVG/анимацией; фокус на адаптив и производительность.</li>
+        </ul>
+      </div>
+
+      <h2>Достижения</h2>
+      <ul>
+        <li>Ускорил мультивыбор в больших виртуализированных списках в ~200 раз — со 180–200 мс до 0,4–0,5 мс на элемент.</li>
+        <li>Перевёл проект с сервисной архитектуры на слоистую NgRx с чистым разделением бизнес-логики.</li>
+        <li>Довёл проект с 0% до ~10 400 unit-тестов при 89% покрытия, а общие библиотеки — до 100%, всё с гейтами в CI.</li>
+        <li>Провёл 70+ технических собеседований; нанял и веду команду из 9 штатных инженеров и ~6 на субподряде.</li>
+        <li>Опубликовал vitest-auto-spy в npm — типизированный auto-mock для Vitest.</li>
+      </ul>
+
+      <h2>Личные проекты / Open Source</h2>
+      <div class="proj">
+        <b>Litely</b> — Tauri · Angular 22 · Rust<br />Кроссплатформенное desktop-приложение для пакетного сжатия изображений / видео / PDF
+        (WebP, AVIF, JPEG, PNG, SVG). Расширение для браузера вставляет сжатые файлы прямо в Jira / GitLab по Cmd+V. Watch-папки, трей,
+        сравнение до/после. → asdalexey.github.io/litely
+      </div>
+      <div class="proj">
+        <b>vitest-auto-spy</b> — TypeScript · Open Source · npm<br />Типизированный auto-mock для Vitest — идейный наследник
+        jest-auto-spies. Один API, три рантайма (Vitest, Bun, Node.js) за сменным MockAdapter. Типизированные спаи из класса или из одного
+        типа, управление Observable / промисами / сигналами, DI-хелперы для Angular и NestJS. Без зависимостей, 100% покрытие. →
+        github.com/ASDAlexey/vitest-auto-spy
+      </div>
+      <div class="proj">
+        <b>Bonds Tracker</b> — Angular 22 · Tauri 2 · Rust · SQLite<br />Личный трекер портфеля облигаций по нескольким счетам Т-Банк
+        Инвестиций — умный оптимизатор портфеля, аудит с предложениями замен, скринер с баллами, купонный календарь и дашборд целей.
+        Аналитика в реальном времени по API Tinkoff / MOEX ISS / ЦБ РФ, риск дефолта по KMV-Merton, Plotly, Telegram-бот, движки на Rust.
+      </div>
+      <div class="proj">
+        <b>SundayRun</b> — Angular 22 · offline-first PWA · Bun · Vitest<br />Работает в реальных забегах: на нём проходят еженедельные
+        парковые пробеги клуба в Таганроге — 300+ бегунов в год. Забег целиком идёт внутри приложения: встроенный секундомер засекает финиши
+        прямо в парке, offline-first PWA продолжает работать без связи и синхронизируется по возвращении, а результаты сами публикуются на
+        сайт одним атомарным коммитом — вместе с PDF-протоколом официального образца, сгенерированным в браузере. Zoneless Angular, 100%
+        покрытие тестами. → asdalexey.github.io/sundayrun
+      </div>
+      <div class="proj">
+        <b>Sportdiary</b> — Ionic · Angular · Node.js · iOS / Android<br />Full-stack трекер бега для iOS и Android, сделан в одиночку от и
+        до — GPS-трекинг с картой маршрута, автоопределение кругов, статистика по тренировке, анализ объёмов с личными рекордами и
+        социальная лента. Бэкенд на Node.js на собственном VPS; больше года в продакшене.
+      </div>
+      <div class="proj">
+        <b>Claude Code config &amp; skills</b> — AI · Automation<br />Собственные скиллы, агенты и хуки Claude Code, кодирующие конвенции
+        проекта, генерацию кода и оптимизацию токенов — включая AI code-review для крупных Angular MR. Это второе мнение, а не авторитет:
+        инструмент выдаёт находки, я читаю дифф и проверяю их до мерджа.
+      </div>
+
+      <h2>Образование</h2>
+      <div>Таганрогский гос. педагогический институт им. А.П. Чехова — Физика и математика, 2004 — 2009 · средний балл 4,97 / 5</div>
+
+      <h2>Языки</h2>
+      <div>Русский — Родной</div>
+      <div>Английский — Рабочий (B1) · 8+ лет с US / EU командами</div>
+    </div>
+  </body>
+</html>

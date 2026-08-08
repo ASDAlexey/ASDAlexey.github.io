@@ -23,8 +23,8 @@ const SHARED = {
 const EN = {
   lang: 'en',
   dir: 'Alexey-Popov-Resume.pdf',
-  role: 'Tech Lead / Senior Frontend (Angular) Engineer',
-  location: 'Taganrog, Russia · UTC+3 · Remote-first',
+  role: 'Tech Lead · Senior Angular Developer',
+  location: 'Taganrog, Russia · UTC+3 · Remote only',
   labels: {
     contact: 'Contact',
     summary: 'Summary',
@@ -34,51 +34,78 @@ const EN = {
     education: 'Education',
     languages: 'Languages',
     highlights: 'Key Highlights',
+    keyExperience: 'Key Experience',
   },
   summary:
-    'Tech Lead and Senior Frontend Engineer with 14+ years building production web apps — 11+ of them on Angular (v2 → v22). I architect large-scale Angular applications end-to-end and ship them across every platform: web (SSR), Smart TV, mobile (Ionic) and desktop (Tauri/Rust). Reactive-first with NgRx, RxJS, Signals and a zoneless, standalone, OnPush architecture. I build GitLab CI/CD from scratch, drive a testing-first culture (up to 100% coverage, enforced by CI gates) and lead frontend teams — code review, mentoring and hiring. Currently driving AI-assisted development with custom Claude Code skills, agents and hooks.',
+    'Tech Lead and Senior Frontend Engineer with 14+ years building production web apps — 11+ of them on Angular (v2 → v22). I architect large-scale Angular applications end-to-end and ship them across every platform: web (SSR), Smart TV, mobile (Ionic) and desktop (Tauri/Rust). Reactive-first with NgRx, RxJS, Signals and a zoneless, standalone, OnPush architecture. I build GitLab CI/CD from scratch, drive a testing-first culture (89% on the main app, 100% on greenfield, enforced by CI gates) and lead frontend teams — code review, mentoring and hiring. Currently driving AI-assisted development with custom Claude Code skills, agents and hooks. Remote only.',
   highlights: [
     'Sped up multi-select on large virtualized lists ~200× — from 180–200 ms down to 0.4–0.5 ms per item.',
     'Led migration from service-based to a layered NgRx architecture with clean business-logic separation.',
-    'Raised unit-test coverage to 100% on shared libraries, gated in CI alongside duplication and circular-dependency checks.',
-    'Ran 70+ technical interviews; hired, onboarded and mentored frontend engineers.',
+    'Took a project from 0% to ~10,400 unit tests at 89% coverage, and to 100% on the shared libraries — all gated in CI.',
+    'Ran 70+ technical interviews; hired and led a team of 9 in-house engineers plus ~6 subcontractors.',
     'Published vitest-auto-spy on npm — typed auto-mocking for Vitest.',
   ],
+  // Same eight groups the site's Skills section shows, in the same order — the résumé keeps the
+  // exhaustive list, the site keeps the scannable subset. Change one, change the other.
   skills: [
+    { group: 'Languages', items: 'TypeScript (strict mode), JavaScript (ES6+ / ES2023+), Node.js, HTML5, CSS3 / SCSS, Tailwind CSS' },
     {
-      group: 'Angular',
-      items: 'Angular 2–22, Standalone, Signals, Zoneless, OnPush, NgRx, RxJS, ControlValueAccessor, Angular Material, Ag-Grid',
+      group: 'Frontend',
+      items:
+        'Angular 2–22, zoneless change detection, Signals, httpResource, standalone components, OnPush, RxJS, NgRx / NgRx Signals, Angular Material, Ionic, micro-frontends, Module Federation, PWA / offline-first, SSR / SSG, i18n / l10n, high-load and content-heavy UIs, real-time interfaces, design systems, Ag-Grid, virtual scrolling, ControlValueAccessor, lazy loading and code splitting, responsive mobile-first design, accessibility (WCAG / ARIA), performance optimization',
     },
-    { group: 'Language', items: 'TypeScript, JavaScript (ES2015+), HTML5, SCSS / CSS, BEM, Responsive Design, Web Components' },
     {
       group: 'Architecture',
-      items: 'Nx Monorepo, Micro-frontends, Design Systems, Clean Architecture, i18n / Localization, SSR (@angular/ssr)',
+      items:
+        'Nx monorepos, module boundaries, shared libraries, Node.js / Express microservices, REST APIs, WebSocket, API-first development against OpenAPI specifications, OpenAPI code generation (Orval) with zod runtime validation, ADRs, feature flags, OOP, data structures and algorithmic complexity, frontend security (OWASP, CSP, role-based access), scalability',
     },
-    { group: 'Platforms', items: 'Web (SSR), Smart TV (Tizen / webOS), Mobile (Ionic, iOS/Android), Desktop (Tauri + Rust)' },
-    { group: 'CI/CD & Infra', items: 'GitLab CI/CD, Docker (multi-stage), Nginx, Kubernetes / Kustomize, Feature Flags' },
-    { group: 'Testing', items: 'Jest, Vitest, TestBed, vitest-auto-spy, 100% coverage gates, TDD' },
     {
-      group: 'Backend & Tools',
-      items: 'Node.js, Express, REST, WebSocket, PostgreSQL, SQLite, Redis, Rust, Figma, ESLint / Prettier / Stylelint',
+      group: 'Testing',
+      items:
+        'TDD, Vitest, Jest, Karma / Jasmine, Playwright, unit, integration and e2e tests, auto-mocking, 89–100% coverage, duplication and circular-dependency gates',
+    },
+    {
+      group: 'DevOps',
+      items:
+        'GitLab (expert level): CI/CD from scratch, GitLab Runners, reusable pipeline templates, affected-only builds, parallel test sharding, semantic versioning, Docker multi-stage, Nginx, Kubernetes / Kustomize, GitHub Actions, private package registry; familiar with Azure DevOps / Azure Pipelines and cloud deployment (AWS, Azure)',
+    },
+    {
+      group: 'Platforms',
+      items:
+        'Web, Smart TV (Tizen / webOS / VIDAA), iOS / Android (Ionic, Capacitor / Cordova), Desktop (Tauri 2 — shipped apps, Rust at project scope)',
+    },
+    {
+      group: 'Tools',
+      items:
+        'Git, Jira, Confluence, Figma, ESLint (custom plugins), Prettier, Webpack, Vite, Bun, PostgreSQL, SQLite, Redis, Node.js / Express, REST, Claude Code',
     },
     {
       group: 'Leadership',
-      items: 'Tech Lead, Frontend Architecture, Code Review, Mentoring, Hiring, Performance Optimization, AI-assisted Dev',
+      items:
+        'Team lead, hiring and onboarding, mentoring junior and mid-level developers, 70+ technical interviews, code review with constructive feedback, coding standards and best practices, technical architecture and system design, estimation and work decomposition, Agile / Scrum, cross-functional work with product owners, backend and UX/UI, release every sprint, fully remote distributed teams',
     },
+  ],
+  keyExperience: [
+    'Angular on every platform — web (SSR), Smart TV (Tizen / webOS / VIDAA), mobile (Ionic, iOS / Android) and desktop (Tauri 2 + Rust), on every version from v2 to v22.',
+    'Architecture at scale — sole architect of a multi-tenant Angular 22 app (286 components, ~107k lines, 8+ environments); Nx monorepos up to 5 apps and 81 libraries; an OpenAPI-first API layer generated with Orval and validated by zod.',
+    'Performance — a streaming service at ~4M web users and ~100k TV devices; multi-select on large virtualized lists made ~200× faster; OnPush and immutability applied across whole codebases.',
+    'Testing and delivery — a project taken from 0% coverage to ~10,400 unit tests at 89%, gated in CI; GitLab CI/CD built from scratch with test sharding, affected-only builds and quality gates.',
+    'Teams and releases — a frontend team grown from one engineer to nine across three directions over 70+ interviews, and the release owned for all of them.',
   ],
   experience: [
     {
-      role: 'Senior Angular Developer',
+      role: 'Tech Lead / Senior Angular Developer',
       company: 'Remote',
       period: '2023 — Present',
       points: [
-        'Led a team of 5+ developers — decomposed complex work, estimated timelines, set goals and shipped a release at the end of every sprint.',
-        'Owned the frontend architecture — modular Nx boundaries, NgRx Signals state and reusable patterns that keep large apps maintainable as they scale.',
-        'Set architectural standards and eliminated anti-patterns (god components, leaky effects, cross-layer coupling) via custom lint rules, ADRs and code review.',
-        'Mentored engineers and ran code reviews with constructive feedback, raising code quality and accelerating the team’s growth.',
-        'Cut critical production bugs by 25% through test automation (Vitest / Jest) and CI/CD pipelines.',
-        'Built a design system and a shared library (tests, utilities, components) reused across projects — improving consistency and cutting delivery time by 15%.',
-        'Planned product architecture with backend and design, ran stand-ups, and set up unified CI/CD templates that sped up my team and the adjacent teams I hired and led.',
+        'KION (MTS) — a streaming platform with ~4M web users and ~100k Smart TV devices. Shipped SSR web features (age-gating and PIN compliance, profile, subscriptions, legal consent) and the whole gamification vertical — achievements, levels, leaderboards, fortune wheel — to web and Smart TV, inside an Nx monorepo of 5 apps and 81 libraries.',
+        'Enterprise 3D digital-twin and geospatial platform — sole architect of a multi-tenant Angular 22 app: 286 components, ~107k lines of TypeScript, real-time pixel streaming, deployed to 8+ environments from a single codebase.',
+        'Inherited a frontend team of one and built it out across three directions — my own group of 4–5, a reporting vertical of 5 and an international one of 2 — hiring every engineer myself over 70+ interviews.',
+        'Own the release for all three frontend teams: I cut the epic, the teams raise the MRs, I merge once the approvals land — often as one of the reviewers. Reviewed an external contractor team’s code for a year, then hired the senior who took it over.',
+        'Introduced unit testing to a project sitting at 0% coverage and taught 20+ developers to write it — the main app now runs ~10,400 unit tests at 89% coverage gated in CI, and the greenfield projects sit at 100%.',
+        'Own production health — Sentry, performance metrics and the regression runs for the whole project. Defects reaching production fell from the 10–12 per sprint I inherited to 2–3.',
+        'Built the GitLab CI/CD from scratch on Kubernetes runners — reusable templates shared across projects, nx affected, three-way sharding that clears 10,400 tests in ~3 minutes, and coverage, duplication, circular-dependency and custom approval gates, with a custom ESLint plugin enforcing the conventions.',
+        'Published an Nx monorepo of 13 shared Angular libraries — design-system tokens from Figma, theming, SVG icons, notifications, feature flags, dev-auth, a generated Orval API client and test helpers — auto-versioned into a private GitLab registry and consumed by 3 apps.',
       ],
     },
     {
@@ -87,10 +114,10 @@ const EN = {
       period: '2019 — 2023',
       points: [
         'Built a distributed digital-asset-management platform used by Marvel, Disney, Warner Bros., Epic Games and Universal (via Sohonet).',
-        'Led the migration to a layered NgRx architecture with clean business-logic separation across effects.',
+        'Led the migration to a layered NgRx architecture over about a year, staged to keep the product shipping — new features first, then auth and the core user / permissions / roles services, then the rest.',
         'Sped up multi-select on large virtualized lists ~200× (180–200 ms → 0.4–0.5 ms) via an OnPush + immutability overhaul.',
         'Wrote custom virtual-scroll strategies for dynamic-height items and complex forms via ControlValueAccessor.',
-        'Ran 20+ technical interviews and helped build the team’s code-review process.',
+        'Ran 20+ technical interviews, hired and mentored newcomers, and set up the code-review process for a team that ran 4–5 strong and peaked at 8.',
       ],
     },
     {
@@ -137,8 +164,8 @@ const EN = {
     },
     {
       name: 'SundayRun',
-      meta: 'Angular 22 · Bun · Vitest · GitHub Pages',
-      desc: 'Web app for a community park-run club (Taganrog). Organizers upload stopwatch results, the app computes rankings and generates the official PDF protocol in the browser, then publishes each result set to the repo archive in one atomic commit. Zoneless Angular, 100% test coverage. → asdalexey.github.io/sundayrun',
+      meta: 'Angular 22 · offline-first PWA · Bun · Vitest',
+      desc: 'In real-world use: it runs the weekly park races for a community club in Taganrog — 300+ runners a year. The whole race happens inside the app: a built-in stopwatch times finishers on-site, the offline-first PWA keeps working with no connectivity and syncs on the way back, and results publish themselves to the site in one atomic commit — official-format PDF protocol included, generated in the browser. Zoneless Angular, 100% test coverage. → asdalexey.github.io/sundayrun',
     },
     {
       name: 'Sportdiary',
@@ -148,21 +175,21 @@ const EN = {
     {
       name: 'Claude Code config & skills',
       meta: 'AI · Automation',
-      desc: 'Custom Claude Code skills, agents and hooks that encode project conventions, code generation and token-optimization — including an AI code-review workflow built for large Angular MRs.',
+      desc: 'Custom Claude Code skills, agents and hooks that encode project conventions, code generation and token-optimization — including an AI code-review workflow built for large Angular MRs. Treated as a second opinion, not an authority: it reports findings, I read the diff and verify them before anything merges.',
     },
   ],
   education: [{ title: 'Taganrog State Pedagogical Institute (A.P. Chekhov)', meta: 'Physics & Mathematics, 2004 — 2009 · GPA 4.97 / 5' }],
   languages: [
     { name: 'Russian', level: 'Native' },
-    { name: 'English', level: 'Professional (B2)' },
+    { name: 'English', level: 'Working proficiency (B1) · 8+ years with US / EU teams' },
   ],
 };
 
 const RU = {
   lang: 'ru',
   dir: 'Alexey-Popov-Resume-ru.pdf',
-  role: 'Tech Lead / Senior Frontend (Angular) разработчик',
-  location: 'Таганрог, Россия · UTC+3 · Удалённо',
+  role: 'Tech Lead · Senior Angular Developer',
+  location: 'Таганрог, Россия · UTC+3 · только удалённо',
   labels: {
     contact: 'Контакты',
     summary: 'О себе',
@@ -172,51 +199,76 @@ const RU = {
     education: 'Образование',
     languages: 'Языки',
     highlights: 'Достижения',
+    keyExperience: 'Ключевой опыт',
   },
   summary:
-    'Tech Lead и Senior Frontend-разработчик с опытом 14+ лет, из них 11+ на Angular (v2 → v22). Проектирую крупные Angular-приложения целиком и выпускаю их на всех платформах: web (SSR), Smart TV, mobile (Ionic) и desktop (Tauri/Rust). Реактивный стек: NgRx, RxJS, Signals, zoneless, standalone, OnPush. Настраиваю GitLab CI/CD с нуля, выстраиваю testing-first культуру (покрытие до 100%, с гейтами в CI) и руковожу фронтенд-командами — code review, менторинг, найм. Развиваю AI-assisted разработку через собственные скиллы, агенты и хуки Claude Code.',
+    'Tech Lead и Senior Frontend-разработчик с опытом 14+ лет, из них 11+ на Angular (v2 → v22). Проектирую крупные Angular-приложения целиком и выпускаю их на всех платформах: web (SSR), Smart TV, mobile (Ionic) и desktop (Tauri/Rust). Реактивный стек: NgRx, RxJS, Signals, zoneless, standalone, OnPush. Настраиваю GitLab CI/CD с нуля, выстраиваю testing-first культуру (89% на основном приложении, 100% на greenfield, с гейтами в CI) и руковожу фронтенд-командами — code review, менторинг, найм. Развиваю AI-assisted разработку через собственные скиллы, агенты и хуки Claude Code. Работаю только удалённо.',
   highlights: [
     'Ускорил мультивыбор в больших виртуализированных списках в ~200 раз — со 180–200 мс до 0,4–0,5 мс на элемент.',
     'Перевёл проект с сервисной архитектуры на слоистую NgRx с чистым разделением бизнес-логики.',
-    'Поднял покрытие unit-тестами общих библиотек до 100% — с гейтами в CI наряду с проверками дублирования и циклических зависимостей.',
-    'Провёл 70+ технических собеседований; нанимал, адаптировал и менторил инженеров.',
+    'Довёл проект с 0% до ~10 400 unit-тестов при 89% покрытия, а общие библиотеки — до 100%, всё с гейтами в CI.',
+    'Провёл 70+ технических собеседований; нанял и веду команду из 9 штатных инженеров и ~6 на субподряде.',
     'Опубликовал vitest-auto-spy в npm — типизированный auto-mock для Vitest.',
   ],
   skills: [
+    { group: 'Языки', items: 'TypeScript (strict mode), JavaScript (ES6+ / ES2023+), Node.js, HTML5, CSS3 / SCSS, Tailwind CSS' },
     {
-      group: 'Angular',
-      items: 'Angular 2–22, Standalone, Signals, Zoneless, OnPush, NgRx, RxJS, ControlValueAccessor, Angular Material, Ag-Grid',
+      group: 'Frontend',
+      items:
+        'Angular 2–22, zoneless change detection, Signals, httpResource, standalone-компоненты, OnPush, RxJS, NgRx / NgRx Signals, Angular Material, Ionic, micro-frontends, Module Federation, PWA / offline-first, SSR / SSG, i18n / l10n, высоконагруженные и контентно-насыщенные интерфейсы, real-time UI, дизайн-системы, Ag-Grid, virtual scroll, ControlValueAccessor, lazy loading и code splitting, адаптивная mobile-first вёрстка, доступность (WCAG / ARIA), оптимизация производительности',
     },
-    { group: 'Язык', items: 'TypeScript, JavaScript (ES2015+), HTML5, SCSS / CSS, BEM, Responsive Design, Web Components' },
     {
       group: 'Архитектура',
-      items: 'Nx Monorepo, микрофронтенды, Design Systems, Clean Architecture, i18n / локализация, SSR (@angular/ssr)',
+      items:
+        'Nx-монорепозитории, модульные границы, общие библиотеки, микросервисы на Node.js / Express, REST API, WebSocket, API-first разработка по спецификациям OpenAPI, кодогенерация из OpenAPI (Orval) с рантайм-валидацией zod, ADR, feature-флаги, ООП, структуры данных и алгоритмическая сложность, безопасность фронтенда (OWASP, CSP, авторизация по ролям), масштабируемость',
     },
-    { group: 'Платформы', items: 'Web (SSR), Smart TV (Tizen / webOS), Mobile (Ionic, iOS/Android), Desktop (Tauri + Rust)' },
-    { group: 'CI/CD & Infra', items: 'GitLab CI/CD, Docker (multi-stage), Nginx, Kubernetes / Kustomize, Feature Flags' },
-    { group: 'Тестирование', items: 'Jest, Vitest, TestBed, vitest-auto-spy, coverage-гейты 100%, TDD' },
     {
-      group: 'Backend & Tools',
-      items: 'Node.js, Express, REST, WebSocket, PostgreSQL, SQLite, Redis, Rust, Figma, ESLint / Prettier / Stylelint',
+      group: 'Тестирование',
+      items:
+        'TDD, Vitest, Jest, Karma / Jasmine, Playwright, unit-, интеграционные и e2e-тесты, авто-мокинг, покрытие 89–100%, гейты дублирования и циклических зависимостей',
+    },
+    {
+      group: 'DevOps',
+      items:
+        'GitLab (экспертный уровень): CI/CD с нуля, GitLab Runners, переиспользуемые шаблоны пайплайнов, affected-сборки, шардинг тестов, семантическое версионирование, Docker multi-stage, Nginx, Kubernetes / Kustomize, GitHub Actions, приватный Package Registry; знаком с Azure DevOps / Azure Pipelines и облачным деплоем (AWS, Azure)',
+    },
+    {
+      group: 'Платформы',
+      items:
+        'Web, Smart TV (Tizen / webOS / VIDAA), iOS / Android (Ionic, Capacitor / Cordova), Desktop (Tauri 2 — выпущенные приложения, Rust в объёме проекта)',
+    },
+    {
+      group: 'Инструменты',
+      items:
+        'Git, Jira, Confluence, Figma, ESLint (кастомные плагины), Prettier, Webpack, Vite, Bun, PostgreSQL, SQLite, Redis, Node.js / Express, REST, Claude Code',
     },
     {
       group: 'Лидерство',
-      items: 'Tech Lead, архитектура фронтенда, code review, менторинг, найм, оптимизация производительности, AI-assisted Dev',
+      items:
+        'Тимлид, найм и онбординг, менторинг junior/middle-разработчиков, 70+ технических собеседований, code review с конструктивной обратной связью, стандарты кодирования и best practices, техническая архитектура и system design, оценка и декомпозиция задач, Agile / Scrum, кросс-функциональная работа с product owner, бэкендом и UX/UI, релиз каждый спринт, полностью удалённая работа с распределёнными командами',
     },
+  ],
+  keyExperience: [
+    'Angular на всех платформах — web (SSR), Smart TV (Tizen / webOS / VIDAA), mobile (Ionic, iOS / Android) и desktop (Tauri 2 + Rust), на всех версиях от v2 до v22.',
+    'Архитектура в масштабе — единственный архитектор мульти-тенант приложения на Angular 22 (286 компонентов, ~107 тыс. строк, 8+ окружений); Nx-монорепозитории до 5 приложений и 81 библиотеки; API-слой по OpenAPI с генерацией Orval и валидацией zod.',
+    'Производительность — стриминговый сервис с ~4 млн пользователей web и ~100 тыс. устройств TV; мультивыбор в больших виртуализированных списках ускорен примерно в 200 раз; OnPush и иммутабельность по всей кодовой базе.',
+    'Тестирование и поставка — проект доведён с 0% покрытия до ~10 400 unit-тестов при 89% с гейтом в CI; GitLab CI/CD построен с нуля — шардинг тестов, affected-сборки и гейты качества.',
+    'Команды и релизы — фронтенд-команда выращена с одного инженера до девяти по трём направлениям за 70+ собеседований, релиз всех трёх на мне.',
   ],
   experience: [
     {
-      role: 'Senior Angular Developer',
+      role: 'Tech Lead / Senior Angular Developer',
       company: 'Удалённо',
       period: '2023 — н.в.',
       points: [
-        'Руководил командой из 5+ разработчиков — декомпозировал сложные задачи, оценивал сроки, ставил цели и делал релиз в конце каждого спринта.',
-        'Отвечал за фронтенд-архитектуру — модульные границы в Nx, состояние на NgRx Signals и переиспользуемые паттерны, сохраняющие крупные приложения поддерживаемыми при росте.',
-        'Задавал архитектурные стандарты и устранял антипаттерны (god-компоненты, неизолированные эффекты, связность между слоями) через кастомные lint-правила, ADR и code review.',
-        'Менторил разработчиков и проводил code review с конструктивной обратной связью, повышая качество кода и ускоряя рост команды.',
-        'Снизил количество критических багов в проде на 25% за счёт автоматизации тестов (Vitest / Jest) и CI/CD.',
-        'Разработал дизайн-систему и общую библиотеку (тесты, утилиты, компоненты), переиспользуемую между проектами — повысил consistency и сократил время разработки на 15%.',
-        'Проектировал архитектуру продукта с бэкендом и дизайном, ввёл stand-up-встречи и настроил единые CI/CD-шаблоны, ускорившие мою и смежные команды, которые я нанимал и вёл.',
+        'KION (МТС) — стриминговый сервис с ~4 млн пользователей на web и ~100 тыс. устройств Smart TV. Реализовал SSR-фичи на web (возрастные ограничения и PIN по требованиям РКН, профиль, подписки, юридические согласия) и вертикаль геймификации целиком — достижения, уровни, лидерборды, колесо фортуны — на web и Smart TV, внутри Nx-монорепо из 5 приложений и 81 библиотеки.',
+        'Enterprise-платформа цифрового двойника и геовизуализации — единственный архитектор мульти-тенант приложения на Angular 22: 286 компонентов, ~107 тыс. строк TypeScript, real-time pixel streaming, деплой в 8+ окружений из одной кодовой базы.',
+        'Пришёл в команду из одного фронтендера и вырастил её по трём направлениям — своя группа 4–5 человек, вертикаль отчётов на 5 и международное направление на 2 — нанял каждого лично, проведя 70+ собеседований.',
+        'Отвечаю за релиз всех трёх фронтенд-команд: нарезаю эпик, команды готовят MR, я мержу после аппрувов — часто сам же и ревьюер. Год ревьюил код внешней команды подрядчиков, потом нанял сеньора, который это перенял.',
+        'Внёс культуру unit-тестов в проект с нулевым покрытием и научил писать их 20+ разработчиков — сейчас основное приложение гоняет ~10 400 unit-тестов при 89% покрытия с гейтом в CI, а greenfield-проекты стоят на 100%.',
+        'Отвечаю за здоровье прода — Sentry, метрики производительности и регресс по всему проекту. Багов, доходящих до прода, стало 2–3 за спринт вместо унаследованных 10–12.',
+        'Построил GitLab CI/CD с нуля на Kubernetes-раннерах — переиспользуемые шаблоны на несколько проектов, nx affected, шардинг на три части, прогоняющий 10 400 тестов за ~3 минуты, и гейты покрытия, дублирования, циклических зависимостей и аппрувов, плюс кастомный ESLint-плагин под конвенции.',
+        'Опубликовал Nx-монорепо из 13 общих Angular-библиотек — токены дизайн-системы из Figma, темизация, SVG-иконки, уведомления, feature-флаги, dev-auth, сгенерированный Orval-клиент и тест-хелперы — с авто-версионированием в приватный GitLab-registry; их используют 3 приложения.',
       ],
     },
     {
@@ -225,10 +277,10 @@ const RU = {
       period: '2019 — 2023',
       points: [
         'Платформа управления медиа-активами для Marvel, Disney, Warner Bros., Epic Games и Universal (через Sohonet).',
-        'Возглавил миграцию на слоистую NgRx-архитектуру с чистым разделением бизнес-логики в effects.',
+        'Возглавил миграцию на слоистую NgRx-архитектуру примерно за год, поэтапно, без остановки поставки — сначала новые фичи, потом авторизация и ключевые сервисы пользователей, прав и ролей, затем всё остальное.',
         'Ускорил мультивыбор в больших виртуализированных списках в ~200 раз (180–200 мс → 0,4–0,5 мс) за счёт OnPush + immutability.',
         'Написал кастомные стратегии virtual-scroll для элементов с динамической высотой и сложные формы через ControlValueAccessor.',
-        'Провёл 20+ технических собеседований и помог выстроить процесс code review.',
+        'Провёл 20+ технических собеседований, нанимал и обучал новичков, участвовал в построении процесса code review в команде из 4–5 человек, доходившей до 8.',
       ],
     },
     {
@@ -275,8 +327,8 @@ const RU = {
     },
     {
       name: 'SundayRun',
-      meta: 'Angular 22 · Bun · Vitest · GitHub Pages',
-      desc: 'Веб-приложение для клуба любительских забегов (Таганрог). Организаторы загружают результаты с секундомера, приложение считает рейтинги и генерирует официальный PDF-протокол прямо в браузере, публикуя каждый забег в архив репозитория одним атомарным коммитом. Zoneless Angular, 100% покрытие тестами. → asdalexey.github.io/sundayrun',
+      meta: 'Angular 22 · offline-first PWA · Bun · Vitest',
+      desc: 'Работает в реальных забегах: на нём проходят еженедельные парковые пробеги клуба в Таганроге — 300+ бегунов в год. Забег целиком идёт внутри приложения: встроенный секундомер засекает финиши прямо в парке, offline-first PWA продолжает работать без связи и синхронизируется по возвращении, а результаты сами публикуются на сайт одним атомарным коммитом — вместе с PDF-протоколом официального образца, сгенерированным в браузере. Zoneless Angular, 100% покрытие тестами. → asdalexey.github.io/sundayrun',
     },
     {
       name: 'Sportdiary',
@@ -286,7 +338,7 @@ const RU = {
     {
       name: 'Claude Code config & skills',
       meta: 'AI · Automation',
-      desc: 'Собственные скиллы, агенты и хуки Claude Code, кодирующие конвенции проекта, генерацию кода и оптимизацию токенов — включая AI code-review для крупных Angular MR.',
+      desc: 'Собственные скиллы, агенты и хуки Claude Code, кодирующие конвенции проекта, генерацию кода и оптимизацию токенов — включая AI code-review для крупных Angular MR. Это второе мнение, а не авторитет: инструмент выдаёт находки, я читаю дифф и проверяю их до мерджа.',
     },
   ],
   education: [
@@ -297,7 +349,7 @@ const RU = {
   ],
   languages: [
     { name: 'Русский', level: 'Родной' },
-    { name: 'Английский', level: 'Professional (B2)' },
+    { name: 'Английский', level: 'Рабочий (B1) · 8+ лет с US / EU командами' },
   ],
 };
 
@@ -400,6 +452,10 @@ function render(d) {
     <div class="eyebrow">${esc(L.summary)}</div>
     <p class="summary">${esc(d.summary)}</p>
 
+    <div class="block"><div class="eyebrow">${esc(L.keyExperience)}</div>
+      <ul class="hl">${d.keyExperience.map((k) => `<li>${esc(k)}</li>`).join('')}</ul>
+    </div>
+
     <div class="block"><div class="eyebrow">${esc(L.highlights)}</div>
       <ul class="hl">${d.highlights.map((h) => `<li>${esc(h)}</li>`).join('')}</ul>
     </div>
@@ -430,8 +486,93 @@ function render(d) {
 </div></body></html>`;
 }
 
+// Plain single-column variant, for job boards and ATS uploads.
+//
+// Same data object as the designed résumé — one source, two renderings, so the two can never drift
+// apart. Everything the designed one does for a human is stripped here for a parser and a recruiter
+// screening at volume: black on white, one column, a system serif/sans stack instead of a webfont
+// (no network fetch at print time), no icons, no photo, no tables, no colour carrying meaning.
+// Section headings are the plain nouns a parser looks for, in the order Western résumés use them.
+const plainCss = `
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:#000;font:9.5pt/1.32 Arial,Helvetica,sans-serif}
+.page{max-width:190mm;margin:0 auto;padding:9mm 0}
+h1{margin:0;font-size:17pt;line-height:1.15}
+.role{margin:1px 0 0;font-size:10.5pt;font-weight:700}
+.loc,.contact{margin:2px 0 0;font-size:8.5pt}
+.contact a{color:#000;text-decoration:none}
+h2{margin:10px 0 4px;padding-bottom:1px;border-bottom:1px solid #000;font-size:9.5pt;letter-spacing:.04em;text-transform:uppercase}
+p{margin:0 0 4px}
+ul{margin:0 0 4px;padding-left:15px}
+li{margin:0 0 2px}
+.job{margin:0 0 7px}
+h2,.job-h{break-after:avoid}
+.job,.proj,li{break-inside:avoid}
+.job-h{font-weight:700}
+.job-m{font-size:10pt}
+.skill{margin:0 0 4px}
+.skill b{font-weight:700}
+.proj{margin:0 0 7px}
+`;
+
+function renderPlain(d) {
+  const L = d.labels;
+  const contacts = [
+    SHARED.links.email,
+    SHARED.links.telegram,
+    SHARED.links.max,
+    SHARED.links.github,
+    SHARED.links.linkedin,
+    SHARED.links.site,
+  ];
+  const list = (items) => `<ul>${items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul>`;
+
+  return `<!doctype html><html lang="${d.lang}"><head><meta charset="utf-8">
+<title>${esc(SHARED.name)} — Résumé</title>
+<style>${plainCss}</style></head><body><div class="page">
+  <h1>${esc(SHARED.name)}</h1>
+  <p class="role">${esc(d.role)}</p>
+  <p class="loc">${esc(d.location)}</p>
+  <p class="contact">${contacts.map((c) => `<a href="${c.href}">${esc(c.value)}</a>`).join(' · ')}</p>
+
+  <h2>${esc(L.summary)}</h2>
+  <p>${esc(d.summary)}</p>
+
+  <h2>${esc(L.keyExperience)}</h2>
+  ${list(d.keyExperience)}
+
+  <h2>${esc(L.skills)}</h2>
+  ${d.skills.map((k) => `<div class="skill"><b>${esc(k.group)}:</b> ${esc(k.items)}</div>`).join('')}
+
+  <h2>${esc(L.experience)}</h2>
+  ${d.experience
+    .map(
+      (j) => `<div class="job"><div class="job-h">${esc(j.role)} — ${esc(j.company)}</div>
+    <div class="job-m">${esc(j.period)}</div>
+    ${list(j.points)}</div>`,
+    )
+    .join('')}
+
+  <h2>${esc(L.highlights)}</h2>
+  ${list(d.highlights)}
+
+  <h2>${esc(L.projects)}</h2>
+  ${d.projects.map((x) => `<div class="proj"><b>${esc(x.name)}</b> — ${esc(x.meta)}<br>${esc(x.desc)}</div>`).join('')}
+
+  <h2>${esc(L.education)}</h2>
+  ${d.education.map((e) => `<div>${esc(e.title)} — ${esc(e.meta)}</div>`).join('')}
+
+  <h2>${esc(L.languages)}</h2>
+  ${d.languages.map((l) => `<div>${esc(l.name)} — ${esc(l.level)}</div>`).join('')}
+</div></body></html>`;
+}
+
 for (const d of [EN, RU]) {
   const out = join(__dirname, `resume.${d.lang}.html`);
   writeFileSync(out, render(d));
   console.log('wrote', out);
+
+  const plain = join(__dirname, `resume.${d.lang}.ats.html`);
+  writeFileSync(plain, renderPlain(d));
+  console.log('wrote', plain);
 }

@@ -46,6 +46,13 @@ Thumbs.db
 # Private portfolio master — NEVER publish (contains company names / parallel work)
 /content/PORTFOLIO.md
 
+# Screening prep and per-vacancy kits — personal notes, salary ranges, private job split
+/content/SCREENING.md
+/content/vacancies/
+
+# Plain single-column résumés for job boards / ATS — rebuilt by `bun run resume`, never deployed
+/content/resume-ats/
+
 # Legacy vanilla site (kept locally as design reference only)
 /_legacy
 
