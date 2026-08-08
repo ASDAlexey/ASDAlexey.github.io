@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -20,17 +20,11 @@
         margin: 0;
       }
       :root {
-        --bg: #06060a;
-        --surface: #0e0e16;
-        --surface-2: #111118;
-        --border: #1f1f2e;
-        --text: #eeeef0;
-        --text-2: #a6a6be;
-        --muted: #7e7e98;
-        --accent: #a78bfa;
-        --accent-2: #7c3aed;
-        --blue: #60a5fa;
-        --green: #34d399;
+        --text: #1c1c1e;
+        --text-2: #3a3a3e;
+        --muted: #75757c;
+        --rule: #d8d8de;
+        --accent: #4a72b0;
         --font: 'Inter', -apple-system, 'Segoe UI', Roboto, sans-serif;
         --mono: 'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
       }
@@ -39,151 +33,89 @@
         print-color-adjust: exact;
       }
       body {
-        background: var(--bg);
+        background: #fff;
         color: var(--text);
-        font-size: 9.6px;
-        line-height: 1.5;
+        font-size: 9.1px;
+        line-height: 1.45;
         font-family: var(--font);
-        letter-spacing: 0.1px;
       }
       .page {
-        display: grid;
-        grid-template-columns: 62mm 1fr;
         width: 210mm;
         min-height: 297mm;
-        background:
-          radial-gradient(900px 500px at 78% -8%, rgba(124, 58, 237, 0.16), transparent 60%),
-          radial-gradient(700px 500px at -5% 8%, rgba(59, 130, 246, 0.1), transparent 55%), var(--bg);
-      }
-      .side {
-        padding: 13mm 8mm 12mm;
-        border-right: 1px solid var(--border);
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
-      }
-      .main {
-        padding: 13mm 11mm 12mm 10mm;
+        padding: 14mm 17mm 12mm;
       }
       .name {
-        background: linear-gradient(120deg, #fff 30%, var(--accent) 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
         font-weight: 800;
-        font-size: 25px;
-        line-height: 1.05;
-        letter-spacing: -0.6px;
+        font-size: 30px;
+        line-height: 1.02;
+        letter-spacing: -0.8px;
       }
       .role {
-        margin-top: 5px;
-        background: linear-gradient(90deg, var(--accent), var(--blue));
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        font-weight: 600;
-        font-size: 11px;
+        margin-top: 6px;
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 12px;
       }
       .loc {
         margin-top: 6px;
-        color: var(--muted);
+        color: var(--text-2);
+        font-size: 9.6px;
+      }
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 9px;
+        gap: 4px 16px;
+        color: var(--text-2);
         font-size: 8.6px;
         font-family: var(--mono);
       }
-      .eyebrow {
-        display: flex;
-        align-items: center;
-        margin: 0 0 7px;
-        gap: 6px;
-        color: var(--accent);
-        font-weight: 600;
-        font-size: 7.6px;
-        font-family: var(--mono);
-        letter-spacing: 1.4px;
-        text-transform: uppercase;
-      }
-      .eyebrow::before {
-        flex: none;
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        background: var(--green);
-        content: '';
-      }
-      .side .block {
-        margin-top: 14px;
-      }
-      .side .block:first-of-type {
-        margin-top: 18px;
-      }
-      .c-row {
-        display: block;
-        margin-bottom: 7px;
-      }
-      .c-row .k {
-        color: var(--muted);
-        font-size: 7.2px;
-        font-family: var(--mono);
-        letter-spacing: 0.8px;
-        text-transform: uppercase;
-      }
-      .c-row .v {
-        color: var(--text);
-        font-size: 9px;
-        word-break: break-word;
-      }
-      .c-row .v a {
-        color: var(--accent);
+      .contact a {
+        color: var(--text-2);
         text-decoration: none;
       }
-      .skill {
-        margin-bottom: 8px;
+      .contact a.site {
+        color: var(--accent);
+        text-decoration: underline;
       }
-      .skill .g {
-        margin-bottom: 2px;
-        color: #fff;
+      .rule {
+        height: 1.4px;
+        margin: 11px 0 0;
+        background: var(--text);
+      }
+      .eyebrow {
+        margin: 12px 0 6px;
+        color: var(--accent);
         font-weight: 700;
         font-size: 9px;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        break-after: avoid;
       }
-      .skill .i {
-        color: var(--text-2);
-        font-size: 8.4px;
-        line-height: 1.45;
-      }
-      .lang {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        margin-bottom: 4px;
-        gap: 8px;
-        font-size: 8.8px;
-      }
-      .lang > span:first-child {
-        flex: none;
-      }
-      .lang .lv {
-        color: var(--muted);
-        font-size: 8px;
-        line-height: 1.35;
-        font-family: var(--mono);
-        text-align: right;
-      }
-      .edu .t {
-        color: #fff;
-        font-weight: 600;
-        font-size: 9px;
-      }
-      .edu .m {
-        margin-top: 1px;
-        color: var(--text-2);
-        font-size: 8.2px;
-      }
-      .summary {
-        margin-bottom: 4px;
-        color: var(--text-2);
-        font-size: 9.4px;
-        line-height: 1.6;
-      }
-      .main .block {
+      .block:first-of-type .eyebrow {
         margin-top: 13px;
+      }
+      p.para {
+        margin-bottom: 6px;
+        color: var(--text-2);
+      }
+      p.para b {
+        color: var(--text);
+        font-weight: 700;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 74px 1fr;
+        margin-bottom: 6px;
+        gap: 5px 12px;
+        break-inside: avoid;
+      }
+      .row .k {
+        font-weight: 700;
+        font-size: 9.1px;
+      }
+      .row .v {
+        color: var(--text-2);
       }
       .hl {
         list-style: none;
@@ -191,407 +123,408 @@
       .hl li {
         position: relative;
         margin-bottom: 4px;
-        padding-left: 14px;
+        padding-left: 12px;
         color: var(--text-2);
-        font-size: 9px;
+        break-inside: avoid;
       }
       .hl li::before {
         position: absolute;
-        left: 0;
-        content: '▹';
-        color: var(--accent);
-        font-size: 9px;
+        top: 5.4px;
+        left: 2px;
+        width: 3.2px;
+        height: 3.2px;
+        border-radius: 50%;
+        background: var(--accent);
+        content: '';
       }
       .job {
-        margin-bottom: 10px;
-        break-inside: avoid;
+        margin-bottom: 9px;
       }
       .job-h {
         display: flex;
         align-items: baseline;
         justify-content: space-between;
-        gap: 10px;
+        gap: 12px;
+        break-after: avoid;
       }
       .job-r {
-        color: #fff;
         font-weight: 700;
-        font-size: 10px;
+        font-size: 10.6px;
       }
       .job-p {
-        color: var(--accent);
-        font-size: 8px;
+        color: var(--muted);
+        font-size: 8.6px;
         font-family: var(--mono);
         white-space: nowrap;
       }
       .job-c {
         margin: 1px 0 4px;
-        color: var(--blue);
-        font-weight: 500;
-        font-size: 8.8px;
+        color: var(--muted);
+        font-size: 9px;
+        break-after: avoid;
       }
       .job ul {
         list-style: none;
       }
       .job li {
         position: relative;
-        margin-bottom: 2.5px;
+        margin-bottom: 2.6px;
         padding-left: 12px;
         color: var(--text-2);
-        font-size: 8.8px;
-        line-height: 1.5;
+        break-inside: avoid;
       }
       .job li::before {
         position: absolute;
-        top: 6px;
+        top: 5.4px;
         left: 2px;
-        width: 3px;
-        height: 3px;
+        width: 3.2px;
+        height: 3.2px;
         border-radius: 50%;
-        background: var(--accent-2);
+        background: var(--accent);
         content: '';
       }
       .proj {
-        margin-bottom: 7px;
+        margin-bottom: 6.5px;
         break-inside: avoid;
       }
       .proj-h {
         display: flex;
         align-items: baseline;
         justify-content: space-between;
-        gap: 8px;
+        gap: 10px;
       }
       .proj-n {
-        color: #fff;
         font-weight: 700;
-        font-size: 9.4px;
+        font-size: 9.8px;
       }
       .proj-m {
         color: var(--muted);
-        font-size: 7.4px;
+        font-size: 8px;
         font-family: var(--mono);
         white-space: nowrap;
       }
       .proj-d {
         margin-top: 1px;
         color: var(--text-2);
-        font-size: 8.6px;
-        line-height: 1.45;
       }
-      .divider {
-        height: 1px;
-        margin-top: 13px;
-        background: linear-gradient(90deg, var(--border), transparent);
+      .quote {
+        margin-bottom: 8px;
+        padding-left: 10px;
+        border-left: 2.2px solid var(--rule);
+        break-inside: avoid;
+      }
+      .quote p {
+        color: var(--text-2);
+        font-style: italic;
+      }
+      .quote .by {
+        margin-top: 2px;
+        color: var(--muted);
+        font-size: 8.6px;
       }
     </style>
   </head>
   <body>
     <div class="page">
-      <aside class="side">
-        <div class="name">Alexey Popov</div>
-        <div class="role">Tech Lead · Senior Angular Developer</div>
-        <div class="loc">Таганрог, Россия · UTC+3 · только удалённо</div>
+      <div class="name">Alexey Popov</div>
+      <div class="role">Tech Lead · Senior Angular Developer</div>
+      <div class="loc">Таганрог, Россия · UTC+3 · только удалённо</div>
+      <div class="contact">
+        <a class="site" href="https://asdalexey.github.io">asdalexey.github.io</a><a class="" href="https://t.me/ASDAlexey">@ASDAlexey</a
+        ><a class="" href="https://max.ru/u/f9LHodD0cOIvsoWjpCYHxdF8aiJ7csO8bFyeafox3xVes4OWbQgToULJSRE">max.ru</a
+        ><a class="" href="https://www.linkedin.com/in/alexey-popov-7988a874/">in/alexey-popov</a
+        ><a class="" href="mailto:ASDAlexey@yandex.ru">ASDAlexey@yandex.ru</a
+        ><a class="" href="https://github.com/ASDAlexey">github.com/ASDAlexey</a>
+      </div>
+      <div class="rule"></div>
 
-        <div class="block">
-          <div class="eyebrow">Контакты</div>
-          <div class="c-row">
-            <div class="k">Email</div>
-            <div class="v"><a href="mailto:ASDAlexey@yandex.ru">ASDAlexey@yandex.ru</a></div>
-          </div>
-          <div class="c-row">
-            <div class="k">Telegram</div>
-            <div class="v"><a href="https://t.me/ASDAlexey">@ASDAlexey</a></div>
-          </div>
-          <div class="c-row">
-            <div class="k">MAX</div>
-            <div class="v"><a href="https://max.ru/u/f9LHodD0cOIvsoWjpCYHxdF8aiJ7csO8bFyeafox3xVes4OWbQgToULJSRE">max.ru</a></div>
-          </div>
-          <div class="c-row">
-            <div class="k">GitHub</div>
-            <div class="v"><a href="https://github.com/ASDAlexey">github.com/ASDAlexey</a></div>
-          </div>
-          <div class="c-row">
-            <div class="k">LinkedIn</div>
-            <div class="v"><a href="https://www.linkedin.com/in/alexey-popov-7988a874/">in/alexey-popov</a></div>
-          </div>
-          <div class="c-row">
-            <div class="k">Portfolio</div>
-            <div class="v"><a href="https://asdalexey.github.io">asdalexey.github.io</a></div>
-          </div>
-        </div>
-
-        <div class="block">
-          <div class="eyebrow">Ключевые навыки</div>
-          <div class="skill">
-            <div class="g">Языки</div>
-            <div class="i">TypeScript (strict mode), JavaScript (ES6+ / ES2023+), Node.js, HTML5, CSS3 / SCSS, Tailwind CSS</div>
-          </div>
-          <div class="skill">
-            <div class="g">Frontend</div>
-            <div class="i">
-              Angular 2–22, zoneless change detection, Signals, httpResource, standalone-компоненты, OnPush, RxJS, NgRx / NgRx Signals,
-              Angular Material, Ionic, micro-frontends, Module Federation, PWA / offline-first, SSR / SSG, i18n / l10n, высоконагруженные и
-              контентно-насыщенные интерфейсы, real-time UI, дизайн-системы, Ag-Grid, virtual scroll, ControlValueAccessor, lazy loading и
-              code splitting, адаптивная mobile-first вёрстка, доступность (WCAG / ARIA), оптимизация производительности
-            </div>
-          </div>
-          <div class="skill">
-            <div class="g">Архитектура</div>
-            <div class="i">
-              Nx-монорепозитории, модульные границы, общие библиотеки, микросервисы на Node.js / Express, REST API, WebSocket, API-first
-              разработка по спецификациям OpenAPI, кодогенерация из OpenAPI (Orval) с рантайм-валидацией zod, ADR, feature-флаги, ООП,
-              структуры данных и алгоритмическая сложность, безопасность фронтенда (OWASP, CSP, авторизация по ролям), масштабируемость
-            </div>
-          </div>
-          <div class="skill">
-            <div class="g">Тестирование</div>
-            <div class="i">
-              TDD, Vitest, Jest, Karma / Jasmine, Playwright, unit-, интеграционные и e2e-тесты, авто-мокинг, покрытие 89–100%, гейты
-              дублирования и циклических зависимостей
-            </div>
-          </div>
-          <div class="skill">
-            <div class="g">DevOps</div>
-            <div class="i">
-              GitLab (экспертный уровень): CI/CD с нуля, GitLab Runners, переиспользуемые шаблоны пайплайнов, affected-сборки, шардинг
-              тестов, семантическое версионирование, Docker multi-stage, Nginx, Kubernetes / Kustomize, GitHub Actions, приватный Package
-              Registry; знаком с Azure DevOps / Azure Pipelines и облачным деплоем (AWS, Azure)
-            </div>
-          </div>
-          <div class="skill">
-            <div class="g">Платформы</div>
-            <div class="i">
-              Web, Smart TV (Tizen / webOS / VIDAA), iOS / Android (Ionic, Capacitor / Cordova), Desktop (Tauri 2 — выпущенные приложения,
-              Rust в объёме проекта)
-            </div>
-          </div>
-          <div class="skill">
-            <div class="g">Инструменты</div>
-            <div class="i">
-              Git, Jira, Confluence, Figma, ESLint (кастомные плагины), Prettier, Webpack, Vite, Bun, PostgreSQL, SQLite, Redis, Node.js /
-              Express, REST, Claude Code
-            </div>
-          </div>
-          <div class="skill">
-            <div class="g">Лидерство</div>
-            <div class="i">
-              Тимлид, найм и онбординг, менторинг junior/middle-разработчиков, 70+ технических собеседований, code review с конструктивной
-              обратной связью, стандарты кодирования и best practices, техническая архитектура и system design, оценка и декомпозиция задач,
-              Agile / Scrum, кросс-функциональная работа с product owner, бэкендом и UX/UI, релиз каждый спринт, полностью удалённая работа
-              с распределёнными командами
-            </div>
-          </div>
-        </div>
-
-        <div class="block">
-          <div class="eyebrow">Языки</div>
-          <div class="lang"><span>Русский</span><span class="lv">Родной</span></div>
-          <div class="lang"><span>Английский</span><span class="lv">Рабочий (B1) · 8+ лет с US / EU командами</span></div>
-        </div>
-
-        <div class="block edu">
-          <div class="eyebrow">Образование</div>
-          <div class="t">Таганрогский гос. педагогический институт им. А.П. Чехова</div>
-          <div class="m">Физика и математика, 2004 — 2009 · средний балл 4,97 / 5</div>
-        </div>
-      </aside>
-
-      <main class="main">
+      <div class="block">
         <div class="eyebrow">О себе</div>
-        <p class="summary">
-          Tech Lead и Senior Frontend-разработчик с опытом 14+ лет, из них 11+ на Angular (v2 → v22). Проектирую крупные Angular-приложения
-          целиком и выпускаю их на всех платформах: web (SSR), Smart TV, mobile (Ionic) и desktop (Tauri/Rust). Реактивный стек: NgRx, RxJS,
-          Signals, zoneless, standalone, OnPush. Настраиваю GitLab CI/CD с нуля, выстраиваю testing-first культуру (89% на основном
-          приложении, 100% на greenfield, с гейтами в CI) и руковожу фронтенд-командами — code review, менторинг, найм. Развиваю AI-assisted
-          разработку через собственные скиллы, агенты и хуки Claude Code. Работаю только удалённо.
+        <p class="para">
+          Tech Lead и Senior Frontend-разработчик с <b>14+ годами</b> коммерческого опыта, 11+ из них на Angular (v2 → v22). Проектирую
+          крупные Angular-приложения целиком и вывожу один стек на все платформы:
+          <b>Web (SSR), Smart TV (Samsung / LG / Hisense), Mobile (Ionic, iOS / Android) и Desktop (Tauri + Rust)</b>.
         </p>
+        <p class="para">
+          Вырастил фронтенд-команду с одного инженера до девяти по трём направлениям, провёл <b>70+ технических собеседований</b>, отвечаю
+          за архитектуру, code review и CI/CD. Довёл проект с нуля тестов до <b>~10 400 unit-тестов при 89% покрытия</b> с гейтом в CI, а
+          багов, доходящих до прода, стало 2–3 за спринт вместо 10–12. Внедряю AI-assisted разработку — кастомные скиллы и агенты Claude
+          Code, включая скилл авто-код-ревью для очень больших MR — и читаю каждый дифф, который выдала модель, до того как он попадёт в
+          проект.
+        </p>
+      </div>
+      <div class="block">
+        <div class="eyebrow">Ключевой опыт</div>
+        <ul class="hl">
+          <li>
+            Angular на всех платформах — web (SSR), Smart TV (Tizen / webOS / VIDAA), mobile (Ionic, iOS / Android) и desktop (Tauri 2 +
+            Rust), на всех версиях от v2 до v22.
+          </li>
+          <li>
+            Архитектура в масштабе — единственный архитектор мульти-тенант приложения на Angular 22 (286 компонентов, ~107 тыс. строк, 8+
+            окружений); Nx-монорепозитории до 5 приложений и 81 библиотеки; API-слой по OpenAPI с генерацией Orval и валидацией zod.
+          </li>
+          <li>
+            Производительность — стриминговый сервис с ~4 млн пользователей web и ~100 тыс. устройств TV; мультивыбор в больших
+            виртуализированных списках ускорен примерно в 200 раз; OnPush и иммутабельность по всей кодовой базе.
+          </li>
+          <li>
+            Тестирование и поставка — проект доведён с 0% покрытия до ~10 400 unit-тестов при 89% с гейтом в CI; GitLab CI/CD построен с
+            нуля — шардинг тестов, affected-сборки и гейты качества.
+          </li>
+          <li>
+            Команды и релизы — фронтенд-команда выращена с одного инженера до девяти по трём направлениям за 70+ собеседований, релиз всех
+            трёх на мне.
+          </li>
+        </ul>
+      </div>
+      <div class="block">
+        <div class="eyebrow">Ключевые навыки</div>
+        <div class="row">
+          <div class="k">Языки</div>
+          <div class="v">TypeScript (strict mode), JavaScript (ES6+ / ES2023+), Node.js, HTML5, CSS3 / SCSS, Tailwind CSS</div>
+        </div>
+        <div class="row">
+          <div class="k">Frontend</div>
+          <div class="v">
+            Angular 2–22, zoneless change detection, Signals, httpResource, standalone-компоненты, OnPush, RxJS, NgRx / NgRx Signals,
+            Angular Material, Ionic, micro-frontends, Module Federation, PWA / offline-first, SSR / SSG, i18n / l10n, высоконагруженные и
+            контентно-насыщенные интерфейсы, real-time UI, дизайн-системы, Ag-Grid, virtual scroll, ControlValueAccessor, lazy loading и
+            code splitting, адаптивная mobile-first вёрстка, доступность (WCAG / ARIA), оптимизация производительности
+          </div>
+        </div>
+        <div class="row">
+          <div class="k">Архитектура</div>
+          <div class="v">
+            Nx-монорепозитории, модульные границы, общие библиотеки, микросервисы на Node.js / Express, REST API, WebSocket, API-first
+            разработка по спецификациям OpenAPI, кодогенерация из OpenAPI (Orval) с рантайм-валидацией zod, ADR, feature-флаги, ООП,
+            структуры данных и алгоритмическая сложность, безопасность фронтенда (OWASP, CSP, авторизация по ролям), масштабируемость
+          </div>
+        </div>
+        <div class="row">
+          <div class="k">Тестирование</div>
+          <div class="v">
+            TDD, Vitest, Jest, Karma / Jasmine, Playwright, unit-, интеграционные и e2e-тесты, авто-мокинг, покрытие 89–100%, гейты
+            дублирования и циклических зависимостей
+          </div>
+        </div>
+        <div class="row">
+          <div class="k">DevOps</div>
+          <div class="v">
+            GitLab (экспертный уровень): CI/CD с нуля, GitLab Runners, переиспользуемые шаблоны пайплайнов, affected-сборки, шардинг тестов,
+            семантическое версионирование, Docker multi-stage, Nginx, Kubernetes / Kustomize, GitHub Actions, приватный Package Registry;
+            знаком с Azure DevOps / Azure Pipelines и облачным деплоем (AWS, Azure)
+          </div>
+        </div>
+        <div class="row">
+          <div class="k">Платформы</div>
+          <div class="v">
+            Web, Smart TV (Tizen / webOS / VIDAA), iOS / Android (Ionic, Capacitor / Cordova), Desktop (Tauri 2 — выпущенные приложения,
+            Rust в объёме проекта)
+          </div>
+        </div>
+        <div class="row">
+          <div class="k">Инструменты</div>
+          <div class="v">
+            Git, Jira, Confluence, Figma, ESLint (кастомные плагины), Prettier, Webpack, Vite, Bun, PostgreSQL, SQLite, Redis, Node.js /
+            Express, REST, Claude Code
+          </div>
+        </div>
+        <div class="row">
+          <div class="k">Лидерство</div>
+          <div class="v">
+            Тимлид, найм и онбординг, менторинг junior/middle-разработчиков, 70+ технических собеседований, code review с конструктивной
+            обратной связью, стандарты кодирования и best practices, техническая архитектура и system design, оценка и декомпозиция задач,
+            Agile / Scrum, кросс-функциональная работа с product owner, бэкендом и UX/UI, релиз каждый спринт, полностью удалённая работа с
+            распределёнными командами
+          </div>
+        </div>
+      </div>
 
-        <div class="block">
-          <div class="eyebrow">Ключевой опыт</div>
-          <ul class="hl">
+      <div class="block">
+        <div class="eyebrow">Опыт работы</div>
+        <div class="job">
+          <div class="job-h"><span class="job-r">Tech Lead / Senior Angular Developer</span><span class="job-p">2023 — н.в.</span></div>
+          <div class="job-c">Удалённо</div>
+          <ul>
             <li>
-              Angular на всех платформах — web (SSR), Smart TV (Tizen / webOS / VIDAA), mobile (Ionic, iOS / Android) и desktop (Tauri 2 +
-              Rust), на всех версиях от v2 до v22.
+              KION (МТС) — стриминговый сервис с ~4 млн пользователей на web и ~100 тыс. устройств Smart TV. Реализовал SSR-фичи на web
+              (возрастные ограничения и PIN по требованиям РКН, профиль, подписки, юридические согласия) и вертикаль геймификации целиком —
+              достижения, уровни, лидерборды, колесо фортуны — на web и Smart TV, внутри Nx-монорепо из 5 приложений и 81 библиотеки.
             </li>
             <li>
-              Архитектура в масштабе — единственный архитектор мульти-тенант приложения на Angular 22 (286 компонентов, ~107 тыс. строк, 8+
-              окружений); Nx-монорепозитории до 5 приложений и 81 библиотеки; API-слой по OpenAPI с генерацией Orval и валидацией zod.
+              Enterprise-платформа цифрового двойника и геовизуализации — единственный архитектор мульти-тенант приложения на Angular 22:
+              286 компонентов, ~107 тыс. строк TypeScript, real-time pixel streaming, деплой в 8+ окружений из одной кодовой базы.
             </li>
             <li>
-              Производительность — стриминговый сервис с ~4 млн пользователей web и ~100 тыс. устройств TV; мультивыбор в больших
-              виртуализированных списках ускорен примерно в 200 раз; OnPush и иммутабельность по всей кодовой базе.
+              Пришёл в команду из одного фронтендера и вырастил её по трём направлениям — своя группа 4–5 человек, вертикаль отчётов на 5 и
+              международное направление на 2 — нанял каждого лично, проведя 70+ собеседований.
             </li>
             <li>
-              Тестирование и поставка — проект доведён с 0% покрытия до ~10 400 unit-тестов при 89% с гейтом в CI; GitLab CI/CD построен с
-              нуля — шардинг тестов, affected-сборки и гейты качества.
+              Отвечаю за релиз всех трёх фронтенд-команд: нарезаю эпик, команды готовят MR, я мержу после аппрувов — часто сам же и ревьюер.
+              Год ревьюил код внешней команды подрядчиков, потом нанял сеньора, который это перенял.
             </li>
             <li>
-              Команды и релизы — фронтенд-команда выращена с одного инженера до девяти по трём направлениям за 70+ собеседований, релиз всех
-              трёх на мне.
+              Внёс культуру unit-тестов в проект с нулевым покрытием и научил писать их 20+ разработчиков — сейчас основное приложение
+              гоняет ~10 400 unit-тестов при 89% покрытия с гейтом в CI, а greenfield-проекты стоят на 100%.
+            </li>
+            <li>
+              Отвечаю за здоровье прода — Sentry, метрики производительности и регресс по всему проекту. Багов, доходящих до прода, стало
+              2–3 за спринт вместо унаследованных 10–12.
+            </li>
+            <li>
+              Построил GitLab CI/CD с нуля на Kubernetes-раннерах — переиспользуемые шаблоны на несколько проектов, nx affected, шардинг на
+              три части, прогоняющий 10 400 тестов за ~3 минуты, и гейты покрытия, дублирования, циклических зависимостей и аппрувов, плюс
+              кастомный ESLint-плагин под конвенции.
+            </li>
+            <li>
+              Опубликовал Nx-монорепо из 13 общих Angular-библиотек — токены дизайн-системы из Figma, темизация, SVG-иконки, уведомления,
+              feature-флаги, dev-auth, сгенерированный Orval-клиент и тест-хелперы — с авто-версионированием в приватный GitLab-registry; их
+              используют 3 приложения.
             </li>
           </ul>
         </div>
-
-        <div class="block">
-          <div class="eyebrow">Достижения</div>
-          <ul class="hl">
-            <li>Ускорил мультивыбор в больших виртуализированных списках в ~200 раз — со 180–200 мс до 0,4–0,5 мс на элемент.</li>
-            <li>Перевёл проект с сервисной архитектуры на слоистую NgRx с чистым разделением бизнес-логики.</li>
-            <li>Довёл проект с 0% до ~10 400 unit-тестов при 89% покрытия, а общие библиотеки — до 100%, всё с гейтами в CI.</li>
-            <li>Провёл 70+ технических собеседований; нанял и веду команду из 9 штатных инженеров и ~6 на субподряде.</li>
-            <li>Опубликовал vitest-auto-spy в npm — типизированный auto-mock для Vitest.</li>
+        <div class="job">
+          <div class="job-h"><span class="job-r">Tech Lead / Senior Frontend</span><span class="job-p">2019 — 2023</span></div>
+          <div class="job-c">The 5th Kind · США, удалённо</div>
+          <ul>
+            <li>Платформа управления медиа-активами для Marvel, Disney, Warner Bros., Epic Games и Universal (через Sohonet).</li>
+            <li>
+              Возглавил миграцию на слоистую NgRx-архитектуру примерно за год, поэтапно, без остановки поставки — сначала новые фичи, потом
+              авторизация и ключевые сервисы пользователей, прав и ролей, затем всё остальное.
+            </li>
+            <li>
+              Ускорил мультивыбор в больших виртуализированных списках в ~200 раз (180–200 мс → 0,4–0,5 мс) за счёт OnPush + immutability.
+            </li>
+            <li>
+              Написал кастомные стратегии virtual-scroll для элементов с динамической высотой и сложные формы через ControlValueAccessor.
+            </li>
+            <li>
+              Провёл 20+ технических собеседований, нанимал и обучал новичков, участвовал в построении процесса code review в команде из 4–5
+              человек, доходившей до 8.
+            </li>
           </ul>
         </div>
+        <div class="job">
+          <div class="job-h"><span class="job-r">Senior Angular Developer</span><span class="job-p">2018 — 2019</span></div>
+          <div class="job-c">Arcadia Inc. · Таганрог</div>
+          <ul>
+            <li>Спроектировал UI-архитектуру продукта и план рефакторинга; выпустил 10+ крупных фич.</li>
+            <li>Внедрил CSS-переменные и стратегию OnPush + immutability по всему проекту.</li>
+            <li>Собрал мобильное iOS/Android-приложение на Ionic; провёл 20+ собеседований по Angular/JS и обучал новичков.</li>
+          </ul>
+        </div>
+        <div class="job">
+          <div class="job-h"><span class="job-r">Senior Full-Stack разработчик</span><span class="job-p">2015 — 2018</span></div>
+          <div class="job-c">Umbrella IT · Таганрог</div>
+          <ul>
+            <li>Full-stack (Angular + Node.js) для международных клиентов из США/ЕС — Top Rated, 100% Job Success на Upwork.</li>
+            <li>Выпустил SPA и бэкенды на Node.js (rademacher.de, pooltrackr.com).</li>
+          </ul>
+        </div>
+        <div class="job">
+          <div class="job-h"><span class="job-r">Frontend Web разработчик</span><span class="job-p">2012 — 2015</span></div>
+          <div class="job-c">TutMee Agency · Таганрог</div>
+          <ul>
+            <li>Сделал 50+ лендингов и интернет-магазинов с активным SVG/анимацией; фокус на адаптив и производительность.</li>
+          </ul>
+        </div>
+      </div>
 
-        <div class="block">
-          <div class="eyebrow">Опыт работы</div>
-          <div class="job">
-            <div class="job-h"><span class="job-r">Tech Lead / Senior Angular Developer</span><span class="job-p">2023 — н.в.</span></div>
-            <div class="job-c">Удалённо</div>
-            <ul>
-              <li>
-                KION (МТС) — стриминговый сервис с ~4 млн пользователей на web и ~100 тыс. устройств Smart TV. Реализовал SSR-фичи на web
-                (возрастные ограничения и PIN по требованиям РКН, профиль, подписки, юридические согласия) и вертикаль геймификации целиком
-                — достижения, уровни, лидерборды, колесо фортуны — на web и Smart TV, внутри Nx-монорепо из 5 приложений и 81 библиотеки.
-              </li>
-              <li>
-                Enterprise-платформа цифрового двойника и геовизуализации — единственный архитектор мульти-тенант приложения на Angular 22:
-                286 компонентов, ~107 тыс. строк TypeScript, real-time pixel streaming, деплой в 8+ окружений из одной кодовой базы.
-              </li>
-              <li>
-                Пришёл в команду из одного фронтендера и вырастил её по трём направлениям — своя группа 4–5 человек, вертикаль отчётов на 5
-                и международное направление на 2 — нанял каждого лично, проведя 70+ собеседований.
-              </li>
-              <li>
-                Отвечаю за релиз всех трёх фронтенд-команд: нарезаю эпик, команды готовят MR, я мержу после аппрувов — часто сам же и
-                ревьюер. Год ревьюил код внешней команды подрядчиков, потом нанял сеньора, который это перенял.
-              </li>
-              <li>
-                Внёс культуру unit-тестов в проект с нулевым покрытием и научил писать их 20+ разработчиков — сейчас основное приложение
-                гоняет ~10 400 unit-тестов при 89% покрытия с гейтом в CI, а greenfield-проекты стоят на 100%.
-              </li>
-              <li>
-                Отвечаю за здоровье прода — Sentry, метрики производительности и регресс по всему проекту. Багов, доходящих до прода, стало
-                2–3 за спринт вместо унаследованных 10–12.
-              </li>
-              <li>
-                Построил GitLab CI/CD с нуля на Kubernetes-раннерах — переиспользуемые шаблоны на несколько проектов, nx affected, шардинг
-                на три части, прогоняющий 10 400 тестов за ~3 минуты, и гейты покрытия, дублирования, циклических зависимостей и аппрувов,
-                плюс кастомный ESLint-плагин под конвенции.
-              </li>
-              <li>
-                Опубликовал Nx-монорепо из 13 общих Angular-библиотек — токены дизайн-системы из Figma, темизация, SVG-иконки, уведомления,
-                feature-флаги, dev-auth, сгенерированный Orval-клиент и тест-хелперы — с авто-версионированием в приватный GitLab-registry;
-                их используют 3 приложения.
-              </li>
-            </ul>
-          </div>
-          <div class="job">
-            <div class="job-h"><span class="job-r">Tech Lead / Senior Frontend</span><span class="job-p">2019 — 2023</span></div>
-            <div class="job-c">The 5th Kind · США, удалённо</div>
-            <ul>
-              <li>Платформа управления медиа-активами для Marvel, Disney, Warner Bros., Epic Games и Universal (через Sohonet).</li>
-              <li>
-                Возглавил миграцию на слоистую NgRx-архитектуру примерно за год, поэтапно, без остановки поставки — сначала новые фичи,
-                потом авторизация и ключевые сервисы пользователей, прав и ролей, затем всё остальное.
-              </li>
-              <li>
-                Ускорил мультивыбор в больших виртуализированных списках в ~200 раз (180–200 мс → 0,4–0,5 мс) за счёт OnPush + immutability.
-              </li>
-              <li>
-                Написал кастомные стратегии virtual-scroll для элементов с динамической высотой и сложные формы через ControlValueAccessor.
-              </li>
-              <li>
-                Провёл 20+ технических собеседований, нанимал и обучал новичков, участвовал в построении процесса code review в команде из
-                4–5 человек, доходившей до 8.
-              </li>
-            </ul>
-          </div>
-          <div class="job">
-            <div class="job-h"><span class="job-r">Senior Angular Developer</span><span class="job-p">2018 — 2019</span></div>
-            <div class="job-c">Arcadia Inc. · Таганрог</div>
-            <ul>
-              <li>Спроектировал UI-архитектуру продукта и план рефакторинга; выпустил 10+ крупных фич.</li>
-              <li>Внедрил CSS-переменные и стратегию OnPush + immutability по всему проекту.</li>
-              <li>Собрал мобильное iOS/Android-приложение на Ionic; провёл 20+ собеседований по Angular/JS и обучал новичков.</li>
-            </ul>
-          </div>
-          <div class="job">
-            <div class="job-h"><span class="job-r">Senior Full-Stack разработчик</span><span class="job-p">2015 — 2018</span></div>
-            <div class="job-c">Umbrella IT · Таганрог</div>
-            <ul>
-              <li>Full-stack (Angular + Node.js) для международных клиентов из США/ЕС — Top Rated, 100% Job Success на Upwork.</li>
-              <li>Выпустил SPA и бэкенды на Node.js (rademacher.de, pooltrackr.com).</li>
-            </ul>
-          </div>
-          <div class="job">
-            <div class="job-h"><span class="job-r">Frontend Web разработчик</span><span class="job-p">2012 — 2015</span></div>
-            <div class="job-c">TutMee Agency · Таганрог</div>
-            <ul>
-              <li>Сделал 50+ лендингов и интернет-магазинов с активным SVG/анимацией; фокус на адаптив и производительность.</li>
-            </ul>
+      <div class="block">
+        <div class="eyebrow">Личные проекты / Open Source</div>
+        <div class="proj">
+          <div class="proj-h"><span class="proj-n">Litely</span><span class="proj-m">Tauri · Angular 22 · Rust</span></div>
+          <div class="proj-d">
+            Кроссплатформенное desktop-приложение для пакетного сжатия изображений / видео / PDF (WebP, AVIF, JPEG, PNG, SVG). Расширение
+            для браузера вставляет сжатые файлы прямо в Jira / GitLab по Cmd+V. Watch-папки, трей, сравнение до/после. →
+            asdalexey.github.io/litely
           </div>
         </div>
-
-        <div class="block">
-          <div class="eyebrow">Личные проекты / Open Source</div>
-          <div class="proj">
-            <div class="proj-h"><span class="proj-n">Litely</span><span class="proj-m">Tauri · Angular 22 · Rust</span></div>
-            <div class="proj-d">
-              Кроссплатформенное desktop-приложение для пакетного сжатия изображений / видео / PDF (WebP, AVIF, JPEG, PNG, SVG). Расширение
-              для браузера вставляет сжатые файлы прямо в Jira / GitLab по Cmd+V. Watch-папки, трей, сравнение до/после. →
-              asdalexey.github.io/litely
-            </div>
-          </div>
-          <div class="proj">
-            <div class="proj-h"><span class="proj-n">vitest-auto-spy</span><span class="proj-m">TypeScript · Open Source · npm</span></div>
-            <div class="proj-d">
-              Типизированный auto-mock для Vitest — идейный наследник jest-auto-spies. Один API, три рантайма (Vitest, Bun, Node.js) за
-              сменным MockAdapter. Типизированные спаи из класса или из одного типа, управление Observable / промисами / сигналами,
-              DI-хелперы для Angular и NestJS. Без зависимостей, 100% покрытие. → github.com/ASDAlexey/vitest-auto-spy
-            </div>
-          </div>
-          <div class="proj">
-            <div class="proj-h">
-              <span class="proj-n">Bonds Tracker</span><span class="proj-m">Angular 22 · Tauri 2 · Rust · SQLite</span>
-            </div>
-            <div class="proj-d">
-              Личный трекер портфеля облигаций по нескольким счетам Т-Банк Инвестиций — умный оптимизатор портфеля, аудит с предложениями
-              замен, скринер с баллами, купонный календарь и дашборд целей. Аналитика в реальном времени по API Tinkoff / MOEX ISS / ЦБ РФ,
-              риск дефолта по KMV-Merton, Plotly, Telegram-бот, движки на Rust.
-            </div>
-          </div>
-          <div class="proj">
-            <div class="proj-h">
-              <span class="proj-n">SundayRun</span><span class="proj-m">Angular 22 · offline-first PWA · Bun · Vitest</span>
-            </div>
-            <div class="proj-d">
-              Работает в реальных забегах: на нём проходят еженедельные парковые пробеги клуба в Таганроге — 300+ бегунов в год. Забег
-              целиком идёт внутри приложения: встроенный секундомер засекает финиши прямо в парке, offline-first PWA продолжает работать без
-              связи и синхронизируется по возвращении, а результаты сами публикуются на сайт одним атомарным коммитом — вместе с
-              PDF-протоколом официального образца, сгенерированным в браузере. Zoneless Angular, 100% покрытие тестами. →
-              asdalexey.github.io/sundayrun
-            </div>
-          </div>
-          <div class="proj">
-            <div class="proj-h">
-              <span class="proj-n">Sportdiary</span><span class="proj-m">Ionic · Angular · Node.js · iOS / Android</span>
-            </div>
-            <div class="proj-d">
-              Full-stack трекер бега для iOS и Android, сделан в одиночку от и до — GPS-трекинг с картой маршрута, автоопределение кругов,
-              статистика по тренировке, анализ объёмов с личными рекордами и социальная лента. Бэкенд на Node.js на собственном VPS; больше
-              года в продакшене.
-            </div>
-          </div>
-          <div class="proj">
-            <div class="proj-h"><span class="proj-n">Claude Code config &amp; skills</span><span class="proj-m">AI · Automation</span></div>
-            <div class="proj-d">
-              Собственные скиллы, агенты и хуки Claude Code, кодирующие конвенции проекта, генерацию кода и оптимизацию токенов — включая AI
-              code-review для крупных Angular MR. Это второе мнение, а не авторитет: инструмент выдаёт находки, я читаю дифф и проверяю их
-              до мерджа.
-            </div>
+        <div class="proj">
+          <div class="proj-h"><span class="proj-n">vitest-auto-spy</span><span class="proj-m">TypeScript · Open Source · npm</span></div>
+          <div class="proj-d">
+            Типизированный auto-mock для Vitest — идейный наследник jest-auto-spies. Один API, три рантайма (Vitest, Bun, Node.js) за
+            сменным MockAdapter. Типизированные спаи из класса или из одного типа, управление Observable / промисами / сигналами, DI-хелперы
+            для Angular и NestJS. Без зависимостей, 100% покрытие. → github.com/ASDAlexey/vitest-auto-spy
           </div>
         </div>
-      </main>
+        <div class="proj">
+          <div class="proj-h">
+            <span class="proj-n">Bonds Tracker</span><span class="proj-m">Angular 22 · Tauri 2 · Rust · SQLite</span>
+          </div>
+          <div class="proj-d">
+            Личный трекер портфеля облигаций по нескольким счетам Т-Банк Инвестиций — умный оптимизатор портфеля, аудит с предложениями
+            замен, скринер с баллами, купонный календарь и дашборд целей. Аналитика в реальном времени по API Tinkoff / MOEX ISS / ЦБ РФ,
+            риск дефолта по KMV-Merton, Plotly, Telegram-бот, движки на Rust.
+          </div>
+        </div>
+        <div class="proj">
+          <div class="proj-h">
+            <span class="proj-n">SundayRun</span><span class="proj-m">Angular 22 · offline-first PWA · Bun · Vitest</span>
+          </div>
+          <div class="proj-d">
+            Работает в реальных забегах: на нём проходят еженедельные парковые пробеги клуба в Таганроге — 300+ бегунов в год. Забег целиком
+            идёт внутри приложения: встроенный секундомер засекает финиши прямо в парке, offline-first PWA продолжает работать без связи и
+            синхронизируется по возвращении, а результаты сами публикуются на сайт одним атомарным коммитом — вместе с PDF-протоколом
+            официального образца, сгенерированным в браузере. Zoneless Angular, 100% покрытие тестами. → asdalexey.github.io/sundayrun
+          </div>
+        </div>
+        <div class="proj">
+          <div class="proj-h">
+            <span class="proj-n">Sportdiary</span><span class="proj-m">Ionic · Angular · Node.js · iOS / Android</span>
+          </div>
+          <div class="proj-d">
+            Full-stack трекер бега для iOS и Android, сделан в одиночку от и до — GPS-трекинг с картой маршрута, автоопределение кругов,
+            статистика по тренировке, анализ объёмов с личными рекордами и социальная лента. Бэкенд на Node.js на собственном VPS; больше
+            года в продакшене.
+          </div>
+        </div>
+        <div class="proj">
+          <div class="proj-h"><span class="proj-n">Claude Code config &amp; skills</span><span class="proj-m">AI · Automation</span></div>
+          <div class="proj-d">
+            Собственные скиллы, агенты и хуки Claude Code, кодирующие конвенции проекта, генерацию кода и оптимизацию токенов — включая AI
+            code-review для крупных Angular MR. Это второе мнение, а не авторитет: инструмент выдаёт находки, я читаю дифф и проверяю их до
+            мерджа.
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="eyebrow">Образование · Языки</div>
+        <div class="row">
+          <div class="k">Образование</div>
+          <div class="v">
+            Таганрогский гос. педагогический институт им. А.П. Чехова — Физика и математика, 2004 — 2009 · средний балл 4,97 / 5
+          </div>
+        </div>
+        <div class="row">
+          <div class="k">Русский</div>
+          <div class="v">Родной</div>
+        </div>
+        <div class="row">
+          <div class="k">Английский</div>
+          <div class="v">Рабочий (B1) · 8+ лет с US / EU командами</div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="eyebrow">Отзывы коллег</div>
+        <div class="quote">
+          <p>
+            “Отличный разработчик и командный игрок: быстро вник в сложный продукт и гибко подстраивался под потребности бизнеса. Рекомендую
+            его на любую ведущую техническую роль.”
+          </p>
+          <div class="by">Steve Cronan — экс-CEO / CTO, The 5th Kind</div>
+        </div>
+        <div class="quote">
+          <p>
+            “Отлично справлялся с ролью Senior Frontend Engineer: ответственный разработчик, которому можно доверить любую техническую
+            задачу; помогал вводить новых сотрудников и обучал джунов.”
+          </p>
+          <div class="by">Eugene Golubev — директор Frontend и Mobile разработки</div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

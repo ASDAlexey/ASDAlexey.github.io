@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -20,17 +20,11 @@
         margin: 0;
       }
       :root {
-        --bg: #06060a;
-        --surface: #0e0e16;
-        --surface-2: #111118;
-        --border: #1f1f2e;
-        --text: #eeeef0;
-        --text-2: #a6a6be;
-        --muted: #7e7e98;
-        --accent: #a78bfa;
-        --accent-2: #7c3aed;
-        --blue: #60a5fa;
-        --green: #34d399;
+        --text: #1c1c1e;
+        --text-2: #3a3a3e;
+        --muted: #75757c;
+        --rule: #d8d8de;
+        --accent: #4a72b0;
         --font: 'Inter', -apple-system, 'Segoe UI', Roboto, sans-serif;
         --mono: 'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
       }
@@ -39,151 +33,89 @@
         print-color-adjust: exact;
       }
       body {
-        background: var(--bg);
+        background: #fff;
         color: var(--text);
-        font-size: 9.6px;
-        line-height: 1.5;
+        font-size: 9.1px;
+        line-height: 1.45;
         font-family: var(--font);
-        letter-spacing: 0.1px;
       }
       .page {
-        display: grid;
-        grid-template-columns: 62mm 1fr;
         width: 210mm;
         min-height: 297mm;
-        background:
-          radial-gradient(900px 500px at 78% -8%, rgba(124, 58, 237, 0.16), transparent 60%),
-          radial-gradient(700px 500px at -5% 8%, rgba(59, 130, 246, 0.1), transparent 55%), var(--bg);
-      }
-      .side {
-        padding: 13mm 8mm 12mm;
-        border-right: 1px solid var(--border);
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
-      }
-      .main {
-        padding: 13mm 11mm 12mm 10mm;
+        padding: 14mm 17mm 12mm;
       }
       .name {
-        background: linear-gradient(120deg, #fff 30%, var(--accent) 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
         font-weight: 800;
-        font-size: 25px;
-        line-height: 1.05;
-        letter-spacing: -0.6px;
+        font-size: 30px;
+        line-height: 1.02;
+        letter-spacing: -0.8px;
       }
       .role {
-        margin-top: 5px;
-        background: linear-gradient(90deg, var(--accent), var(--blue));
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        font-weight: 600;
-        font-size: 11px;
+        margin-top: 6px;
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 12px;
       }
       .loc {
         margin-top: 6px;
-        color: var(--muted);
+        color: var(--text-2);
+        font-size: 9.6px;
+      }
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 9px;
+        gap: 4px 16px;
+        color: var(--text-2);
         font-size: 8.6px;
         font-family: var(--mono);
       }
-      .eyebrow {
-        display: flex;
-        align-items: center;
-        margin: 0 0 7px;
-        gap: 6px;
-        color: var(--accent);
-        font-weight: 600;
-        font-size: 7.6px;
-        font-family: var(--mono);
-        letter-spacing: 1.4px;
-        text-transform: uppercase;
-      }
-      .eyebrow::before {
-        flex: none;
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        background: var(--green);
-        content: '';
-      }
-      .side .block {
-        margin-top: 14px;
-      }
-      .side .block:first-of-type {
-        margin-top: 18px;
-      }
-      .c-row {
-        display: block;
-        margin-bottom: 7px;
-      }
-      .c-row .k {
-        color: var(--muted);
-        font-size: 7.2px;
-        font-family: var(--mono);
-        letter-spacing: 0.8px;
-        text-transform: uppercase;
-      }
-      .c-row .v {
-        color: var(--text);
-        font-size: 9px;
-        word-break: break-word;
-      }
-      .c-row .v a {
-        color: var(--accent);
+      .contact a {
+        color: var(--text-2);
         text-decoration: none;
       }
-      .skill {
-        margin-bottom: 8px;
+      .contact a.site {
+        color: var(--accent);
+        text-decoration: underline;
       }
-      .skill .g {
-        margin-bottom: 2px;
-        color: #fff;
+      .rule {
+        height: 1.4px;
+        margin: 11px 0 0;
+        background: var(--text);
+      }
+      .eyebrow {
+        margin: 12px 0 6px;
+        color: var(--accent);
         font-weight: 700;
         font-size: 9px;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        break-after: avoid;
       }
-      .skill .i {
-        color: var(--text-2);
-        font-size: 8.4px;
-        line-height: 1.45;
-      }
-      .lang {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        margin-bottom: 4px;
-        gap: 8px;
-        font-size: 8.8px;
-      }
-      .lang > span:first-child {
-        flex: none;
-      }
-      .lang .lv {
-        color: var(--muted);
-        font-size: 8px;
-        line-height: 1.35;
-        font-family: var(--mono);
-        text-align: right;
-      }
-      .edu .t {
-        color: #fff;
-        font-weight: 600;
-        font-size: 9px;
-      }
-      .edu .m {
-        margin-top: 1px;
-        color: var(--text-2);
-        font-size: 8.2px;
-      }
-      .summary {
-        margin-bottom: 4px;
-        color: var(--text-2);
-        font-size: 9.4px;
-        line-height: 1.6;
-      }
-      .main .block {
+      .block:first-of-type .eyebrow {
         margin-top: 13px;
+      }
+      p.para {
+        margin-bottom: 6px;
+        color: var(--text-2);
+      }
+      p.para b {
+        color: var(--text);
+        font-weight: 700;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 74px 1fr;
+        margin-bottom: 6px;
+        gap: 5px 12px;
+        break-inside: avoid;
+      }
+      .row .k {
+        font-weight: 700;
+        font-size: 9.1px;
+      }
+      .row .v {
+        color: var(--text-2);
       }
       .hl {
         list-style: none;
@@ -191,411 +123,406 @@
       .hl li {
         position: relative;
         margin-bottom: 4px;
-        padding-left: 14px;
+        padding-left: 12px;
         color: var(--text-2);
-        font-size: 9px;
+        break-inside: avoid;
       }
       .hl li::before {
         position: absolute;
-        left: 0;
-        content: '▹';
-        color: var(--accent);
-        font-size: 9px;
+        top: 5.4px;
+        left: 2px;
+        width: 3.2px;
+        height: 3.2px;
+        border-radius: 50%;
+        background: var(--accent);
+        content: '';
       }
       .job {
-        margin-bottom: 10px;
-        break-inside: avoid;
+        margin-bottom: 9px;
       }
       .job-h {
         display: flex;
         align-items: baseline;
         justify-content: space-between;
-        gap: 10px;
+        gap: 12px;
+        break-after: avoid;
       }
       .job-r {
-        color: #fff;
         font-weight: 700;
-        font-size: 10px;
+        font-size: 10.6px;
       }
       .job-p {
-        color: var(--accent);
-        font-size: 8px;
+        color: var(--muted);
+        font-size: 8.6px;
         font-family: var(--mono);
         white-space: nowrap;
       }
       .job-c {
         margin: 1px 0 4px;
-        color: var(--blue);
-        font-weight: 500;
-        font-size: 8.8px;
+        color: var(--muted);
+        font-size: 9px;
+        break-after: avoid;
       }
       .job ul {
         list-style: none;
       }
       .job li {
         position: relative;
-        margin-bottom: 2.5px;
+        margin-bottom: 2.6px;
         padding-left: 12px;
         color: var(--text-2);
-        font-size: 8.8px;
-        line-height: 1.5;
+        break-inside: avoid;
       }
       .job li::before {
         position: absolute;
-        top: 6px;
+        top: 5.4px;
         left: 2px;
-        width: 3px;
-        height: 3px;
+        width: 3.2px;
+        height: 3.2px;
         border-radius: 50%;
-        background: var(--accent-2);
+        background: var(--accent);
         content: '';
       }
       .proj {
-        margin-bottom: 7px;
+        margin-bottom: 6.5px;
         break-inside: avoid;
       }
       .proj-h {
         display: flex;
         align-items: baseline;
         justify-content: space-between;
-        gap: 8px;
+        gap: 10px;
       }
       .proj-n {
-        color: #fff;
         font-weight: 700;
-        font-size: 9.4px;
+        font-size: 9.8px;
       }
       .proj-m {
         color: var(--muted);
-        font-size: 7.4px;
+        font-size: 8px;
         font-family: var(--mono);
         white-space: nowrap;
       }
       .proj-d {
         margin-top: 1px;
         color: var(--text-2);
-        font-size: 8.6px;
-        line-height: 1.45;
       }
-      .divider {
-        height: 1px;
-        margin-top: 13px;
-        background: linear-gradient(90deg, var(--border), transparent);
+      .quote {
+        margin-bottom: 8px;
+        padding-left: 10px;
+        border-left: 2.2px solid var(--rule);
+        break-inside: avoid;
+      }
+      .quote p {
+        color: var(--text-2);
+        font-style: italic;
+      }
+      .quote .by {
+        margin-top: 2px;
+        color: var(--muted);
+        font-size: 8.6px;
       }
     </style>
   </head>
   <body>
     <div class="page">
-      <aside class="side">
-        <div class="name">Alexey Popov</div>
-        <div class="role">Tech Lead · Senior Angular Developer</div>
-        <div class="loc">Taganrog, Russia · UTC+3 · Remote only</div>
+      <div class="name">Alexey Popov</div>
+      <div class="role">Tech Lead · Senior Angular Developer</div>
+      <div class="loc">Taganrog, Russia · UTC+3 · Remote only</div>
+      <div class="contact">
+        <a class="site" href="https://asdalexey.github.io">asdalexey.github.io</a><a class="" href="https://t.me/ASDAlexey">@ASDAlexey</a
+        ><a class="" href="https://max.ru/u/f9LHodD0cOIvsoWjpCYHxdF8aiJ7csO8bFyeafox3xVes4OWbQgToULJSRE">max.ru</a
+        ><a class="" href="https://www.linkedin.com/in/alexey-popov-7988a874/">in/alexey-popov</a
+        ><a class="" href="mailto:ASDAlexey@yandex.ru">ASDAlexey@yandex.ru</a
+        ><a class="" href="https://github.com/ASDAlexey">github.com/ASDAlexey</a>
+      </div>
+      <div class="rule"></div>
 
-        <div class="block">
-          <div class="eyebrow">Contact</div>
-          <div class="c-row">
-            <div class="k">Email</div>
-            <div class="v"><a href="mailto:ASDAlexey@yandex.ru">ASDAlexey@yandex.ru</a></div>
-          </div>
-          <div class="c-row">
-            <div class="k">Telegram</div>
-            <div class="v"><a href="https://t.me/ASDAlexey">@ASDAlexey</a></div>
-          </div>
-          <div class="c-row">
-            <div class="k">MAX</div>
-            <div class="v"><a href="https://max.ru/u/f9LHodD0cOIvsoWjpCYHxdF8aiJ7csO8bFyeafox3xVes4OWbQgToULJSRE">max.ru</a></div>
-          </div>
-          <div class="c-row">
-            <div class="k">GitHub</div>
-            <div class="v"><a href="https://github.com/ASDAlexey">github.com/ASDAlexey</a></div>
-          </div>
-          <div class="c-row">
-            <div class="k">LinkedIn</div>
-            <div class="v"><a href="https://www.linkedin.com/in/alexey-popov-7988a874/">in/alexey-popov</a></div>
-          </div>
-          <div class="c-row">
-            <div class="k">Portfolio</div>
-            <div class="v"><a href="https://asdalexey.github.io">asdalexey.github.io</a></div>
-          </div>
-        </div>
-
-        <div class="block">
-          <div class="eyebrow">Core Skills</div>
-          <div class="skill">
-            <div class="g">Languages</div>
-            <div class="i">TypeScript (strict mode), JavaScript (ES6+ / ES2023+), Node.js, HTML5, CSS3 / SCSS, Tailwind CSS</div>
-          </div>
-          <div class="skill">
-            <div class="g">Frontend</div>
-            <div class="i">
-              Angular 2–22, zoneless change detection, Signals, httpResource, standalone components, OnPush, RxJS, NgRx / NgRx Signals,
-              Angular Material, Ionic, micro-frontends, Module Federation, PWA / offline-first, SSR / SSG, i18n / l10n, high-load and
-              content-heavy UIs, real-time interfaces, design systems, Ag-Grid, virtual scrolling, ControlValueAccessor, lazy loading and
-              code splitting, responsive mobile-first design, accessibility (WCAG / ARIA), performance optimization
-            </div>
-          </div>
-          <div class="skill">
-            <div class="g">Architecture</div>
-            <div class="i">
-              Nx monorepos, module boundaries, shared libraries, Node.js / Express microservices, REST APIs, WebSocket, API-first
-              development against OpenAPI specifications, OpenAPI code generation (Orval) with zod runtime validation, ADRs, feature flags,
-              OOP, data structures and algorithmic complexity, frontend security (OWASP, CSP, role-based access), scalability
-            </div>
-          </div>
-          <div class="skill">
-            <div class="g">Testing</div>
-            <div class="i">
-              TDD, Vitest, Jest, Karma / Jasmine, Playwright, unit, integration and e2e tests, auto-mocking, 89–100% coverage, duplication
-              and circular-dependency gates
-            </div>
-          </div>
-          <div class="skill">
-            <div class="g">DevOps</div>
-            <div class="i">
-              GitLab (expert level): CI/CD from scratch, GitLab Runners, reusable pipeline templates, affected-only builds, parallel test
-              sharding, semantic versioning, Docker multi-stage, Nginx, Kubernetes / Kustomize, GitHub Actions, private package registry;
-              familiar with Azure DevOps / Azure Pipelines and cloud deployment (AWS, Azure)
-            </div>
-          </div>
-          <div class="skill">
-            <div class="g">Platforms</div>
-            <div class="i">
-              Web, Smart TV (Tizen / webOS / VIDAA), iOS / Android (Ionic, Capacitor / Cordova), Desktop (Tauri 2 — shipped apps, Rust at
-              project scope)
-            </div>
-          </div>
-          <div class="skill">
-            <div class="g">Tools</div>
-            <div class="i">
-              Git, Jira, Confluence, Figma, ESLint (custom plugins), Prettier, Webpack, Vite, Bun, PostgreSQL, SQLite, Redis, Node.js /
-              Express, REST, Claude Code
-            </div>
-          </div>
-          <div class="skill">
-            <div class="g">Leadership</div>
-            <div class="i">
-              Team lead, hiring and onboarding, mentoring junior and mid-level developers, 70+ technical interviews, code review with
-              constructive feedback, coding standards and best practices, technical architecture and system design, estimation and work
-              decomposition, Agile / Scrum, cross-functional work with product owners, backend and UX/UI, release every sprint, fully remote
-              distributed teams
-            </div>
-          </div>
-        </div>
-
-        <div class="block">
-          <div class="eyebrow">Languages</div>
-          <div class="lang"><span>Russian</span><span class="lv">Native</span></div>
-          <div class="lang"><span>English</span><span class="lv">Working proficiency (B1) · 8+ years with US / EU teams</span></div>
-        </div>
-
-        <div class="block edu">
-          <div class="eyebrow">Education</div>
-          <div class="t">Taganrog State Pedagogical Institute (A.P. Chekhov)</div>
-          <div class="m">Physics &amp; Mathematics, 2004 — 2009 · GPA 4.97 / 5</div>
-        </div>
-      </aside>
-
-      <main class="main">
-        <div class="eyebrow">Summary</div>
-        <p class="summary">
-          Tech Lead and Senior Frontend Engineer with 14+ years building production web apps — 11+ of them on Angular (v2 → v22). I
-          architect large-scale Angular applications end-to-end and ship them across every platform: web (SSR), Smart TV, mobile (Ionic) and
-          desktop (Tauri/Rust). Reactive-first with NgRx, RxJS, Signals and a zoneless, standalone, OnPush architecture. I build GitLab
-          CI/CD from scratch, drive a testing-first culture (89% on the main app, 100% on greenfield, enforced by CI gates) and lead
-          frontend teams — code review, mentoring and hiring. Currently driving AI-assisted development with custom Claude Code skills,
-          agents and hooks. Remote only.
+      <div class="block">
+        <div class="eyebrow">Profile</div>
+        <p class="para">
+          Tech Lead and Senior Frontend Developer with <b>14+ years</b> of commercial experience, 11+ of them on Angular (v2 → v22). I
+          architect large Angular applications end-to-end and ship one stack across every platform:
+          <b>Web (SSR), Smart TV (Samsung / LG / Hisense), Mobile (Ionic, iOS / Android) and Desktop (Tauri + Rust)</b>.
         </p>
+        <p class="para">
+          I built a frontend team from one engineer to nine across three directions, have run <b>70+ technical interviews</b>, and own
+          frontend architecture, code review and CI/CD. I took a project from zero tests to <b>~10,400 unit tests at 89% coverage</b> gated
+          in CI, and defects reaching production fell from 10–12 a sprint to 2–3. I drive AI-assisted development — custom Claude Code
+          skills and agents, including an AI code-review skill for very large merge requests — and I read every diff a model produces before
+          it lands.
+        </p>
+      </div>
+      <div class="block">
+        <div class="eyebrow">Key Experience</div>
+        <ul class="hl">
+          <li>
+            Angular on every platform — web (SSR), Smart TV (Tizen / webOS / VIDAA), mobile (Ionic, iOS / Android) and desktop (Tauri 2 +
+            Rust), on every version from v2 to v22.
+          </li>
+          <li>
+            Architecture at scale — sole architect of a multi-tenant Angular 22 app (286 components, ~107k lines, 8+ environments); Nx
+            monorepos up to 5 apps and 81 libraries; an OpenAPI-first API layer generated with Orval and validated by zod.
+          </li>
+          <li>
+            Performance — a streaming service at ~4M web users and ~100k TV devices; multi-select on large virtualized lists made ~200×
+            faster; OnPush and immutability applied across whole codebases.
+          </li>
+          <li>
+            Testing and delivery — a project taken from 0% coverage to ~10,400 unit tests at 89%, gated in CI; GitLab CI/CD built from
+            scratch with test sharding, affected-only builds and quality gates.
+          </li>
+          <li>
+            Teams and releases — a frontend team grown from one engineer to nine across three directions over 70+ interviews, and the
+            release owned for all of them.
+          </li>
+        </ul>
+      </div>
+      <div class="block">
+        <div class="eyebrow">Core Skills</div>
+        <div class="row">
+          <div class="k">Languages</div>
+          <div class="v">TypeScript (strict mode), JavaScript (ES6+ / ES2023+), Node.js, HTML5, CSS3 / SCSS, Tailwind CSS</div>
+        </div>
+        <div class="row">
+          <div class="k">Frontend</div>
+          <div class="v">
+            Angular 2–22, zoneless change detection, Signals, httpResource, standalone components, OnPush, RxJS, NgRx / NgRx Signals,
+            Angular Material, Ionic, micro-frontends, Module Federation, PWA / offline-first, SSR / SSG, i18n / l10n, high-load and
+            content-heavy UIs, real-time interfaces, design systems, Ag-Grid, virtual scrolling, ControlValueAccessor, lazy loading and code
+            splitting, responsive mobile-first design, accessibility (WCAG / ARIA), performance optimization
+          </div>
+        </div>
+        <div class="row">
+          <div class="k">Architecture</div>
+          <div class="v">
+            Nx monorepos, module boundaries, shared libraries, Node.js / Express microservices, REST APIs, WebSocket, API-first development
+            against OpenAPI specifications, OpenAPI code generation (Orval) with zod runtime validation, ADRs, feature flags, OOP, data
+            structures and algorithmic complexity, frontend security (OWASP, CSP, role-based access), scalability
+          </div>
+        </div>
+        <div class="row">
+          <div class="k">Testing</div>
+          <div class="v">
+            TDD, Vitest, Jest, Karma / Jasmine, Playwright, unit, integration and e2e tests, auto-mocking, 89–100% coverage, duplication and
+            circular-dependency gates
+          </div>
+        </div>
+        <div class="row">
+          <div class="k">DevOps</div>
+          <div class="v">
+            GitLab (expert level): CI/CD from scratch, GitLab Runners, reusable pipeline templates, affected-only builds, parallel test
+            sharding, semantic versioning, Docker multi-stage, Nginx, Kubernetes / Kustomize, GitHub Actions, private package registry;
+            familiar with Azure DevOps / Azure Pipelines and cloud deployment (AWS, Azure)
+          </div>
+        </div>
+        <div class="row">
+          <div class="k">Platforms</div>
+          <div class="v">
+            Web, Smart TV (Tizen / webOS / VIDAA), iOS / Android (Ionic, Capacitor / Cordova), Desktop (Tauri 2 — shipped apps, Rust at
+            project scope)
+          </div>
+        </div>
+        <div class="row">
+          <div class="k">Tools</div>
+          <div class="v">
+            Git, Jira, Confluence, Figma, ESLint (custom plugins), Prettier, Webpack, Vite, Bun, PostgreSQL, SQLite, Redis, Node.js /
+            Express, REST, Claude Code
+          </div>
+        </div>
+        <div class="row">
+          <div class="k">Leadership</div>
+          <div class="v">
+            Team lead, hiring and onboarding, mentoring junior and mid-level developers, 70+ technical interviews, code review with
+            constructive feedback, coding standards and best practices, technical architecture and system design, estimation and work
+            decomposition, Agile / Scrum, cross-functional work with product owners, backend and UX/UI, release every sprint, fully remote
+            distributed teams
+          </div>
+        </div>
+      </div>
 
-        <div class="block">
-          <div class="eyebrow">Key Experience</div>
-          <ul class="hl">
+      <div class="block">
+        <div class="eyebrow">Experience</div>
+        <div class="job">
+          <div class="job-h"><span class="job-r">Tech Lead / Senior Angular Developer</span><span class="job-p">2023 — Present</span></div>
+          <div class="job-c">Remote</div>
+          <ul>
             <li>
-              Angular on every platform — web (SSR), Smart TV (Tizen / webOS / VIDAA), mobile (Ionic, iOS / Android) and desktop (Tauri 2 +
-              Rust), on every version from v2 to v22.
+              KION (MTS) — a streaming platform with ~4M web users and ~100k Smart TV devices. Shipped SSR web features (age-gating and PIN
+              compliance, profile, subscriptions, legal consent) and the whole gamification vertical — achievements, levels, leaderboards,
+              fortune wheel — to web and Smart TV, inside an Nx monorepo of 5 apps and 81 libraries.
             </li>
             <li>
-              Architecture at scale — sole architect of a multi-tenant Angular 22 app (286 components, ~107k lines, 8+ environments); Nx
-              monorepos up to 5 apps and 81 libraries; an OpenAPI-first API layer generated with Orval and validated by zod.
+              Enterprise 3D digital-twin and geospatial platform — sole architect of a multi-tenant Angular 22 app: 286 components, ~107k
+              lines of TypeScript, real-time pixel streaming, deployed to 8+ environments from a single codebase.
             </li>
             <li>
-              Performance — a streaming service at ~4M web users and ~100k TV devices; multi-select on large virtualized lists made ~200×
-              faster; OnPush and immutability applied across whole codebases.
+              Inherited a frontend team of one and built it out across three directions — my own group of 4–5, a reporting vertical of 5 and
+              an international one of 2 — hiring every engineer myself over 70+ interviews.
             </li>
             <li>
-              Testing and delivery — a project taken from 0% coverage to ~10,400 unit tests at 89%, gated in CI; GitLab CI/CD built from
-              scratch with test sharding, affected-only builds and quality gates.
+              Own the release for all three frontend teams: I cut the epic, the teams raise the MRs, I merge once the approvals land — often
+              as one of the reviewers. Reviewed an external contractor team’s code for a year, then hired the senior who took it over.
             </li>
             <li>
-              Teams and releases — a frontend team grown from one engineer to nine across three directions over 70+ interviews, and the
-              release owned for all of them.
+              Introduced unit testing to a project sitting at 0% coverage and taught 20+ developers to write it — the main app now runs
+              ~10,400 unit tests at 89% coverage gated in CI, and the greenfield projects sit at 100%.
+            </li>
+            <li>
+              Own production health — Sentry, performance metrics and the regression runs for the whole project. Defects reaching production
+              fell from the 10–12 per sprint I inherited to 2–3.
+            </li>
+            <li>
+              Built the GitLab CI/CD from scratch on Kubernetes runners — reusable templates shared across projects, nx affected, three-way
+              sharding that clears 10,400 tests in ~3 minutes, and coverage, duplication, circular-dependency and custom approval gates,
+              with a custom ESLint plugin enforcing the conventions.
+            </li>
+            <li>
+              Published an Nx monorepo of 13 shared Angular libraries — design-system tokens from Figma, theming, SVG icons, notifications,
+              feature flags, dev-auth, a generated Orval API client and test helpers — auto-versioned into a private GitLab registry and
+              consumed by 3 apps.
             </li>
           </ul>
         </div>
-
-        <div class="block">
-          <div class="eyebrow">Key Highlights</div>
-          <ul class="hl">
-            <li>Sped up multi-select on large virtualized lists ~200× — from 180–200 ms down to 0.4–0.5 ms per item.</li>
-            <li>Led migration from service-based to a layered NgRx architecture with clean business-logic separation.</li>
-            <li>Took a project from 0% to ~10,400 unit tests at 89% coverage, and to 100% on the shared libraries — all gated in CI.</li>
-            <li>Ran 70+ technical interviews; hired and led a team of 9 in-house engineers plus ~6 subcontractors.</li>
-            <li>Published vitest-auto-spy on npm — typed auto-mocking for Vitest.</li>
+        <div class="job">
+          <div class="job-h"><span class="job-r">Tech Lead / Senior Frontend</span><span class="job-p">2019 — 2023</span></div>
+          <div class="job-c">The 5th Kind · US, Remote</div>
+          <ul>
+            <li>
+              Built a distributed digital-asset-management platform used by Marvel, Disney, Warner Bros., Epic Games and Universal (via
+              Sohonet).
+            </li>
+            <li>
+              Led the migration to a layered NgRx architecture over about a year, staged to keep the product shipping — new features first,
+              then auth and the core user / permissions / roles services, then the rest.
+            </li>
+            <li>Sped up multi-select on large virtualized lists ~200× (180–200 ms → 0.4–0.5 ms) via an OnPush + immutability overhaul.</li>
+            <li>Wrote custom virtual-scroll strategies for dynamic-height items and complex forms via ControlValueAccessor.</li>
+            <li>
+              Ran 20+ technical interviews, hired and mentored newcomers, and set up the code-review process for a team that ran 4–5 strong
+              and peaked at 8.
+            </li>
           </ul>
         </div>
+        <div class="job">
+          <div class="job-h"><span class="job-r">Senior Angular Developer</span><span class="job-p">2018 — 2019</span></div>
+          <div class="job-c">Arcadia Inc. · Taganrog</div>
+          <ul>
+            <li>Designed the product’s UI architecture and refactoring roadmap; shipped 10+ major features.</li>
+            <li>Introduced CSS variables and the OnPush + immutability strategy across the codebase.</li>
+            <li>Built the mobile iOS/Android app with Ionic; conducted 20+ Angular/JS interviews and trained new hires.</li>
+          </ul>
+        </div>
+        <div class="job">
+          <div class="job-h"><span class="job-r">Senior Full-Stack Developer</span><span class="job-p">2015 — 2018</span></div>
+          <div class="job-c">Umbrella IT · Taganrog</div>
+          <ul>
+            <li>Full-stack delivery (Angular + Node.js) for international US/EU clients — Top Rated, 100% Job Success on Upwork.</li>
+            <li>Shipped SPAs and Node.js back ends (rademacher.de, pooltrackr.com).</li>
+          </ul>
+        </div>
+        <div class="job">
+          <div class="job-h"><span class="job-r">Frontend Web Developer</span><span class="job-p">2012 — 2015</span></div>
+          <div class="job-c">TutMee Agency · Taganrog</div>
+          <ul>
+            <li>Built 50+ landing pages and online stores with heavy SVG/animation; focus on responsive layout and performance.</li>
+          </ul>
+        </div>
+      </div>
 
-        <div class="block">
-          <div class="eyebrow">Experience</div>
-          <div class="job">
-            <div class="job-h">
-              <span class="job-r">Tech Lead / Senior Angular Developer</span><span class="job-p">2023 — Present</span>
-            </div>
-            <div class="job-c">Remote</div>
-            <ul>
-              <li>
-                KION (MTS) — a streaming platform with ~4M web users and ~100k Smart TV devices. Shipped SSR web features (age-gating and
-                PIN compliance, profile, subscriptions, legal consent) and the whole gamification vertical — achievements, levels,
-                leaderboards, fortune wheel — to web and Smart TV, inside an Nx monorepo of 5 apps and 81 libraries.
-              </li>
-              <li>
-                Enterprise 3D digital-twin and geospatial platform — sole architect of a multi-tenant Angular 22 app: 286 components, ~107k
-                lines of TypeScript, real-time pixel streaming, deployed to 8+ environments from a single codebase.
-              </li>
-              <li>
-                Inherited a frontend team of one and built it out across three directions — my own group of 4–5, a reporting vertical of 5
-                and an international one of 2 — hiring every engineer myself over 70+ interviews.
-              </li>
-              <li>
-                Own the release for all three frontend teams: I cut the epic, the teams raise the MRs, I merge once the approvals land —
-                often as one of the reviewers. Reviewed an external contractor team’s code for a year, then hired the senior who took it
-                over.
-              </li>
-              <li>
-                Introduced unit testing to a project sitting at 0% coverage and taught 20+ developers to write it — the main app now runs
-                ~10,400 unit tests at 89% coverage gated in CI, and the greenfield projects sit at 100%.
-              </li>
-              <li>
-                Own production health — Sentry, performance metrics and the regression runs for the whole project. Defects reaching
-                production fell from the 10–12 per sprint I inherited to 2–3.
-              </li>
-              <li>
-                Built the GitLab CI/CD from scratch on Kubernetes runners — reusable templates shared across projects, nx affected,
-                three-way sharding that clears 10,400 tests in ~3 minutes, and coverage, duplication, circular-dependency and custom
-                approval gates, with a custom ESLint plugin enforcing the conventions.
-              </li>
-              <li>
-                Published an Nx monorepo of 13 shared Angular libraries — design-system tokens from Figma, theming, SVG icons,
-                notifications, feature flags, dev-auth, a generated Orval API client and test helpers — auto-versioned into a private GitLab
-                registry and consumed by 3 apps.
-              </li>
-            </ul>
-          </div>
-          <div class="job">
-            <div class="job-h"><span class="job-r">Tech Lead / Senior Frontend</span><span class="job-p">2019 — 2023</span></div>
-            <div class="job-c">The 5th Kind · US, Remote</div>
-            <ul>
-              <li>
-                Built a distributed digital-asset-management platform used by Marvel, Disney, Warner Bros., Epic Games and Universal (via
-                Sohonet).
-              </li>
-              <li>
-                Led the migration to a layered NgRx architecture over about a year, staged to keep the product shipping — new features
-                first, then auth and the core user / permissions / roles services, then the rest.
-              </li>
-              <li>
-                Sped up multi-select on large virtualized lists ~200× (180–200 ms → 0.4–0.5 ms) via an OnPush + immutability overhaul.
-              </li>
-              <li>Wrote custom virtual-scroll strategies for dynamic-height items and complex forms via ControlValueAccessor.</li>
-              <li>
-                Ran 20+ technical interviews, hired and mentored newcomers, and set up the code-review process for a team that ran 4–5
-                strong and peaked at 8.
-              </li>
-            </ul>
-          </div>
-          <div class="job">
-            <div class="job-h"><span class="job-r">Senior Angular Developer</span><span class="job-p">2018 — 2019</span></div>
-            <div class="job-c">Arcadia Inc. · Taganrog</div>
-            <ul>
-              <li>Designed the product’s UI architecture and refactoring roadmap; shipped 10+ major features.</li>
-              <li>Introduced CSS variables and the OnPush + immutability strategy across the codebase.</li>
-              <li>Built the mobile iOS/Android app with Ionic; conducted 20+ Angular/JS interviews and trained new hires.</li>
-            </ul>
-          </div>
-          <div class="job">
-            <div class="job-h"><span class="job-r">Senior Full-Stack Developer</span><span class="job-p">2015 — 2018</span></div>
-            <div class="job-c">Umbrella IT · Taganrog</div>
-            <ul>
-              <li>Full-stack delivery (Angular + Node.js) for international US/EU clients — Top Rated, 100% Job Success on Upwork.</li>
-              <li>Shipped SPAs and Node.js back ends (rademacher.de, pooltrackr.com).</li>
-            </ul>
-          </div>
-          <div class="job">
-            <div class="job-h"><span class="job-r">Frontend Web Developer</span><span class="job-p">2012 — 2015</span></div>
-            <div class="job-c">TutMee Agency · Taganrog</div>
-            <ul>
-              <li>Built 50+ landing pages and online stores with heavy SVG/animation; focus on responsive layout and performance.</li>
-            </ul>
+      <div class="block">
+        <div class="eyebrow">Personal Projects / Open Source</div>
+        <div class="proj">
+          <div class="proj-h"><span class="proj-n">Litely</span><span class="proj-m">Tauri · Angular 22 · Rust</span></div>
+          <div class="proj-d">
+            Cross-platform desktop app for batch image / video / PDF compression (WebP, AVIF, JPEG, PNG, SVG). Browser extension pastes
+            compressed files straight into Jira / GitLab with Cmd+V. Watch-folders, system tray, before/after compare. →
+            asdalexey.github.io/litely
           </div>
         </div>
-
-        <div class="block">
-          <div class="eyebrow">Personal Projects / Open Source</div>
-          <div class="proj">
-            <div class="proj-h"><span class="proj-n">Litely</span><span class="proj-m">Tauri · Angular 22 · Rust</span></div>
-            <div class="proj-d">
-              Cross-platform desktop app for batch image / video / PDF compression (WebP, AVIF, JPEG, PNG, SVG). Browser extension pastes
-              compressed files straight into Jira / GitLab with Cmd+V. Watch-folders, system tray, before/after compare. →
-              asdalexey.github.io/litely
-            </div>
-          </div>
-          <div class="proj">
-            <div class="proj-h"><span class="proj-n">vitest-auto-spy</span><span class="proj-m">TypeScript · Open Source · npm</span></div>
-            <div class="proj-d">
-              Typed auto-mocking for Vitest — the spiritual successor to jest-auto-spies. One API, three runtimes (Vitest, Bun, Node.js)
-              behind a swappable MockAdapter. Typed spies from a class or from a type alone, Observable / promise / signal controls, DI
-              helpers for Angular and NestJS. Zero dependencies, 100% coverage. → github.com/ASDAlexey/vitest-auto-spy
-            </div>
-          </div>
-          <div class="proj">
-            <div class="proj-h">
-              <span class="proj-n">Bonds Tracker</span><span class="proj-m">Angular 22 · Tauri 2 · Rust · SQLite</span>
-            </div>
-            <div class="proj-d">
-              Personal bonds-portfolio tracker across multiple T-Bank Invest accounts — smart-portfolio optimizer, audit with swap
-              suggestions, scored screener, coupon calendar and a goal dashboard. Real-time analytics over Tinkoff / MOEX ISS / CBR APIs,
-              KMV-Merton default risk, Plotly, Telegram bot, Rust engines.
-            </div>
-          </div>
-          <div class="proj">
-            <div class="proj-h">
-              <span class="proj-n">SundayRun</span><span class="proj-m">Angular 22 · offline-first PWA · Bun · Vitest</span>
-            </div>
-            <div class="proj-d">
-              In real-world use: it runs the weekly park races for a community club in Taganrog — 300+ runners a year. The whole race
-              happens inside the app: a built-in stopwatch times finishers on-site, the offline-first PWA keeps working with no connectivity
-              and syncs on the way back, and results publish themselves to the site in one atomic commit — official-format PDF protocol
-              included, generated in the browser. Zoneless Angular, 100% test coverage. → asdalexey.github.io/sundayrun
-            </div>
-          </div>
-          <div class="proj">
-            <div class="proj-h">
-              <span class="proj-n">Sportdiary</span><span class="proj-m">Ionic · Angular · Node.js · iOS / Android</span>
-            </div>
-            <div class="proj-d">
-              Full-stack running tracker for iOS &amp; Android, built solo end to end — GPS tracking with live route maps, automatic lap
-              detection, per-workout stats, volume analysis with personal records and a social feed. Node.js backend self-hosted on my own
-              VPS; ran in production for over a year.
-            </div>
-          </div>
-          <div class="proj">
-            <div class="proj-h"><span class="proj-n">Claude Code config &amp; skills</span><span class="proj-m">AI · Automation</span></div>
-            <div class="proj-d">
-              Custom Claude Code skills, agents and hooks that encode project conventions, code generation and token-optimization —
-              including an AI code-review workflow built for large Angular MRs. Treated as a second opinion, not an authority: it reports
-              findings, I read the diff and verify them before anything merges.
-            </div>
+        <div class="proj">
+          <div class="proj-h"><span class="proj-n">vitest-auto-spy</span><span class="proj-m">TypeScript · Open Source · npm</span></div>
+          <div class="proj-d">
+            Typed auto-mocking for Vitest — the spiritual successor to jest-auto-spies. One API, three runtimes (Vitest, Bun, Node.js)
+            behind a swappable MockAdapter. Typed spies from a class or from a type alone, Observable / promise / signal controls, DI
+            helpers for Angular and NestJS. Zero dependencies, 100% coverage. → github.com/ASDAlexey/vitest-auto-spy
           </div>
         </div>
-      </main>
+        <div class="proj">
+          <div class="proj-h">
+            <span class="proj-n">Bonds Tracker</span><span class="proj-m">Angular 22 · Tauri 2 · Rust · SQLite</span>
+          </div>
+          <div class="proj-d">
+            Personal bonds-portfolio tracker across multiple T-Bank Invest accounts — smart-portfolio optimizer, audit with swap
+            suggestions, scored screener, coupon calendar and a goal dashboard. Real-time analytics over Tinkoff / MOEX ISS / CBR APIs,
+            KMV-Merton default risk, Plotly, Telegram bot, Rust engines.
+          </div>
+        </div>
+        <div class="proj">
+          <div class="proj-h">
+            <span class="proj-n">SundayRun</span><span class="proj-m">Angular 22 · offline-first PWA · Bun · Vitest</span>
+          </div>
+          <div class="proj-d">
+            In real-world use: it runs the weekly park races for a community club in Taganrog — 300+ runners a year. The whole race happens
+            inside the app: a built-in stopwatch times finishers on-site, the offline-first PWA keeps working with no connectivity and syncs
+            on the way back, and results publish themselves to the site in one atomic commit — official-format PDF protocol included,
+            generated in the browser. Zoneless Angular, 100% test coverage. → asdalexey.github.io/sundayrun
+          </div>
+        </div>
+        <div class="proj">
+          <div class="proj-h">
+            <span class="proj-n">Sportdiary</span><span class="proj-m">Ionic · Angular · Node.js · iOS / Android</span>
+          </div>
+          <div class="proj-d">
+            Full-stack running tracker for iOS &amp; Android, built solo end to end — GPS tracking with live route maps, automatic lap
+            detection, per-workout stats, volume analysis with personal records and a social feed. Node.js backend self-hosted on my own
+            VPS; ran in production for over a year.
+          </div>
+        </div>
+        <div class="proj">
+          <div class="proj-h"><span class="proj-n">Claude Code config &amp; skills</span><span class="proj-m">AI · Automation</span></div>
+          <div class="proj-d">
+            Custom Claude Code skills, agents and hooks that encode project conventions, code generation and token-optimization — including
+            an AI code-review workflow built for large Angular MRs. Treated as a second opinion, not an authority: it reports findings, I
+            read the diff and verify them before anything merges.
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="eyebrow">Education · Languages</div>
+        <div class="row">
+          <div class="k">Education</div>
+          <div class="v">Taganrog State Pedagogical Institute (A.P. Chekhov) — Physics &amp; Mathematics, 2004 — 2009 · GPA 4.97 / 5</div>
+        </div>
+        <div class="row">
+          <div class="k">Russian</div>
+          <div class="v">Native</div>
+        </div>
+        <div class="row">
+          <div class="k">English</div>
+          <div class="v">Working proficiency (B1) · 8+ years with US / EU teams</div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="eyebrow">Recommendations</div>
+        <div class="quote">
+          <p>
+            “I had the pleasure of working with Alexey for over 5 years. A great developer and team player, who jumped into a complex
+            product, got up to speed quickly and was flexible to the needs of the business. Also a great communicator in English and would
+            recommend him for any lead technical role.”
+          </p>
+          <div class="by">Steve Cronan — ex-CEO / CTO, The 5th Kind</div>
+        </div>
+        <div class="quote">
+          <p>
+            “I worked with Alexey for about 5 years, he did a great job as a Senior Frontend Engineer. An executive developer who can be
+            trusted to solve any technical problem. He also assisted with onboarding new employees onto the project and training juniors.”
+          </p>
+          <div class="by">Eugene Golubev — Director of Frontend &amp; Mobile Engineering</div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -27,23 +27,18 @@ const EN = {
   location: 'Taganrog, Russia · UTC+3 · Remote only',
   labels: {
     contact: 'Contact',
-    summary: 'Summary',
+    summary: 'Profile',
     skills: 'Core Skills',
     experience: 'Experience',
     projects: 'Personal Projects / Open Source',
     education: 'Education',
     languages: 'Languages',
-    highlights: 'Key Highlights',
     keyExperience: 'Key Experience',
+    recommendations: 'Recommendations',
   },
-  summary:
-    'Tech Lead and Senior Frontend Engineer with 14+ years building production web apps — 11+ of them on Angular (v2 → v22). I architect large-scale Angular applications end-to-end and ship them across every platform: web (SSR), Smart TV, mobile (Ionic) and desktop (Tauri/Rust). Reactive-first with NgRx, RxJS, Signals and a zoneless, standalone, OnPush architecture. I build GitLab CI/CD from scratch, drive a testing-first culture (89% on the main app, 100% on greenfield, enforced by CI gates) and lead frontend teams — code review, mentoring and hiring. Currently driving AI-assisted development with custom Claude Code skills, agents and hooks. Remote only.',
-  highlights: [
-    'Sped up multi-select on large virtualized lists ~200× — from 180–200 ms down to 0.4–0.5 ms per item.',
-    'Led migration from service-based to a layered NgRx architecture with clean business-logic separation.',
-    'Took a project from 0% to ~10,400 unit tests at 89% coverage, and to 100% on the shared libraries — all gated in CI.',
-    'Ran 70+ technical interviews; hired and led a team of 9 in-house engineers plus ~6 subcontractors.',
-    'Published vitest-auto-spy on npm — typed auto-mocking for Vitest.',
+  profile: [
+    'Tech Lead and Senior Frontend Developer with **14+ years** of commercial experience, 11+ of them on Angular (v2 → v22). I architect large Angular applications end-to-end and ship one stack across every platform: **Web (SSR), Smart TV (Samsung / LG / Hisense), Mobile (Ionic, iOS / Android) and Desktop (Tauri + Rust)**.',
+    'I built a frontend team from one engineer to nine across three directions, have run **70+ technical interviews**, and own frontend architecture, code review and CI/CD. I took a project from zero tests to **~10,400 unit tests at 89% coverage** gated in CI, and defects reaching production fell from 10–12 a sprint to 2–3. I drive AI-assisted development — custom Claude Code skills and agents, including an AI code-review skill for very large merge requests — and I read every diff a model produces before it lands.',
   ],
   // Same eight groups the site's Skills section shows, in the same order — the résumé keeps the
   // exhaustive list, the site keeps the scannable subset. Change one, change the other.
@@ -179,6 +174,18 @@ const EN = {
     },
   ],
   education: [{ title: 'Taganrog State Pedagogical Institute (A.P. Chekhov)', meta: 'Physics & Mathematics, 2004 — 2009 · GPA 4.97 / 5' }],
+  recommendations: [
+    {
+      quote:
+        'I had the pleasure of working with Alexey for over 5 years. A great developer and team player, who jumped into a complex product, got up to speed quickly and was flexible to the needs of the business. Also a great communicator in English and would recommend him for any lead technical role.',
+      author: 'Steve Cronan — ex-CEO / CTO, The 5th Kind',
+    },
+    {
+      quote:
+        'I worked with Alexey for about 5 years, he did a great job as a Senior Frontend Engineer. An executive developer who can be trusted to solve any technical problem. He also assisted with onboarding new employees onto the project and training juniors.',
+      author: 'Eugene Golubev — Director of Frontend & Mobile Engineering',
+    },
+  ],
   languages: [
     { name: 'Russian', level: 'Native' },
     { name: 'English', level: 'Working proficiency (B1) · 8+ years with US / EU teams' },
@@ -198,17 +205,12 @@ const RU = {
     projects: 'Личные проекты / Open Source',
     education: 'Образование',
     languages: 'Языки',
-    highlights: 'Достижения',
     keyExperience: 'Ключевой опыт',
+    recommendations: 'Отзывы коллег',
   },
-  summary:
-    'Tech Lead и Senior Frontend-разработчик с опытом 14+ лет, из них 11+ на Angular (v2 → v22). Проектирую крупные Angular-приложения целиком и выпускаю их на всех платформах: web (SSR), Smart TV, mobile (Ionic) и desktop (Tauri/Rust). Реактивный стек: NgRx, RxJS, Signals, zoneless, standalone, OnPush. Настраиваю GitLab CI/CD с нуля, выстраиваю testing-first культуру (89% на основном приложении, 100% на greenfield, с гейтами в CI) и руковожу фронтенд-командами — code review, менторинг, найм. Развиваю AI-assisted разработку через собственные скиллы, агенты и хуки Claude Code. Работаю только удалённо.',
-  highlights: [
-    'Ускорил мультивыбор в больших виртуализированных списках в ~200 раз — со 180–200 мс до 0,4–0,5 мс на элемент.',
-    'Перевёл проект с сервисной архитектуры на слоистую NgRx с чистым разделением бизнес-логики.',
-    'Довёл проект с 0% до ~10 400 unit-тестов при 89% покрытия, а общие библиотеки — до 100%, всё с гейтами в CI.',
-    'Провёл 70+ технических собеседований; нанял и веду команду из 9 штатных инженеров и ~6 на субподряде.',
-    'Опубликовал vitest-auto-spy в npm — типизированный auto-mock для Vitest.',
+  profile: [
+    'Tech Lead и Senior Frontend-разработчик с **14+ годами** коммерческого опыта, 11+ из них на Angular (v2 → v22). Проектирую крупные Angular-приложения целиком и вывожу один стек на все платформы: **Web (SSR), Smart TV (Samsung / LG / Hisense), Mobile (Ionic, iOS / Android) и Desktop (Tauri + Rust)**.',
+    'Вырастил фронтенд-команду с одного инженера до девяти по трём направлениям, провёл **70+ технических собеседований**, отвечаю за архитектуру, code review и CI/CD. Довёл проект с нуля тестов до **~10 400 unit-тестов при 89% покрытия** с гейтом в CI, а багов, доходящих до прода, стало 2–3 за спринт вместо 10–12. Внедряю AI-assisted разработку — кастомные скиллы и агенты Claude Code, включая скилл авто-код-ревью для очень больших MR — и читаю каждый дифф, который выдала модель, до того как он попадёт в проект.',
   ],
   skills: [
     { group: 'Языки', items: 'TypeScript (strict mode), JavaScript (ES6+ / ES2023+), Node.js, HTML5, CSS3 / SCSS, Tailwind CSS' },
@@ -347,6 +349,18 @@ const RU = {
       meta: 'Физика и математика, 2004 — 2009 · средний балл 4,97 / 5',
     },
   ],
+  recommendations: [
+    {
+      quote:
+        'Отличный разработчик и командный игрок: быстро вник в сложный продукт и гибко подстраивался под потребности бизнеса. Рекомендую его на любую ведущую техническую роль.',
+      author: 'Steve Cronan — экс-CEO / CTO, The 5th Kind',
+    },
+    {
+      quote:
+        'Отлично справлялся с ролью Senior Frontend Engineer: ответственный разработчик, которому можно доверить любую техническую задачу; помогал вводить новых сотрудников и обучал джунов.',
+      author: 'Eugene Golubev — директор Frontend и Mobile разработки',
+    },
+  ],
   languages: [
     { name: 'Русский', level: 'Родной' },
     { name: 'Английский', level: 'Рабочий (B1) · 8+ лет с US / EU командами' },
@@ -355,134 +369,130 @@ const RU = {
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
+// `**bold**` in the copy above becomes <b> — the only markup the data carries, so a phrase can be
+// emphasised the way the profile paragraphs do without letting raw HTML into the strings.
+const rich = (t) => esc(t).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+
+// Light, single-column, print-first. The dark two-column version this replaces looked good on a
+// screen and wrong on a recruiter's printer: it read as a template rather than as a document, and
+// the sidebar meant the eye had two places to start. One column, black on white and a single blue
+// accent is what the format expects — and it happens to be what parsers read most reliably.
 const css = `
 *{margin:0;padding:0;box-sizing:border-box}
 @page{size:A4;margin:0}
 :root{
-  --bg:#06060a;--surface:#0e0e16;--surface-2:#111118;--border:#1f1f2e;
-  --text:#eeeef0;--text-2:#a6a6be;--muted:#7e7e98;
-  --accent:#a78bfa;--accent-2:#7c3aed;--blue:#60a5fa;--green:#34d399;
+  --text:#1c1c1e;--text-2:#3a3a3e;--muted:#75757c;--rule:#d8d8de;
+  --accent:#4a72b0;
   --font:'Inter',-apple-system,'Segoe UI',Roboto,sans-serif;
   --mono:'JetBrains Mono','SF Mono',ui-monospace,monospace;
 }
 html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:9.6px;line-height:1.5;letter-spacing:.1px}
-.page{width:210mm;min-height:297mm;background:
-  radial-gradient(900px 500px at 78% -8%,rgba(124,58,237,.16),transparent 60%),
-  radial-gradient(700px 500px at -5% 8%,rgba(59,130,246,.10),transparent 55%),
-  var(--bg);
-  display:grid;grid-template-columns:62mm 1fr;}
-.side{padding:13mm 8mm 12mm;background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);border-right:1px solid var(--border)}
-.main{padding:13mm 11mm 12mm 10mm}
-.name{font-size:25px;font-weight:800;letter-spacing:-.6px;line-height:1.05;
-  background:linear-gradient(120deg,#fff 30%,var(--accent) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.role{margin-top:5px;font-weight:600;font-size:11px;
-  background:linear-gradient(90deg,var(--accent),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
-.loc{margin-top:6px;color:var(--muted);font-size:8.6px;font-family:var(--mono)}
-.eyebrow{font-family:var(--mono);font-size:7.6px;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent);
-  font-weight:600;margin:0 0 7px;display:flex;align-items:center;gap:6px}
-.eyebrow::before{content:'';flex:none;width:5px;height:5px;border-radius:50%;background:var(--green)}
-.side .block{margin-top:14px}
-.side .block:first-of-type{margin-top:18px}
-.c-row{display:block;margin-bottom:7px}
-.c-row .k{font-family:var(--mono);font-size:7.2px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted)}
-.c-row .v{color:var(--text);font-size:9px;word-break:break-word}
-.c-row .v a{color:var(--accent);text-decoration:none}
-.skill{margin-bottom:8px}
-.skill .g{font-weight:700;font-size:9px;color:#fff;margin-bottom:2px}
-.skill .i{color:var(--text-2);font-size:8.4px;line-height:1.45}
-.lang{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px;font-size:8.8px}
-.lang>span:first-child{flex:none}
-.lang .lv{color:var(--muted);font-family:var(--mono);font-size:8px;text-align:right;line-height:1.35}
-.edu .t{font-weight:600;font-size:9px;color:#fff}
-.edu .m{color:var(--text-2);font-size:8.2px;margin-top:1px}
-.summary{color:var(--text-2);font-size:9.4px;line-height:1.6;margin-bottom:4px}
-.main .block{margin-top:13px}
+body{font-family:var(--font);background:#fff;color:var(--text);font-size:9.1px;line-height:1.45}
+.page{width:210mm;min-height:297mm;padding:14mm 17mm 12mm}
+.name{font-size:30px;font-weight:800;letter-spacing:-.8px;line-height:1.02}
+.role{margin-top:6px;font-size:12px;font-weight:700;color:var(--accent)}
+.loc{margin-top:6px;color:var(--text-2);font-size:9.6px}
+.contact{margin-top:9px;display:flex;flex-wrap:wrap;gap:4px 16px;font-family:var(--mono);font-size:8.6px;color:var(--text-2)}
+.contact a{color:var(--text-2);text-decoration:none}
+.contact a.site{color:var(--accent);text-decoration:underline}
+.rule{height:1.4px;background:var(--text);margin:11px 0 0}
+.eyebrow{font-size:9px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--accent);margin:12px 0 6px;break-after:avoid}
+.block:first-of-type .eyebrow{margin-top:13px}
+p.para{color:var(--text-2);margin-bottom:6px}
+p.para b{color:var(--text);font-weight:700}
+.row{display:grid;grid-template-columns:74px 1fr;gap:5px 12px;margin-bottom:6px;break-inside:avoid}
+.row .k{font-weight:700;font-size:9.1px}
+.row .v{color:var(--text-2)}
 .hl{list-style:none}
-.hl li{position:relative;padding-left:14px;color:var(--text-2);font-size:9px;margin-bottom:4px}
-.hl li::before{content:'▹';position:absolute;left:0;color:var(--accent);font-size:9px}
-.job{margin-bottom:10px;break-inside:avoid}
-.job-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
-.job-r{font-weight:700;font-size:10px;color:#fff}
-.job-p{font-family:var(--mono);font-size:8px;color:var(--accent);white-space:nowrap}
-.job-c{color:var(--blue);font-size:8.8px;font-weight:500;margin:1px 0 4px}
+.hl li{position:relative;padding-left:12px;color:var(--text-2);margin-bottom:4px;break-inside:avoid}
+.hl li::before{content:'';position:absolute;left:2px;top:5.4px;width:3.2px;height:3.2px;border-radius:50%;background:var(--accent)}
+.job{margin-bottom:9px}
+.job-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;break-after:avoid}
+.job-r{font-weight:700;font-size:10.6px}
+.job-p{font-family:var(--mono);font-size:8.6px;color:var(--muted);white-space:nowrap}
+.job-c{color:var(--muted);font-size:9px;margin:1px 0 4px;break-after:avoid}
 .job ul{list-style:none}
-.job li{position:relative;padding-left:12px;color:var(--text-2);font-size:8.8px;line-height:1.5;margin-bottom:2.5px}
-.job li::before{content:'';position:absolute;left:2px;top:6px;width:3px;height:3px;border-radius:50%;background:var(--accent-2)}
-.proj{margin-bottom:7px;break-inside:avoid}
-.proj-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
-.proj-n{font-weight:700;font-size:9.4px;color:#fff}
-.proj-m{font-family:var(--mono);font-size:7.4px;color:var(--muted);white-space:nowrap}
-.proj-d{color:var(--text-2);font-size:8.6px;line-height:1.45;margin-top:1px}
-.divider{height:1px;background:linear-gradient(90deg,var(--border),transparent);margin-top:13px}
+.job li{position:relative;padding-left:12px;color:var(--text-2);margin-bottom:2.6px;break-inside:avoid}
+.job li::before{content:'';position:absolute;left:2px;top:5.4px;width:3.2px;height:3.2px;border-radius:50%;background:var(--accent)}
+.proj{margin-bottom:6.5px;break-inside:avoid}
+.proj-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.proj-n{font-weight:700;font-size:9.8px}
+.proj-m{font-family:var(--mono);font-size:8px;color:var(--muted);white-space:nowrap}
+.proj-d{color:var(--text-2);margin-top:1px}
+.quote{border-left:2.2px solid var(--rule);padding-left:10px;margin-bottom:8px;break-inside:avoid}
+.quote p{color:var(--text-2);font-style:italic}
+.quote .by{color:var(--muted);font-size:8.6px;margin-top:2px}
 `;
 
 function render(d) {
   const L = d.labels;
-  const link = (x) =>
-    `<div class="c-row"><div class="k">${esc(x.label)}</div><div class="v"><a href="${x.href}">${esc(x.value)}</a></div></div>`;
+  const links = [
+    SHARED.links.site,
+    SHARED.links.telegram,
+    SHARED.links.max,
+    SHARED.links.linkedin,
+    SHARED.links.email,
+    SHARED.links.github,
+  ];
+  const section = (title, body) => `<div class="block"><div class="eyebrow">${esc(title)}</div>${body}</div>`;
+  const rows = (items) =>
+    items.map((i) => `<div class="row"><div class="k">${esc(i.k)}</div><div class="v">${esc(i.v)}</div></div>`).join('');
+  const bullets = (items) => `<ul class="hl">${items.map((i) => `<li>${rich(i)}</li>`).join('')}</ul>`;
+
   return `<!doctype html><html lang="${d.lang}"><head><meta charset="utf-8">
 <title>${esc(SHARED.name)} — Résumé</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>${css}</style></head><body><div class="page">
-  <aside class="side">
-    <div class="name">${esc(SHARED.name)}</div>
-    <div class="role">${esc(d.role)}</div>
-    <div class="loc">${esc(d.location)}</div>
+  <div class="name">${esc(SHARED.name)}</div>
+  <div class="role">${esc(d.role)}</div>
+  <div class="loc">${esc(d.location)}</div>
+  <div class="contact">${links
+    .map((x) => `<a class="${x === SHARED.links.site ? 'site' : ''}" href="${x.href}">${esc(x.value)}</a>`)
+    .join('')}</div>
+  <div class="rule"></div>
 
-    <div class="block"><div class="eyebrow">${esc(L.contact)}</div>
-      ${link(SHARED.links.email)}${link(SHARED.links.telegram)}${link(SHARED.links.max)}${link(SHARED.links.github)}${link(SHARED.links.linkedin)}${link(SHARED.links.site)}
-    </div>
+  ${section(L.summary, d.profile.map((t) => `<p class="para">${rich(t)}</p>`).join(''))}
+  ${section(L.keyExperience, bullets(d.keyExperience))}
+  ${section(L.skills, rows(d.skills.map((x) => ({ k: x.group, v: x.items }))))}
 
-    <div class="block"><div class="eyebrow">${esc(L.skills)}</div>
-      ${d.skills.map((s) => `<div class="skill"><div class="g">${esc(s.group)}</div><div class="i">${esc(s.items)}</div></div>`).join('')}
-    </div>
+  ${section(
+    L.experience,
+    d.experience
+      .map(
+        (
+          j,
+        ) => `<div class="job"><div class="job-h"><span class="job-r">${esc(j.role)}</span><span class="job-p">${esc(j.period)}</span></div>
+    <div class="job-c">${esc(j.company)}</div>
+    <ul>${j.points.map((x) => `<li>${rich(x)}</li>`).join('')}</ul></div>`,
+      )
+      .join(''),
+  )}
 
-    <div class="block"><div class="eyebrow">${esc(L.languages)}</div>
-      ${d.languages.map((l) => `<div class="lang"><span>${esc(l.name)}</span><span class="lv">${esc(l.level)}</span></div>`).join('')}
-    </div>
+  ${section(
+    L.projects,
+    d.projects
+      .map(
+        (
+          x,
+        ) => `<div class="proj"><div class="proj-h"><span class="proj-n">${esc(x.name)}</span><span class="proj-m">${esc(x.meta)}</span></div>
+    <div class="proj-d">${esc(x.desc)}</div></div>`,
+      )
+      .join(''),
+  )}
 
-    <div class="block edu"><div class="eyebrow">${esc(L.education)}</div>
-      ${d.education.map((e) => `<div class="t">${esc(e.title)}</div><div class="m">${esc(e.meta)}</div>`).join('')}
-    </div>
-  </aside>
+  ${section(
+    `${L.education} · ${L.languages}`,
+    rows([
+      ...d.education.map((e) => ({ k: L.education, v: `${e.title} — ${e.meta}` })),
+      ...d.languages.map((l) => ({ k: l.name, v: l.level })),
+    ]),
+  )}
 
-  <main class="main">
-    <div class="eyebrow">${esc(L.summary)}</div>
-    <p class="summary">${esc(d.summary)}</p>
-
-    <div class="block"><div class="eyebrow">${esc(L.keyExperience)}</div>
-      <ul class="hl">${d.keyExperience.map((k) => `<li>${esc(k)}</li>`).join('')}</ul>
-    </div>
-
-    <div class="block"><div class="eyebrow">${esc(L.highlights)}</div>
-      <ul class="hl">${d.highlights.map((h) => `<li>${esc(h)}</li>`).join('')}</ul>
-    </div>
-
-    <div class="block"><div class="eyebrow">${esc(L.experience)}</div>
-      ${d.experience
-        .map(
-          (
-            j,
-          ) => `<div class="job"><div class="job-h"><span class="job-r">${esc(j.role)}</span><span class="job-p">${esc(j.period)}</span></div>
-        <div class="job-c">${esc(j.company)}</div>
-        <ul>${j.points.map((p) => `<li>${esc(p)}</li>`).join('')}</ul></div>`,
-        )
-        .join('')}
-    </div>
-
-    <div class="block"><div class="eyebrow">${esc(L.projects)}</div>
-      ${d.projects
-        .map(
-          (
-            p,
-          ) => `<div class="proj"><div class="proj-h"><span class="proj-n">${esc(p.name)}</span><span class="proj-m">${esc(p.meta)}</span></div>
-        <div class="proj-d">${esc(p.desc)}</div></div>`,
-        )
-        .join('')}
-    </div>
-  </main>
+  ${section(
+    L.recommendations,
+    d.recommendations.map((r) => `<div class="quote"><p>“${esc(r.quote)}”</p><div class="by">${esc(r.author)}</div></div>`).join(''),
+  )}
 </div></body></html>`;
 }
 
@@ -525,7 +535,10 @@ function renderPlain(d) {
     SHARED.links.linkedin,
     SHARED.links.site,
   ];
-  const list = (items) => `<ul>${items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul>`;
+  // The plain variant drops the emphasis rather than rendering it — bold carries no meaning to a
+  // parser, and `**` left in the text would.
+  const plain = (t) => esc(t).replace(/\*\*(.+?)\*\*/g, '$1');
+  const list = (items) => `<ul>${items.map((i) => `<li>${plain(i)}</li>`).join('')}</ul>`;
 
   return `<!doctype html><html lang="${d.lang}"><head><meta charset="utf-8">
 <title>${esc(SHARED.name)} — Résumé</title>
@@ -536,7 +549,7 @@ function renderPlain(d) {
   <p class="contact">${contacts.map((c) => `<a href="${c.href}">${esc(c.value)}</a>`).join(' · ')}</p>
 
   <h2>${esc(L.summary)}</h2>
-  <p>${esc(d.summary)}</p>
+  ${d.profile.map((t) => `<p>${plain(t)}</p>`).join('')}
 
   <h2>${esc(L.keyExperience)}</h2>
   ${list(d.keyExperience)}
@@ -552,9 +565,6 @@ function renderPlain(d) {
     ${list(j.points)}</div>`,
     )
     .join('')}
-
-  <h2>${esc(L.highlights)}</h2>
-  ${list(d.highlights)}
 
   <h2>${esc(L.projects)}</h2>
   ${d.projects.map((x) => `<div class="proj"><b>${esc(x.name)}</b> — ${esc(x.meta)}<br>${esc(x.desc)}</div>`).join('')}
