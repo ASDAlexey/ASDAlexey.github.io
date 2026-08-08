@@ -93,7 +93,7 @@ const EN = {
       company: 'Remote',
       period: '2023 — Present',
       points: [
-        'KION (MTS) — a streaming platform with ~4M web users and ~100k Smart TV devices. Shipped SSR web features (age-gating and PIN compliance, profile, subscriptions, legal consent) and the whole gamification vertical — achievements, levels, leaderboards, fortune wheel — to web and Smart TV, inside an Nx monorepo of 5 apps and 81 libraries.',
+        'A major streaming service — ~4M web users and ~100k Smart TV devices. Shipped SSR web features (age-gating and PIN compliance, profile, subscriptions, legal consent) and the whole gamification vertical — achievements, levels, leaderboards, fortune wheel — to web and Smart TV, inside an Nx monorepo of 5 apps and 81 libraries.',
         'Enterprise 3D digital-twin and geospatial platform — sole architect of a multi-tenant Angular 22 app: 286 components, ~107k lines of TypeScript, real-time pixel streaming, deployed to 8+ environments from a single codebase.',
         'Inherited a frontend team of one and built it out across three directions — my own group of 4–5, a reporting vertical of 5 and an international one of 2 — hiring every engineer myself over 70+ interviews.',
         'Own the release for all three frontend teams: I cut the epic, the teams raise the MRs, I merge once the approvals land — often as one of the reviewers. Reviewed an external contractor team’s code for a year, then hired the senior who took it over.',
@@ -263,7 +263,7 @@ const RU = {
       company: 'Удалённо',
       period: '2023 — н.в.',
       points: [
-        'KION (МТС) — стриминговый сервис с ~4 млн пользователей на web и ~100 тыс. устройств Smart TV. Реализовал SSR-фичи на web (возрастные ограничения и PIN по требованиям РКН, профиль, подписки, юридические согласия) и вертикаль геймификации целиком — достижения, уровни, лидерборды, колесо фортуны — на web и Smart TV, внутри Nx-монорепо из 5 приложений и 81 библиотеки.',
+        'Крупный стриминговый сервис — ~4 млн пользователей на web и ~100 тыс. устройств Smart TV. Реализовал SSR-фичи на web (возрастные ограничения и PIN по требованиям РКН, профиль, подписки, юридические согласия) и вертикаль геймификации целиком — достижения, уровни, лидерборды, колесо фортуны — на web и Smart TV, внутри Nx-монорепо из 5 приложений и 81 библиотеки.',
         'Enterprise-платформа цифрового двойника и геовизуализации — единственный архитектор мульти-тенант приложения на Angular 22: 286 компонентов, ~107 тыс. строк TypeScript, real-time pixel streaming, деплой в 8+ окружений из одной кодовой базы.',
         'Пришёл в команду из одного фронтендера и вырастил её по трём направлениям — своя группа 4–5 человек, вертикаль отчётов на 5 и международное направление на 2 — нанял каждого лично, проведя 70+ собеседований.',
         'Отвечаю за релиз всех трёх фронтенд-команд: нарезаю эпик, команды готовят MR, я мержу после аппрувов — часто сам же и ревьюер. Год ревьюил код внешней команды подрядчиков, потом нанял сеньора, который это перенял.',
@@ -387,39 +387,40 @@ const css = `
   --mono:'JetBrains Mono','SF Mono',ui-monospace,monospace;
 }
 html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-body{font-family:var(--font);background:#fff;color:var(--text);font-size:9.1px;line-height:1.45}
-.page{width:210mm;min-height:297mm;padding:14mm 17mm 12mm}
+body{font-family:var(--font);background:#fff;color:var(--text);font-size:9.6px;line-height:1.6}
+.page{width:210mm;min-height:297mm;padding:16mm 18mm 14mm}
 .name{font-size:30px;font-weight:800;letter-spacing:-.8px;line-height:1.02}
 .role{margin-top:6px;font-size:12px;font-weight:700;color:var(--accent)}
 .loc{margin-top:6px;color:var(--text-2);font-size:9.6px}
 .contact{margin-top:9px;display:flex;flex-wrap:wrap;gap:4px 16px;font-family:var(--mono);font-size:8.6px;color:var(--text-2)}
 .contact a{color:var(--text-2);text-decoration:none}
 .contact a.site{color:var(--accent);text-decoration:underline}
-.rule{height:1.4px;background:var(--text);margin:11px 0 0}
-.eyebrow{font-size:9px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--accent);margin:12px 0 6px;break-after:avoid}
+.rule{height:1.4px;background:var(--text);margin:12px 0 0}
+.block.page-break{break-before:page;padding-top:2mm}
+.eyebrow{font-size:9.2px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--accent);margin:17px 0 9px;break-after:avoid}
 .block:first-of-type .eyebrow{margin-top:13px}
-p.para{color:var(--text-2);margin-bottom:6px}
+p.para{color:var(--text-2);margin-bottom:8px}
 p.para b{color:var(--text);font-weight:700}
-.row{display:grid;grid-template-columns:74px 1fr;gap:5px 12px;margin-bottom:6px;break-inside:avoid}
+.row{display:grid;grid-template-columns:78px 1fr;gap:5px 14px;margin-bottom:8px;break-inside:avoid}
 .row .k{font-weight:700;font-size:9.1px}
 .row .v{color:var(--text-2)}
 .hl{list-style:none}
-.hl li{position:relative;padding-left:12px;color:var(--text-2);margin-bottom:4px;break-inside:avoid}
+.hl li{position:relative;padding-left:13px;color:var(--text-2);margin-bottom:6px;break-inside:avoid}
 .hl li::before{content:'';position:absolute;left:2px;top:5.4px;width:3.2px;height:3.2px;border-radius:50%;background:var(--accent)}
-.job{margin-bottom:9px}
+.job{margin-bottom:13px}
 .job-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;break-after:avoid}
 .job-r{font-weight:700;font-size:10.6px}
 .job-p{font-family:var(--mono);font-size:8.6px;color:var(--muted);white-space:nowrap}
 .job-c{color:var(--muted);font-size:9px;margin:1px 0 4px;break-after:avoid}
 .job ul{list-style:none}
-.job li{position:relative;padding-left:12px;color:var(--text-2);margin-bottom:2.6px;break-inside:avoid}
+.job li{position:relative;padding-left:13px;color:var(--text-2);margin-bottom:4px;break-inside:avoid}
 .job li::before{content:'';position:absolute;left:2px;top:5.4px;width:3.2px;height:3.2px;border-radius:50%;background:var(--accent)}
-.proj{margin-bottom:6.5px;break-inside:avoid}
+.proj{margin-bottom:10px;break-inside:avoid}
 .proj-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
 .proj-n{font-weight:700;font-size:9.8px}
 .proj-m{font-family:var(--mono);font-size:8px;color:var(--muted);white-space:nowrap}
 .proj-d{color:var(--text-2);margin-top:1px}
-.quote{border-left:2.2px solid var(--rule);padding-left:10px;margin-bottom:8px;break-inside:avoid}
+.quote{border-left:2.2px solid var(--rule);padding-left:12px;margin-bottom:11px;break-inside:avoid}
 .quote p{color:var(--text-2);font-style:italic}
 .quote .by{color:var(--muted);font-size:8.6px;margin-top:2px}
 `;
@@ -434,7 +435,8 @@ function render(d) {
     SHARED.links.email,
     SHARED.links.github,
   ];
-  const section = (title, body) => `<div class="block"><div class="eyebrow">${esc(title)}</div>${body}</div>`;
+  const section = (title, body, opts = {}) =>
+    `<div class="block${opts.newPage ? ' page-break' : ''}"><div class="eyebrow">${esc(title)}</div>${body}</div>`;
   const rows = (items) =>
     items.map((i) => `<div class="row"><div class="k">${esc(i.k)}</div><div class="v">${esc(i.v)}</div></div>`).join('');
   const bullets = (items) => `<ul class="hl">${items.map((i) => `<li>${rich(i)}</li>`).join('')}</ul>`;
@@ -467,6 +469,7 @@ function render(d) {
     <ul>${j.points.map((x) => `<li>${rich(x)}</li>`).join('')}</ul></div>`,
       )
       .join(''),
+    { newPage: true },
   )}
 
   ${section(
@@ -479,6 +482,7 @@ function render(d) {
     <div class="proj-d">${esc(x.desc)}</div></div>`,
       )
       .join(''),
+    { newPage: true },
   )}
 
   ${section(

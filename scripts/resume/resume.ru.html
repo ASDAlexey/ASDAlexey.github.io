@@ -35,14 +35,14 @@
       body {
         background: #fff;
         color: var(--text);
-        font-size: 9.1px;
-        line-height: 1.45;
+        font-size: 9.6px;
+        line-height: 1.6;
         font-family: var(--font);
       }
       .page {
         width: 210mm;
         min-height: 297mm;
-        padding: 14mm 17mm 12mm;
+        padding: 16mm 18mm 14mm;
       }
       .name {
         font-weight: 800;
@@ -80,14 +80,18 @@
       }
       .rule {
         height: 1.4px;
-        margin: 11px 0 0;
+        margin: 12px 0 0;
         background: var(--text);
       }
+      .block.page-break {
+        padding-top: 2mm;
+        break-before: page;
+      }
       .eyebrow {
-        margin: 12px 0 6px;
+        margin: 17px 0 9px;
         color: var(--accent);
         font-weight: 700;
-        font-size: 9px;
+        font-size: 9.2px;
         letter-spacing: 1.2px;
         text-transform: uppercase;
         break-after: avoid;
@@ -96,7 +100,7 @@
         margin-top: 13px;
       }
       p.para {
-        margin-bottom: 6px;
+        margin-bottom: 8px;
         color: var(--text-2);
       }
       p.para b {
@@ -105,9 +109,9 @@
       }
       .row {
         display: grid;
-        grid-template-columns: 74px 1fr;
-        margin-bottom: 6px;
-        gap: 5px 12px;
+        grid-template-columns: 78px 1fr;
+        margin-bottom: 8px;
+        gap: 5px 14px;
         break-inside: avoid;
       }
       .row .k {
@@ -122,8 +126,8 @@
       }
       .hl li {
         position: relative;
-        margin-bottom: 4px;
-        padding-left: 12px;
+        margin-bottom: 6px;
+        padding-left: 13px;
         color: var(--text-2);
         break-inside: avoid;
       }
@@ -138,7 +142,7 @@
         content: '';
       }
       .job {
-        margin-bottom: 9px;
+        margin-bottom: 13px;
       }
       .job-h {
         display: flex;
@@ -168,8 +172,8 @@
       }
       .job li {
         position: relative;
-        margin-bottom: 2.6px;
-        padding-left: 12px;
+        margin-bottom: 4px;
+        padding-left: 13px;
         color: var(--text-2);
         break-inside: avoid;
       }
@@ -184,7 +188,7 @@
         content: '';
       }
       .proj {
-        margin-bottom: 6.5px;
+        margin-bottom: 10px;
         break-inside: avoid;
       }
       .proj-h {
@@ -208,8 +212,8 @@
         color: var(--text-2);
       }
       .quote {
-        margin-bottom: 8px;
-        padding-left: 10px;
+        margin-bottom: 11px;
+        padding-left: 12px;
         border-left: 2.2px solid var(--rule);
         break-inside: avoid;
       }
@@ -341,14 +345,14 @@
         </div>
       </div>
 
-      <div class="block">
+      <div class="block page-break">
         <div class="eyebrow">Опыт работы</div>
         <div class="job">
           <div class="job-h"><span class="job-r">Tech Lead / Senior Angular Developer</span><span class="job-p">2023 — н.в.</span></div>
           <div class="job-c">Удалённо</div>
           <ul>
             <li>
-              KION (МТС) — стриминговый сервис с ~4 млн пользователей на web и ~100 тыс. устройств Smart TV. Реализовал SSR-фичи на web
+              Крупный стриминговый сервис — ~4 млн пользователей на web и ~100 тыс. устройств Smart TV. Реализовал SSR-фичи на web
               (возрастные ограничения и PIN по требованиям РКН, профиль, подписки, юридические согласия) и вертикаль геймификации целиком —
               достижения, уровни, лидерборды, колесо фортуны — на web и Smart TV, внутри Nx-монорепо из 5 приложений и 81 библиотеки.
             </li>
@@ -431,7 +435,7 @@
         </div>
       </div>
 
-      <div class="block">
+      <div class="block page-break">
         <div class="eyebrow">Личные проекты / Open Source</div>
         <div class="proj">
           <div class="proj-h"><span class="proj-n">Litely</span><span class="proj-m">Tauri · Angular 22 · Rust</span></div>
