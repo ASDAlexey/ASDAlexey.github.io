@@ -19,17 +19,23 @@ const ROOT = 'dist/ngportfolio/browser';
 const KB = 1024;
 const MB = 1024 * KB;
 
-// Measured on 1 Aug 2026, roughly 10% of headroom each. The comment after every limit is what
+// Re-measured on 8 Aug 2026, roughly 10% of headroom each. The comment after every limit is what
 // it actually weighed that day, so the next person can see how much room a change has eaten.
+//
+// Two limits moved that day: the experience copy grew into the figures behind it, and the résumé
+// gained the full core-skills table. That is content, not bloat, so the ceilings rose to keep
+// their usual headroom rather than the content being cut to fit a number.
 const BUDGETS = [
-  { label: 'Deploy total', limit: 6.2 * MB, measure: () => dirSize(ROOT) }, // 5.53 MB
-  { label: 'Locale bundle (en)', limit: 1.1 * MB, measure: () => dirSize(join(ROOT, 'en')) }, // 929 KB
-  { label: 'Locale bundle (ru)', limit: 1.1 * MB, measure: () => dirSize(join(ROOT, 'ru')) }, // 962 KB
+  { label: 'Deploy total', limit: 6.4 * MB, measure: () => dirSize(ROOT) }, // 5.73 MB
+  { label: 'Locale bundle (en)', limit: 1.1 * MB, measure: () => dirSize(join(ROOT, 'en')) }, // 940 KB
+  { label: 'Locale bundle (ru)', limit: 1.1 * MB, measure: () => dirSize(join(ROOT, 'ru')) }, // 985 KB
   { label: 'Screenshots', limit: 3.6 * MB, measure: () => dirSize(join(ROOT, 'my-projects')) }, // 3.20 MB
-  { label: 'index.html (worst locale)', limit: 168 * KB, measure: () => worstIndexHtml() }, // 151 KB
-  { label: 'main.js gzipped (worst locale)', limit: 64 * KB, measure: () => worstMainJsGzip() }, // 54 KB
+  { label: 'index.html (worst locale)', limit: 176 * KB, measure: () => worstIndexHtml() }, // 158 KB
+  { label: 'main.js gzipped (worst locale)', limit: 64 * KB, measure: () => worstMainJsGzip() }, // 55 KB
   { label: 'og-image.png', limit: 56 * KB, measure: () => fileSize(join(ROOT, 'og-image.png')) }, // 41 KB
-  { label: 'Résumé PDFs', limit: 520 * KB, measure: () => resumeSize() }, // 451 KB
+  // Only the two designed PDFs are deployed. The plain single-column pair for job boards is built
+  // beside them into content/resume-ats/ and never reaches dist, so it is not measured here.
+  { label: 'Résumé PDFs', limit: 700 * KB, measure: () => resumeSize() }, // 629 KB
 ];
 
 function dirSize(dir) {
