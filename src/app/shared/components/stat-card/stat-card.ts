@@ -37,8 +37,14 @@ export class StatCard {
   /** What the template paints: the animated count for numbers, the raw string otherwise. */
   readonly display = computed(() => (this.#isNumeric() ? this.#current().toString() : this.stat().value));
 
-  /** Only percentages get a ring — they are the ones with a meaningful "out of". */
-  readonly hasRing = computed(() => this.#isNumeric() && this.stat().suffix === PERCENT_SUFFIX);
+  /**
+   * Only percentages get a ring — they are the ones with a meaningful "out of".
+   *
+   * Matched on the end of the suffix rather than the whole of it, so a range like `97` + `–100%`
+   * still reads as a share and keeps its gauge; the arc then fills to the low end of the range,
+   * which is the figure the number beside it shows.
+   */
+  readonly hasRing = computed(() => this.#isNumeric() && this.stat().suffix.endsWith(PERCENT_SUFFIX));
 
   /**
    * Dash offset for the ring's filled arc. The circle is normalised to

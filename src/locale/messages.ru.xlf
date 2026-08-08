@@ -47,16 +47,16 @@
         <target>Алексей Попов — Tech Lead / Senior Angular Developer</target>
       </trans-unit>
       <trans-unit id="seo.desc" datatype="html">
-        <source>Tech Lead / Senior Angular Developer (NgRx). 14+ years of Angular across every platform — Web (SSR), Smart TV, Mobile (Ionic), Desktop (Tauri/Rust). Angular 22, zoneless, signals, Nx, OpenAPI/zod codegen, design systems, GitLab CI/CD, 97% test coverage, AI code-review, Frontend Team Lead.</source>
-        <target>Tech Lead / Senior Angular Developer (NgRx). 14+ лет Angular на всех платформах — Web (SSR), Smart TV, Mobile (Ionic), Desktop (Tauri/Rust). Angular 22, zoneless, сигналы, Nx, кодген из OpenAPI с zod, дизайн-системы, GitLab CI/CD, 97% покрытие тестами, AI code-review, Тимлид фронтенд-команд.</target>
+        <source>Tech Lead / Senior Angular Developer. 14+ years of commercial experience, 11+ on Angular (v2 → v22), across every platform — Web (SSR), Smart TV, Mobile (Ionic), Desktop (Tauri/Rust). Zoneless, signals, Nx monorepos, OpenAPI/zod codegen, design systems, GitLab CI/CD, 89–100% test coverage, 70+ technical interviews, AI code-review. Remote only.</source>
+        <target>Tech Lead / Senior Angular Developer. 14+ лет коммерческого опыта, 11+ из них на Angular (v2 → v22), на всех платформах — Web (SSR), Smart TV, Mobile (Ionic), Desktop (Tauri/Rust). Zoneless, сигналы, Nx-монорепозитории, кодген из OpenAPI с zod, дизайн-системы, GitLab CI/CD, 89–100% покрытие тестами, 70+ технических собеседований, AI code-review. Только удалённо.</target>
       </trans-unit>
       <trans-unit id="ld.jobTitle" datatype="html">
         <source>Tech Lead / Senior Angular Developer</source>
         <target>Tech Lead / Senior Angular Developer</target>
       </trans-unit>
       <trans-unit id="ld.description" datatype="html">
-        <source>Tech Lead and Senior Angular Developer with 14+ years of experience, shipping Angular on web (SSR), Smart TV, mobile (Ionic) and desktop (Tauri/Rust).</source>
-        <target>Tech Lead и Senior Angular-разработчик с опытом 14+ лет — Angular на web (SSR), Smart TV, mobile (Ionic) и desktop (Tauri/Rust).</target>
+        <source>Tech Lead and Senior Angular Developer with 14+ years of commercial experience, 11+ of them on Angular (v2 → v22), shipping it on web (SSR), Smart TV, mobile (Ionic) and desktop (Tauri/Rust). Leads frontend teams, owns architecture, code review and GitLab CI/CD. Remote only.</source>
+        <target>Tech Lead и Senior Angular-разработчик с 14+ годами коммерческого опыта, 11+ из них на Angular (v2 → v22) — на web (SSR), Smart TV, mobile (Ionic) и desktop (Tauri/Rust). Ведёт фронтенд-команды, отвечает за архитектуру, code review и GitLab CI/CD. Только удалённо.</target>
       </trans-unit>
       <trans-unit id="nav.about" datatype="html">
         <source>About</source>
@@ -67,16 +67,16 @@
         <target>Angular-специалист, который закрывает все платформы одним стеком</target>
       </trans-unit>
       <trans-unit id="about.p1" datatype="html">
-        <source> Tech Lead and Senior Frontend Developer with <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>14+ years<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> of experience. Angular is my core strength — and I&apos;ve shipped it on every platform there is: web (SSR), Smart TV (Samsung/LG/Hisense), mobile (Ionic, iOS/Android) and desktop (Tauri). </source>
-        <target> Tech Lead и Senior Frontend Developer с <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>14+ годами<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> опыта. Angular — моя сильная сторона, и я выпускал его на всех платформах: web (SSR), Smart TV (Samsung/LG/Hisense), mobile (Ionic, iOS/Android) и desktop (Tauri). </target>
+        <source> Tech Lead and Senior Frontend Developer with <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>14+ years<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> of commercial experience, <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>11+ of them on Angular<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — every version from v2 to v22. I&apos;ve shipped it on every platform there is: web (SSR), Smart TV (Samsung/LG/Hisense), mobile (Ionic, iOS/Android) and desktop (Tauri + Rust). </source>
+        <target> Tech Lead и Senior Frontend-разработчик с <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>14+ годами<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> коммерческого опыта, <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>11+ из них на Angular<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — каждая версия от v2 до v22. Выпускал его на всех платформах, какие есть: web (SSR), Smart TV (Samsung/LG/Hisense), mobile (Ionic, iOS/Android) и desktop (Tauri + Rust). </target>
       </trans-unit>
       <trans-unit id="about.p2" datatype="html">
-        <source> I <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>architect large Angular apps end-to-end<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — Nx monorepos, micro-frontends, multi-tenant builds, zoneless change detection, signals, NgRx, design systems and shared libraries. I build <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>GitLab CI/CD from scratch<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — reusable templates, builds scoped to only the changed projects, parallel test sharding, automated semantic versioning, Docker multi-stage builds and Nginx. </source>
+        <source> I <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>architect large Angular apps end-to-end<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — Nx monorepos, micro-frontends, multilingual (i18n), zoneless change detection, signals, NgRx, design systems and shared libraries. I build <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>GitLab CI/CD from scratch<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — reusable templates, builds scoped to only the changed projects, parallel test sharding, automated semantic versioning, Docker multi-stage builds and Nginx. </source>
         <target> Я <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>проектирую крупные Angular-приложения целиком<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — Nx-монорепо, micro-frontends, мультиязычность (i18n), zoneless, signals, NgRx, дизайн-системы и общие библиотеки. Строю <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>GitLab CI/CD с нуля<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — переиспользуемые шаблоны, сборки только изменённых проектов, параллельный шардинг тестов, семантическое авто-версионирование, многостадийные Docker-сборки и Nginx. </target>
       </trans-unit>
       <trans-unit id="about.p3" datatype="html">
-        <source> I <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>lead people<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — I've built and led frontend teams, run technical interviews, and own the code-review process. I <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>test relentlessly<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — I raised a project to <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>97% unit-test coverage<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> and hold my own code to the same bar. And I drive <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>AI-assisted development<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — custom Claude Code skills, agents and hooks, including an AI code-review skill that handles huge MRs. </source>
-        <target> Я <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>руковожу людьми<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — собирал и вёл фронтенд-команды, провожу технические собеседования и отвечаю за процесс code-review. Я <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>дотошно тестирую<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — поднял проект до <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>97% покрытия unit-тестами<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> и держу свой код на той же планке. И внедряю <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>AI-assisted разработку<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — кастомные скиллы, агенты и хуки для Claude Code, включая скилл авто-код-ревью для огромных MR. </target>
+        <source> I <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>lead people<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — I&apos;ve built and led frontend teams, run technical interviews, and own the code-review process. I <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>test relentlessly<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — I brought unit testing to a project sitting at <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>0% coverage<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> and taught 20+ developers to write it; the main app now runs <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>~10,400 unit tests at 89%<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, gated in CI, and the greenfield projects sit at <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>100%<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>. Defects reaching production dropped from 10–12 a sprint to 2–3. And I drive <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>AI-assisted development<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — custom Claude Code skills, agents and hooks, including an AI code-review skill that handles huge MRs. I read every diff a model produces and dig into whatever looks off before it lands: the tooling is mine to steer, not to trust. </source>
+        <target> Я <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>руковожу людьми<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — собирал и вёл фронтенд-команды, провожу технические собеседования и отвечаю за процесс code review. Я <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>дотошно тестирую<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — принёс unit-тесты в проект с <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>нулевым покрытием<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> и научил писать их 20+ разработчиков; сейчас основное приложение гоняет <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>~10 400 unit-тестов при 89%<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> с гейтом в CI, а greenfield-проекты стоят на <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>100%<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>. Багов, доходящих до прода, стало 2–3 за спринт вместо 10–12. И внедряю <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>AI-assisted разработку<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — кастомные скиллы, агенты и хуки для Claude Code, включая скилл авто-код-ревью для огромных MR. Я читаю каждый дифф, который выдала модель, и разбираюсь в том, что выглядит подозрительно, до того как это попадёт в проект: инструментом управляю я, а не доверяю ему. </target>
       </trans-unit>
       <trans-unit id="nav.experience" datatype="html">
         <source>Experience</source>
@@ -87,8 +87,8 @@
         <target>Где я работал</target>
       </trans-unit>
       <trans-unit id="hero.subtitle" datatype="html">
-        <source> 14+ years building <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Angular across every platform<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — Web (SSR), Smart TV, mobile (Ionic) and desktop (Tauri/Rust). Nx · NgRx · GitLab CI/CD · 100% test coverage · AI code-review · Frontend Team Lead. </source>
-        <target> 14+ лет создаю <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Angular на всех платформах<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — Web (SSR), Smart TV, mobile (Ionic) и desktop (Tauri/Rust). Nx · NgRx · GitLab CI/CD · 100% покрытие тестами · AI code-review · Тимлид фронтенд-команд. </target>
+        <source> 14+ years building <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Angular across every platform<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — Web (SSR), Smart TV, mobile (Ionic) and desktop (Tauri/Rust). Nx · NgRx Signals · GitLab CI/CD · 89–100% test coverage · AI code-review · Frontend Team Lead. </source>
+        <target> 14+ лет создаю <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Angular на всех платформах<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> — Web (SSR), Smart TV, mobile (Ionic) и desktop (Tauri/Rust). Nx · NgRx Signals · GitLab CI/CD · 89–100% покрытие тестами · AI code-review · Тимлид фронтенд-команд. </target>
       </trans-unit>
       <trans-unit id="hero.platforms" datatype="html">
         <source>Platforms</source>
@@ -179,8 +179,8 @@
         <target>Angular · все платформы</target>
       </trans-unit>
       <trans-unit id="hero.hint" datatype="html">
-        <source>Taganrog, Russia · UTC+3 · remote-first</source>
-        <target>Таганрог, Россия · UTC+3 · удалённо</target>
+        <source>Taganrog, Russia · UTC+3 · remote only</source>
+        <target>Таганрог, Россия · UTC+3 · только удалённо</target>
       </trans-unit>
       <trans-unit id="hero.map.hub" datatype="html">
         <source>Taganrog</source>
@@ -255,8 +255,8 @@
         <target>собеседований</target>
       </trans-unit>
       <trans-unit id="exp.current.role" datatype="html">
-        <source>Senior Angular Developer</source>
-        <target>Senior Angular Developer</target>
+        <source>Tech Lead / Senior Angular Developer</source>
+        <target>Tech Lead / Senior Angular Developer</target>
       </trans-unit>
       <trans-unit id="exp.current.loc" datatype="html">
         <source>Remote</source>
@@ -271,32 +271,28 @@
         <target>Проектирую Angular 22-приложения целиком — zoneless, сигналы, standalone и OnPush повсюду, сторы на NgRx Signals. Спроектировал типобезопасный API-слой: Orval-клиент, авто-генерируемый из OpenAPI с рантайм-валидацией zod — signal-based httpResource для чтений, HttpClient-сервисы для мутаций. Самостоятельно построил Nx-монорепозиторий общих Angular-библиотек (токены дизайн-системы из Figma, темизация, inline-SVG иконки, уведомления, feature-флаги, dev-auth тулинг) с авто-версионированием и идемпотентной публикацией в приватный GitLab Package Registry. Качество держат кастомный ESLint-плагин (приватные #поля, DI только через inject(), гигиена RxJS), мультиплагинный Prettier, 100% покрытие тестами и проверки дублирования / циклических зависимостей в CI.</target>
       </trans-unit>
       <trans-unit id="exp.current.hl1" datatype="html">
-        <source>Led a team of 5+ developers — decomposed complex work, estimated timelines, set goals and shipped a release at the end of every sprint.</source>
-        <target>Руководил командой из 5+ разработчиков — декомпозировал сложные задачи, оценивал сроки, ставил цели и делал релиз в конце каждого спринта.</target>
+        <source>Inherited a frontend team of one and built it out across three directions — my own group of 4–5, a reporting vertical of 5 and an international one of 2 — hiring every engineer myself over 70+ interviews.</source>
+        <target>Пришёл в команду из одного фронтендера и вырастил её по трём направлениям — своя группа 4–5 человек, вертикаль отчётов на 5 и международное направление на 2 — нанял каждого лично, проведя 70+ собеседований.</target>
       </trans-unit>
       <trans-unit id="exp.current.hl2" datatype="html">
-        <source>Owned the frontend architecture — modular Nx boundaries, NgRx Signals state and reusable patterns that keep large apps maintainable as they scale.</source>
-        <target>Отвечал за фронтенд-архитектуру — модульные границы в Nx, состояние на NgRx Signals и переиспользуемые паттерны, сохраняющие крупные приложения поддерживаемыми при росте.</target>
+        <source>Own the release for all three frontend teams: I cut the epic, the teams raise the MRs, I merge once the approvals land — often as one of the reviewers. Reviewed an external contractor team&apos;s code for a year, then hired the senior who took it over.</source>
+        <target>Отвечаю за релиз всех трёх фронтенд-команд: нарезаю эпик, команды готовят MR, я мержу после аппрувов — часто сам же и ревьюер. Год ревьюил код внешней команды подрядчиков, потом нанял сеньора, который это перенял.</target>
       </trans-unit>
       <trans-unit id="exp.current.hl3" datatype="html">
-        <source>Set architectural standards and eliminated anti-patterns (god components, leaky effects, cross-layer coupling) via custom lint rules, ADRs and code review.</source>
-        <target>Задавал архитектурные стандарты и устранял антипаттерны (god-компоненты, неизолированные эффекты, связность между слоями) через кастомные lint-правила, ADR и code review.</target>
+        <source>Introduced unit testing to a project sitting at 0% coverage and taught 20+ developers to write it — the main app now runs ~10,400 unit tests at 89% coverage gated in CI, and the greenfield projects sit at 100%.</source>
+        <target>Внёс культуру unit-тестов в проект с нулевым покрытием и научил писать их 20+ разработчиков — сейчас основное приложение гоняет ~10 400 unit-тестов при 89% покрытия с гейтом в CI, а greenfield-проекты стоят на 100%.</target>
       </trans-unit>
       <trans-unit id="exp.current.hl4" datatype="html">
-        <source>Mentored engineers and ran code reviews with constructive feedback, raising code quality and accelerating the team's growth.</source>
-        <target>Менторил разработчиков и проводил code review с конструктивной обратной связью, повышая качество кода и ускоряя рост команды.</target>
+        <source>Own production health — Sentry, performance metrics and the regression runs for the whole project. Defects reaching production fell from the 10–12 per sprint I inherited to 2–3.</source>
+        <target>Отвечаю за здоровье прода — Sentry, метрики производительности и регресс по всему проекту. Багов, доходящих до прода, стало 2–3 за спринт вместо унаследованных 10–12.</target>
       </trans-unit>
       <trans-unit id="exp.current.hl5" datatype="html">
-        <source>Cut critical production bugs by 25% through test automation (Vitest / Jest) and CI/CD pipelines.</source>
-        <target>Снизил количество критических багов в проде на 25% за счёт автоматизации тестов (Vitest / Jest) и CI/CD.</target>
+        <source>Built the GitLab CI/CD from scratch on Kubernetes runners — reusable templates shared across projects, nx affected, three-way sharding that clears 10,400 tests in ~3 minutes, and coverage, duplication, circular-dependency and custom approval gates, with a custom ESLint plugin enforcing the conventions.</source>
+        <target>Построил GitLab CI/CD с нуля на Kubernetes-раннерах — переиспользуемые шаблоны на несколько проектов, nx affected, шардинг на три части, прогоняющий 10 400 тестов за ~3 минуты, и гейты покрытия, дублирования, циклических зависимостей и аппрувов, плюс кастомный ESLint-плагин под конвенции.</target>
       </trans-unit>
       <trans-unit id="exp.current.hl6" datatype="html">
-        <source>Built a design system and a shared library (tests, utilities, components) reused across projects — improving consistency and cutting delivery time by 15%.</source>
-        <target>Разработал дизайн-систему и общую библиотеку (компоненты, утилиты, тестовые хелперы) для нескольких проектов — обеспечил единообразие UI и сократил время разработки на 15%.</target>
-      </trans-unit>
-      <trans-unit id="exp.current.hl7" datatype="html">
-        <source>Planned product architecture with backend and design, ran stand-ups, and set up unified CI/CD templates that sped up my team and the adjacent teams I hired and led.</source>
-        <target>Проектировал архитектуру продукта с бэкендом и дизайном, ввёл stand-up-встречи и настроил единые CI/CD-шаблоны, ускорившие мою и смежные команды, которые я нанимал и вёл.</target>
+        <source>Published an Nx monorepo of 13 shared Angular libraries — design-system tokens from Figma, theming, SVG icons, notifications, feature flags, dev-auth, a generated Orval API client and test helpers — auto-versioned into a private GitLab registry and consumed by 3 apps.</source>
+        <target>Опубликовал Nx-монорепо из 13 общих Angular-библиотек — токены дизайн-системы из Figma, темизация, SVG-иконки, уведомления, feature-флаги, dev-auth, сгенерированный Orval-клиент и тест-хелперы — с авто-версионированием в приватный GitLab-registry; их используют 3 приложения.</target>
       </trans-unit>
       <trans-unit id="exp.fifthkind.role" datatype="html">
         <source>Tech Lead / Senior Frontend</source>
@@ -307,8 +303,8 @@
         <target>США, удалённо</target>
       </trans-unit>
       <trans-unit id="exp.fifthkind.desc" datatype="html">
-        <source>Distributed digital-asset management platform. Led the migration to a layered NgRx architecture, built custom virtual-scrolling for dynamic-height items, complex forms via ControlValueAccessor, and an OnPush + immutability performance overhaul. Ran 20+ technical interviews; hired and mentored newcomers.</source>
-        <target>Распределённая система управления цифровыми ассетами. Вёл миграцию на слоистую NgRx-архитектуру, сделал кастомный virtual scroll для элементов с динамической высотой, сложные формы через ControlValueAccessor и переход на OnPush + иммутабельность. Провёл 20+ технических собеседований; нанимал и обучал новичков.</target>
+        <source>5th Kind CORE (Sohonet) — the distributed digital-asset management platform film and TV production runs on: ~10k users, with Marvel, Disney, Warner Bros., Epic Games and Universal among its clients.</source>
+        <target>5th Kind CORE (Sohonet) — распределённая система управления цифровыми ассетами, на которой работает производство кино и ТВ: ~10 тыс. пользователей, среди клиентов Marvel, Disney, Warner Bros., Epic Games и Universal.</target>
       </trans-unit>
       <trans-unit id="exp.fifthkind.link.alt" datatype="html">
         <source>Sohonet — 5th Kind CORE platform</source>
@@ -327,8 +323,8 @@
         <target>Таганрог</target>
       </trans-unit>
       <trans-unit id="exp.arcadia.desc" datatype="html">
-        <source>Designed the product&apos;s UI architecture, planned refactoring, and shipped 10+ major features. Built the mobile iOS/Android app with Ionic.</source>
-        <target>Спроектировал UI-архитектуру продукта, планировал рефакторинг и реализовал 10+ крупных фич. Сделал мобильное приложение iOS/Android на Ionic.</target>
+        <source>Owned the product&apos;s UI architecture and the refactoring roadmap that went with it.</source>
+        <target>Отвечал за UI-архитектуру продукта и за план рефакторинга, который из неё следовал.</target>
       </trans-unit>
       <trans-unit id="exp.umbrella.role" datatype="html">
         <source>Senior Full Stack Developer</source>
@@ -339,8 +335,8 @@
         <target>Таганрог</target>
       </trans-unit>
       <trans-unit id="exp.umbrella.desc" datatype="html">
-        <source>Full-stack development (Angular + Node.js) for international US/EU clients via Upwork.</source>
-        <target>Full-stack-разработка (Angular + Node.js) для международных клиентов US/EU через Upwork.</target>
+        <source>Full-stack development (Angular + Node.js) for international US/EU clients via Upwork — SPAs and the Node.js back ends behind them, with direct client communication in English.</source>
+        <target>Full-stack-разработка (Angular + Node.js) для международных заказчиков из US/EU через Upwork — SPA и Node.js-бэкенды под ними, прямая коммуникация с клиентом на английском.</target>
       </trans-unit>
       <trans-unit id="exp.tutmee.role" datatype="html">
         <source>Frontend Web Developer</source>
@@ -383,7 +379,7 @@
         <target>Библиотека · Open Source</target>
       </trans-unit>
       <trans-unit id="proj.vas.desc" datatype="html">
-        <source>Typed auto-mocking for Vitest — the spiritual successor to jest-auto-spies. One API, three runtimes: the same helpers run on Vitest, Bun (bun:test) and Node.js (node:test) behind a swappable MockAdapter. Generate fully-typed spies from a class (createSpyFromClass) or from a TypeScript type alone (createAutoMock, Proxy-based — never instantiates the class). Return-type-aware controls: mockReturnValue, resolveWith / rejectWith for promises, nextWith / throwWith / complete for Observables, plus calledWith dispatch and readonly / signal property mocking. First-class RxJS entry point and DI helpers (provideAutoSpy / injectSpy) for Angular, NestJS, React, Vue and Svelte. Zero runtime dependencies, 100% coverage, published on npm and dogfooded in this site's tests.</source>
+        <source>Typed auto-mocking for Vitest — the spiritual successor to jest-auto-spies. One API, three runtimes: the same helpers run on Vitest, Bun (bun:test) and Node.js (node:test) behind a swappable MockAdapter. Generate fully-typed spies from a class (createSpyFromClass) or from a TypeScript type alone (createAutoMock, Proxy-based — never instantiates the class). Return-type-aware controls: mockReturnValue, resolveWith / rejectWith for promises, nextWith / throwWith / complete for Observables, plus calledWith dispatch and readonly / signal property mocking. First-class RxJS entry point and DI helpers (provideAutoSpy / injectSpy) for Angular, NestJS, React, Vue and Svelte. Zero runtime dependencies, 100% coverage, published on npm at ~7k downloads a month, and dogfooded in this site&apos;s own tests.</source>
         <target>Типобезопасный авто-мокинг для Vitest — идейный наследник jest-auto-spies. Один API, три рантайма: одни и те же хелперы работают в Vitest, Bun (bun:test) и Node.js (node:test) через сменный MockAdapter. Генерация полностью типизированных спаев из класса (createSpyFromClass) или из одного лишь TypeScript-типа (createAutoMock, на Proxy — без инстанцирования класса). Хелперы с учётом возвращаемого типа: mockReturnValue, resolveWith / rejectWith для промисов, nextWith / throwWith / complete для Observable, плюс calledWith-диспетчинг и мокинг readonly / signal-свойств. Отдельный вход для RxJS и DI-хелперы (provideAutoSpy / injectSpy) для Angular, NestJS, React, Vue и Svelte. Ноль зависимостей, 100% покрытие, опубликован в npm и используется в тестах этого сайта.</target>
       </trans-unit>
       <trans-unit id="proj.vas.img.alt" datatype="html">
@@ -395,8 +391,8 @@
         <target>Веб · Сообщество</target>
       </trans-unit>
       <trans-unit id="proj.sundayrun.desc" datatype="html">
-        <source>Web app for a community park-run club (Taganrog). Organizers upload race results (stopwatch xlsx export) → the app detects participant gender, computes rankings and generates an official-format PDF protocol on the fly in the browser. Every result set is published to the repo archive in one atomic commit; the home page is an archive of all published runs with downloadable PDF protocols. Zoneless Angular, 100% test coverage.</source>
-        <target>Веб-приложение клуба парковых пробегов (Таганрог). Организаторы загружают результаты забега (xlsx-экспорт секундомера) → приложение определяет пол участников, считает места и генерирует PDF-протокол по официальному образцу на лету в браузере. Каждый забег публикуется в архив репозитория одним атомарным коммитом; главная страница — архив всех опубликованных пробегов со скачиванием протоколов в PDF. Zoneless Angular, 100% покрытие тестами.</target>
+        <source>In real-world use: it runs the weekly park races for a community club in Taganrog — 300+ runners a year. The whole race happens inside the app. A built-in stopwatch times finishers on-site, the offline-first PWA keeps working with no connectivity and syncs on the way back, and results publish themselves to the site in one atomic commit — official-format PDF protocol included, generated in the browser. The home page is the archive of every run published so far. Zoneless Angular, 100% test coverage.</source>
+        <target>Работает в реальных забегах: на нём проходят еженедельные парковые пробеги клуба в Таганроге — 300+ бегунов в год. Забег целиком идёт внутри приложения. Встроенный секундомер засекает финиши прямо в парке, offline-first PWA продолжает работать без связи и синхронизируется по возвращении, а результаты сами публикуются на сайт одним атомарным коммитом — вместе с PDF-протоколом официального образца, сгенерированным в браузере. Главная — архив всех опубликованных забегов. Zoneless Angular, 100% покрытие тестами.</target>
       </trans-unit>
       <trans-unit id="proj.sundayrun.img.alt" datatype="html">
         <source>SundayRun web app — park-run landing page</source>
@@ -419,16 +415,12 @@
         <target>Тулинг · Open Source</target>
       </trans-unit>
       <trans-unit id="proj.claude.desc" datatype="html">
-        <source>Custom Claude Code skills, agents and hooks that encode project conventions, code generation and token-optimization — including an AI code-review skill built for large Angular MRs.</source>
-        <target>Кастомные скиллы, агенты и хуки для Claude Code, кодирующие конвенции проекта, кодген и оптимизацию токенов — включая скилл авто-код-ревью для больших Angular MR.</target>
+        <source>Custom Claude Code skills, agents and hooks that encode project conventions, code generation and token-optimization — including an AI code-review skill built for large Angular MRs. The review skill is deliberately a second opinion, not an authority: it reports findings for me to verify, and I read the diff and chase down what looks wrong before anything is merged.</source>
+        <target>Собственные скиллы, агенты и хуки Claude Code, кодирующие конвенции проекта, генерацию кода и оптимизацию токенов — включая скилл AI code-review для крупных Angular MR. Скилл ревью намеренно сделан вторым мнением, а не авторитетом: он выдаёт находки, которые я проверяю сам — читаю дифф и докапываюсь до того, что выглядит неверно, до мерджа.</target>
       </trans-unit>
       <trans-unit id="lang.switch" datatype="html">
         <source>Switch language</source>
         <target>Сменить язык</target>
-      </trans-unit>
-      <trans-unit id="nav.logo" datatype="html">
-        <source>AP</source>
-        <target>AP</target>
       </trans-unit>
       <trans-unit id="nav.github" datatype="html">
         <source>GitHub ↗</source>
@@ -449,6 +441,62 @@
       <trans-unit id="hero.cta.max" datatype="html">
         <source>MAX</source>
         <target>MAX</target>
+      </trans-unit>
+      <trans-unit id="ld.alumniOf" datatype="html">
+        <source>Taganrog State Pedagogical Institute (A. P. Chekhov)</source>
+        <target>Таганрогский государственный педагогический институт им. А. П. Чехова</target>
+      </trans-unit>
+      <trans-unit id="about.education.label" datatype="html">
+        <source>Education</source>
+        <target>Образование</target>
+      </trans-unit>
+      <trans-unit id="about.education.value" datatype="html">
+        <source>Taganrog State Pedagogical Institute (A. P. Chekhov) — Physics &amp; Mathematics, 2004—2009 · GPA 4.97 / 5</source>
+        <target>Таганрогский государственный педагогический институт им. А. П. Чехова — физика и математика, 2004—2009 · средний балл 4,97 / 5</target>
+      </trans-unit>
+      <trans-unit id="about.languages.label" datatype="html">
+        <source>Languages</source>
+        <target>Языки</target>
+      </trans-unit>
+      <trans-unit id="about.languages.value" datatype="html">
+        <source>Russian — native · English — B1, working proficiency across 8+ years with US / EU teams</source>
+        <target>Русский — родной · английский — B1, рабочий уровень, 8+ лет работы с US / EU командами</target>
+      </trans-unit>
+      <trans-unit id="exp.fifthkind.hl1" datatype="html">
+        <source>Led the migration to a layered NgRx architecture over about a year, staged to keep the product shipping — new features first, then auth and the core user / permissions / roles services, then the rest.</source>
+        <target>Вёл миграцию на слоистую NgRx-архитектуру примерно за год, поэтапно и без остановки поставки — сначала новые фичи, затем авторизация и ключевые сервисы пользователей, прав и ролей, потом всё остальное.</target>
+      </trans-unit>
+      <trans-unit id="exp.fifthkind.hl2" datatype="html">
+        <source>Made multi-select on large virtualized lists roughly 200× faster — 180–200 ms down to 0.4–0.5 ms per item — through an OnPush + immutability overhaul.</source>
+        <target>Ускорил мультивыбор в больших виртуализированных списках примерно в 200 раз — со 180–200 мс до 0,4–0,5 мс на элемент — за счёт перехода на OnPush и иммутабельность.</target>
+      </trans-unit>
+      <trans-unit id="exp.fifthkind.hl3" datatype="html">
+        <source>Wrote custom virtual-scrolling strategies for dynamic-height items, and complex forms via ControlValueAccessor.</source>
+        <target>Написал кастомные стратегии virtual scroll для элементов с динамической высотой и сложные формы через ControlValueAccessor.</target>
+      </trans-unit>
+      <trans-unit id="exp.fifthkind.hl4" datatype="html">
+        <source>Ran 20+ technical interviews, hired and mentored newcomers, and set up the code-review process for a team that ran 4–5 strong and peaked at 8.</source>
+        <target>Провёл 20+ технических собеседований, нанимал и обучал новичков, выстроил процесс code review в команде из 4–5 человек, доходившей до 8.</target>
+      </trans-unit>
+      <trans-unit id="exp.arcadia.hl1" datatype="html">
+        <source>Designed the UI architecture and refactoring plan, then shipped 10+ major features against it.</source>
+        <target>Спроектировал UI-архитектуру и план рефакторинга, по нему выпустил 10+ крупных фич.</target>
+      </trans-unit>
+      <trans-unit id="exp.arcadia.hl2" datatype="html">
+        <source>Rolled CSS variables and an OnPush + immutability strategy across the codebase.</source>
+        <target>Внедрил CSS-переменные и стратегию OnPush + иммутабельность по всей кодовой базе.</target>
+      </trans-unit>
+      <trans-unit id="exp.arcadia.hl3" datatype="html">
+        <source>Built and released the mobile iOS / Android app with Ionic; ran Angular / JS interviews and trained new hires.</source>
+        <target>Собрал и выпустил мобильное приложение для iOS / Android на Ionic; проводил интервью по Angular / JS и обучал новичков.</target>
+      </trans-unit>
+      <trans-unit id="exp.current.proj1" datatype="html">
+        <source>KION (MTS) — a streaming platform with ~4M web users and ~100k Smart TV devices. Shipped SSR web features (age-gating and PIN compliance, profile, subscriptions, legal consent) and the whole gamification vertical — achievements, levels, leaderboards, fortune wheel — to web and Smart TV, inside an Nx monorepo of 5 apps and 81 libraries.</source>
+        <target>KION (МТС) — стриминговый сервис с ~4 млн пользователей на web и ~100 тыс. устройств Smart TV. Реализовал SSR-фичи на web (возрастные ограничения и PIN по требованиям РКН, профиль, подписки, юридические согласия) и вертикаль геймификации целиком — достижения, уровни, лидерборды, колесо фортуны — на web и Smart TV, внутри Nx-монорепо из 5 приложений и 81 библиотеки.</target>
+      </trans-unit>
+      <trans-unit id="exp.current.proj2" datatype="html">
+        <source>Enterprise 3D digital-twin and geospatial platform — sole architect of a multi-tenant Angular 22 app: 286 components, ~107k lines of TypeScript, real-time pixel streaming, deployed to 8+ environments from a single codebase.</source>
+        <target>Enterprise-платформа цифрового двойника и геовизуализации — единственный архитектор мульти-тенант приложения на Angular 22: 286 компонентов, ~107 тыс. строк TypeScript, real-time pixel streaming, деплой в 8+ окружений из одной кодовой базы.</target>
       </trans-unit>
     </body>
   </file>

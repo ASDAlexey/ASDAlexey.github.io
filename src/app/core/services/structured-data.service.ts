@@ -11,25 +11,44 @@ const KNOWS_ABOUT = [
   'TypeScript',
   'RxJS',
   'NgRx',
+  'NgRx Signals',
   'Angular Signals',
   'Zoneless Angular',
   'Nx monorepo',
+  'Module Federation',
   'Design systems',
   'OpenAPI code generation',
   'zod validation',
   'Micro-frontends',
   'Server-Side Rendering',
+  'Progressive Web Apps',
   'Smart TV',
   'Ionic',
   'Tauri',
   'Rust',
   'GitLab CI/CD',
+  'Kubernetes',
   'Docker',
   'Unit testing',
+  'Playwright',
+  'Vitest',
+  'Frontend architecture',
+  'Technical leadership',
   'AI-assisted development',
 ] as const;
 
-const OCCUPATION_SKILLS = 'Angular, TypeScript, RxJS, NgRx, Signals, Zoneless, Nx, OpenAPI codegen, Design systems, SSR, GitLab CI/CD';
+const OCCUPATION_SKILLS =
+  'Angular, TypeScript, RxJS, NgRx Signals, Zoneless, Nx, Module Federation, OpenAPI codegen, zod, Design systems, SSR, PWA, Ionic, Tauri, Rust, GitLab CI/CD, Kubernetes, Vitest, Playwright, Technical leadership';
+
+/**
+ * Only Russian gets a proficiency node. Schema.org models fluency as a boolean, so B1 —
+ * working proficiency, not fluency — would be a false claim either way it was set; the
+ * language is still listed, just without a level attached.
+ */
+const KNOWS_LANGUAGE = [
+  { '@type': 'Language', name: 'Russian', alternateName: 'ru' },
+  { '@type': 'Language', name: 'English', alternateName: 'en' },
+] as const;
 
 @Injectable({ providedIn: 'root' })
 export class StructuredDataService {
@@ -69,7 +88,8 @@ export class StructuredDataService {
 
   #person(url: string): Record<string, unknown> {
     const jobTitle = $localize`:@@ld.jobTitle:Tech Lead / Senior Angular Developer`;
-    const description = $localize`:@@ld.description:Tech Lead and Senior Angular Developer with 14+ years of experience, shipping Angular on web (SSR), Smart TV, mobile (Ionic) and desktop (Tauri/Rust).`;
+    const description = $localize`:@@ld.description:Tech Lead and Senior Angular Developer with 14+ years of commercial experience, 11+ of them on Angular (v2 → v22), shipping it on web (SSR), Smart TV, mobile (Ionic) and desktop (Tauri/Rust). Leads frontend teams, owns architecture, code review and GitLab CI/CD. Remote only.`;
+    const alumniOf = $localize`:@@ld.alumniOf:Taganrog State Pedagogical Institute (A. P. Chekhov)`;
 
     return {
       '@type': 'Person',
@@ -90,7 +110,12 @@ export class StructuredDataService {
       sameAs: [PROFILE.github, PROFILE.linkedin, PROFILE.telegram, PROFILE.max],
       hasOccupation: { '@type': 'Occupation', name: jobTitle, skills: OCCUPATION_SKILLS },
       knowsAbout: KNOWS_ABOUT,
-      knowsLanguage: ['Russian', 'English'],
+      knowsLanguage: KNOWS_LANGUAGE,
+      alumniOf: {
+        '@type': 'CollegeOrUniversity',
+        name: alumniOf,
+        address: { '@type': 'PostalAddress', addressLocality: 'Taganrog', addressCountry: 'RU' },
+      },
       address: { '@type': 'PostalAddress', addressLocality: 'Taganrog', addressCountry: 'RU' },
     };
   }

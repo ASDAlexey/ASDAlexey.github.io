@@ -1,3 +1,4 @@
+@use 'styles/card' as c;
 @use 'styles/section' as s;
 @use 'styles/typography' as t;
 
@@ -65,6 +66,47 @@
   @for $i from 1 through 3 {
     &.is-visible .prose__text:nth-child(#{$i}) strong::after {
       transition-delay: #{0.25 + ($i - 1) * 0.18}s;
+    }
+  }
+}
+
+// Education and languages, closing the section the way they close the résumé. One card, two
+// rows: the label column is fixed so both values start on the same line, and collapses to a
+// stacked pair once there is no room for two columns.
+.credentials {
+  @include c.card-base;
+
+  margin-top: 28px;
+  padding: 20px 22px;
+
+  &__row {
+    display: grid;
+    grid-template-columns: 128px 1fr;
+    gap: 4px 18px;
+
+    & + & {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+  }
+
+  &__label {
+    @include t.text('label', 'medium');
+
+    color: var(--accent-light);
+    text-transform: uppercase;
+  }
+
+  &__value {
+    @include t.text('body', 'medium');
+
+    color: var(--text-secondary);
+  }
+
+  @media (width <= 560px) {
+    &__row {
+      grid-template-columns: 1fr;
     }
   }
 }

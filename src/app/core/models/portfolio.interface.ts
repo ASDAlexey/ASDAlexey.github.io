@@ -65,6 +65,12 @@ export interface Stat {
   readonly caption: string;
 }
 
+/** A labelled line under the About copy — the résumé's education / languages footer. */
+export interface Credential {
+  readonly label: string;
+  readonly value: string;
+}
+
 export interface Testimonial {
   readonly quote: string;
   readonly author: string;

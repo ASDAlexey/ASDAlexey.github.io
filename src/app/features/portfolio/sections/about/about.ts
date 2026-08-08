@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
+import { CREDENTIALS } from '@shared/data/portfolio.data';
 import { Pipeline } from './pipeline/pipeline';
 import { ScrollReveal } from '@shared/directives/scroll-reveal/scroll-reveal';
 
@@ -10,4 +11,6 @@ import { ScrollReveal } from '@shared/directives/scroll-reveal/scroll-reveal';
   templateUrl: './about.html',
   styleUrl: './about.scss',
 })
-export class About {}
+export class About {
+  readonly credentials = CREDENTIALS;
+}

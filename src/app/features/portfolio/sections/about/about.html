@@ -7,9 +7,10 @@
 
     <div appScrollReveal class="prose reveal--stagger">
       <p class="prose__text" i18n="@@about.p1">
-        Tech Lead and Senior Frontend Developer with <strong>14+ years</strong> of experience. Angular is my core strength — and I've
-        shipped it on every platform there is: web&nbsp;(SSR), Smart&nbsp;TV (Samsung/LG/Hisense), mobile (Ionic, iOS/Android) and desktop
-        (Tauri).
+        Tech Lead and Senior Frontend Developer with <strong>14+ years</strong> of commercial experience,
+        <strong>11+ of them on Angular</strong>
+        — every version from v2 to v22. I've shipped it on every platform there is: web&nbsp;(SSR), Smart&nbsp;TV (Samsung/LG/Hisense),
+        mobile (Ionic, iOS/Android) and desktop (Tauri&nbsp;+&nbsp;Rust).
       </p>
       <p class="prose__text" i18n="@@about.p2">
         I <strong>architect large Angular apps end-to-end</strong> — Nx monorepos, micro-frontends, multilingual (i18n), zoneless change
@@ -19,14 +20,28 @@
       </p>
       <p class="prose__text" i18n="@@about.p3">
         I <strong>lead people</strong> — I've built and led frontend teams, run technical interviews, and own the code-review process. I
-        <strong>test relentlessly</strong> — I raised a project to <strong>97% unit-test coverage</strong> and hold my own code to the same
-        bar. And I drive <strong>AI-assisted development</strong> — custom Claude Code skills, agents and hooks, including an AI code-review
-        skill that handles huge MRs.
+        <strong>test relentlessly</strong> — I brought unit testing to a project sitting at <strong>0% coverage</strong> and taught 20+
+        developers to write it; the main app now runs <strong>~10,400 unit tests at 89%</strong>, gated in CI, and the greenfield projects
+        sit at <strong>100%</strong>. Defects reaching production dropped from 10–12 a sprint to 2–3. And I drive
+        <strong>AI-assisted development</strong> — custom Claude Code skills, agents and hooks, including an AI code-review skill that
+        handles huge MRs. I read every diff a model produces and dig into whatever looks off before it lands: the tooling is mine to steer,
+        not to trust.
       </p>
     </div>
 
     <!-- Shows the pipeline the paragraph above describes, rather than only
          claiming it: the run advances as the reader scrolls past. -->
     <app-pipeline appScrollReveal />
+
+    <!-- The résumé's closing facts. A `dl` rather than a paragraph so the label and the
+         thing it labels stay associated for a screen reader, and so the two rows line up. -->
+    <dl appScrollReveal class="credentials reveal--stagger">
+      @for (credential of credentials; track credential.label) {
+        <div class="credentials__row">
+          <dt class="credentials__label">{{ credential.label }}</dt>
+          <dd class="credentials__value">{{ credential.value }}</dd>
+        </div>
+      }
+    </dl>
   </div>
 </section>
