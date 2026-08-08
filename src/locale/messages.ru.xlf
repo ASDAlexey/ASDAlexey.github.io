@@ -491,8 +491,8 @@
         <target>Собрал и выпустил мобильное приложение для iOS / Android на Ionic; проводил интервью по Angular / JS и обучал новичков.</target>
       </trans-unit>
       <trans-unit id="exp.current.proj1" datatype="html">
-        <source>KION (MTS) — a streaming platform with ~4M web users and ~100k Smart TV devices. Shipped SSR web features (age-gating and PIN compliance, profile, subscriptions, legal consent) and the whole gamification vertical — achievements, levels, leaderboards, fortune wheel — to web and Smart TV, inside an Nx monorepo of 5 apps and 81 libraries.</source>
-        <target>KION (МТС) — стриминговый сервис с ~4 млн пользователей на web и ~100 тыс. устройств Smart TV. Реализовал SSR-фичи на web (возрастные ограничения и PIN по требованиям РКН, профиль, подписки, юридические согласия) и вертикаль геймификации целиком — достижения, уровни, лидерборды, колесо фортуны — на web и Smart TV, внутри Nx-монорепо из 5 приложений и 81 библиотеки.</target>
+        <source>A major streaming service — ~4M web users and ~100k Smart TV devices. Shipped SSR web features (age-gating and PIN compliance, profile, subscriptions, legal consent) and the whole gamification vertical — achievements, levels, leaderboards, fortune wheel — to web and Smart TV, inside an Nx monorepo of 5 apps and 81 libraries.</source>
+        <target>Крупный стриминговый сервис — ~4 млн пользователей на web и ~100 тыс. устройств Smart TV. Реализовал SSR-фичи на web (возрастные ограничения и PIN по требованиям РКН, профиль, подписки, юридические согласия) и вертикаль геймификации целиком — достижения, уровни, лидерборды, колесо фортуны — на web и Smart TV, внутри Nx-монорепо из 5 приложений и 81 библиотеки.</target>
       </trans-unit>
       <trans-unit id="exp.current.proj2" datatype="html">
         <source>Enterprise 3D digital-twin and geospatial platform — sole architect of a multi-tenant Angular 22 app: 286 components, ~107k lines of TypeScript, real-time pixel streaming, deployed to 8+ environments from a single codebase.</source>
