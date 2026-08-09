@@ -64,7 +64,7 @@ export const EXPERIENCES: readonly Experience[] = [
     // than any metric underneath it. The employer stays unnamed — the products are what matter
     // here, and naming them costs nothing that naming the company would.
     highlights: [
-      $localize`:@@exp.current.proj1:A high-traffic media product — ~4M web users and ~100k Smart TV devices. Shipped SSR web features (age-gating and PIN compliance, profile, subscriptions, legal consent) and the whole gamification vertical — achievements, levels, leaderboards, fortune wheel — to web and Smart TV, inside an Nx monorepo of 5 apps and 81 libraries.`,
+      $localize`:@@exp.current.proj1:A high-traffic media product — ~4M web users and ~100k Smart TV devices. Shipped SSR web features (age-gating and PIN compliance, profile, subscriptions, legal consent) and the gamification vertical — achievements, levels, leaderboards — to web and Smart TV, inside an Nx monorepo of 5 apps and 81 libraries.`,
       $localize`:@@exp.current.proj2:A large enterprise application with real-time 3D — sole architect of a multi-tenant Angular 22 app: 286 components, ~107k lines of TypeScript, real-time pixel streaming, deployed to 8+ environments from a single codebase.`,
       $localize`:@@exp.current.hl1:Inherited a frontend team of one and built it out across three directions — my own group of 4–5, a reporting vertical of 5 and an international one of 2 — hiring every engineer myself over 70+ interviews.`,
       $localize`:@@exp.current.hl2:Own the release for all three frontend teams: I cut the epic, the teams raise the MRs, I merge once the approvals land — often as one of the reviewers. Reviewed an external contractor team's code for a year, then hired the senior who took it over.`,
