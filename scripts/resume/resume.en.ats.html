@@ -182,13 +182,22 @@
         <div class="job-m">2023 — Present</div>
         <ul>
           <li>
-            A high-traffic media product — ~4M web users and ~100k Smart TV devices. Shipped SSR web features (age-gating and PIN
-            compliance, profile, subscriptions, legal consent) and the gamification vertical — achievements, levels, leaderboards — to web
-            and Smart TV, inside an Nx monorepo of 5 apps and 81 libraries.
+            Two products in parallel — a consumer platform on web SSR and Smart TV, ~4M users and ~100k devices, and a multi-tenant
+            enterprise application with real-time 3D pixel streaming where I am the sole architect: an Nx estate of 5 apps and 81 libraries,
+            286 components, ~107k lines of TypeScript, deployed to 8+ environments from a single codebase. My own features — age-gating and
+            PIN compliance, profile, subscriptions, legal consent and the gamification vertical (achievements, levels, leaderboards).
           </li>
           <li>
-            A large enterprise application with real-time 3D — sole architect of a multi-tenant Angular 22 app: 286 components, ~107k lines
-            of TypeScript, real-time pixel streaming, deployed to 8+ environments from a single codebase.
+            Led the authentication migration — off a legacy provider onto corporate SSO, on web SSR and Smart TV at once: sessions with
+            heartbeat, short-lived tokens, HTTP interceptors, guest entry, a mixed mode and a new refresh-token flow, plus WebSocket device
+            management with per-subscription limits. Rolled out behind feature flags and cleaned back out afterwards — ~170 commits across
+            two apps.
+          </li>
+          <li>
+            Designed two libraries from scratch and wrote almost all of the code — the Smart TV navigation layer (API contract, caching, a
+            fallback catalogue that keeps the app navigable when the backend is down, product and performance metrics) and a resource-only
+            data layer on signal httpResource: a per-session cache dropped on profile switch, no-retry on cache hits, error normalisation,
+            fully spec-covered.
           </li>
           <li>
             Inherited a frontend team of one and built it out across three directions — my own group of 4–5, a reporting vertical of 5 and

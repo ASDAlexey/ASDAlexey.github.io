@@ -60,12 +60,13 @@ export const EXPERIENCES: readonly Experience[] = [
     // Each bullet is written as action + scope + result: the responsibility is what a screen
     // matches against, the number at the end is what makes it worth reading.
     //
-    // The two flagship products lead, because a name a reader already knows buys more attention
-    // than any metric underneath it. The employer stays unnamed — the products are what matter
-    // here, and naming them costs nothing that naming the company would.
+    // Both products are described in one bullet, and neither is labelled by its domain: split
+    // across two bullets with their own metrics, the pair is enough to identify the employer.
+    // Worth splitting back out once the products are no longer concurrent.
     highlights: [
-      $localize`:@@exp.current.proj1:A high-traffic media product — ~4M web users and ~100k Smart TV devices. Shipped SSR web features (age-gating and PIN compliance, profile, subscriptions, legal consent) and the gamification vertical — achievements, levels, leaderboards — to web and Smart TV, inside an Nx monorepo of 5 apps and 81 libraries.`,
-      $localize`:@@exp.current.proj2:A large enterprise application with real-time 3D — sole architect of a multi-tenant Angular 22 app: 286 components, ~107k lines of TypeScript, real-time pixel streaming, deployed to 8+ environments from a single codebase.`,
+      $localize`:@@exp.current.proj1:Two products in parallel — a consumer platform on web SSR and Smart TV, ~4M users and ~100k devices, and a multi-tenant enterprise application with real-time 3D pixel streaming where I am the sole architect: an Nx estate of 5 apps and 81 libraries, 286 components, ~107k lines of TypeScript, deployed to 8+ environments from a single codebase. My own features — age-gating and PIN compliance, profile, subscriptions, legal consent and the gamification vertical (achievements, levels, leaderboards).`,
+      $localize`:@@exp.current.auth:Led the authentication migration — off a legacy provider onto corporate SSO, on web SSR and Smart TV at once: sessions with heartbeat, short-lived tokens, HTTP interceptors, guest entry, a mixed mode and a new refresh-token flow, plus WebSocket device management with per-subscription limits. Rolled out behind feature flags and cleaned back out afterwards — ~170 commits across two apps.`,
+      $localize`:@@exp.current.tvlibs:Designed two libraries from scratch and wrote almost all of the code — the Smart TV navigation layer (API contract, caching, a fallback catalogue that keeps the app navigable when the backend is down, product and performance metrics) and a resource-only data layer on signal httpResource: a per-session cache dropped on profile switch, no-retry on cache hits, error normalisation, fully spec-covered.`,
       $localize`:@@exp.current.hl1:Inherited a frontend team of one and built it out across three directions — my own group of 4–5, a reporting vertical of 5 and an international one of 2 — hiring every engineer myself over 70+ interviews.`,
       $localize`:@@exp.current.hl2:Own the release for all three frontend teams: I cut the epic, the teams raise the MRs, I merge once the approvals land — often as one of the reviewers. Reviewed an external contractor team's code for a year, then hired the senior who took it over.`,
       $localize`:@@exp.current.hl3:Introduced unit testing to a project sitting at 0% coverage and taught 20+ developers to write it — the main app now runs ~10,400 unit tests at 89% coverage gated in CI, and the greenfield projects sit at 100%.`,
