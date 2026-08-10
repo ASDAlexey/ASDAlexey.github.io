@@ -545,7 +545,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="exp.current.proj1" datatype="html">
-        <source>Two products in parallel — a consumer platform on web SSR and Smart TV, ~4M users and ~100k devices, and a multi-tenant enterprise application with real-time 3D pixel streaming where I am the sole architect: an Nx estate of 5 apps and 81 libraries, 286 components, ~107k lines of TypeScript, deployed to 8+ environments from a single codebase. My own features — age-gating and PIN compliance, profile, subscriptions, legal consent and the gamification vertical (achievements, levels, leaderboards).</source>
+        <source>A high-traffic consumer product on web SSR and Smart TV — ~4M users and ~100k devices, inside an Nx monorepo of 5 apps and 81 libraries. Shipped the SSR web features (age-gating and PIN compliance, profile, subscriptions, legal consent) and the gamification vertical — achievements, levels, leaderboards — to both web and TV.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/data/portfolio.data.ts</context>
           <context context-type="linenumber">67</context>

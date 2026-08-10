@@ -60,11 +60,11 @@ export const EXPERIENCES: readonly Experience[] = [
     // Each bullet is written as action + scope + result: the responsibility is what a screen
     // matches against, the number at the end is what makes it worth reading.
     //
-    // Both products are described in one bullet, and neither is labelled by its domain: split
-    // across two bullets with their own metrics, the pair is enough to identify the employer.
-    // Worth splitting back out once the products are no longer concurrent.
+    // Only the one product is claimed here. The second, concurrent one is deliberately absent:
+    // two products with their own metrics side by side identify the employer, and it is not
+    // worth an achievement bullet for that. Its stack survives as a neutral keyword in skills.
     highlights: [
-      $localize`:@@exp.current.proj1:Two products in parallel — a consumer platform on web SSR and Smart TV, ~4M users and ~100k devices, and a multi-tenant enterprise application with real-time 3D pixel streaming where I am the sole architect: an Nx estate of 5 apps and 81 libraries, 286 components, ~107k lines of TypeScript, deployed to 8+ environments from a single codebase. My own features — age-gating and PIN compliance, profile, subscriptions, legal consent and the gamification vertical (achievements, levels, leaderboards).`,
+      $localize`:@@exp.current.proj1:A high-traffic consumer product on web SSR and Smart TV — ~4M users and ~100k devices, inside an Nx monorepo of 5 apps and 81 libraries. Shipped the SSR web features (age-gating and PIN compliance, profile, subscriptions, legal consent) and the gamification vertical — achievements, levels, leaderboards — to both web and TV.`,
       $localize`:@@exp.current.auth:Led the authentication migration — off a legacy provider onto corporate SSO, on web SSR and Smart TV at once: sessions with heartbeat, short-lived tokens, HTTP interceptors, guest entry, a mixed mode and a new refresh-token flow, plus WebSocket device management with per-subscription limits. Rolled out behind feature flags and cleaned back out afterwards — ~170 commits across two apps.`,
       $localize`:@@exp.current.tvlibs:Designed two libraries from scratch and wrote almost all of the code — the Smart TV navigation layer (API contract, caching, a fallback catalogue that keeps the app navigable when the backend is down, product and performance metrics) and a resource-only data layer on signal httpResource: a per-session cache dropped on profile switch, no-retry on cache hits, error normalisation, fully spec-covered.`,
       $localize`:@@exp.current.hl1:Inherited a frontend team of one and built it out across three directions — my own group of 4–5, a reporting vertical of 5 and an international one of 2 — hiring every engineer myself over 70+ interviews.`,

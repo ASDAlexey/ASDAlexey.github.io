@@ -82,7 +82,7 @@ const EN = {
   ],
   keyExperience: [
     'Angular on every platform — web (SSR), Smart TV (Tizen / webOS / VIDAA), mobile (Ionic, iOS / Android) and desktop (Tauri 2 + Rust), on every version from v2 to v22.',
-    'Architecture at scale — sole architect of a multi-tenant Angular 22 app (286 components, ~107k lines, 8+ environments); Nx monorepos up to 5 apps and 81 libraries; an OpenAPI-first API layer generated with Orval and validated by zod.',
+    'Architecture at scale — Nx monorepos up to 5 apps and 81 libraries; an OpenAPI-first API layer generated with Orval and validated by zod; multi-tenant Angular 22 applications, zoneless and signal-based throughout.',
     'Performance — a streaming service at ~4M web users and ~100k TV devices; multi-select on large virtualized lists made ~200× faster; OnPush and immutability applied across whole codebases.',
     'Testing and delivery — a project taken from 0% coverage to ~10,400 unit tests at 89%, gated in CI; GitLab CI/CD built from scratch with test sharding, affected-only builds and quality gates.',
     'Teams and releases — a frontend team grown from one engineer to nine across three directions over 70+ interviews, and the release owned for all of them.',
@@ -93,7 +93,7 @@ const EN = {
       company: 'Remote',
       period: '2023 — Present',
       points: [
-        'Two products in parallel — a consumer platform on web SSR and Smart TV, ~4M users and ~100k devices, and a multi-tenant enterprise application with real-time 3D pixel streaming where I am the sole architect: an Nx estate of 5 apps and 81 libraries, 286 components, ~107k lines of TypeScript, deployed to 8+ environments from a single codebase. My own features — age-gating and PIN compliance, profile, subscriptions, legal consent and the gamification vertical (achievements, levels, leaderboards).',
+        'A high-traffic consumer product on web SSR and Smart TV — ~4M users and ~100k devices, inside an Nx monorepo of 5 apps and 81 libraries. Shipped the SSR web features (age-gating and PIN compliance, profile, subscriptions, legal consent) and the gamification vertical — achievements, levels, leaderboards — to both web and TV.',
         'Led the authentication migration — off a legacy provider onto corporate SSO, on web SSR and Smart TV at once: sessions with heartbeat, short-lived tokens, HTTP interceptors, guest entry, a mixed mode and a new refresh-token flow, plus WebSocket device management with per-subscription limits. Rolled out behind feature flags and cleaned back out afterwards — ~170 commits across two apps.',
         'Designed two libraries from scratch and wrote almost all of the code — the Smart TV navigation layer (API contract, caching, a fallback catalogue that keeps the app navigable when the backend is down, product and performance metrics) and a resource-only data layer on signal httpResource: a per-session cache dropped on profile switch, no-retry on cache hits, error normalisation, fully spec-covered.',
         'Inherited a frontend team of one and built it out across three directions — my own group of 4–5, a reporting vertical of 5 and an international one of 2 — hiring every engineer myself over 70+ interviews.',
@@ -253,7 +253,7 @@ const RU = {
   ],
   keyExperience: [
     'Angular на всех платформах — web (SSR), Smart TV (Tizen / webOS / VIDAA), mobile (Ionic, iOS / Android) и desktop (Tauri 2 + Rust), на всех версиях от v2 до v22.',
-    'Архитектура в масштабе — единственный архитектор мульти-тенант приложения на Angular 22 (286 компонентов, ~107 тыс. строк, 8+ окружений); Nx-монорепозитории до 5 приложений и 81 библиотеки; API-слой по OpenAPI с генерацией Orval и валидацией zod.',
+    'Архитектура в масштабе — Nx-монорепозитории до 5 приложений и 81 библиотеки; API-слой по OpenAPI с генерацией Orval и валидацией zod; мульти-тенант приложения на Angular 22, zoneless и на сигналах.',
     'Производительность — стриминговый сервис с ~4 млн пользователей web и ~100 тыс. устройств TV; мультивыбор в больших виртуализированных списках ускорен примерно в 200 раз; OnPush и иммутабельность по всей кодовой базе.',
     'Тестирование и поставка — проект доведён с 0% покрытия до ~10 400 unit-тестов при 89% с гейтом в CI; GitLab CI/CD построен с нуля — шардинг тестов, affected-сборки и гейты качества.',
     'Команды и релизы — фронтенд-команда выращена с одного инженера до девяти по трём направлениям за 70+ собеседований, релиз всех трёх на мне.',
@@ -264,7 +264,7 @@ const RU = {
       company: 'Удалённо',
       period: '2023 — н.в.',
       points: [
-        'Веду два продукта параллельно — потребительский на web (SSR) и Smart TV, ~4 млн пользователей и ~100 тыс. устройств, и мульти-тенант enterprise-приложение с real-time 3D и pixel streaming, где я единственный архитектор: Nx-хозяйство из 5 приложений и 81 библиотеки, 286 компонентов, ~107 тыс. строк TypeScript, деплой в 8+ окружений из одной кодовой базы. Мои фичи — возрастные ограничения и PIN по регуляторным требованиям, профиль, подписки, юридические согласия и вертикаль геймификации (достижения, уровни, лидерборды).',
+        'Высоконагруженный потребительский продукт на web (SSR) и Smart TV — ~4 млн пользователей и ~100 тыс. устройств, внутри Nx-монорепо из 5 приложений и 81 библиотеки. Реализовал SSR-фичи на web (возрастные ограничения и PIN по регуляторным требованиям, профиль, подписки, юридические согласия) и вертикаль геймификации — достижения, уровни, лидерборды — на web и Smart TV.',
         'Провёл миграцию авторизации — с legacy-провайдера на корпоративный SSO, сразу на web (SSR) и Smart TV: сессии с heartbeat, короткоживущие токены, HTTP-интерсепторы, гостевой вход, mixed-режим и новый механизм refresh-token, плюс управление устройствами по WebSocket с лимитами по подписке. Раскатка под фича-флагами с последующей зачисткой ключей — ~170 коммитов в двух приложениях.',
         'Спроектировал с нуля и написал почти целиком две библиотеки — слой навигации Smart TV (контракт API, кеширование, fallback-каталог, оставляющий приложение навигируемым при недоступном бэкенде, продуктовые метрики и метрики производительности) и resource-only data-слой на signal httpResource: сессионный кеш со сбросом при смене профиля, no-retry на кеше, нормализация ошибок, полное покрытие спеками.',
         'Пришёл в команду из одного фронтендера и вырастил её по трём направлениям — своя группа 4–5 человек, вертикаль отчётов на 5 и международное направление на 2 — нанял каждого лично, проведя 70+ собеседований.',
