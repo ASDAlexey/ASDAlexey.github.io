@@ -89,25 +89,9 @@ const EN = {
   ],
   experience: [
     {
-      role: 'Tech Lead / Senior Angular Developer',
-      company: 'Remote',
-      period: '2023 — Present',
-      points: [
-        'A high-traffic consumer product on web SSR and Smart TV — ~4M users and ~100k devices, inside an Nx monorepo of 5 apps and 81 libraries. Shipped the SSR web features (age-gating and PIN compliance, profile, subscriptions, legal consent) and the gamification vertical — achievements, levels, leaderboards — to both web and TV.',
-        'Led the authentication migration — off a legacy provider onto corporate SSO, on web SSR and Smart TV at once: sessions with heartbeat, short-lived tokens, HTTP interceptors, guest entry, a mixed mode and a new refresh-token flow, plus WebSocket device management with per-subscription limits. Rolled out behind feature flags and cleaned back out afterwards — ~170 commits across two apps.',
-        'Designed two libraries from scratch and wrote almost all of the code — the Smart TV navigation layer (API contract, caching, a fallback catalogue that keeps the app navigable when the backend is down, product and performance metrics) and a resource-only data layer on signal httpResource: a per-session cache dropped on profile switch, no-retry on cache hits, error normalisation, fully spec-covered.',
-        'Inherited a frontend team of one and built it out across three directions — my own group of 4–5, a reporting vertical of 5 and an international one of 2 — hiring every engineer myself over 70+ interviews.',
-        'Own the release for all three frontend teams: I cut the epic, the teams raise the MRs, I merge once the approvals land — often as one of the reviewers. Reviewed an external contractor team’s code for a year, then hired the senior who took it over.',
-        'Introduced unit testing to a project sitting at 0% coverage and taught 20+ developers to write it — the main app now runs ~10,400 unit tests at 89% coverage gated in CI, and the greenfield projects sit at 100%.',
-        'Own production health — Sentry, performance metrics and the regression runs for the whole project. Defects reaching production fell from the 10–12 per sprint I inherited to 2–3.',
-        'Built the GitLab CI/CD from scratch on Kubernetes runners — reusable templates shared across projects, nx affected, three-way sharding that clears 10,400 tests in ~3 minutes, and coverage, duplication, circular-dependency and custom approval gates, with a custom ESLint plugin enforcing the conventions.',
-        'Published an Nx monorepo of 13 shared Angular libraries — design-system tokens from Figma, theming, SVG icons, notifications, feature flags, dev-auth, a generated Orval API client and test helpers — auto-versioned into a private GitLab registry and consumed by 3 apps.',
-      ],
-    },
-    {
       role: 'Tech Lead / Senior Frontend',
       company: 'The 5th Kind · US, Remote',
-      period: '2019 — 2023',
+      period: '2019 — Present',
       points: [
         'Built a distributed digital-asset-management platform used by Marvel, Disney, Warner Bros., Epic Games and Universal (via Sohonet).',
         'Led the migration to a layered NgRx architecture over about a year, staged to keep the product shipping — new features first, then auth and the core user / permissions / roles services, then the rest.',
@@ -260,25 +244,9 @@ const RU = {
   ],
   experience: [
     {
-      role: 'Tech Lead / Senior Angular Developer',
-      company: 'Удалённо',
-      period: '2023 — н.в.',
-      points: [
-        'Высоконагруженный потребительский продукт на web (SSR) и Smart TV — ~4 млн пользователей и ~100 тыс. устройств, внутри Nx-монорепо из 5 приложений и 81 библиотеки. Реализовал SSR-фичи на web (возрастные ограничения и PIN по регуляторным требованиям, профиль, подписки, юридические согласия) и вертикаль геймификации — достижения, уровни, лидерборды — на web и Smart TV.',
-        'Провёл миграцию авторизации — с legacy-провайдера на корпоративный SSO, сразу на web (SSR) и Smart TV: сессии с heartbeat, короткоживущие токены, HTTP-интерсепторы, гостевой вход, mixed-режим и новый механизм refresh-token, плюс управление устройствами по WebSocket с лимитами по подписке. Раскатка под фича-флагами с последующей зачисткой ключей — ~170 коммитов в двух приложениях.',
-        'Спроектировал с нуля и написал почти целиком две библиотеки — слой навигации Smart TV (контракт API, кеширование, fallback-каталог, оставляющий приложение навигируемым при недоступном бэкенде, продуктовые метрики и метрики производительности) и resource-only data-слой на signal httpResource: сессионный кеш со сбросом при смене профиля, no-retry на кеше, нормализация ошибок, полное покрытие спеками.',
-        'Пришёл в команду из одного фронтендера и вырастил её по трём направлениям — своя группа 4–5 человек, вертикаль отчётов на 5 и международное направление на 2 — нанял каждого лично, проведя 70+ собеседований.',
-        'Отвечаю за релиз всех трёх фронтенд-команд: нарезаю эпик, команды готовят MR, я мержу после аппрувов — часто сам же и ревьюер. Год ревьюил код внешней команды подрядчиков, потом нанял сеньора, который это перенял.',
-        'Внёс культуру unit-тестов в проект с нулевым покрытием и научил писать их 20+ разработчиков — сейчас основное приложение гоняет ~10 400 unit-тестов при 89% покрытия с гейтом в CI, а greenfield-проекты стоят на 100%.',
-        'Отвечаю за здоровье прода — Sentry, метрики производительности и регресс по всему проекту. Багов, доходящих до прода, стало 2–3 за спринт вместо унаследованных 10–12.',
-        'Построил GitLab CI/CD с нуля на Kubernetes-раннерах — переиспользуемые шаблоны на несколько проектов, nx affected, шардинг на три части, прогоняющий 10 400 тестов за ~3 минуты, и гейты покрытия, дублирования, циклических зависимостей и аппрувов, плюс кастомный ESLint-плагин под конвенции.',
-        'Опубликовал Nx-монорепо из 13 общих Angular-библиотек — токены дизайн-системы из Figma, темизация, SVG-иконки, уведомления, feature-флаги, dev-auth, сгенерированный Orval-клиент и тест-хелперы — с авто-версионированием в приватный GitLab-registry; их используют 3 приложения.',
-      ],
-    },
-    {
       role: 'Tech Lead / Senior Frontend',
       company: 'The 5th Kind · США, удалённо',
-      period: '2019 — 2023',
+      period: '2019 — н.в.',
       points: [
         'Платформа управления медиа-активами для Marvel, Disney, Warner Bros., Epic Games и Universal (через Sohonet).',
         'Возглавил миграцию на слоистую NgRx-архитектуру примерно за год, поэтапно, без остановки поставки — сначала новые фичи, потом авторизация и ключевые сервисы пользователей, прав и ролей, затем всё остальное.',
