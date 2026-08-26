@@ -52,35 +52,10 @@ export const CREDENTIALS: readonly Credential[] = [
 
 export const EXPERIENCES: readonly Experience[] = [
   {
-    role: $localize`:@@exp.current.role:Tech Lead / Senior Angular Developer`,
-    company: null,
-    location: $localize`:@@exp.current.loc:Remote`,
-    period: $localize`:@@exp.current.period:2023 — Present`,
-    description: $localize`:@@exp.current.desc:Architecting Angular 22 applications end-to-end — zoneless, signals, standalone and OnPush throughout, with NgRx Signals stores. Designed a type-safe API layer: an Orval client auto-generated from OpenAPI with zod runtime validation — signal-based httpResource for reads, HttpClient services for mutations. Built a self-authored Nx monorepo of shared Angular libraries (design-system tokens from Figma, theming, inline-SVG icons, notifications, feature flags, dev-auth tooling), auto-versioned and idempotently published to a private GitLab Package Registry. Quality enforced by a custom ESLint plugin (private #fields, inject()-only DI, RxJS hygiene), a multi-plugin Prettier stack, 100% test coverage and duplication / circular-dependency gates in CI.`,
-    // Each bullet is written as action + scope + result: the responsibility is what a screen
-    // matches against, the number at the end is what makes it worth reading.
-    //
-    // Only the one product is claimed here. The second, concurrent one is deliberately absent:
-    // two products with their own metrics side by side identify the employer, and it is not
-    // worth an achievement bullet for that. Its stack survives as a neutral keyword in skills.
-    highlights: [
-      $localize`:@@exp.current.proj1:A high-traffic consumer product on web SSR and Smart TV — ~4M users and ~100k devices, inside an Nx monorepo of 5 apps and 81 libraries. Shipped the SSR web features (age-gating and PIN compliance, profile, subscriptions, legal consent) and the gamification vertical — achievements, levels, leaderboards — to both web and TV.`,
-      $localize`:@@exp.current.auth:Led the authentication migration — off a legacy provider onto corporate SSO, on web SSR and Smart TV at once: sessions with heartbeat, short-lived tokens, HTTP interceptors, guest entry, a mixed mode and a new refresh-token flow, plus WebSocket device management with per-subscription limits. Rolled out behind feature flags and cleaned back out afterwards — ~170 commits across two apps.`,
-      $localize`:@@exp.current.tvlibs:Designed two libraries from scratch and wrote almost all of the code — the Smart TV navigation layer (API contract, caching, a fallback catalogue that keeps the app navigable when the backend is down, product and performance metrics) and a resource-only data layer on signal httpResource: a per-session cache dropped on profile switch, no-retry on cache hits, error normalisation, fully spec-covered.`,
-      $localize`:@@exp.current.hl1:Inherited a frontend team of one and built it out across three directions — my own group of 4–5, a reporting vertical of 5 and an international one of 2 — hiring every engineer myself over 70+ interviews.`,
-      $localize`:@@exp.current.hl2:Own the release for all three frontend teams: I cut the epic, the teams raise the MRs, I merge once the approvals land — often as one of the reviewers. Reviewed an external contractor team's code for a year, then hired the senior who took it over.`,
-      $localize`:@@exp.current.hl3:Introduced unit testing to a project sitting at 0% coverage and taught 20+ developers to write it — the main app now runs ~10,400 unit tests at 89% coverage gated in CI, and the greenfield projects sit at 100%.`,
-      $localize`:@@exp.current.hl4:Own production health — Sentry, performance metrics and the regression runs for the whole project. Defects reaching production fell from the 10–12 per sprint I inherited to 2–3.`,
-      $localize`:@@exp.current.hl5:Built the GitLab CI/CD from scratch on Kubernetes runners — reusable templates shared across projects, nx affected, three-way sharding that clears 10,400 tests in ~3 minutes, and coverage, duplication, circular-dependency and custom approval gates, with a custom ESLint plugin enforcing the conventions.`,
-      $localize`:@@exp.current.hl6:Published an Nx monorepo of 13 shared Angular libraries — design-system tokens from Figma, theming, SVG icons, notifications, feature flags, dev-auth, a generated Orval API client and test helpers — auto-versioned into a private GitLab registry and consumed by 3 apps.`,
-    ],
-    tags: ['Angular', 'NgRx', 'Signals', 'RxJS', 'TypeScript', 'CI/CD', 'Jira', 'Confluence'],
-  },
-  {
     role: $localize`:@@exp.fifthkind.role:Tech Lead / Senior Frontend`,
     company: 'The 5th Kind',
     location: $localize`:@@exp.fifthkind.loc:US, Remote`,
-    period: '2019 — 2023',
+    period: $localize`:@@exp.fifthkind.period:2019 — Present`,
     description: $localize`:@@exp.fifthkind.desc:5th Kind CORE (Sohonet) — the distributed digital-asset management platform film and TV production runs on: ~10k users, with Marvel, Disney, Warner Bros., Epic Games and Universal among its clients.`,
     highlights: [
       $localize`:@@exp.fifthkind.hl1:Led the migration to a layered NgRx architecture over about a year, staged to keep the product shipping — new features first, then auth and the core user / permissions / roles services, then the rest.`,

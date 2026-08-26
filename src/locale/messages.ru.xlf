@@ -254,46 +254,6 @@
         <source>interviews run</source>
         <target>собеседований</target>
       </trans-unit>
-      <trans-unit id="exp.current.role" datatype="html">
-        <source>Tech Lead / Senior Angular Developer</source>
-        <target>Tech Lead / Senior Angular Developer</target>
-      </trans-unit>
-      <trans-unit id="exp.current.loc" datatype="html">
-        <source>Remote</source>
-        <target>Удалённо</target>
-      </trans-unit>
-      <trans-unit id="exp.current.period" datatype="html">
-        <source>2023 — Present</source>
-        <target>2023 — наст. время</target>
-      </trans-unit>
-      <trans-unit id="exp.current.desc" datatype="html">
-        <source>Architecting Angular 22 applications end-to-end — zoneless, signals, standalone and OnPush throughout, with NgRx Signals stores. Designed a type-safe API layer: an Orval client auto-generated from OpenAPI with zod runtime validation — signal-based httpResource for reads, HttpClient services for mutations. Built a self-authored Nx monorepo of shared Angular libraries (design-system tokens from Figma, theming, inline-SVG icons, notifications, feature flags, dev-auth tooling), auto-versioned and idempotently published to a private GitLab Package Registry. Quality enforced by a custom ESLint plugin (private #fields, inject()-only DI, RxJS hygiene), a multi-plugin Prettier stack, 100% test coverage and duplication / circular-dependency gates in CI.</source>
-        <target>Проектирую Angular 22-приложения целиком — zoneless, сигналы, standalone и OnPush повсюду, сторы на NgRx Signals. Спроектировал типобезопасный API-слой: Orval-клиент, авто-генерируемый из OpenAPI с рантайм-валидацией zod — signal-based httpResource для чтений, HttpClient-сервисы для мутаций. Самостоятельно построил Nx-монорепозиторий общих Angular-библиотек (токены дизайн-системы из Figma, темизация, inline-SVG иконки, уведомления, feature-флаги, dev-auth тулинг) с авто-версионированием и идемпотентной публикацией в приватный GitLab Package Registry. Качество держат кастомный ESLint-плагин (приватные #поля, DI только через inject(), гигиена RxJS), мультиплагинный Prettier, 100% покрытие тестами и проверки дублирования / циклических зависимостей в CI.</target>
-      </trans-unit>
-      <trans-unit id="exp.current.hl1" datatype="html">
-        <source>Inherited a frontend team of one and built it out across three directions — my own group of 4–5, a reporting vertical of 5 and an international one of 2 — hiring every engineer myself over 70+ interviews.</source>
-        <target>Пришёл в команду из одного фронтендера и вырастил её по трём направлениям — своя группа 4–5 человек, вертикаль отчётов на 5 и международное направление на 2 — нанял каждого лично, проведя 70+ собеседований.</target>
-      </trans-unit>
-      <trans-unit id="exp.current.hl2" datatype="html">
-        <source>Own the release for all three frontend teams: I cut the epic, the teams raise the MRs, I merge once the approvals land — often as one of the reviewers. Reviewed an external contractor team&apos;s code for a year, then hired the senior who took it over.</source>
-        <target>Отвечаю за релиз всех трёх фронтенд-команд: нарезаю эпик, команды готовят MR, я мержу после аппрувов — часто сам же и ревьюер. Год ревьюил код внешней команды подрядчиков, потом нанял сеньора, который это перенял.</target>
-      </trans-unit>
-      <trans-unit id="exp.current.hl3" datatype="html">
-        <source>Introduced unit testing to a project sitting at 0% coverage and taught 20+ developers to write it — the main app now runs ~10,400 unit tests at 89% coverage gated in CI, and the greenfield projects sit at 100%.</source>
-        <target>Внёс культуру unit-тестов в проект с нулевым покрытием и научил писать их 20+ разработчиков — сейчас основное приложение гоняет ~10 400 unit-тестов при 89% покрытия с гейтом в CI, а greenfield-проекты стоят на 100%.</target>
-      </trans-unit>
-      <trans-unit id="exp.current.hl4" datatype="html">
-        <source>Own production health — Sentry, performance metrics and the regression runs for the whole project. Defects reaching production fell from the 10–12 per sprint I inherited to 2–3.</source>
-        <target>Отвечаю за здоровье прода — Sentry, метрики производительности и регресс по всему проекту. Багов, доходящих до прода, стало 2–3 за спринт вместо унаследованных 10–12.</target>
-      </trans-unit>
-      <trans-unit id="exp.current.hl5" datatype="html">
-        <source>Built the GitLab CI/CD from scratch on Kubernetes runners — reusable templates shared across projects, nx affected, three-way sharding that clears 10,400 tests in ~3 minutes, and coverage, duplication, circular-dependency and custom approval gates, with a custom ESLint plugin enforcing the conventions.</source>
-        <target>Построил GitLab CI/CD с нуля на Kubernetes-раннерах — переиспользуемые шаблоны на несколько проектов, nx affected, шардинг на три части, прогоняющий 10 400 тестов за ~3 минуты, и гейты покрытия, дублирования, циклических зависимостей и аппрувов, плюс кастомный ESLint-плагин под конвенции.</target>
-      </trans-unit>
-      <trans-unit id="exp.current.hl6" datatype="html">
-        <source>Published an Nx monorepo of 13 shared Angular libraries — design-system tokens from Figma, theming, SVG icons, notifications, feature flags, dev-auth, a generated Orval API client and test helpers — auto-versioned into a private GitLab registry and consumed by 3 apps.</source>
-        <target>Опубликовал Nx-монорепо из 13 общих Angular-библиотек — токены дизайн-системы из Figma, темизация, SVG-иконки, уведомления, feature-флаги, dev-auth, сгенерированный Orval-клиент и тест-хелперы — с авто-версионированием в приватный GitLab-registry; их используют 3 приложения.</target>
-      </trans-unit>
       <trans-unit id="exp.fifthkind.role" datatype="html">
         <source>Tech Lead / Senior Frontend</source>
         <target>Tech Lead / Senior Frontend</target>
@@ -301,6 +261,10 @@
       <trans-unit id="exp.fifthkind.loc" datatype="html">
         <source>US, Remote</source>
         <target>США, удалённо</target>
+      </trans-unit>
+      <trans-unit id="exp.fifthkind.period" datatype="html">
+        <source>2019 — Present</source>
+        <target>2019 — наст. время</target>
       </trans-unit>
       <trans-unit id="exp.fifthkind.desc" datatype="html">
         <source>5th Kind CORE (Sohonet) — the distributed digital-asset management platform film and TV production runs on: ~10k users, with Marvel, Disney, Warner Bros., Epic Games and Universal among its clients.</source>
@@ -489,18 +453,6 @@
       <trans-unit id="exp.arcadia.hl3" datatype="html">
         <source>Built and released the mobile iOS / Android app with Ionic; ran Angular / JS interviews and trained new hires.</source>
         <target>Собрал и выпустил мобильное приложение для iOS / Android на Ionic; проводил интервью по Angular / JS и обучал новичков.</target>
-      </trans-unit>
-      <trans-unit id="exp.current.proj1" datatype="html">
-        <source>A high-traffic consumer product on web SSR and Smart TV — ~4M users and ~100k devices, inside an Nx monorepo of 5 apps and 81 libraries. Shipped the SSR web features (age-gating and PIN compliance, profile, subscriptions, legal consent) and the gamification vertical — achievements, levels, leaderboards — to both web and TV.</source>
-        <target>Высоконагруженный потребительский продукт на web (SSR) и Smart TV — ~4 млн пользователей и ~100 тыс. устройств, внутри Nx-монорепо из 5 приложений и 81 библиотеки. Реализовал SSR-фичи на web (возрастные ограничения и PIN по регуляторным требованиям, профиль, подписки, юридические согласия) и вертикаль геймификации — достижения, уровни, лидерборды — на web и Smart TV.</target>
-      </trans-unit>
-      <trans-unit id="exp.current.auth" datatype="html">
-        <source>Led the authentication migration — off a legacy provider onto corporate SSO, on web SSR and Smart TV at once: sessions with heartbeat, short-lived tokens, HTTP interceptors, guest entry, a mixed mode and a new refresh-token flow, plus WebSocket device management with per-subscription limits. Rolled out behind feature flags and cleaned back out afterwards — ~170 commits across two apps.</source>
-        <target>Провёл миграцию авторизации — с legacy-провайдера на корпоративный SSO, сразу на web (SSR) и Smart TV: сессии с heartbeat, короткоживущие токены, HTTP-интерсепторы, гостевой вход, mixed-режим и новый механизм refresh-token, плюс управление устройствами по WebSocket с лимитами по подписке. Раскатка под фича-флагами с последующей зачисткой ключей — ~170 коммитов в двух приложениях.</target>
-      </trans-unit>
-      <trans-unit id="exp.current.tvlibs" datatype="html">
-        <source>Designed two libraries from scratch and wrote almost all of the code — the Smart TV navigation layer (API contract, caching, a fallback catalogue that keeps the app navigable when the backend is down, product and performance metrics) and a resource-only data layer on signal httpResource: a per-session cache dropped on profile switch, no-retry on cache hits, error normalisation, fully spec-covered.</source>
-        <target>Спроектировал с нуля и написал почти целиком две библиотеки — слой навигации Smart TV (контракт API, кеширование, fallback-каталог, оставляющий приложение навигируемым при недоступном бэкенде, продуктовые метрики и метрики производительности) и resource-only data-слой на signal httpResource: сессионный кеш со сбросом при смене профиля, no-retry на кеше, нормализация ошибок, полное покрытие спеками.</target>
       </trans-unit>
     </body>
   </file>

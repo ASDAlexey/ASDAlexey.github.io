@@ -46,6 +46,9 @@ Thumbs.db
 # Private portfolio master — NEVER publish (contains company names / parallel work)
 /content/PORTFOLIO.md
 
+# Private drawer — experience/bullets pulled off the site but kept for later restore
+/content/private/
+
 # Screening prep and per-vacancy kits — personal notes, salary ranges, private job split
 /content/SCREENING.md
 /content/vacancies/
