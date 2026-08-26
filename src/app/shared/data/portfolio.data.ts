@@ -158,6 +158,7 @@ export const PROJECTS: readonly Project[] = [
     badge: $localize`:@@proj.vas.badge:Library · Open Source`,
     description: $localize`:@@proj.vas.desc:Typed auto-mocking for Vitest — the spiritual successor to jest-auto-spies. One API, three runtimes: the same helpers run on Vitest, Bun (bun:test) and Node.js (node:test) behind a swappable MockAdapter. Generate fully-typed spies from a class (createSpyFromClass) or from a TypeScript type alone (createAutoMock, Proxy-based — never instantiates the class). Return-type-aware controls: mockReturnValue, resolveWith / rejectWith for promises, nextWith / throwWith / complete for Observables, plus calledWith dispatch and readonly / signal property mocking. First-class RxJS entry point and DI helpers (provideAutoSpy / injectSpy) for Angular, NestJS, React, Vue and Svelte. Zero runtime dependencies, 100% coverage, published on npm at ~7k downloads a month, and dogfooded in this site's own tests.`,
     links: [
+      { label: 'Live', href: 'https://asdalexey.github.io/vitest-auto-spy/' },
       { label: 'npm', href: 'https://www.npmjs.com/package/vitest-auto-spy' },
       { label: 'GitHub', href: 'https://github.com/ASDAlexey/vitest-auto-spy' },
     ],
